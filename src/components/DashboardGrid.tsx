@@ -3,6 +3,8 @@
 import { useState } from "react";
 import type { Vessel } from "@/lib/types";
 import VesselMap from "./VesselMap";
+import VesselTable from "./VesselTable";
+
 interface DashboardGridProps {
   vessels: Vessel[];
 }
@@ -26,9 +28,11 @@ export default function DashboardGrid({ vessels }: DashboardGridProps) {
         <p className="text-[10px] uppercase tracking-label text-label mb-2">
           Vessel details
         </p>
-        <div className="border border-border h-[400px] md:h-full min-h-[300px] flex items-center justify-center text-label-light text-sm">
-          Vessel table placeholder
-        </div>
+        <VesselTable
+          vessels={vessels}
+          selectedImo={selectedImo}
+          onSelectVessel={setSelectedImo}
+        />
       </div>
     </div>
   );
