@@ -1,6 +1,7 @@
 import { loadDashboardData } from "@/lib/data";
 import Header from "@/components/Header";
 import StatBar from "@/components/StatBar";
+import DashboardGrid from "@/components/DashboardGrid";
 
 export default function Home() {
   const data = loadDashboardData();
@@ -23,7 +24,7 @@ export default function Home() {
         vessels={data.snapshot.vessels}
         latestConsumptionCover={latestConsumption}
       />
-      {/* Map + Table will go here */}
+      <DashboardGrid vessels={data.snapshot.vessels} />
       {/* Historical chart will go here */}
     </main>
   );
