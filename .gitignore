@@ -7,3 +7,4 @@ __pycache__/
 .env.local
 .superpowers/
 .claude/
+data/petroleum_stats_cache.xlsx
