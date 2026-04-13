@@ -1,0 +1,14 @@
+{
+  "ports": [
+    {"name": "Geelong", "lat": -38.1499, "lon": 144.3600, "radius_km": 5},
+    {"name": "Melbourne", "lat": -37.8400, "lon": 144.9200, "radius_km": 5},
+    {"name": "Sydney / Botany", "lat": -33.9700, "lon": 151.2100, "radius_km": 5},
+    {"name": "Port Kembla", "lat": -34.4700, "lon": 150.9000, "radius_km": 5},
+    {"name": "Brisbane", "lat": -27.3800, "lon": 153.1700, "radius_km": 5},
+    {"name": "Gladstone", "lat": -23.8500, "lon": 151.2800, "radius_km": 5},
+    {"name": "Fremantle", "lat": -32.0500, "lon": 115.7400, "radius_km": 5},
+    {"name": "Adelaide", "lat": -34.7900, "lon": 138.4800, "radius_km": 5},
+    {"name": "Darwin", "lat": -12.4300, "lon": 130.8500, "radius_km": 5},
+    {"name": "Townsville", "lat": -19.2500, "lon": 146.7700, "radius_km": 5}
+  ]
+}
