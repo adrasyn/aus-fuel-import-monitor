@@ -1,1 +1,3372 @@
-{"imports_by_month": [], "consumption_cover": []}
+{
+  "imports_by_month": [
+    {
+      "month": "2010-07",
+      "crude_oil_ml": 2594.0,
+      "lpg_ml": 88.2,
+      "gasoline_ml": 207.3,
+      "jet_fuel_ml": 175.3,
+      "diesel_ml": 804.9,
+      "fuel_oil_ml": 43.7,
+      "total_ml": 4043.1
+    },
+    {
+      "month": "2010-08",
+      "crude_oil_ml": 2525.9,
+      "lpg_ml": 141.4,
+      "gasoline_ml": 151.9,
+      "jet_fuel_ml": 146.8,
+      "diesel_ml": 535.1,
+      "fuel_oil_ml": 59.3,
+      "total_ml": 3667.3
+    },
+    {
+      "month": "2010-09",
+      "crude_oil_ml": 2566.8,
+      "lpg_ml": 4.0,
+      "gasoline_ml": 155.8,
+      "jet_fuel_ml": 184.1,
+      "diesel_ml": 747.4,
+      "fuel_oil_ml": 156.1,
+      "total_ml": 3949.1
+    },
+    {
+      "month": "2010-10",
+      "crude_oil_ml": 2048.3,
+      "lpg_ml": 164.4,
+      "gasoline_ml": 225.0,
+      "jet_fuel_ml": 221.7,
+      "diesel_ml": 637.0,
+      "fuel_oil_ml": 173.4,
+      "total_ml": 3597.0
+    },
+    {
+      "month": "2010-11",
+      "crude_oil_ml": 2687.4,
+      "lpg_ml": 3.6,
+      "gasoline_ml": 271.5,
+      "jet_fuel_ml": 238.5,
+      "diesel_ml": 703.9,
+      "fuel_oil_ml": 169.9,
+      "total_ml": 4159.6
+    },
+    {
+      "month": "2010-12",
+      "crude_oil_ml": 3214.4,
+      "lpg_ml": 159.4,
+      "gasoline_ml": 215.1,
+      "jet_fuel_ml": 172.9,
+      "diesel_ml": 706.6,
+      "fuel_oil_ml": 161.3,
+      "total_ml": 4747.9
+    },
+    {
+      "month": "2011-01",
+      "crude_oil_ml": 2308.1,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 225.6,
+      "jet_fuel_ml": 122.7,
+      "diesel_ml": 461.0,
+      "fuel_oil_ml": 91.8,
+      "total_ml": 3314.3
+    },
+    {
+      "month": "2011-02",
+      "crude_oil_ml": 2567.3,
+      "lpg_ml": 71.5,
+      "gasoline_ml": 405.4,
+      "jet_fuel_ml": 182.0,
+      "diesel_ml": 630.7,
+      "fuel_oil_ml": 142.6,
+      "total_ml": 4094.9
+    },
+    {
+      "month": "2011-03",
+      "crude_oil_ml": 3186.1,
+      "lpg_ml": 64.4,
+      "gasoline_ml": 196.0,
+      "jet_fuel_ml": 157.5,
+      "diesel_ml": 723.0,
+      "fuel_oil_ml": 185.3,
+      "total_ml": 4636.6
+    },
+    {
+      "month": "2011-04",
+      "crude_oil_ml": 2485.6,
+      "lpg_ml": 20.9,
+      "gasoline_ml": 220.0,
+      "jet_fuel_ml": 154.2,
+      "diesel_ml": 1012.7,
+      "fuel_oil_ml": 82.8,
+      "total_ml": 4090.9
+    },
+    {
+      "month": "2011-05",
+      "crude_oil_ml": 2456.0,
+      "lpg_ml": 165.7,
+      "gasoline_ml": 203.2,
+      "jet_fuel_ml": 122.5,
+      "diesel_ml": 1022.1,
+      "fuel_oil_ml": 143.1,
+      "total_ml": 4228.4
+    },
+    {
+      "month": "2011-06",
+      "crude_oil_ml": 3134.1,
+      "lpg_ml": 4.4,
+      "gasoline_ml": 176.1,
+      "jet_fuel_ml": 207.8,
+      "diesel_ml": 859.0,
+      "fuel_oil_ml": 147.9,
+      "total_ml": 4663.8
+    },
+    {
+      "month": "2011-07",
+      "crude_oil_ml": 2321.5,
+      "lpg_ml": 167.9,
+      "gasoline_ml": 234.1,
+      "jet_fuel_ml": 233.2,
+      "diesel_ml": 927.9,
+      "fuel_oil_ml": 64.7,
+      "total_ml": 4068.2
+    },
+    {
+      "month": "2011-08",
+      "crude_oil_ml": 2866.1,
+      "lpg_ml": 77.4,
+      "gasoline_ml": 264.8,
+      "jet_fuel_ml": 200.9,
+      "diesel_ml": 820.1,
+      "fuel_oil_ml": 172.0,
+      "total_ml": 4542.0
+    },
+    {
+      "month": "2011-09",
+      "crude_oil_ml": 1997.9,
+      "lpg_ml": 165.6,
+      "gasoline_ml": 276.3,
+      "jet_fuel_ml": 207.9,
+      "diesel_ml": 968.7,
+      "fuel_oil_ml": 123.5,
+      "total_ml": 3878.1
+    },
+    {
+      "month": "2011-10",
+      "crude_oil_ml": 2317.9,
+      "lpg_ml": 0.6,
+      "gasoline_ml": 321.9,
+      "jet_fuel_ml": 182.7,
+      "diesel_ml": 1047.4,
+      "fuel_oil_ml": 66.0,
+      "total_ml": 4063.7
+    },
+    {
+      "month": "2011-11",
+      "crude_oil_ml": 2185.4,
+      "lpg_ml": 167.3,
+      "gasoline_ml": 337.9,
+      "jet_fuel_ml": 248.4,
+      "diesel_ml": 910.5,
+      "fuel_oil_ml": 203.6,
+      "total_ml": 4169.4
+    },
+    {
+      "month": "2011-12",
+      "crude_oil_ml": 2767.6,
+      "lpg_ml": 0.5,
+      "gasoline_ml": 516.7,
+      "jet_fuel_ml": 214.8,
+      "diesel_ml": 969.4,
+      "fuel_oil_ml": 180.9,
+      "total_ml": 4765.5
+    },
+    {
+      "month": "2012-01",
+      "crude_oil_ml": 2667.7,
+      "lpg_ml": 0.5,
+      "gasoline_ml": 162.9,
+      "jet_fuel_ml": 105.8,
+      "diesel_ml": 839.8,
+      "fuel_oil_ml": 54.4,
+      "total_ml": 3933.6
+    },
+    {
+      "month": "2012-02",
+      "crude_oil_ml": 2486.8,
+      "lpg_ml": 65.8,
+      "gasoline_ml": 320.8,
+      "jet_fuel_ml": 172.7,
+      "diesel_ml": 733.6,
+      "fuel_oil_ml": 179.8,
+      "total_ml": 4116.9
+    },
+    {
+      "month": "2012-03",
+      "crude_oil_ml": 2679.9,
+      "lpg_ml": 91.8,
+      "gasoline_ml": 402.7,
+      "jet_fuel_ml": 189.3,
+      "diesel_ml": 1128.8,
+      "fuel_oil_ml": 219.6,
+      "total_ml": 4868.6
+    },
+    {
+      "month": "2012-04",
+      "crude_oil_ml": 2141.4,
+      "lpg_ml": 138.8,
+      "gasoline_ml": 383.6,
+      "jet_fuel_ml": 164.6,
+      "diesel_ml": 773.4,
+      "fuel_oil_ml": 87.8,
+      "total_ml": 3842.3
+    },
+    {
+      "month": "2012-05",
+      "crude_oil_ml": 2777.6,
+      "lpg_ml": 6.0,
+      "gasoline_ml": 250.7,
+      "jet_fuel_ml": 217.3,
+      "diesel_ml": 1043.1,
+      "fuel_oil_ml": 135.4,
+      "total_ml": 4608.8
+    },
+    {
+      "month": "2012-06",
+      "crude_oil_ml": 2295.2,
+      "lpg_ml": 140.6,
+      "gasoline_ml": 199.3,
+      "jet_fuel_ml": 114.3,
+      "diesel_ml": 1081.7,
+      "fuel_oil_ml": 131.4,
+      "total_ml": 4073.6
+    },
+    {
+      "month": "2012-07",
+      "crude_oil_ml": 2830.8,
+      "lpg_ml": 59.1,
+      "gasoline_ml": 212.7,
+      "jet_fuel_ml": 238.6,
+      "diesel_ml": 961.7,
+      "fuel_oil_ml": 126.3,
+      "total_ml": 4573.5
+    },
+    {
+      "month": "2012-08",
+      "crude_oil_ml": 3138.8,
+      "lpg_ml": 79.7,
+      "gasoline_ml": 182.9,
+      "jet_fuel_ml": 232.5,
+      "diesel_ml": 1052.2,
+      "fuel_oil_ml": 205.3,
+      "total_ml": 5008.8
+    },
+    {
+      "month": "2012-09",
+      "crude_oil_ml": 2394.5,
+      "lpg_ml": 57.6,
+      "gasoline_ml": 191.9,
+      "jet_fuel_ml": 213.2,
+      "diesel_ml": 857.3,
+      "fuel_oil_ml": 50.8,
+      "total_ml": 3890.7
+    },
+    {
+      "month": "2012-10",
+      "crude_oil_ml": 2239.7,
+      "lpg_ml": 91.3,
+      "gasoline_ml": 360.5,
+      "jet_fuel_ml": 222.6,
+      "diesel_ml": 1068.2,
+      "fuel_oil_ml": 152.6,
+      "total_ml": 4289.3
+    },
+    {
+      "month": "2012-11",
+      "crude_oil_ml": 2844.0,
+      "lpg_ml": 80.4,
+      "gasoline_ml": 315.9,
+      "jet_fuel_ml": 328.8,
+      "diesel_ml": 1140.0,
+      "fuel_oil_ml": 178.7,
+      "total_ml": 5011.8
+    },
+    {
+      "month": "2012-12",
+      "crude_oil_ml": 2361.5,
+      "lpg_ml": 89.5,
+      "gasoline_ml": 299.7,
+      "jet_fuel_ml": 278.4,
+      "diesel_ml": 1022.7,
+      "fuel_oil_ml": 194.6,
+      "total_ml": 4375.3
+    },
+    {
+      "month": "2013-01",
+      "crude_oil_ml": 2203.9,
+      "lpg_ml": 77.6,
+      "gasoline_ml": 373.6,
+      "jet_fuel_ml": 258.1,
+      "diesel_ml": 1015.6,
+      "fuel_oil_ml": 71.8,
+      "total_ml": 4149.0
+    },
+    {
+      "month": "2013-02",
+      "crude_oil_ml": 2435.1,
+      "lpg_ml": 2.8,
+      "gasoline_ml": 376.9,
+      "jet_fuel_ml": 261.4,
+      "diesel_ml": 980.0,
+      "fuel_oil_ml": 134.7,
+      "total_ml": 4371.2
+    },
+    {
+      "month": "2013-03",
+      "crude_oil_ml": 2373.9,
+      "lpg_ml": 2.7,
+      "gasoline_ml": 358.4,
+      "jet_fuel_ml": 205.3,
+      "diesel_ml": 846.9,
+      "fuel_oil_ml": 141.8,
+      "total_ml": 4103.2
+    },
+    {
+      "month": "2013-04",
+      "crude_oil_ml": 2202.2,
+      "lpg_ml": 169.2,
+      "gasoline_ml": 404.1,
+      "jet_fuel_ml": 332.3,
+      "diesel_ml": 1167.8,
+      "fuel_oil_ml": 113.9,
+      "total_ml": 4534.0
+    },
+    {
+      "month": "2013-05",
+      "crude_oil_ml": 2473.5,
+      "lpg_ml": 103.5,
+      "gasoline_ml": 361.1,
+      "jet_fuel_ml": 303.1,
+      "diesel_ml": 1328.7,
+      "fuel_oil_ml": 222.5,
+      "total_ml": 5002.9
+    },
+    {
+      "month": "2013-06",
+      "crude_oil_ml": 2022.0,
+      "lpg_ml": 104.7,
+      "gasoline_ml": 215.5,
+      "jet_fuel_ml": 326.9,
+      "diesel_ml": 1071.0,
+      "fuel_oil_ml": 83.7,
+      "total_ml": 3975.0
+    },
+    {
+      "month": "2013-07",
+      "crude_oil_ml": 2549.6,
+      "lpg_ml": 165.6,
+      "gasoline_ml": 273.7,
+      "jet_fuel_ml": 280.0,
+      "diesel_ml": 1155.0,
+      "fuel_oil_ml": 69.2,
+      "total_ml": 4669.4
+    },
+    {
+      "month": "2013-08",
+      "crude_oil_ml": 2020.6,
+      "lpg_ml": 10.4,
+      "gasoline_ml": 177.6,
+      "jet_fuel_ml": 314.3,
+      "diesel_ml": 953.9,
+      "fuel_oil_ml": 162.8,
+      "total_ml": 3786.3
+    },
+    {
+      "month": "2013-09",
+      "crude_oil_ml": 2228.8,
+      "lpg_ml": 80.8,
+      "gasoline_ml": 280.3,
+      "jet_fuel_ml": 212.5,
+      "diesel_ml": 1148.9,
+      "fuel_oil_ml": 51.6,
+      "total_ml": 4221.6
+    },
+    {
+      "month": "2013-10",
+      "crude_oil_ml": 2339.1,
+      "lpg_ml": 1.6,
+      "gasoline_ml": 286.3,
+      "jet_fuel_ml": 294.5,
+      "diesel_ml": 1063.7,
+      "fuel_oil_ml": 172.5,
+      "total_ml": 4319.7
+    },
+    {
+      "month": "2013-11",
+      "crude_oil_ml": 2487.1,
+      "lpg_ml": 96.1,
+      "gasoline_ml": 277.8,
+      "jet_fuel_ml": 329.4,
+      "diesel_ml": 1270.8,
+      "fuel_oil_ml": 199.6,
+      "total_ml": 4866.6
+    },
+    {
+      "month": "2013-12",
+      "crude_oil_ml": 2387.5,
+      "lpg_ml": 88.6,
+      "gasoline_ml": 303.3,
+      "jet_fuel_ml": 307.1,
+      "diesel_ml": 1193.1,
+      "fuel_oil_ml": 136.9,
+      "total_ml": 4597.6
+    },
+    {
+      "month": "2014-01",
+      "crude_oil_ml": 2489.3,
+      "lpg_ml": 4.3,
+      "gasoline_ml": 412.8,
+      "jet_fuel_ml": 246.5,
+      "diesel_ml": 1037.9,
+      "fuel_oil_ml": 234.3,
+      "total_ml": 4589.1
+    },
+    {
+      "month": "2014-02",
+      "crude_oil_ml": 2839.4,
+      "lpg_ml": 89.2,
+      "gasoline_ml": 326.8,
+      "jet_fuel_ml": 196.5,
+      "diesel_ml": 822.2,
+      "fuel_oil_ml": 51.6,
+      "total_ml": 4482.4
+    },
+    {
+      "month": "2014-03",
+      "crude_oil_ml": 1831.5,
+      "lpg_ml": 3.2,
+      "gasoline_ml": 244.5,
+      "jet_fuel_ml": 305.3,
+      "diesel_ml": 1042.6,
+      "fuel_oil_ml": 131.6,
+      "total_ml": 3713.4
+    },
+    {
+      "month": "2014-04",
+      "crude_oil_ml": 2100.7,
+      "lpg_ml": 95.6,
+      "gasoline_ml": 256.9,
+      "jet_fuel_ml": 254.1,
+      "diesel_ml": 1016.3,
+      "fuel_oil_ml": 61.3,
+      "total_ml": 4002.8
+    },
+    {
+      "month": "2014-05",
+      "crude_oil_ml": 1977.0,
+      "lpg_ml": 89.2,
+      "gasoline_ml": 463.2,
+      "jet_fuel_ml": 424.8,
+      "diesel_ml": 1524.1,
+      "fuel_oil_ml": 54.7,
+      "total_ml": 4681.9
+    },
+    {
+      "month": "2014-06",
+      "crude_oil_ml": 2427.0,
+      "lpg_ml": 5.4,
+      "gasoline_ml": 295.1,
+      "jet_fuel_ml": 316.8,
+      "diesel_ml": 1374.2,
+      "fuel_oil_ml": 9.9,
+      "total_ml": 4589.6
+    },
+    {
+      "month": "2014-07",
+      "crude_oil_ml": 2437.1,
+      "lpg_ml": 178.3,
+      "gasoline_ml": 197.9,
+      "jet_fuel_ml": 238.7,
+      "diesel_ml": 1365.9,
+      "fuel_oil_ml": 10.2,
+      "total_ml": 4569.3
+    },
+    {
+      "month": "2014-08",
+      "crude_oil_ml": 2197.1,
+      "lpg_ml": 66.8,
+      "gasoline_ml": 174.5,
+      "jet_fuel_ml": 240.0,
+      "diesel_ml": 919.1,
+      "fuel_oil_ml": 12.3,
+      "total_ml": 3743.3
+    },
+    {
+      "month": "2014-09",
+      "crude_oil_ml": 2523.3,
+      "lpg_ml": 91.8,
+      "gasoline_ml": 379.7,
+      "jet_fuel_ml": 277.6,
+      "diesel_ml": 1281.3,
+      "fuel_oil_ml": 35.8,
+      "total_ml": 4738.6
+    },
+    {
+      "month": "2014-10",
+      "crude_oil_ml": 1944.9,
+      "lpg_ml": 91.4,
+      "gasoline_ml": 435.9,
+      "jet_fuel_ml": 492.7,
+      "diesel_ml": 1339.9,
+      "fuel_oil_ml": 25.8,
+      "total_ml": 4473.9
+    },
+    {
+      "month": "2014-11",
+      "crude_oil_ml": 1976.6,
+      "lpg_ml": 1.9,
+      "gasoline_ml": 451.6,
+      "jet_fuel_ml": 304.9,
+      "diesel_ml": 1161.0,
+      "fuel_oil_ml": 4.2,
+      "total_ml": 4040.6
+    },
+    {
+      "month": "2014-12",
+      "crude_oil_ml": 2139.4,
+      "lpg_ml": 91.9,
+      "gasoline_ml": 417.0,
+      "jet_fuel_ml": 401.5,
+      "diesel_ml": 1154.3,
+      "fuel_oil_ml": 8.9,
+      "total_ml": 4354.1
+    },
+    {
+      "month": "2015-01",
+      "crude_oil_ml": 1959.2,
+      "lpg_ml": 0.6,
+      "gasoline_ml": 510.6,
+      "jet_fuel_ml": 310.2,
+      "diesel_ml": 1398.9,
+      "fuel_oil_ml": 8.0,
+      "total_ml": 4374.9
+    },
+    {
+      "month": "2015-02",
+      "crude_oil_ml": 2112.6,
+      "lpg_ml": 87.7,
+      "gasoline_ml": 616.5,
+      "jet_fuel_ml": 374.2,
+      "diesel_ml": 1144.1,
+      "fuel_oil_ml": 42.3,
+      "total_ml": 4508.5
+    },
+    {
+      "month": "2015-03",
+      "crude_oil_ml": 1958.8,
+      "lpg_ml": 1.1,
+      "gasoline_ml": 547.7,
+      "jet_fuel_ml": 410.6,
+      "diesel_ml": 991.5,
+      "fuel_oil_ml": 38.8,
+      "total_ml": 4137.2
+    },
+    {
+      "month": "2015-04",
+      "crude_oil_ml": 2107.7,
+      "lpg_ml": 79.8,
+      "gasoline_ml": 571.6,
+      "jet_fuel_ml": 353.7,
+      "diesel_ml": 1390.0,
+      "fuel_oil_ml": 11.6,
+      "total_ml": 4693.4
+    },
+    {
+      "month": "2015-05",
+      "crude_oil_ml": 1332.0,
+      "lpg_ml": 87.3,
+      "gasoline_ml": 733.7,
+      "jet_fuel_ml": 436.5,
+      "diesel_ml": 1593.1,
+      "fuel_oil_ml": 28.6,
+      "total_ml": 4344.1
+    },
+    {
+      "month": "2015-06",
+      "crude_oil_ml": 1585.1,
+      "lpg_ml": 179.3,
+      "gasoline_ml": 497.6,
+      "jet_fuel_ml": 458.6,
+      "diesel_ml": 1439.2,
+      "fuel_oil_ml": 33.8,
+      "total_ml": 4337.0
+    },
+    {
+      "month": "2015-07",
+      "crude_oil_ml": 1522.8,
+      "lpg_ml": 71.1,
+      "gasoline_ml": 588.0,
+      "jet_fuel_ml": 378.8,
+      "diesel_ml": 1357.5,
+      "fuel_oil_ml": 24.4,
+      "total_ml": 4088.0
+    },
+    {
+      "month": "2015-08",
+      "crude_oil_ml": 1383.3,
+      "lpg_ml": 89.3,
+      "gasoline_ml": 491.8,
+      "jet_fuel_ml": 437.1,
+      "diesel_ml": 1558.6,
+      "fuel_oil_ml": 19.4,
+      "total_ml": 4082.5
+    },
+    {
+      "month": "2015-09",
+      "crude_oil_ml": 1055.3,
+      "lpg_ml": 148.7,
+      "gasoline_ml": 558.8,
+      "jet_fuel_ml": 580.8,
+      "diesel_ml": 1619.0,
+      "fuel_oil_ml": 96.1,
+      "total_ml": 4216.0
+    },
+    {
+      "month": "2015-10",
+      "crude_oil_ml": 1715.3,
+      "lpg_ml": 5.9,
+      "gasoline_ml": 567.8,
+      "jet_fuel_ml": 451.4,
+      "diesel_ml": 1604.2,
+      "fuel_oil_ml": 9.8,
+      "total_ml": 4460.7
+    },
+    {
+      "month": "2015-11",
+      "crude_oil_ml": 1450.7,
+      "lpg_ml": 153.4,
+      "gasoline_ml": 611.7,
+      "jet_fuel_ml": 415.2,
+      "diesel_ml": 1269.9,
+      "fuel_oil_ml": 70.6,
+      "total_ml": 4132.1
+    },
+    {
+      "month": "2015-12",
+      "crude_oil_ml": 1799.5,
+      "lpg_ml": 0.5,
+      "gasoline_ml": 665.1,
+      "jet_fuel_ml": 463.8,
+      "diesel_ml": 1579.8,
+      "fuel_oil_ml": 51.9,
+      "total_ml": 4696.3
+    },
+    {
+      "month": "2016-01",
+      "crude_oil_ml": 1599.5,
+      "lpg_ml": 94.5,
+      "gasoline_ml": 569.2,
+      "jet_fuel_ml": 502.7,
+      "diesel_ml": 1212.9,
+      "fuel_oil_ml": 5.7,
+      "total_ml": 4135.5
+    },
+    {
+      "month": "2016-02",
+      "crude_oil_ml": 1576.1,
+      "lpg_ml": 4.2,
+      "gasoline_ml": 487.1,
+      "jet_fuel_ml": 289.5,
+      "diesel_ml": 1272.8,
+      "fuel_oil_ml": 31.8,
+      "total_ml": 3818.9
+    },
+    {
+      "month": "2016-03",
+      "crude_oil_ml": 1836.5,
+      "lpg_ml": 95.4,
+      "gasoline_ml": 591.8,
+      "jet_fuel_ml": 457.2,
+      "diesel_ml": 1548.5,
+      "fuel_oil_ml": 5.3,
+      "total_ml": 4643.6
+    },
+    {
+      "month": "2016-04",
+      "crude_oil_ml": 1960.9,
+      "lpg_ml": 96.2,
+      "gasoline_ml": 516.6,
+      "jet_fuel_ml": 514.0,
+      "diesel_ml": 1614.2,
+      "fuel_oil_ml": 6.3,
+      "total_ml": 4818.5
+    },
+    {
+      "month": "2016-05",
+      "crude_oil_ml": 1971.6,
+      "lpg_ml": 86.9,
+      "gasoline_ml": 509.1,
+      "jet_fuel_ml": 527.0,
+      "diesel_ml": 1686.6,
+      "fuel_oil_ml": 3.5,
+      "total_ml": 4891.5
+    },
+    {
+      "month": "2016-06",
+      "crude_oil_ml": 1868.8,
+      "lpg_ml": 72.1,
+      "gasoline_ml": 480.6,
+      "jet_fuel_ml": 573.5,
+      "diesel_ml": 1434.5,
+      "fuel_oil_ml": 7.2,
+      "total_ml": 4547.2
+    },
+    {
+      "month": "2016-07",
+      "crude_oil_ml": 1608.8,
+      "lpg_ml": 154.7,
+      "gasoline_ml": 502.7,
+      "jet_fuel_ml": 309.5,
+      "diesel_ml": 1376.1,
+      "fuel_oil_ml": 4.2,
+      "total_ml": 4124.8
+    },
+    {
+      "month": "2016-08",
+      "crude_oil_ml": 1917.5,
+      "lpg_ml": 88.3,
+      "gasoline_ml": 375.6,
+      "jet_fuel_ml": 464.8,
+      "diesel_ml": 1454.9,
+      "fuel_oil_ml": 11.0,
+      "total_ml": 4486.4
+    },
+    {
+      "month": "2016-09",
+      "crude_oil_ml": 1848.3,
+      "lpg_ml": 91.7,
+      "gasoline_ml": 601.8,
+      "jet_fuel_ml": 488.5,
+      "diesel_ml": 1640.4,
+      "fuel_oil_ml": 3.4,
+      "total_ml": 4782.1
+    },
+    {
+      "month": "2016-10",
+      "crude_oil_ml": 1509.6,
+      "lpg_ml": 88.2,
+      "gasoline_ml": 701.5,
+      "jet_fuel_ml": 553.3,
+      "diesel_ml": 1332.2,
+      "fuel_oil_ml": 6.3,
+      "total_ml": 4334.0
+    },
+    {
+      "month": "2016-11",
+      "crude_oil_ml": 1751.7,
+      "lpg_ml": 1.0,
+      "gasoline_ml": 621.1,
+      "jet_fuel_ml": 470.2,
+      "diesel_ml": 1494.5,
+      "fuel_oil_ml": 1.9,
+      "total_ml": 4495.7
+    },
+    {
+      "month": "2016-12",
+      "crude_oil_ml": 1746.0,
+      "lpg_ml": 92.7,
+      "gasoline_ml": 482.4,
+      "jet_fuel_ml": 494.7,
+      "diesel_ml": 1813.3,
+      "fuel_oil_ml": 4.2,
+      "total_ml": 4777.5
+    },
+    {
+      "month": "2017-01",
+      "crude_oil_ml": 1719.0,
+      "lpg_ml": 88.7,
+      "gasoline_ml": 580.4,
+      "jet_fuel_ml": 467.9,
+      "diesel_ml": 1362.5,
+      "fuel_oil_ml": 6.6,
+      "total_ml": 4391.4
+    },
+    {
+      "month": "2017-02",
+      "crude_oil_ml": 1267.3,
+      "lpg_ml": 64.5,
+      "gasoline_ml": 675.2,
+      "jet_fuel_ml": 534.1,
+      "diesel_ml": 1595.7,
+      "fuel_oil_ml": 2.9,
+      "total_ml": 4297.3
+    },
+    {
+      "month": "2017-03",
+      "crude_oil_ml": 1908.3,
+      "lpg_ml": 4.8,
+      "gasoline_ml": 964.9,
+      "jet_fuel_ml": 623.7,
+      "diesel_ml": 1869.1,
+      "fuel_oil_ml": 81.8,
+      "total_ml": 5636.4
+    },
+    {
+      "month": "2017-04",
+      "crude_oil_ml": 1336.1,
+      "lpg_ml": 88.3,
+      "gasoline_ml": 471.8,
+      "jet_fuel_ml": 476.5,
+      "diesel_ml": 1494.3,
+      "fuel_oil_ml": 27.8,
+      "total_ml": 4063.9
+    },
+    {
+      "month": "2017-05",
+      "crude_oil_ml": 2392.7,
+      "lpg_ml": 171.1,
+      "gasoline_ml": 595.2,
+      "jet_fuel_ml": 468.9,
+      "diesel_ml": 1529.8,
+      "fuel_oil_ml": 56.4,
+      "total_ml": 5351.9
+    },
+    {
+      "month": "2017-06",
+      "crude_oil_ml": 1356.5,
+      "lpg_ml": 68.9,
+      "gasoline_ml": 378.3,
+      "jet_fuel_ml": 507.1,
+      "diesel_ml": 1550.3,
+      "fuel_oil_ml": 78.2,
+      "total_ml": 4111.8
+    },
+    {
+      "month": "2017-07",
+      "crude_oil_ml": 1892.7,
+      "lpg_ml": 93.5,
+      "gasoline_ml": 403.3,
+      "jet_fuel_ml": 513.9,
+      "diesel_ml": 1771.6,
+      "fuel_oil_ml": 46.7,
+      "total_ml": 4848.9
+    },
+    {
+      "month": "2017-08",
+      "crude_oil_ml": 1834.9,
+      "lpg_ml": 111.2,
+      "gasoline_ml": 605.8,
+      "jet_fuel_ml": 472.2,
+      "diesel_ml": 1866.3,
+      "fuel_oil_ml": 22.4,
+      "total_ml": 5115.3
+    },
+    {
+      "month": "2017-09",
+      "crude_oil_ml": 1758.0,
+      "lpg_ml": 62.6,
+      "gasoline_ml": 287.1,
+      "jet_fuel_ml": 441.6,
+      "diesel_ml": 1607.4,
+      "fuel_oil_ml": 98.6,
+      "total_ml": 4427.0
+    },
+    {
+      "month": "2017-10",
+      "crude_oil_ml": 1920.4,
+      "lpg_ml": 92.1,
+      "gasoline_ml": 640.3,
+      "jet_fuel_ml": 538.2,
+      "diesel_ml": 1700.4,
+      "fuel_oil_ml": 34.3,
+      "total_ml": 5089.9
+    },
+    {
+      "month": "2017-11",
+      "crude_oil_ml": 1804.6,
+      "lpg_ml": 5.1,
+      "gasoline_ml": 529.5,
+      "jet_fuel_ml": 511.9,
+      "diesel_ml": 1705.4,
+      "fuel_oil_ml": 41.8,
+      "total_ml": 4761.9
+    },
+    {
+      "month": "2017-12",
+      "crude_oil_ml": 1847.8,
+      "lpg_ml": 92.6,
+      "gasoline_ml": 442.2,
+      "jet_fuel_ml": 571.9,
+      "diesel_ml": 1424.3,
+      "fuel_oil_ml": 87.1,
+      "total_ml": 4661.6
+    },
+    {
+      "month": "2018-01",
+      "crude_oil_ml": 1873.0,
+      "lpg_ml": 175.2,
+      "gasoline_ml": 680.7,
+      "jet_fuel_ml": 486.6,
+      "diesel_ml": 1881.6,
+      "fuel_oil_ml": 43.7,
+      "total_ml": 5320.7
+    },
+    {
+      "month": "2018-02",
+      "crude_oil_ml": 1686.7,
+      "lpg_ml": 1.0,
+      "gasoline_ml": 688.9,
+      "jet_fuel_ml": 536.8,
+      "diesel_ml": 1512.4,
+      "fuel_oil_ml": 99.6,
+      "total_ml": 4664.1
+    },
+    {
+      "month": "2018-03",
+      "crude_oil_ml": 1895.0,
+      "lpg_ml": 8.3,
+      "gasoline_ml": 495.9,
+      "jet_fuel_ml": 448.4,
+      "diesel_ml": 1552.3,
+      "fuel_oil_ml": 68.3,
+      "total_ml": 4692.6
+    },
+    {
+      "month": "2018-04",
+      "crude_oil_ml": 1877.4,
+      "lpg_ml": 93.5,
+      "gasoline_ml": 485.8,
+      "jet_fuel_ml": 538.6,
+      "diesel_ml": 1738.1,
+      "fuel_oil_ml": 42.9,
+      "total_ml": 4956.6
+    },
+    {
+      "month": "2018-05",
+      "crude_oil_ml": 2008.5,
+      "lpg_ml": 0.2,
+      "gasoline_ml": 652.5,
+      "jet_fuel_ml": 574.9,
+      "diesel_ml": 1779.2,
+      "fuel_oil_ml": 90.7,
+      "total_ml": 5262.7
+    },
+    {
+      "month": "2018-06",
+      "crude_oil_ml": 1991.9,
+      "lpg_ml": 98.1,
+      "gasoline_ml": 466.0,
+      "jet_fuel_ml": 497.6,
+      "diesel_ml": 1588.4,
+      "fuel_oil_ml": 45.8,
+      "total_ml": 4895.5
+    },
+    {
+      "month": "2018-07",
+      "crude_oil_ml": 1576.3,
+      "lpg_ml": 92.2,
+      "gasoline_ml": 504.9,
+      "jet_fuel_ml": 556.0,
+      "diesel_ml": 1817.7,
+      "fuel_oil_ml": 47.6,
+      "total_ml": 4710.3
+    },
+    {
+      "month": "2018-08",
+      "crude_oil_ml": 2062.8,
+      "lpg_ml": 3.1,
+      "gasoline_ml": 395.6,
+      "jet_fuel_ml": 566.1,
+      "diesel_ml": 1621.1,
+      "fuel_oil_ml": 68.6,
+      "total_ml": 4897.0
+    },
+    {
+      "month": "2018-09",
+      "crude_oil_ml": 1835.7,
+      "lpg_ml": 88.8,
+      "gasoline_ml": 216.4,
+      "jet_fuel_ml": 485.7,
+      "diesel_ml": 1752.9,
+      "fuel_oil_ml": 47.1,
+      "total_ml": 4628.6
+    },
+    {
+      "month": "2018-10",
+      "crude_oil_ml": 1775.7,
+      "lpg_ml": 173.9,
+      "gasoline_ml": 614.4,
+      "jet_fuel_ml": 574.9,
+      "diesel_ml": 1824.9,
+      "fuel_oil_ml": 64.5,
+      "total_ml": 5196.0
+    },
+    {
+      "month": "2018-11",
+      "crude_oil_ml": 2268.5,
+      "lpg_ml": 5.1,
+      "gasoline_ml": 510.8,
+      "jet_fuel_ml": 333.3,
+      "diesel_ml": 1793.9,
+      "fuel_oil_ml": 45.5,
+      "total_ml": 5167.7
+    },
+    {
+      "month": "2018-12",
+      "crude_oil_ml": 1838.1,
+      "lpg_ml": 97.2,
+      "gasoline_ml": 406.5,
+      "jet_fuel_ml": 595.2,
+      "diesel_ml": 1879.6,
+      "fuel_oil_ml": 92.7,
+      "total_ml": 5082.3
+    },
+    {
+      "month": "2019-01",
+      "crude_oil_ml": 2028.6,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 847.2,
+      "jet_fuel_ml": 547.3,
+      "diesel_ml": 1458.7,
+      "fuel_oil_ml": 54.1,
+      "total_ml": 5087.4
+    },
+    {
+      "month": "2019-02",
+      "crude_oil_ml": 1660.0,
+      "lpg_ml": 93.2,
+      "gasoline_ml": 484.1,
+      "jet_fuel_ml": 336.1,
+      "diesel_ml": 1371.7,
+      "fuel_oil_ml": 93.2,
+      "total_ml": 4224.7
+    },
+    {
+      "month": "2019-03",
+      "crude_oil_ml": 1767.1,
+      "lpg_ml": 0.2,
+      "gasoline_ml": 703.3,
+      "jet_fuel_ml": 414.4,
+      "diesel_ml": 1756.8,
+      "fuel_oil_ml": 79.5,
+      "total_ml": 4921.9
+    },
+    {
+      "month": "2019-04",
+      "crude_oil_ml": 1443.0,
+      "lpg_ml": 92.1,
+      "gasoline_ml": 446.7,
+      "jet_fuel_ml": 574.5,
+      "diesel_ml": 1768.6,
+      "fuel_oil_ml": 33.3,
+      "total_ml": 4505.5
+    },
+    {
+      "month": "2019-05",
+      "crude_oil_ml": 1771.6,
+      "lpg_ml": 0.4,
+      "gasoline_ml": 550.6,
+      "jet_fuel_ml": 490.4,
+      "diesel_ml": 1835.4,
+      "fuel_oil_ml": 65.7,
+      "total_ml": 4880.9
+    },
+    {
+      "month": "2019-06",
+      "crude_oil_ml": 1716.9,
+      "lpg_ml": 155.2,
+      "gasoline_ml": 385.8,
+      "jet_fuel_ml": 357.3,
+      "diesel_ml": 1674.7,
+      "fuel_oil_ml": 48.1,
+      "total_ml": 4489.8
+    },
+    {
+      "month": "2019-07",
+      "crude_oil_ml": 1624.1,
+      "lpg_ml": 20.3,
+      "gasoline_ml": 556.5,
+      "jet_fuel_ml": 476.7,
+      "diesel_ml": 1903.3,
+      "fuel_oil_ml": 24.4,
+      "total_ml": 4736.5
+    },
+    {
+      "month": "2019-08",
+      "crude_oil_ml": 1682.7,
+      "lpg_ml": 169.3,
+      "gasoline_ml": 557.4,
+      "jet_fuel_ml": 588.4,
+      "diesel_ml": 2020.2,
+      "fuel_oil_ml": 65.0,
+      "total_ml": 5236.4
+    },
+    {
+      "month": "2019-09",
+      "crude_oil_ml": 1229.9,
+      "lpg_ml": 9.1,
+      "gasoline_ml": 636.2,
+      "jet_fuel_ml": 531.4,
+      "diesel_ml": 1756.2,
+      "fuel_oil_ml": 59.9,
+      "total_ml": 4368.7
+    },
+    {
+      "month": "2019-10",
+      "crude_oil_ml": 2008.3,
+      "lpg_ml": 91.8,
+      "gasoline_ml": 506.6,
+      "jet_fuel_ml": 587.7,
+      "diesel_ml": 1807.7,
+      "fuel_oil_ml": 94.0,
+      "total_ml": 5265.7
+    },
+    {
+      "month": "2019-11",
+      "crude_oil_ml": 1159.6,
+      "lpg_ml": 102.1,
+      "gasoline_ml": 524.4,
+      "jet_fuel_ml": 414.0,
+      "diesel_ml": 1782.0,
+      "fuel_oil_ml": 45.2,
+      "total_ml": 4211.9
+    },
+    {
+      "month": "2019-12",
+      "crude_oil_ml": 2488.7,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 470.7,
+      "jet_fuel_ml": 599.5,
+      "diesel_ml": 1833.3,
+      "fuel_oil_ml": 43.8,
+      "total_ml": 5574.5
+    },
+    {
+      "month": "2020-01",
+      "crude_oil_ml": 1691.9,
+      "lpg_ml": 98.2,
+      "gasoline_ml": 506.8,
+      "jet_fuel_ml": 521.4,
+      "diesel_ml": 1820.6,
+      "fuel_oil_ml": 53.7,
+      "total_ml": 4872.1
+    },
+    {
+      "month": "2020-02",
+      "crude_oil_ml": 1357.8,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 462.4,
+      "jet_fuel_ml": 385.7,
+      "diesel_ml": 1642.5,
+      "fuel_oil_ml": 49.5,
+      "total_ml": 4068.1
+    },
+    {
+      "month": "2020-03",
+      "crude_oil_ml": 1955.2,
+      "lpg_ml": 96.9,
+      "gasoline_ml": 495.6,
+      "jet_fuel_ml": 448.5,
+      "diesel_ml": 1505.3,
+      "fuel_oil_ml": 66.9,
+      "total_ml": 4720.2
+    },
+    {
+      "month": "2020-04",
+      "crude_oil_ml": 1603.6,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 333.7,
+      "jet_fuel_ml": 190.3,
+      "diesel_ml": 1790.9,
+      "fuel_oil_ml": 55.8,
+      "total_ml": 4121.0
+    },
+    {
+      "month": "2020-05",
+      "crude_oil_ml": 623.9,
+      "lpg_ml": 91.2,
+      "gasoline_ml": 281.0,
+      "jet_fuel_ml": 4.4,
+      "diesel_ml": 2022.9,
+      "fuel_oil_ml": 23.7,
+      "total_ml": 3209.3
+    },
+    {
+      "month": "2020-06",
+      "crude_oil_ml": 549.7,
+      "lpg_ml": 91.4,
+      "gasoline_ml": 574.6,
+      "jet_fuel_ml": 99.7,
+      "diesel_ml": 2062.5,
+      "fuel_oil_ml": 53.5,
+      "total_ml": 3602.1
+    },
+    {
+      "month": "2020-07",
+      "crude_oil_ml": 788.9,
+      "lpg_ml": 79.7,
+      "gasoline_ml": 847.7,
+      "jet_fuel_ml": 161.3,
+      "diesel_ml": 2023.5,
+      "fuel_oil_ml": 9.8,
+      "total_ml": 4102.9
+    },
+    {
+      "month": "2020-08",
+      "crude_oil_ml": 1085.6,
+      "lpg_ml": 99.1,
+      "gasoline_ml": 608.1,
+      "jet_fuel_ml": 253.0,
+      "diesel_ml": 1992.9,
+      "fuel_oil_ml": 6.6,
+      "total_ml": 4201.3
+    },
+    {
+      "month": "2020-09",
+      "crude_oil_ml": 984.0,
+      "lpg_ml": 0.5,
+      "gasoline_ml": 528.0,
+      "jet_fuel_ml": 185.5,
+      "diesel_ml": 1806.0,
+      "fuel_oil_ml": 50.1,
+      "total_ml": 3723.3
+    },
+    {
+      "month": "2020-10",
+      "crude_oil_ml": 1390.7,
+      "lpg_ml": 94.9,
+      "gasoline_ml": 563.9,
+      "jet_fuel_ml": 131.3,
+      "diesel_ml": 1764.9,
+      "fuel_oil_ml": 4.5,
+      "total_ml": 4120.3
+    },
+    {
+      "month": "2020-11",
+      "crude_oil_ml": 1596.4,
+      "lpg_ml": 92.1,
+      "gasoline_ml": 516.9,
+      "jet_fuel_ml": 230.2,
+      "diesel_ml": 1865.3,
+      "fuel_oil_ml": 59.6,
+      "total_ml": 4490.6
+    },
+    {
+      "month": "2020-12",
+      "crude_oil_ml": 1080.1,
+      "lpg_ml": 1.2,
+      "gasoline_ml": 532.1,
+      "jet_fuel_ml": 165.7,
+      "diesel_ml": 1586.4,
+      "fuel_oil_ml": 4.9,
+      "total_ml": 3520.8
+    },
+    {
+      "month": "2021-01",
+      "crude_oil_ml": 1197.6,
+      "lpg_ml": 94.0,
+      "gasoline_ml": 572.2,
+      "jet_fuel_ml": 312.0,
+      "diesel_ml": 1908.3,
+      "fuel_oil_ml": 53.0,
+      "total_ml": 4302.9
+    },
+    {
+      "month": "2021-02",
+      "crude_oil_ml": 1307.8,
+      "lpg_ml": 1.0,
+      "gasoline_ml": 745.0,
+      "jet_fuel_ml": 228.3,
+      "diesel_ml": 1553.2,
+      "fuel_oil_ml": 5.8,
+      "total_ml": 3995.4
+    },
+    {
+      "month": "2021-03",
+      "crude_oil_ml": 1376.7,
+      "lpg_ml": 91.9,
+      "gasoline_ml": 748.9,
+      "jet_fuel_ml": 107.2,
+      "diesel_ml": 2044.9,
+      "fuel_oil_ml": 14.5,
+      "total_ml": 4590.2
+    },
+    {
+      "month": "2021-04",
+      "crude_oil_ml": 1101.6,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 715.7,
+      "jet_fuel_ml": 324.1,
+      "diesel_ml": 2107.6,
+      "fuel_oil_ml": 25.3,
+      "total_ml": 4423.8
+    },
+    {
+      "month": "2021-05",
+      "crude_oil_ml": 931.3,
+      "lpg_ml": 101.2,
+      "gasoline_ml": 557.0,
+      "jet_fuel_ml": 151.9,
+      "diesel_ml": 1726.2,
+      "fuel_oil_ml": 26.7,
+      "total_ml": 3630.7
+    },
+    {
+      "month": "2021-06",
+      "crude_oil_ml": 1294.0,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 782.8,
+      "jet_fuel_ml": 429.0,
+      "diesel_ml": 2325.5,
+      "fuel_oil_ml": 49.9,
+      "total_ml": 5074.8
+    },
+    {
+      "month": "2021-07",
+      "crude_oil_ml": 975.6,
+      "lpg_ml": 179.3,
+      "gasoline_ml": 509.3,
+      "jet_fuel_ml": 290.1,
+      "diesel_ml": 2206.3,
+      "fuel_oil_ml": 3.5,
+      "total_ml": 4308.1
+    },
+    {
+      "month": "2021-08",
+      "crude_oil_ml": 896.7,
+      "lpg_ml": 1.4,
+      "gasoline_ml": 689.6,
+      "jet_fuel_ml": 169.0,
+      "diesel_ml": 2124.0,
+      "fuel_oil_ml": 47.6,
+      "total_ml": 4072.8
+    },
+    {
+      "month": "2021-09",
+      "crude_oil_ml": 880.5,
+      "lpg_ml": 96.3,
+      "gasoline_ml": 408.4,
+      "jet_fuel_ml": 207.5,
+      "diesel_ml": 2030.9,
+      "fuel_oil_ml": 76.2,
+      "total_ml": 3888.5
+    },
+    {
+      "month": "2021-10",
+      "crude_oil_ml": 1102.0,
+      "lpg_ml": 93.0,
+      "gasoline_ml": 665.5,
+      "jet_fuel_ml": 164.4,
+      "diesel_ml": 2368.0,
+      "fuel_oil_ml": 19.7,
+      "total_ml": 4538.4
+    },
+    {
+      "month": "2021-11",
+      "crude_oil_ml": 652.3,
+      "lpg_ml": 91.1,
+      "gasoline_ml": 657.8,
+      "jet_fuel_ml": 414.2,
+      "diesel_ml": 2545.8,
+      "fuel_oil_ml": 63.1,
+      "total_ml": 4618.5
+    },
+    {
+      "month": "2021-12",
+      "crude_oil_ml": 868.2,
+      "lpg_ml": 6.2,
+      "gasoline_ml": 1018.8,
+      "jet_fuel_ml": 356.7,
+      "diesel_ml": 2119.1,
+      "fuel_oil_ml": 4.4,
+      "total_ml": 4542.0
+    },
+    {
+      "month": "2022-01",
+      "crude_oil_ml": 888.0,
+      "lpg_ml": 95.0,
+      "gasoline_ml": 894.9,
+      "jet_fuel_ml": 241.8,
+      "diesel_ml": 1939.6,
+      "fuel_oil_ml": 37.9,
+      "total_ml": 4253.1
+    },
+    {
+      "month": "2022-02",
+      "crude_oil_ml": 740.3,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 750.1,
+      "jet_fuel_ml": 303.1,
+      "diesel_ml": 1873.2,
+      "fuel_oil_ml": 43.5,
+      "total_ml": 3855.5
+    },
+    {
+      "month": "2022-03",
+      "crude_oil_ml": 1050.1,
+      "lpg_ml": 93.3,
+      "gasoline_ml": 970.6,
+      "jet_fuel_ml": 330.6,
+      "diesel_ml": 2097.5,
+      "fuel_oil_ml": 8.3,
+      "total_ml": 4717.3
+    },
+    {
+      "month": "2022-04",
+      "crude_oil_ml": 957.4,
+      "lpg_ml": 5.8,
+      "gasoline_ml": 485.4,
+      "jet_fuel_ml": 338.6,
+      "diesel_ml": 2023.4,
+      "fuel_oil_ml": 70.8,
+      "total_ml": 4050.9
+    },
+    {
+      "month": "2022-05",
+      "crude_oil_ml": 742.9,
+      "lpg_ml": 1.6,
+      "gasoline_ml": 842.3,
+      "jet_fuel_ml": 395.9,
+      "diesel_ml": 2638.6,
+      "fuel_oil_ml": 7.7,
+      "total_ml": 4786.7
+    },
+    {
+      "month": "2022-06",
+      "crude_oil_ml": 693.8,
+      "lpg_ml": 97.0,
+      "gasoline_ml": 934.4,
+      "jet_fuel_ml": 583.3,
+      "diesel_ml": 2434.1,
+      "fuel_oil_ml": 58.9,
+      "total_ml": 4967.9
+    },
+    {
+      "month": "2022-07",
+      "crude_oil_ml": 1135.9,
+      "lpg_ml": 88.4,
+      "gasoline_ml": 621.3,
+      "jet_fuel_ml": 328.1,
+      "diesel_ml": 2222.8,
+      "fuel_oil_ml": 46.5,
+      "total_ml": 4595.3
+    },
+    {
+      "month": "2022-08",
+      "crude_oil_ml": 842.9,
+      "lpg_ml": 97.4,
+      "gasoline_ml": 741.6,
+      "jet_fuel_ml": 507.9,
+      "diesel_ml": 2706.7,
+      "fuel_oil_ml": 96.3,
+      "total_ml": 5140.0
+    },
+    {
+      "month": "2022-09",
+      "crude_oil_ml": 719.5,
+      "lpg_ml": 92.8,
+      "gasoline_ml": 978.3,
+      "jet_fuel_ml": 331.7,
+      "diesel_ml": 2796.2,
+      "fuel_oil_ml": 23.9,
+      "total_ml": 5156.2
+    },
+    {
+      "month": "2022-10",
+      "crude_oil_ml": 1004.2,
+      "lpg_ml": 1.9,
+      "gasoline_ml": 717.1,
+      "jet_fuel_ml": 624.1,
+      "diesel_ml": 2481.9,
+      "fuel_oil_ml": 76.0,
+      "total_ml": 5104.7
+    },
+    {
+      "month": "2022-11",
+      "crude_oil_ml": 894.2,
+      "lpg_ml": 94.2,
+      "gasoline_ml": 913.3,
+      "jet_fuel_ml": 387.8,
+      "diesel_ml": 2301.2,
+      "fuel_oil_ml": 54.9,
+      "total_ml": 4815.9
+    },
+    {
+      "month": "2022-12",
+      "crude_oil_ml": 767.5,
+      "lpg_ml": 1.4,
+      "gasoline_ml": 830.3,
+      "jet_fuel_ml": 442.9,
+      "diesel_ml": 2333.3,
+      "fuel_oil_ml": 86.3,
+      "total_ml": 4583.2
+    },
+    {
+      "month": "2023-01",
+      "crude_oil_ml": 691.1,
+      "lpg_ml": 99.5,
+      "gasoline_ml": 838.0,
+      "jet_fuel_ml": 533.2,
+      "diesel_ml": 2186.3,
+      "fuel_oil_ml": 80.2,
+      "total_ml": 4594.3
+    },
+    {
+      "month": "2023-02",
+      "crude_oil_ml": 905.1,
+      "lpg_ml": 1.0,
+      "gasoline_ml": 913.8,
+      "jet_fuel_ml": 551.5,
+      "diesel_ml": 2292.4,
+      "fuel_oil_ml": 72.5,
+      "total_ml": 4920.6
+    },
+    {
+      "month": "2023-03",
+      "crude_oil_ml": 725.3,
+      "lpg_ml": 92.6,
+      "gasoline_ml": 791.2,
+      "jet_fuel_ml": 505.6,
+      "diesel_ml": 2607.3,
+      "fuel_oil_ml": 85.4,
+      "total_ml": 4952.5
+    },
+    {
+      "month": "2023-04",
+      "crude_oil_ml": 733.0,
+      "lpg_ml": 0.2,
+      "gasoline_ml": 921.9,
+      "jet_fuel_ml": 466.2,
+      "diesel_ml": 1980.2,
+      "fuel_oil_ml": 69.1,
+      "total_ml": 4362.0
+    },
+    {
+      "month": "2023-05",
+      "crude_oil_ml": 750.5,
+      "lpg_ml": 89.7,
+      "gasoline_ml": 1043.2,
+      "jet_fuel_ml": 683.6,
+      "diesel_ml": 3154.5,
+      "fuel_oil_ml": 45.8,
+      "total_ml": 5920.8
+    },
+    {
+      "month": "2023-06",
+      "crude_oil_ml": 624.9,
+      "lpg_ml": 93.5,
+      "gasoline_ml": 792.4,
+      "jet_fuel_ml": 568.8,
+      "diesel_ml": 2735.3,
+      "fuel_oil_ml": 66.3,
+      "total_ml": 5029.9
+    },
+    {
+      "month": "2023-07",
+      "crude_oil_ml": 832.2,
+      "lpg_ml": 98.4,
+      "gasoline_ml": 831.6,
+      "jet_fuel_ml": 480.8,
+      "diesel_ml": 2867.9,
+      "fuel_oil_ml": 19.5,
+      "total_ml": 5312.3
+    },
+    {
+      "month": "2023-08",
+      "crude_oil_ml": 683.9,
+      "lpg_ml": 93.2,
+      "gasoline_ml": 912.4,
+      "jet_fuel_ml": 656.5,
+      "diesel_ml": 2825.9,
+      "fuel_oil_ml": 54.1,
+      "total_ml": 5364.3
+    },
+    {
+      "month": "2023-09",
+      "crude_oil_ml": 787.0,
+      "lpg_ml": 0.3,
+      "gasoline_ml": 707.6,
+      "jet_fuel_ml": 553.7,
+      "diesel_ml": 2602.5,
+      "fuel_oil_ml": 78.3,
+      "total_ml": 4919.2
+    },
+    {
+      "month": "2023-10",
+      "crude_oil_ml": 947.6,
+      "lpg_ml": 100.4,
+      "gasoline_ml": 879.5,
+      "jet_fuel_ml": 786.6,
+      "diesel_ml": 2602.9,
+      "fuel_oil_ml": 44.5,
+      "total_ml": 5515.0
+    },
+    {
+      "month": "2023-11",
+      "crude_oil_ml": 764.6,
+      "lpg_ml": 0.4,
+      "gasoline_ml": 829.8,
+      "jet_fuel_ml": 465.6,
+      "diesel_ml": 2323.6,
+      "fuel_oil_ml": 121.5,
+      "total_ml": 4717.4
+    },
+    {
+      "month": "2023-12",
+      "crude_oil_ml": 987.2,
+      "lpg_ml": 99.5,
+      "gasoline_ml": 965.3,
+      "jet_fuel_ml": 599.7,
+      "diesel_ml": 2520.6,
+      "fuel_oil_ml": 87.4,
+      "total_ml": 5424.0
+    },
+    {
+      "month": "2024-01",
+      "crude_oil_ml": 337.9,
+      "lpg_ml": 0.6,
+      "gasoline_ml": 850.3,
+      "jet_fuel_ml": 727.4,
+      "diesel_ml": 2572.5,
+      "fuel_oil_ml": 106.1,
+      "total_ml": 4777.4
+    },
+    {
+      "month": "2024-02",
+      "crude_oil_ml": 1034.2,
+      "lpg_ml": 92.8,
+      "gasoline_ml": 889.3,
+      "jet_fuel_ml": 523.9,
+      "diesel_ml": 2301.8,
+      "fuel_oil_ml": 68.9,
+      "total_ml": 5086.4
+    },
+    {
+      "month": "2024-03",
+      "crude_oil_ml": 794.7,
+      "lpg_ml": 0.4,
+      "gasoline_ml": 1040.4,
+      "jet_fuel_ml": 668.7,
+      "diesel_ml": 2153.0,
+      "fuel_oil_ml": 69.7,
+      "total_ml": 4919.3
+    },
+    {
+      "month": "2024-04",
+      "crude_oil_ml": 816.7,
+      "lpg_ml": 99.3,
+      "gasoline_ml": 839.8,
+      "jet_fuel_ml": 552.4,
+      "diesel_ml": 2472.9,
+      "fuel_oil_ml": 101.3,
+      "total_ml": 5036.4
+    },
+    {
+      "month": "2024-05",
+      "crude_oil_ml": 1125.6,
+      "lpg_ml": 0.7,
+      "gasoline_ml": 766.5,
+      "jet_fuel_ml": 610.6,
+      "diesel_ml": 2790.2,
+      "fuel_oil_ml": 54.5,
+      "total_ml": 5538.0
+    },
+    {
+      "month": "2024-06",
+      "crude_oil_ml": 680.6,
+      "lpg_ml": 88.3,
+      "gasoline_ml": 760.1,
+      "jet_fuel_ml": 663.8,
+      "diesel_ml": 2638.9,
+      "fuel_oil_ml": 92.0,
+      "total_ml": 5098.8
+    },
+    {
+      "month": "2024-07",
+      "crude_oil_ml": 527.7,
+      "lpg_ml": 102.0,
+      "gasoline_ml": 1110.4,
+      "jet_fuel_ml": 805.6,
+      "diesel_ml": 2924.5,
+      "fuel_oil_ml": 31.7,
+      "total_ml": 5666.8
+    },
+    {
+      "month": "2024-08",
+      "crude_oil_ml": 787.4,
+      "lpg_ml": 93.2,
+      "gasoline_ml": 719.0,
+      "jet_fuel_ml": 484.7,
+      "diesel_ml": 2311.1,
+      "fuel_oil_ml": 16.7,
+      "total_ml": 4598.4
+    },
+    {
+      "month": "2024-09",
+      "crude_oil_ml": 731.1,
+      "lpg_ml": 101.2,
+      "gasoline_ml": 899.5,
+      "jet_fuel_ml": 572.3,
+      "diesel_ml": 2437.0,
+      "fuel_oil_ml": 75.2,
+      "total_ml": 4986.7
+    },
+    {
+      "month": "2024-10",
+      "crude_oil_ml": 880.2,
+      "lpg_ml": 0.4,
+      "gasoline_ml": 746.5,
+      "jet_fuel_ml": 553.2,
+      "diesel_ml": 2568.1,
+      "fuel_oil_ml": 52.3,
+      "total_ml": 4994.4
+    },
+    {
+      "month": "2024-11",
+      "crude_oil_ml": 803.8,
+      "lpg_ml": 82.8,
+      "gasoline_ml": 832.2,
+      "jet_fuel_ml": 600.2,
+      "diesel_ml": 2519.9,
+      "fuel_oil_ml": 61.7,
+      "total_ml": 5097.8
+    },
+    {
+      "month": "2024-12",
+      "crude_oil_ml": 899.6,
+      "lpg_ml": 0.7,
+      "gasoline_ml": 1254.3,
+      "jet_fuel_ml": 717.7,
+      "diesel_ml": 2853.7,
+      "fuel_oil_ml": 91.6,
+      "total_ml": 5977.7
+    },
+    {
+      "month": "2025-01",
+      "crude_oil_ml": 855.4,
+      "lpg_ml": 96.1,
+      "gasoline_ml": 1125.4,
+      "jet_fuel_ml": 626.9,
+      "diesel_ml": 2650.0,
+      "fuel_oil_ml": 107.3,
+      "total_ml": 5638.9
+    },
+    {
+      "month": "2025-02",
+      "crude_oil_ml": 699.5,
+      "lpg_ml": 0.4,
+      "gasoline_ml": 692.3,
+      "jet_fuel_ml": 690.4,
+      "diesel_ml": 1847.2,
+      "fuel_oil_ml": 47.3,
+      "total_ml": 4114.3
+    },
+    {
+      "month": "2025-03",
+      "crude_oil_ml": 933.3,
+      "lpg_ml": 93.9,
+      "gasoline_ml": 736.4,
+      "jet_fuel_ml": 550.2,
+      "diesel_ml": 2512.8,
+      "fuel_oil_ml": 59.2,
+      "total_ml": 5024.9
+    },
+    {
+      "month": "2025-04",
+      "crude_oil_ml": 788.5,
+      "lpg_ml": 4.6,
+      "gasoline_ml": 996.1,
+      "jet_fuel_ml": 755.2,
+      "diesel_ml": 2311.7,
+      "fuel_oil_ml": 39.5,
+      "total_ml": 5052.6
+    },
+    {
+      "month": "2025-05",
+      "crude_oil_ml": 875.0,
+      "lpg_ml": 102.6,
+      "gasoline_ml": 942.9,
+      "jet_fuel_ml": 715.4,
+      "diesel_ml": 2561.8,
+      "fuel_oil_ml": 66.3,
+      "total_ml": 5450.1
+    },
+    {
+      "month": "2025-06",
+      "crude_oil_ml": 1037.4,
+      "lpg_ml": 7.6,
+      "gasoline_ml": 749.2,
+      "jet_fuel_ml": 647.7,
+      "diesel_ml": 2440.7,
+      "fuel_oil_ml": 43.7,
+      "total_ml": 5041.7
+    },
+    {
+      "month": "2025-07",
+      "crude_oil_ml": 419.0,
+      "lpg_ml": 178.7,
+      "gasoline_ml": 907.3,
+      "jet_fuel_ml": 587.8,
+      "diesel_ml": 2912.9,
+      "fuel_oil_ml": 17.2,
+      "total_ml": 5201.6
+    },
+    {
+      "month": "2025-08",
+      "crude_oil_ml": 732.4,
+      "lpg_ml": 3.2,
+      "gasoline_ml": 934.9,
+      "jet_fuel_ml": 783.6,
+      "diesel_ml": 2601.4,
+      "fuel_oil_ml": 2.5,
+      "total_ml": 5186.4
+    },
+    {
+      "month": "2025-09",
+      "crude_oil_ml": 716.5,
+      "lpg_ml": 103.0,
+      "gasoline_ml": 1029.4,
+      "jet_fuel_ml": 576.3,
+      "diesel_ml": 2764.9,
+      "fuel_oil_ml": 76.2,
+      "total_ml": 5469.8
+    },
+    {
+      "month": "2025-10",
+      "crude_oil_ml": 1113.0,
+      "lpg_ml": 2.3,
+      "gasoline_ml": 1085.3,
+      "jet_fuel_ml": 803.3,
+      "diesel_ml": 2480.5,
+      "fuel_oil_ml": 60.7,
+      "total_ml": 5694.9
+    },
+    {
+      "month": "2025-11",
+      "crude_oil_ml": 995.2,
+      "lpg_ml": 94.0,
+      "gasoline_ml": 895.8,
+      "jet_fuel_ml": 486.7,
+      "diesel_ml": 2405.2,
+      "fuel_oil_ml": 49.4,
+      "total_ml": 5115.1
+    },
+    {
+      "month": "2025-12",
+      "crude_oil_ml": 1039.6,
+      "lpg_ml": 4.3,
+      "gasoline_ml": 829.9,
+      "jet_fuel_ml": 889.4,
+      "diesel_ml": 2758.0,
+      "fuel_oil_ml": 60.2,
+      "total_ml": 5719.2
+    },
+    {
+      "month": "2026-01",
+      "crude_oil_ml": 986.4,
+      "lpg_ml": 95.8,
+      "gasoline_ml": 1031.9,
+      "jet_fuel_ml": 826.4,
+      "diesel_ml": 2662.1,
+      "fuel_oil_ml": 36.5,
+      "total_ml": 5805.7
+    }
+  ],
+  "consumption_cover": [
+    {
+      "month": "2010-07",
+      "crude_days": 31,
+      "gasoline_days": 22,
+      "jet_fuel_days": 16,
+      "diesel_days": 18,
+      "total_days": 27
+    },
+    {
+      "month": "2010-08",
+      "crude_days": 30,
+      "gasoline_days": 21,
+      "jet_fuel_days": 17,
+      "diesel_days": 17,
+      "total_days": 26
+    },
+    {
+      "month": "2010-09",
+      "crude_days": 30,
+      "gasoline_days": 20,
+      "jet_fuel_days": 19,
+      "diesel_days": 20,
+      "total_days": 26
+    },
+    {
+      "month": "2010-10",
+      "crude_days": 30,
+      "gasoline_days": 20,
+      "jet_fuel_days": 17,
+      "diesel_days": 18,
+      "total_days": 25
+    },
+    {
+      "month": "2010-11",
+      "crude_days": 30,
+      "gasoline_days": 17,
+      "jet_fuel_days": 21,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2010-12",
+      "crude_days": 28,
+      "gasoline_days": 16,
+      "jet_fuel_days": 18,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2011-01",
+      "crude_days": 28,
+      "gasoline_days": 18,
+      "jet_fuel_days": 16,
+      "diesel_days": 18,
+      "total_days": 25
+    },
+    {
+      "month": "2011-02",
+      "crude_days": 29,
+      "gasoline_days": 18,
+      "jet_fuel_days": 18,
+      "diesel_days": 16,
+      "total_days": 24
+    },
+    {
+      "month": "2011-03",
+      "crude_days": 30,
+      "gasoline_days": 18,
+      "jet_fuel_days": 19,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2011-04",
+      "crude_days": 28,
+      "gasoline_days": 19,
+      "jet_fuel_days": 17,
+      "diesel_days": 19,
+      "total_days": 24
+    },
+    {
+      "month": "2011-05",
+      "crude_days": 29,
+      "gasoline_days": 19,
+      "jet_fuel_days": 18,
+      "diesel_days": 18,
+      "total_days": 24
+    },
+    {
+      "month": "2011-06",
+      "crude_days": 27,
+      "gasoline_days": 21,
+      "jet_fuel_days": 18,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2011-07",
+      "crude_days": 29,
+      "gasoline_days": 22,
+      "jet_fuel_days": 18,
+      "diesel_days": 16,
+      "total_days": 24
+    },
+    {
+      "month": "2011-08",
+      "crude_days": 29,
+      "gasoline_days": 22,
+      "jet_fuel_days": 19,
+      "diesel_days": 17,
+      "total_days": 26
+    },
+    {
+      "month": "2011-09",
+      "crude_days": 25,
+      "gasoline_days": 21,
+      "jet_fuel_days": 22,
+      "diesel_days": 15,
+      "total_days": 25
+    },
+    {
+      "month": "2011-10",
+      "crude_days": 24,
+      "gasoline_days": 18,
+      "jet_fuel_days": 19,
+      "diesel_days": 16,
+      "total_days": 24
+    },
+    {
+      "month": "2011-11",
+      "crude_days": 28,
+      "gasoline_days": 18,
+      "jet_fuel_days": 22,
+      "diesel_days": 15,
+      "total_days": 24
+    },
+    {
+      "month": "2011-12",
+      "crude_days": 26,
+      "gasoline_days": 20,
+      "jet_fuel_days": 20,
+      "diesel_days": 16,
+      "total_days": 25
+    },
+    {
+      "month": "2012-01",
+      "crude_days": 25,
+      "gasoline_days": 19,
+      "jet_fuel_days": 16,
+      "diesel_days": 19,
+      "total_days": 24
+    },
+    {
+      "month": "2012-02",
+      "crude_days": 29,
+      "gasoline_days": 18,
+      "jet_fuel_days": 18,
+      "diesel_days": 15,
+      "total_days": 22
+    },
+    {
+      "month": "2012-03",
+      "crude_days": 28,
+      "gasoline_days": 17,
+      "jet_fuel_days": 16,
+      "diesel_days": 15,
+      "total_days": 22
+    },
+    {
+      "month": "2012-04",
+      "crude_days": 30,
+      "gasoline_days": 20,
+      "jet_fuel_days": 21,
+      "diesel_days": 18,
+      "total_days": 24
+    },
+    {
+      "month": "2012-05",
+      "crude_days": 28,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 17,
+      "total_days": 25
+    },
+    {
+      "month": "2012-06",
+      "crude_days": 26,
+      "gasoline_days": 21,
+      "jet_fuel_days": 17,
+      "diesel_days": 17,
+      "total_days": 25
+    },
+    {
+      "month": "2012-07",
+      "crude_days": 27,
+      "gasoline_days": 20,
+      "jet_fuel_days": 17,
+      "diesel_days": 16,
+      "total_days": 24
+    },
+    {
+      "month": "2012-08",
+      "crude_days": 27,
+      "gasoline_days": 20,
+      "jet_fuel_days": 17,
+      "diesel_days": 15,
+      "total_days": 24
+    },
+    {
+      "month": "2012-09",
+      "crude_days": 30,
+      "gasoline_days": 20,
+      "jet_fuel_days": 17,
+      "diesel_days": 16,
+      "total_days": 24
+    },
+    {
+      "month": "2012-10",
+      "crude_days": 25,
+      "gasoline_days": 20,
+      "jet_fuel_days": 15,
+      "diesel_days": 14,
+      "total_days": 22
+    },
+    {
+      "month": "2012-11",
+      "crude_days": 24,
+      "gasoline_days": 19,
+      "jet_fuel_days": 15,
+      "diesel_days": 10,
+      "total_days": 20
+    },
+    {
+      "month": "2012-12",
+      "crude_days": 23,
+      "gasoline_days": 17,
+      "jet_fuel_days": 18,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2013-01",
+      "crude_days": 20,
+      "gasoline_days": 19,
+      "jet_fuel_days": 16,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2013-02",
+      "crude_days": 23,
+      "gasoline_days": 20,
+      "jet_fuel_days": 18,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2013-03",
+      "crude_days": 21,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2013-04",
+      "crude_days": 23,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 15,
+      "total_days": 24
+    },
+    {
+      "month": "2013-05",
+      "crude_days": 23,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2013-06",
+      "crude_days": 24,
+      "gasoline_days": 23,
+      "jet_fuel_days": 17,
+      "diesel_days": 18,
+      "total_days": 24
+    },
+    {
+      "month": "2013-07",
+      "crude_days": 24,
+      "gasoline_days": 24,
+      "jet_fuel_days": 17,
+      "diesel_days": 17,
+      "total_days": 25
+    },
+    {
+      "month": "2013-08",
+      "crude_days": 23,
+      "gasoline_days": 21,
+      "jet_fuel_days": 18,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2013-09",
+      "crude_days": 24,
+      "gasoline_days": 19,
+      "jet_fuel_days": 15,
+      "diesel_days": 15,
+      "total_days": 22
+    },
+    {
+      "month": "2013-10",
+      "crude_days": 20,
+      "gasoline_days": 18,
+      "jet_fuel_days": 16,
+      "diesel_days": 15,
+      "total_days": 22
+    },
+    {
+      "month": "2013-11",
+      "crude_days": 22,
+      "gasoline_days": 18,
+      "jet_fuel_days": 18,
+      "diesel_days": 15,
+      "total_days": 22
+    },
+    {
+      "month": "2013-12",
+      "crude_days": 23,
+      "gasoline_days": 18,
+      "jet_fuel_days": 17,
+      "diesel_days": 17,
+      "total_days": 22
+    },
+    {
+      "month": "2014-01",
+      "crude_days": 21,
+      "gasoline_days": 19,
+      "jet_fuel_days": 16,
+      "diesel_days": 16,
+      "total_days": 24
+    },
+    {
+      "month": "2014-02",
+      "crude_days": 23,
+      "gasoline_days": 20,
+      "jet_fuel_days": 15,
+      "diesel_days": 14,
+      "total_days": 22
+    },
+    {
+      "month": "2014-03",
+      "crude_days": 25,
+      "gasoline_days": 20,
+      "jet_fuel_days": 19,
+      "diesel_days": 13,
+      "total_days": 22
+    },
+    {
+      "month": "2014-04",
+      "crude_days": 24,
+      "gasoline_days": 21,
+      "jet_fuel_days": 15,
+      "diesel_days": 12,
+      "total_days": 21
+    },
+    {
+      "month": "2014-05",
+      "crude_days": 24,
+      "gasoline_days": 20,
+      "jet_fuel_days": 20,
+      "diesel_days": 12,
+      "total_days": 22
+    },
+    {
+      "month": "2014-06",
+      "crude_days": 25,
+      "gasoline_days": 20,
+      "jet_fuel_days": 17,
+      "diesel_days": 11,
+      "total_days": 21
+    },
+    {
+      "month": "2014-07",
+      "crude_days": 25,
+      "gasoline_days": 19,
+      "jet_fuel_days": 18,
+      "diesel_days": 12,
+      "total_days": 22
+    },
+    {
+      "month": "2014-08",
+      "crude_days": 26,
+      "gasoline_days": 20,
+      "jet_fuel_days": 19,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2014-09",
+      "crude_days": 27,
+      "gasoline_days": 19,
+      "jet_fuel_days": 19,
+      "diesel_days": 16,
+      "total_days": 23
+    },
+    {
+      "month": "2014-10",
+      "crude_days": 24,
+      "gasoline_days": 17,
+      "jet_fuel_days": 21,
+      "diesel_days": 12,
+      "total_days": 21
+    },
+    {
+      "month": "2014-11",
+      "crude_days": 23,
+      "gasoline_days": 17,
+      "jet_fuel_days": 20,
+      "diesel_days": 13,
+      "total_days": 20
+    },
+    {
+      "month": "2014-12",
+      "crude_days": 23,
+      "gasoline_days": 18,
+      "jet_fuel_days": 21,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2015-01",
+      "crude_days": 21,
+      "gasoline_days": 19,
+      "jet_fuel_days": 18,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2015-02",
+      "crude_days": 22,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 16,
+      "total_days": 24
+    },
+    {
+      "month": "2015-03",
+      "crude_days": 22,
+      "gasoline_days": 20,
+      "jet_fuel_days": 21,
+      "diesel_days": 15,
+      "total_days": 22
+    },
+    {
+      "month": "2015-04",
+      "crude_days": 21,
+      "gasoline_days": 24,
+      "jet_fuel_days": 22,
+      "diesel_days": 15,
+      "total_days": 24
+    },
+    {
+      "month": "2015-05",
+      "crude_days": 20,
+      "gasoline_days": 23,
+      "jet_fuel_days": 19,
+      "diesel_days": 14,
+      "total_days": 22
+    },
+    {
+      "month": "2015-06",
+      "crude_days": 25,
+      "gasoline_days": 24,
+      "jet_fuel_days": 21,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2015-07",
+      "crude_days": 24,
+      "gasoline_days": 24,
+      "jet_fuel_days": 19,
+      "diesel_days": 14,
+      "total_days": 23
+    },
+    {
+      "month": "2015-08",
+      "crude_days": 26,
+      "gasoline_days": 22,
+      "jet_fuel_days": 21,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2015-09",
+      "crude_days": 25,
+      "gasoline_days": 22,
+      "jet_fuel_days": 21,
+      "diesel_days": 14,
+      "total_days": 23
+    },
+    {
+      "month": "2015-10",
+      "crude_days": 28,
+      "gasoline_days": 21,
+      "jet_fuel_days": 22,
+      "diesel_days": 14,
+      "total_days": 22
+    },
+    {
+      "month": "2015-11",
+      "crude_days": 23,
+      "gasoline_days": 20,
+      "jet_fuel_days": 21,
+      "diesel_days": 12,
+      "total_days": 21
+    },
+    {
+      "month": "2015-12",
+      "crude_days": 26,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 15,
+      "total_days": 22
+    },
+    {
+      "month": "2016-01",
+      "crude_days": 27,
+      "gasoline_days": 23,
+      "jet_fuel_days": 23,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2016-02",
+      "crude_days": 28,
+      "gasoline_days": 22,
+      "jet_fuel_days": 19,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2016-03",
+      "crude_days": 23,
+      "gasoline_days": 27,
+      "jet_fuel_days": 21,
+      "diesel_days": 18,
+      "total_days": 27
+    },
+    {
+      "month": "2016-04",
+      "crude_days": 24,
+      "gasoline_days": 26,
+      "jet_fuel_days": 18,
+      "diesel_days": 17,
+      "total_days": 25
+    },
+    {
+      "month": "2016-05",
+      "crude_days": 26,
+      "gasoline_days": 25,
+      "jet_fuel_days": 22,
+      "diesel_days": 17,
+      "total_days": 26
+    },
+    {
+      "month": "2016-06",
+      "crude_days": 25,
+      "gasoline_days": 27,
+      "jet_fuel_days": 22,
+      "diesel_days": 18,
+      "total_days": 27
+    },
+    {
+      "month": "2016-07",
+      "crude_days": 27,
+      "gasoline_days": 27,
+      "jet_fuel_days": 17,
+      "diesel_days": 19,
+      "total_days": 27
+    },
+    {
+      "month": "2016-08",
+      "crude_days": 24,
+      "gasoline_days": 24,
+      "jet_fuel_days": 19,
+      "diesel_days": 18,
+      "total_days": 26
+    },
+    {
+      "month": "2016-09",
+      "crude_days": 26,
+      "gasoline_days": 24,
+      "jet_fuel_days": 19,
+      "diesel_days": 16,
+      "total_days": 25
+    },
+    {
+      "month": "2016-10",
+      "crude_days": 25,
+      "gasoline_days": 24,
+      "jet_fuel_days": 19,
+      "diesel_days": 15,
+      "total_days": 24
+    },
+    {
+      "month": "2016-11",
+      "crude_days": 24,
+      "gasoline_days": 24,
+      "jet_fuel_days": 20,
+      "diesel_days": 12,
+      "total_days": 22
+    },
+    {
+      "month": "2016-12",
+      "crude_days": 23,
+      "gasoline_days": 22,
+      "jet_fuel_days": 22,
+      "diesel_days": 16,
+      "total_days": 23
+    },
+    {
+      "month": "2017-01",
+      "crude_days": 20,
+      "gasoline_days": 20,
+      "jet_fuel_days": 22,
+      "diesel_days": 18,
+      "total_days": 24
+    },
+    {
+      "month": "2017-02",
+      "crude_days": 22,
+      "gasoline_days": 20,
+      "jet_fuel_days": 17,
+      "diesel_days": 17,
+      "total_days": 23
+    },
+    {
+      "month": "2017-03",
+      "crude_days": 21,
+      "gasoline_days": 20,
+      "jet_fuel_days": 19,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2017-04",
+      "crude_days": 25,
+      "gasoline_days": 22,
+      "jet_fuel_days": 19,
+      "diesel_days": 19,
+      "total_days": 25
+    },
+    {
+      "month": "2017-05",
+      "crude_days": 24,
+      "gasoline_days": 25,
+      "jet_fuel_days": 23,
+      "diesel_days": 18,
+      "total_days": 25
+    },
+    {
+      "month": "2017-06",
+      "crude_days": 25,
+      "gasoline_days": 24,
+      "jet_fuel_days": 22,
+      "diesel_days": 15,
+      "total_days": 24
+    },
+    {
+      "month": "2017-07",
+      "crude_days": 24,
+      "gasoline_days": 21,
+      "jet_fuel_days": 17,
+      "diesel_days": 14,
+      "total_days": 22
+    },
+    {
+      "month": "2017-08",
+      "crude_days": 22,
+      "gasoline_days": 23,
+      "jet_fuel_days": 16,
+      "diesel_days": 16,
+      "total_days": 23
+    },
+    {
+      "month": "2017-09",
+      "crude_days": 23,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 15,
+      "total_days": 23
+    },
+    {
+      "month": "2017-10",
+      "crude_days": 23,
+      "gasoline_days": 20,
+      "jet_fuel_days": 20,
+      "diesel_days": 17,
+      "total_days": 24
+    },
+    {
+      "month": "2017-11",
+      "crude_days": 25,
+      "gasoline_days": 20,
+      "jet_fuel_days": 18,
+      "diesel_days": 14,
+      "total_days": 22
+    },
+    {
+      "month": "2017-12",
+      "crude_days": 23,
+      "gasoline_days": 21,
+      "jet_fuel_days": 19,
+      "diesel_days": 16,
+      "total_days": 23
+    },
+    {
+      "month": "2018-01",
+      "crude_days": 25,
+      "gasoline_days": 21,
+      "jet_fuel_days": 18,
+      "diesel_days": 20,
+      "total_days": 26
+    },
+    {
+      "month": "2018-02",
+      "crude_days": 27,
+      "gasoline_days": 23,
+      "jet_fuel_days": 23,
+      "diesel_days": 18,
+      "total_days": 27
+    },
+    {
+      "month": "2018-03",
+      "crude_days": 23,
+      "gasoline_days": 23,
+      "jet_fuel_days": 23,
+      "diesel_days": 20,
+      "total_days": 28
+    },
+    {
+      "month": "2018-04",
+      "crude_days": 26,
+      "gasoline_days": 22,
+      "jet_fuel_days": 25,
+      "diesel_days": 20,
+      "total_days": 28
+    },
+    {
+      "month": "2018-05",
+      "crude_days": 25,
+      "gasoline_days": 26,
+      "jet_fuel_days": 23,
+      "diesel_days": 18,
+      "total_days": 29
+    },
+    {
+      "month": "2018-06",
+      "crude_days": 25,
+      "gasoline_days": 26,
+      "jet_fuel_days": 22,
+      "diesel_days": 19,
+      "total_days": 29
+    },
+    {
+      "month": "2018-07",
+      "crude_days": 25,
+      "gasoline_days": 26,
+      "jet_fuel_days": 24,
+      "diesel_days": 21,
+      "total_days": 30
+    },
+    {
+      "month": "2018-08",
+      "crude_days": 25,
+      "gasoline_days": 24,
+      "jet_fuel_days": 25,
+      "diesel_days": 19,
+      "total_days": 29
+    },
+    {
+      "month": "2018-09",
+      "crude_days": 28,
+      "gasoline_days": 22,
+      "jet_fuel_days": 24,
+      "diesel_days": 21,
+      "total_days": 28
+    },
+    {
+      "month": "2018-10",
+      "crude_days": 28,
+      "gasoline_days": 22,
+      "jet_fuel_days": 25,
+      "diesel_days": 17,
+      "total_days": 28
+    },
+    {
+      "month": "2018-11",
+      "crude_days": 22,
+      "gasoline_days": 19,
+      "jet_fuel_days": 20,
+      "diesel_days": 17,
+      "total_days": 27
+    },
+    {
+      "month": "2018-12",
+      "crude_days": 23,
+      "gasoline_days": 18,
+      "jet_fuel_days": 23,
+      "diesel_days": 22,
+      "total_days": 28
+    },
+    {
+      "month": "2019-01",
+      "crude_days": 23,
+      "gasoline_days": 24,
+      "jet_fuel_days": 22,
+      "diesel_days": 20,
+      "total_days": 28
+    },
+    {
+      "month": "2019-02",
+      "crude_days": 25,
+      "gasoline_days": 21,
+      "jet_fuel_days": 25,
+      "diesel_days": 19,
+      "total_days": 29
+    },
+    {
+      "month": "2019-03",
+      "crude_days": 26,
+      "gasoline_days": 24,
+      "jet_fuel_days": 24,
+      "diesel_days": 20,
+      "total_days": 30
+    },
+    {
+      "month": "2019-04",
+      "crude_days": 27,
+      "gasoline_days": 26,
+      "jet_fuel_days": 28,
+      "diesel_days": 21,
+      "total_days": 30
+    },
+    {
+      "month": "2019-05",
+      "crude_days": 27,
+      "gasoline_days": 29,
+      "jet_fuel_days": 30,
+      "diesel_days": 22,
+      "total_days": 32
+    },
+    {
+      "month": "2019-06",
+      "crude_days": 27,
+      "gasoline_days": 27,
+      "jet_fuel_days": 30,
+      "diesel_days": 22,
+      "total_days": 31
+    },
+    {
+      "month": "2019-07",
+      "crude_days": 30,
+      "gasoline_days": 28,
+      "jet_fuel_days": 23,
+      "diesel_days": 21,
+      "total_days": 30
+    },
+    {
+      "month": "2019-08",
+      "crude_days": 27,
+      "gasoline_days": 24,
+      "jet_fuel_days": 26,
+      "diesel_days": 21,
+      "total_days": 30
+    },
+    {
+      "month": "2019-09",
+      "crude_days": 28,
+      "gasoline_days": 27,
+      "jet_fuel_days": 26,
+      "diesel_days": 21,
+      "total_days": 30
+    },
+    {
+      "month": "2019-10",
+      "crude_days": 29,
+      "gasoline_days": 25,
+      "jet_fuel_days": 24,
+      "diesel_days": 18,
+      "total_days": 27
+    },
+    {
+      "month": "2019-11",
+      "crude_days": 30,
+      "gasoline_days": 22,
+      "jet_fuel_days": 29,
+      "diesel_days": 19,
+      "total_days": 28
+    },
+    {
+      "month": "2019-12",
+      "crude_days": 27,
+      "gasoline_days": 24,
+      "jet_fuel_days": 23,
+      "diesel_days": 22,
+      "total_days": 28
+    },
+    {
+      "month": "2020-01",
+      "crude_days": 25,
+      "gasoline_days": 25,
+      "jet_fuel_days": 23,
+      "diesel_days": 22,
+      "total_days": 29
+    },
+    {
+      "month": "2020-02",
+      "crude_days": 27,
+      "gasoline_days": 25,
+      "jet_fuel_days": 22,
+      "diesel_days": 20,
+      "total_days": 28
+    },
+    {
+      "month": "2020-03",
+      "crude_days": 28,
+      "gasoline_days": 25,
+      "jet_fuel_days": 28,
+      "diesel_days": 18,
+      "total_days": 28
+    },
+    {
+      "month": "2020-04",
+      "crude_days": 26,
+      "gasoline_days": 30,
+      "jet_fuel_days": 29,
+      "diesel_days": 20,
+      "total_days": 31
+    },
+    {
+      "month": "2020-05",
+      "crude_days": 31,
+      "gasoline_days": 27,
+      "jet_fuel_days": 31,
+      "diesel_days": 18,
+      "total_days": 28
+    },
+    {
+      "month": "2020-06",
+      "crude_days": 30,
+      "gasoline_days": 26,
+      "jet_fuel_days": 28,
+      "diesel_days": 20,
+      "total_days": 28
+    },
+    {
+      "month": "2020-07",
+      "crude_days": 34,
+      "gasoline_days": 25,
+      "jet_fuel_days": 27,
+      "diesel_days": 20,
+      "total_days": 29
+    },
+    {
+      "month": "2020-08",
+      "crude_days": 31,
+      "gasoline_days": 26,
+      "jet_fuel_days": 35,
+      "diesel_days": 23,
+      "total_days": 33
+    },
+    {
+      "month": "2020-09",
+      "crude_days": 29,
+      "gasoline_days": 29,
+      "jet_fuel_days": 30,
+      "diesel_days": 21,
+      "total_days": 31
+    },
+    {
+      "month": "2020-10",
+      "crude_days": 33,
+      "gasoline_days": 25,
+      "jet_fuel_days": 32,
+      "diesel_days": 21,
+      "total_days": 31
+    },
+    {
+      "month": "2020-11",
+      "crude_days": 30,
+      "gasoline_days": 25,
+      "jet_fuel_days": 41,
+      "diesel_days": 22,
+      "total_days": 34
+    },
+    {
+      "month": "2020-12",
+      "crude_days": 31,
+      "gasoline_days": 27,
+      "jet_fuel_days": 39,
+      "diesel_days": 20,
+      "total_days": 31
+    },
+    {
+      "month": "2021-01",
+      "crude_days": 30,
+      "gasoline_days": 35,
+      "jet_fuel_days": 71,
+      "diesel_days": 24,
+      "total_days": 39
+    },
+    {
+      "month": "2021-02",
+      "crude_days": 29,
+      "gasoline_days": 33,
+      "jet_fuel_days": 70,
+      "diesel_days": 21,
+      "total_days": 36
+    },
+    {
+      "month": "2021-03",
+      "crude_days": 36,
+      "gasoline_days": 33,
+      "jet_fuel_days": 62,
+      "diesel_days": 21,
+      "total_days": 35
+    },
+    {
+      "month": "2021-04",
+      "crude_days": 33,
+      "gasoline_days": 33,
+      "jet_fuel_days": 59,
+      "diesel_days": 19,
+      "total_days": 34
+    },
+    {
+      "month": "2021-05",
+      "crude_days": 29,
+      "gasoline_days": 28,
+      "jet_fuel_days": 42,
+      "diesel_days": 19,
+      "total_days": 31
+    },
+    {
+      "month": "2021-06",
+      "crude_days": 28,
+      "gasoline_days": 30,
+      "jet_fuel_days": 58,
+      "diesel_days": 20,
+      "total_days": 32
+    },
+    {
+      "month": "2021-07",
+      "crude_days": 33,
+      "gasoline_days": 34,
+      "jet_fuel_days": 51,
+      "diesel_days": 22,
+      "total_days": 34
+    },
+    {
+      "month": "2021-08",
+      "crude_days": 32,
+      "gasoline_days": 38,
+      "jet_fuel_days": 55,
+      "diesel_days": 22,
+      "total_days": 36
+    },
+    {
+      "month": "2021-09",
+      "crude_days": 30,
+      "gasoline_days": 34,
+      "jet_fuel_days": 52,
+      "diesel_days": 20,
+      "total_days": 33
+    },
+    {
+      "month": "2021-10",
+      "crude_days": 33,
+      "gasoline_days": 32,
+      "jet_fuel_days": 54,
+      "diesel_days": 22,
+      "total_days": 34
+    },
+    {
+      "month": "2021-11",
+      "crude_days": 36,
+      "gasoline_days": 24,
+      "jet_fuel_days": 54,
+      "diesel_days": 20,
+      "total_days": 30
+    },
+    {
+      "month": "2021-12",
+      "crude_days": 32,
+      "gasoline_days": 25,
+      "jet_fuel_days": 49,
+      "diesel_days": 22,
+      "total_days": 31
+    },
+    {
+      "month": "2022-01",
+      "crude_days": 32,
+      "gasoline_days": 30,
+      "jet_fuel_days": 46,
+      "diesel_days": 21,
+      "total_days": 32
+    },
+    {
+      "month": "2022-02",
+      "crude_days": 36,
+      "gasoline_days": 37,
+      "jet_fuel_days": 48,
+      "diesel_days": 23,
+      "total_days": 36
+    },
+    {
+      "month": "2022-03",
+      "crude_days": 37,
+      "gasoline_days": 30,
+      "jet_fuel_days": 41,
+      "diesel_days": 19,
+      "total_days": 33
+    },
+    {
+      "month": "2022-04",
+      "crude_days": 43,
+      "gasoline_days": 29,
+      "jet_fuel_days": 36,
+      "diesel_days": 20,
+      "total_days": 31
+    },
+    {
+      "month": "2022-05",
+      "crude_days": 45,
+      "gasoline_days": 31,
+      "jet_fuel_days": 31,
+      "diesel_days": 22,
+      "total_days": 31
+    },
+    {
+      "month": "2022-06",
+      "crude_days": 38,
+      "gasoline_days": 28,
+      "jet_fuel_days": 36,
+      "diesel_days": 21,
+      "total_days": 31
+    },
+    {
+      "month": "2022-07",
+      "crude_days": 41,
+      "gasoline_days": 30,
+      "jet_fuel_days": 34,
+      "diesel_days": 18,
+      "total_days": 29
+    },
+    {
+      "month": "2022-08",
+      "crude_days": 42,
+      "gasoline_days": 29,
+      "jet_fuel_days": 34,
+      "diesel_days": 20,
+      "total_days": 31
+    },
+    {
+      "month": "2022-09",
+      "crude_days": 37,
+      "gasoline_days": 25,
+      "jet_fuel_days": 26,
+      "diesel_days": 19,
+      "total_days": 27
+    },
+    {
+      "month": "2022-10",
+      "crude_days": 38,
+      "gasoline_days": 29,
+      "jet_fuel_days": 28,
+      "diesel_days": 24,
+      "total_days": 33
+    },
+    {
+      "month": "2022-11",
+      "crude_days": 41,
+      "gasoline_days": 27,
+      "jet_fuel_days": 26,
+      "diesel_days": 23,
+      "total_days": 31
+    },
+    {
+      "month": "2022-12",
+      "crude_days": 39,
+      "gasoline_days": 26,
+      "jet_fuel_days": 27,
+      "diesel_days": 22,
+      "total_days": 30
+    },
+    {
+      "month": "2023-01",
+      "crude_days": 36,
+      "gasoline_days": 29,
+      "jet_fuel_days": 23,
+      "diesel_days": 22,
+      "total_days": 32
+    },
+    {
+      "month": "2023-02",
+      "crude_days": 34,
+      "gasoline_days": 33,
+      "jet_fuel_days": 19,
+      "diesel_days": 23,
+      "total_days": 32
+    },
+    {
+      "month": "2023-03",
+      "crude_days": 37,
+      "gasoline_days": 28,
+      "jet_fuel_days": 19,
+      "diesel_days": 21,
+      "total_days": 30
+    },
+    {
+      "month": "2023-04",
+      "crude_days": 37,
+      "gasoline_days": 28,
+      "jet_fuel_days": 25,
+      "diesel_days": 21,
+      "total_days": 29
+    },
+    {
+      "month": "2023-05",
+      "crude_days": 37,
+      "gasoline_days": 26,
+      "jet_fuel_days": 27,
+      "diesel_days": 20,
+      "total_days": 28
+    },
+    {
+      "month": "2023-06",
+      "crude_days": 38,
+      "gasoline_days": 29,
+      "jet_fuel_days": 19,
+      "diesel_days": 21,
+      "total_days": 29
+    },
+    {
+      "month": "2023-07",
+      "crude_days": 39,
+      "gasoline_days": 30,
+      "jet_fuel_days": 19,
+      "diesel_days": 23,
+      "total_days": 31
+    },
+    {
+      "month": "2023-08",
+      "crude_days": 37,
+      "gasoline_days": 26,
+      "jet_fuel_days": 22,
+      "diesel_days": 23,
+      "total_days": 30
+    },
+    {
+      "month": "2023-09",
+      "crude_days": 37,
+      "gasoline_days": 27,
+      "jet_fuel_days": 21,
+      "diesel_days": 23,
+      "total_days": 30
+    },
+    {
+      "month": "2023-10",
+      "crude_days": 42,
+      "gasoline_days": 26,
+      "jet_fuel_days": 23,
+      "diesel_days": 20,
+      "total_days": 28
+    },
+    {
+      "month": "2023-11",
+      "crude_days": 42,
+      "gasoline_days": 23,
+      "jet_fuel_days": 19,
+      "diesel_days": 21,
+      "total_days": 26
+    },
+    {
+      "month": "2023-12",
+      "crude_days": 47,
+      "gasoline_days": 23,
+      "jet_fuel_days": 18,
+      "diesel_days": 22,
+      "total_days": 28
+    },
+    {
+      "month": "2024-01",
+      "crude_days": 38,
+      "gasoline_days": 24,
+      "jet_fuel_days": 17,
+      "diesel_days": 24,
+      "total_days": 29
+    },
+    {
+      "month": "2024-02",
+      "crude_days": 41,
+      "gasoline_days": 27,
+      "jet_fuel_days": 23,
+      "diesel_days": 26,
+      "total_days": 31
+    },
+    {
+      "month": "2024-03",
+      "crude_days": 36,
+      "gasoline_days": 28,
+      "jet_fuel_days": 20,
+      "diesel_days": 23,
+      "total_days": 30
+    },
+    {
+      "month": "2024-04",
+      "crude_days": 44,
+      "gasoline_days": 27,
+      "jet_fuel_days": 21,
+      "diesel_days": 21,
+      "total_days": 28
+    },
+    {
+      "month": "2024-05",
+      "crude_days": 39,
+      "gasoline_days": 30,
+      "jet_fuel_days": 22,
+      "diesel_days": 22,
+      "total_days": 30
+    },
+    {
+      "month": "2024-06",
+      "crude_days": 40,
+      "gasoline_days": 29,
+      "jet_fuel_days": 24,
+      "diesel_days": 25,
+      "total_days": 32
+    },
+    {
+      "month": "2024-07",
+      "crude_days": 41,
+      "gasoline_days": 31,
+      "jet_fuel_days": 21,
+      "diesel_days": 24,
+      "total_days": 30
+    },
+    {
+      "month": "2024-08",
+      "crude_days": 38,
+      "gasoline_days": 28,
+      "jet_fuel_days": 22,
+      "diesel_days": 24,
+      "total_days": 31
+    },
+    {
+      "month": "2024-09",
+      "crude_days": 42,
+      "gasoline_days": 29,
+      "jet_fuel_days": 19,
+      "diesel_days": 24,
+      "total_days": 30
+    },
+    {
+      "month": "2024-10",
+      "crude_days": 40,
+      "gasoline_days": 29,
+      "jet_fuel_days": 17,
+      "diesel_days": 22,
+      "total_days": 28
+    },
+    {
+      "month": "2024-11",
+      "crude_days": 41,
+      "gasoline_days": 24,
+      "jet_fuel_days": 18,
+      "diesel_days": 22,
+      "total_days": 27
+    },
+    {
+      "month": "2024-12",
+      "crude_days": 42,
+      "gasoline_days": 25,
+      "jet_fuel_days": 21,
+      "diesel_days": 23,
+      "total_days": 28
+    },
+    {
+      "month": "2025-01",
+      "crude_days": 38,
+      "gasoline_days": 30,
+      "jet_fuel_days": 23,
+      "diesel_days": 27,
+      "total_days": 33
+    },
+    {
+      "month": "2025-02",
+      "crude_days": 40,
+      "gasoline_days": 30,
+      "jet_fuel_days": 23,
+      "diesel_days": 28,
+      "total_days": 33
+    },
+    {
+      "month": "2025-03",
+      "crude_days": 45,
+      "gasoline_days": 28,
+      "jet_fuel_days": 24,
+      "diesel_days": 29,
+      "total_days": 34
+    },
+    {
+      "month": "2025-04",
+      "crude_days": 34,
+      "gasoline_days": 31,
+      "jet_fuel_days": 21,
+      "diesel_days": 26,
+      "total_days": 32
+    },
+    {
+      "month": "2025-05",
+      "crude_days": 40,
+      "gasoline_days": 29,
+      "jet_fuel_days": 17,
+      "diesel_days": 24,
+      "total_days": 30
+    },
+    {
+      "month": "2025-06",
+      "crude_days": 38,
+      "gasoline_days": 27,
+      "jet_fuel_days": 18,
+      "diesel_days": 23,
+      "total_days": 29
+    },
+    {
+      "month": "2025-07",
+      "crude_days": 38,
+      "gasoline_days": 28,
+      "jet_fuel_days": 20,
+      "diesel_days": 24,
+      "total_days": 30
+    },
+    {
+      "month": "2025-08",
+      "crude_days": 35,
+      "gasoline_days": 32,
+      "jet_fuel_days": 20,
+      "diesel_days": 24,
+      "total_days": 31
+    },
+    {
+      "month": "2025-09",
+      "crude_days": 31,
+      "gasoline_days": 33,
+      "jet_fuel_days": 25,
+      "diesel_days": 29,
+      "total_days": 35
+    },
+    {
+      "month": "2025-10",
+      "crude_days": 33,
+      "gasoline_days": 30,
+      "jet_fuel_days": 21,
+      "diesel_days": 24,
+      "total_days": 31
+    },
+    {
+      "month": "2025-11",
+      "crude_days": 38,
+      "gasoline_days": 28,
+      "jet_fuel_days": 19,
+      "diesel_days": 22,
+      "total_days": 29
+    },
+    {
+      "month": "2025-12",
+      "crude_days": 41,
+      "gasoline_days": 26,
+      "jet_fuel_days": 20,
+      "diesel_days": 25,
+      "total_days": 30
+    },
+    {
+      "month": "2026-01",
+      "crude_days": 35,
+      "gasoline_days": 29,
+      "jet_fuel_days": 19,
+      "diesel_days": 26,
+      "total_days": 31
+    }
+  ]
+}

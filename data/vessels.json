@@ -1,1 +1,13 @@
-{}
+{
+  "9213179": {
+    "name": "KARAPAN ARMADA S III",
+    "vessel_class": "Aframax",
+    "dwt": 100000,
+    "length": 246,
+    "beam": 42,
+    "ship_type": "product",
+    "first_seen": "2026-04-13T21:27:00.589555+00:00",
+    "last_seen": "2026-04-13T21:27:00.589555+00:00",
+    "arrival_count": 0
+  }
+}

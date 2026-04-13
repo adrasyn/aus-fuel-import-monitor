@@ -1,1 +1,30 @@
-{"timestamp": "2026-04-13T16:00:00Z", "vessels": []}
+{
+  "timestamp": "2026-04-13T21:27:00.587249+00:00",
+  "vessels": [
+    {
+      "mmsi": "525100350",
+      "imo": "9213179",
+      "name": "KARAPAN ARMADA S III",
+      "ship_type": "product",
+      "ais_type_code": 89,
+      "lat": -7.37078,
+      "lon": 113.27803,
+      "speed": 0,
+      "course": 248.2,
+      "heading": 243,
+      "draught": 0,
+      "length": 246,
+      "beam": 42,
+      "destination": "-FUL??UL",
+      "destination_parsed": null,
+      "last_update": "2026-04-13 21:25:04.245599581 +0000 UTC",
+      "vessel_class": "Aframax",
+      "dwt": 100000,
+      "load_factor": 0.75,
+      "cargo_tonnes": 75000,
+      "cargo_litres": 91500000,
+      "is_ballast": false,
+      "draught_missing": true
+    }
+  ]
+}

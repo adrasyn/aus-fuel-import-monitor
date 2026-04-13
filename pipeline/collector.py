@@ -33,8 +33,9 @@ def classify_ship_type(ais_type: int) -> str:
 
 
 async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
-    vessels: dict[str, dict] = {}
+    vessels: dict[str, dict] = {}  # keyed by MMSI
     start_time = time.time()
+    msg_count = 0
 
     subscription = {
         "APIKey": api_key,
@@ -62,17 +63,16 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
                 if not mmsi:
                     continue
 
-                ais_type = meta.get("ShipType", 0)
-                if ais_type not in TANKER_TYPE_CODES:
-                    continue
+                msg_count += 1
 
+                # Initialize vessel record if new
                 if mmsi not in vessels:
                     vessels[mmsi] = {
                         "mmsi": mmsi,
                         "imo": "",
                         "name": meta.get("ShipName", "").strip(),
-                        "ship_type": classify_ship_type(ais_type),
-                        "ais_type_code": ais_type,
+                        "ship_type": "product",
+                        "ais_type_code": 0,
                         "lat": 0.0,
                         "lon": 0.0,
                         "speed": 0.0,
@@ -99,6 +99,10 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
                 elif msg_type == "ShipStaticData":
                     static = msg.get("Message", {}).get("ShipStaticData", {})
+                    # Ship type is in the static data message, NOT in MetaData
+                    ais_type = static.get("Type", 0)
+                    vessel["ais_type_code"] = ais_type
+                    vessel["ship_type"] = classify_ship_type(ais_type)
                     vessel["imo"] = str(static.get("ImoNumber", ""))
                     vessel["name"] = static.get("Name", vessel["name"]).strip()
                     vessel["draught"] = static.get("MaximumStaticDraught", 0.0)
@@ -112,10 +116,17 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
     except Exception as e:
         print(f"Collection error: {e}")
 
-    # Post-process: add cargo estimates
+    print(f"  Received {msg_count} messages, {len(vessels)} unique vessels")
+
+    # Post-process: filter to tankers only, add cargo estimates
     result_vessels = []
     for vessel in vessels.values():
+        # Skip vessels with no position
         if vessel["lat"] == 0.0 and vessel["lon"] == 0.0:
+            continue
+
+        # Only keep tankers (type 80-89) — skip vessels where we never got static data
+        if vessel["ais_type_code"] not in TANKER_TYPE_CODES:
             continue
 
         cargo = estimate_cargo(
@@ -137,7 +148,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
     count = len(result_vessels)
     tanker_count = len([v for v in result_vessels if not v["is_ballast"]])
-    print(f"Collected {count} tanker vessels ({tanker_count} laden, {count - tanker_count} ballast)")
+    print(f"  Filtered to {count} tanker vessels ({tanker_count} laden, {count - tanker_count} ballast)")
 
     return {
         "timestamp": datetime.now(timezone.utc).isoformat(),
