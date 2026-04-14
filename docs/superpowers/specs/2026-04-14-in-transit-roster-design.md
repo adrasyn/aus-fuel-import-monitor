@@ -79,7 +79,7 @@ The collector and most pipeline steps stay as-is; the changes are concentrated i
 - If `staleHours > 24`, render the marker with `opacity-50` (or equivalent dim treatment) and add a tooltip line "Last seen Xd ago" (or "Xh ago" if <48h).
 
 `src/components/VesselTable.tsx`:
-- Optional: add a "last seen" column or a small "Xd ago" suffix on the vessel name when stale (>24h). Decide during implementation — keep the table dense first, only add if it reads well.
+- No "last seen" indicator in this iteration. Keep the table dense. Map markers and the AIS-range disclaimer already convey staleness; we can add a column later if it turns out to read poorly without one.
 
 StatBar counts and sums use the full in-transit roster including stale entries. The "AIS terrestrial range" disclaimer added in UI batch 1 already explains why some entries may be old.
 
@@ -109,7 +109,6 @@ StatBar counts and sums use the full in-transit roster including stale entries. 
 - `src/lib/data.ts` — read `vessels.json` instead of `snapshot.json` for the in-transit list
 - `src/lib/types.ts` — add `last_position_update` (and possibly `staleHours`)
 - `src/components/VesselMap.tsx` — dim stale markers + tooltip
-- `src/components/VesselTable.tsx` — optional "last seen" indicator (decide during implementation)
 
 ## Non-goals
 
