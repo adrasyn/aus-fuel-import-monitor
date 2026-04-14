@@ -1,5 +1,7 @@
 """Parse AIS destination strings into Australian port names."""
 
+import re
+
 _PORT_PATTERNS: list[tuple[list[str], str]] = [
     (["port kembla", "kembla", "pt kembla", "ptkembla"], "Port Kembla"),
     (["botany", "sydney", "syd", "au syd", "pt botany"], "Sydney / Botany"),
@@ -15,6 +17,13 @@ _PORT_PATTERNS: list[tuple[list[str], str]] = [
 
 _AU_INDICATORS = ["australia", "au ", "aust", " au"]
 
+# Precompile each port pattern with word boundaries so short abbreviations
+# like "glad" no longer substring-match inside words like "everglades".
+_COMPILED_PORT_PATTERNS: list[tuple[list[re.Pattern[str]], str]] = [
+    ([re.compile(rf"\b{re.escape(p)}\b") for p in patterns], port_name)
+    for patterns, port_name in _PORT_PATTERNS
+]
+
 
 def parse_destination(raw: str | None) -> str | None:
     if not raw:
@@ -22,10 +31,9 @@ def parse_destination(raw: str | None) -> str | None:
     cleaned = raw.strip().lower()
     if not cleaned:
         return None
-    for patterns, port_name in _PORT_PATTERNS:
-        for pattern in patterns:
-            if pattern in cleaned or cleaned == pattern:
-                return port_name
+    for compiled_patterns, port_name in _COMPILED_PORT_PATTERNS:
+        if any(p.search(cleaned) for p in compiled_patterns):
+            return port_name
     for indicator in _AU_INDICATORS:
         if indicator in cleaned:
             return "Australia (port unknown)"
