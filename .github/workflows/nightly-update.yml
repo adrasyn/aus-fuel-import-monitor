@@ -44,9 +44,13 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase origin main
           git add data/
-          git diff --staged --quiet || git commit -m "data: nightly update $(date -u +%Y-%m-%d)"
+          if git diff --staged --quiet; then
+            echo "No data changes to commit"
+            exit 0
+          fi
+          git commit -m "data: nightly update $(date -u +%Y-%m-%d)"
+          git pull --rebase origin main
           git push
 
       - name: Set up Node.js
