@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 from pipeline.collector import run_collector
 from pipeline.arrivals import detect_arrivals, load_ports
-from pipeline.vessels import update_vessel_db
+from pipeline.vessels import update_vessel_db, migrate_missing_in_transit
 from pipeline.daily_estimates import update_daily_estimates
 from pipeline.petroleum_stats import download_latest_excel, build_imports_json
 
@@ -75,14 +75,24 @@ def update_monthly_estimates(monthly: dict, new_arrivals: list[dict], vessel_db:
 def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
 
+    previous_snapshot = load_json(f"{DATA_DIR}/snapshot.json", {"vessels": []})
     arrivals_data = load_json(f"{DATA_DIR}/arrivals.json", {"arrivals": []})
     vessel_db = load_json(f"{DATA_DIR}/vessels.json", {})
     monthly = load_json(f"{DATA_DIR}/monthly-estimates.json", {"months": {}})
     daily = load_json(f"{DATA_DIR}/daily-estimates.json", {"days": {}})
     ports = load_ports(f"{DATA_DIR}/ports.json")
 
+    migrated = migrate_missing_in_transit(vessel_db, previous_snapshot)
+    if migrated:
+        print(f"Migration: backfilled in_transit on {migrated} record(s) from previous snapshot")
+        save_json(f"{DATA_DIR}/vessels.json", vessel_db)
+
     print("Step 1: Collecting from AISStream...")
     current_snapshot = run_collector(api_key, duration_seconds)
+    if not current_snapshot.get("vessels"):
+        print("  WARNING: 0 tankers received. Preserving last-good data; skipping downstream steps.")
+        print("Pipeline complete (no-op run).")
+        return
     save_json(f"{DATA_DIR}/snapshot.json", current_snapshot)
 
     print("Step 2: Detecting port arrivals...")

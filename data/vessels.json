@@ -8,7 +8,25 @@
     "ship_type": "product",
     "first_seen": "2026-04-13T21:27:00.589555+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "525100350",
+      "lat": -7.3708,
+      "lon": 113.278,
+      "speed": 0,
+      "course": 248.2,
+      "heading": 511,
+      "draught": 0,
+      "destination": "-FUL??UL",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 91500000,
+      "cargo_tonnes": 75000,
+      "load_factor": 0.75,
+      "is_ballast": false,
+      "draught_missing": true,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "1097799": {
     "name": "YONG WANG DA 69",
@@ -19,7 +37,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "667002065",
+      "lat": -6.85132,
+      "lon": 112.43694,
+      "speed": 0.4,
+      "course": 152.2,
+      "heading": 86,
+      "draught": 3.8,
+      "destination": "LAMONGAN IDN",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 0,
+      "cargo_tonnes": 0,
+      "load_factor": 0.0,
+      "is_ballast": true,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9948281": {
     "name": "DAT MERCURY",
@@ -30,7 +66,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "538010239",
+      "lat": -37.82359,
+      "lon": 144.90192,
+      "speed": 0,
+      "course": 318.3,
+      "heading": 207,
+      "draught": 12.1,
+      "destination": "AU MEL",
+      "destination_parsed": "Melbourne",
+      "region": "AU_APPROACH",
+      "cargo_litres": 46520000,
+      "cargo_tonnes": 40000,
+      "load_factor": 1.0,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9147435": {
     "name": "SUCCESSCHALLENGER37",
@@ -41,7 +95,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "525019644",
+      "lat": -6.71387,
+      "lon": 112.15324,
+      "speed": 0,
+      "course": 360,
+      "heading": 511,
+      "draught": 8,
+      "destination": "TUBAN",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 14378909,
+      "cargo_tonnes": 12364,
+      "load_factor": 0.727,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9654737": {
     "name": "MACLEAY",
@@ -52,7 +124,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "503016010",
+      "lat": -33.86033,
+      "lon": 151.22972,
+      "speed": 0,
+      "course": 249.1,
+      "heading": 45,
+      "draught": 0,
+      "destination": "",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 14828250,
+      "cargo_tonnes": 12750,
+      "load_factor": 0.75,
+      "is_ballast": false,
+      "draught_missing": true,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9469314": {
     "name": "PENG HU WAN",
@@ -63,7 +153,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "413369000",
+      "lat": -33.05495,
+      "lon": 152.33534,
+      "speed": 11.2,
+      "course": 40.6,
+      "heading": 38,
+      "draught": 5.6,
+      "destination": "AU GLT",
+      "destination_parsed": "Australia (port unknown)",
+      "region": "AU_APPROACH",
+      "cargo_litres": 5751564,
+      "cargo_tonnes": 4945,
+      "load_factor": 0.291,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9095917": {
     "name": "TARAKASAMUDRA128",
@@ -74,7 +182,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "525601836",
+      "lat": -6.8486,
+      "lon": 112.40567,
+      "speed": 0.1,
+      "course": 360,
+      "heading": 511,
+      "draught": 4.9,
+      "destination": "LAMONGAN",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 3235255,
+      "cargo_tonnes": 2782,
+      "load_factor": 0.164,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9576648": {
     "name": "ANARGYA 1",
@@ -85,7 +211,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "525101819",
+      "lat": -7.22924,
+      "lon": 113.31888,
+      "speed": 0,
+      "course": 316.9,
+      "heading": 73,
+      "draught": 7,
+      "destination": "CAMPLONG",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 10784182,
+      "cargo_tonnes": 9273,
+      "load_factor": 0.545,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9732709": {
     "name": "HAFNIA MIKALA",
@@ -96,7 +240,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "249836000",
+      "lat": -33.17467,
+      "lon": 152.1382,
+      "speed": 11.3,
+      "course": 205.7,
+      "heading": 207,
+      "draught": 10.2,
+      "destination": "AUBTB",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 37216000,
+      "cargo_tonnes": 32000,
+      "load_factor": 0.8,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9718741": {
     "name": "MUSCAT SILVER",
@@ -107,7 +269,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "538006488",
+      "lat": -32.22892,
+      "lon": 115.75376,
+      "speed": 0,
+      "course": 185.3,
+      "heading": 168,
+      "draught": 11.3,
+      "destination": "AU KWI",
+      "destination_parsed": "Australia (port unknown)",
+      "region": "AU_APPROACH",
+      "cargo_litres": 45088615,
+      "cargo_tonnes": 38769,
+      "load_factor": 0.969,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9906685": {
     "name": "GRAND WINNER 1",
@@ -118,7 +298,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "357011000",
+      "lat": -34.00028,
+      "lon": 151.20998,
+      "speed": 0,
+      "course": 230,
+      "heading": 28,
+      "draught": 8.7,
+      "destination": "AUBTB",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 26480615,
+      "cargo_tonnes": 22769,
+      "load_factor": 0.569,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9729738": {
     "name": "BALLARD",
@@ -129,7 +327,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "258032000",
+      "lat": -33.32077,
+      "lon": 115.66443,
+      "speed": 0,
+      "course": 22.8,
+      "heading": 315,
+      "draught": 11.2,
+      "destination": "AUBUY",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 56444267,
+      "cargo_tonnes": 48533,
+      "load_factor": 0.693,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9698006": {
     "name": "GARDEN STATE",
@@ -140,7 +356,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "367102000",
+      "lat": 26.09334,
+      "lon": -80.12228,
+      "speed": 0,
+      "course": 297,
+      "heading": 88,
+      "draught": 8.5,
+      "destination": "PORT EVERGLADES",
+      "destination_parsed": "Gladstone",
+      "region": "US_GULF",
+      "cargo_litres": 25049231,
+      "cargo_tonnes": 21538,
+      "load_factor": 0.538,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9803247": {
     "name": "ROSTELLA",
@@ -151,7 +385,25 @@
     "ship_type": "product",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "563017700",
+      "lat": -32.01618,
+      "lon": 115.66578,
+      "speed": 0,
+      "course": 298.3,
+      "heading": 186,
+      "draught": 7.5,
+      "destination": "AUKWI",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 13198182,
+      "cargo_tonnes": 10818,
+      "load_factor": 0.636,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9288813": {
     "name": "CHAMPION ENDURANCE",
@@ -162,7 +414,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "538008626",
+      "lat": -32.19622,
+      "lon": 115.70803,
+      "speed": 0,
+      "course": 87.5,
+      "heading": 182,
+      "draught": 8.8,
+      "destination": "AUKWI",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 27196308,
+      "cargo_tonnes": 23385,
+      "load_factor": 0.585,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9572575": {
     "name": "GOLDEN UNITY",
@@ -173,7 +443,25 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "352565000",
+      "lat": -32.04272,
+      "lon": 115.66551,
+      "speed": 0.1,
+      "course": 345.7,
+      "heading": 187,
+      "draught": 10.3,
+      "destination": "AU KWI",
+      "destination_parsed": "Australia (port unknown)",
+      "region": "AU_APPROACH",
+      "cargo_litres": 19771000,
+      "cargo_tonnes": 17000,
+      "load_factor": 1.0,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   },
   "9054183": {
     "name": "MT.PETRO OCEAN XXVII",
@@ -184,6 +472,24 @@
     "ship_type": "crude",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
-    "arrival_count": 0
+    "arrival_count": 0,
+    "in_transit": {
+      "mmsi": "525018215",
+      "lat": -6.85506,
+      "lon": 112.38083,
+      "speed": 0.3,
+      "course": 115.7,
+      "heading": 511,
+      "draught": 4,
+      "destination": "PACIRAN",
+      "destination_parsed": null,
+      "region": "AU_APPROACH",
+      "cargo_litres": 0,
+      "cargo_tonnes": 0,
+      "load_factor": 0.0,
+      "is_ballast": true,
+      "draught_missing": false,
+      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
+    }
   }
 }

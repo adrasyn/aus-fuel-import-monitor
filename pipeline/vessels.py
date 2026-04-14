@@ -67,6 +67,35 @@ def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | N
     return db
 
 
+def migrate_missing_in_transit(db: dict, snapshot: dict) -> int:
+    """Backfill in_transit on records that don't have it yet, using snapshot data.
+
+    One-off migration to heal the schema gap between pre- and post-in-transit
+    vessel records. For each record in db that has no in_transit key, looks up
+    the vessel by IMO in snapshot["vessels"]; if found, builds in_transit using
+    the snapshot's timestamp as last_position_update so staleness is honest.
+
+    Idempotent: after every record has in_transit, becomes a no-op.
+    Returns the number of records migrated.
+    """
+    snapshot_by_imo = {
+        v.get("imo"): v
+        for v in snapshot.get("vessels", [])
+        if v.get("imo")
+    }
+    timestamp = snapshot.get("timestamp") or datetime.now(timezone.utc).isoformat()
+    count = 0
+    for imo, record in db.items():
+        if "in_transit" in record:
+            continue
+        snap_row = snapshot_by_imo.get(imo)
+        if not snap_row:
+            continue
+        record["in_transit"] = build_in_transit(snap_row, now=timestamp)
+        count += 1
+    return count
+
+
 def prune_stale_in_transit(db: dict, now: str) -> None:
     """Clear in_transit on any vessel last pinged > STALENESS_DAYS ago.
 
