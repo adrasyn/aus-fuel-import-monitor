@@ -275,3 +275,114 @@ def test_update_vessel_db_prunes_stale_in_transit():
     }
     updated = update_vessel_db(db, [])  # no fresh ping
     assert updated["9876543"]["in_transit"] is None
+
+
+# ---------- migrate_missing_in_transit ----------
+from pipeline.vessels import migrate_missing_in_transit
+
+
+def _static_record_no_in_transit(imo: str, name: str = "Test Tanker", ship_type: str = "crude") -> dict:
+    return {
+        "name": name, "vessel_class": "Aframax", "dwt": 100000,
+        "length": 245, "beam": 44, "ship_type": ship_type,
+        "first_seen": "2026-04-13T00:00:00Z",
+        "last_seen": "2026-04-13T00:00:00Z",
+        "arrival_count": 0,
+    }
+
+
+def _snapshot_row(imo: str, mmsi: str = "636019825") -> dict:
+    return {
+        "imo": imo, "mmsi": mmsi, "name": "Test Tanker",
+        "ship_type": "crude", "length": 245, "beam": 44,
+        "lat": -25.5, "lon": 130.2,
+        "speed": 12.4, "course": 180.0, "heading": 180.0,
+        "draught": 14.5,
+        "destination": "AU GLT", "destination_parsed": "Gladstone",
+        "region": "AU_APPROACH",
+        "cargo_litres": 95_000_000, "cargo_tonnes": 80_000,
+        "load_factor": 0.95,
+        "is_ballast": False, "draught_missing": False,
+        "last_update": "2026-04-14T12:30:00Z",
+    }
+
+
+def test_migrate_backfills_record_from_snapshot():
+    db = {"9876543": _static_record_no_in_transit("9876543")}
+    snapshot = {
+        "timestamp": "2026-04-14T12:31:35+00:00",
+        "vessels": [_snapshot_row("9876543")],
+    }
+    count = migrate_missing_in_transit(db, snapshot)
+    assert count == 1
+    assert db["9876543"]["in_transit"]["destination_parsed"] == "Gladstone"
+    # Uses snapshot timestamp so stale-marker logic works correctly
+    assert db["9876543"]["in_transit"]["last_position_update"] == "2026-04-14T12:31:35+00:00"
+
+
+def test_migrate_skips_records_with_existing_in_transit():
+    existing_in_transit = {
+        "mmsi": "636019825", "lat": 0.0, "lon": 0.0, "speed": 0.0,
+        "course": 0.0, "heading": 0.0, "draught": 0.0,
+        "destination": "", "destination_parsed": None, "region": "AU_APPROACH",
+        "cargo_litres": 0, "cargo_tonnes": 0, "load_factor": 0.0,
+        "is_ballast": False, "draught_missing": False,
+        "last_position_update": "2026-04-14T00:00:00Z",
+    }
+    db = {
+        "9876543": {
+            **_static_record_no_in_transit("9876543"),
+            "in_transit": existing_in_transit,
+        }
+    }
+    snapshot = {
+        "timestamp": "2026-04-14T12:31:35+00:00",
+        "vessels": [_snapshot_row("9876543")],
+    }
+    count = migrate_missing_in_transit(db, snapshot)
+    assert count == 0
+    assert db["9876543"]["in_transit"] == existing_in_transit  # untouched
+
+
+def test_migrate_skips_records_not_in_snapshot():
+    # Record exists in db without in_transit, but snapshot has no matching IMO
+    db = {"9000001": _static_record_no_in_transit("9000001")}
+    snapshot = {
+        "timestamp": "2026-04-14T12:31:35+00:00",
+        "vessels": [_snapshot_row("9999999")],  # different IMO
+    }
+    count = migrate_missing_in_transit(db, snapshot)
+    assert count == 0
+    assert "in_transit" not in db["9000001"]
+
+
+def test_migrate_idempotent():
+    db = {"9876543": _static_record_no_in_transit("9876543")}
+    snapshot = {
+        "timestamp": "2026-04-14T12:31:35+00:00",
+        "vessels": [_snapshot_row("9876543")],
+    }
+    first = migrate_missing_in_transit(db, snapshot)
+    second = migrate_missing_in_transit(db, snapshot)
+    assert first == 1
+    assert second == 0  # nothing to migrate on second call
+
+
+def test_migrate_multiple_records_mixed():
+    db = {
+        "9000001": _static_record_no_in_transit("9000001"),  # no in_transit, in snapshot → migrate
+        "9000002": {
+            **_static_record_no_in_transit("9000002"),
+            "in_transit": {"last_position_update": "2026-04-14T00:00:00Z"},  # already has it
+        },
+        "9000003": _static_record_no_in_transit("9000003"),  # no in_transit, not in snapshot
+    }
+    snapshot = {
+        "timestamp": "2026-04-14T12:31:35+00:00",
+        "vessels": [_snapshot_row("9000001")],
+    }
+    count = migrate_missing_in_transit(db, snapshot)
+    assert count == 1
+    assert db["9000001"]["in_transit"] is not None
+    assert db["9000002"]["in_transit"]["last_position_update"] == "2026-04-14T00:00:00Z"
+    assert "in_transit" not in db["9000003"]
