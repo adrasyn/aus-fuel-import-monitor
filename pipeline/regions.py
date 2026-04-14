@@ -39,3 +39,14 @@ def should_keep_vessel(region: str | None, destination_parsed: str | None) -> bo
     if region == "AU_APPROACH":
         return True
     return destination_parsed is not None
+
+
+def bounding_boxes_for_subscription() -> list[list[list[float]]]:
+    """Convert REGIONS to AISStream's BoundingBoxes wire format.
+
+    AISStream expects: [[[lat_min, lon_min], [lat_max, lon_max]], ...]
+    """
+    return [
+        [[lat_min, lon_min], [lat_max, lon_max]]
+        for (lat_min, lon_min), (lat_max, lon_max) in REGIONS.values()
+    ]

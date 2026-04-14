@@ -88,3 +88,24 @@ def test_drop_vessel_outside_all_regions():
 
 def test_drop_vessel_outside_all_regions_even_with_destination():
     assert should_keep_vessel(None, "Fremantle") is False
+
+
+from pipeline.regions import REGIONS, bounding_boxes_for_subscription
+
+
+def test_bounding_boxes_for_subscription_shape():
+    boxes = bounding_boxes_for_subscription()
+
+    # One box per region
+    assert len(boxes) == len(REGIONS)
+
+    # Each box is a 2-element list of [lat, lon] pairs (AISStream format)
+    for box in boxes:
+        assert len(box) == 2
+        assert len(box[0]) == 2
+        assert len(box[1]) == 2
+
+
+def test_bounding_boxes_for_subscription_includes_au_approach():
+    boxes = bounding_boxes_for_subscription()
+    assert [[-50.0, 90.0], [-5.0, 170.0]] in boxes
