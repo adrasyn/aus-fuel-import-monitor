@@ -2,8 +2,8 @@ name: Nightly Data Update
 
 on:
   schedule:
-    # 02:00 UTC = 03:00 BST (currently) / 02:00 GMT (in winter)
-    - cron: "0 2 * * *"
+    # 20:00 UTC = 06:00 AEST (currently) / 07:00 AEDT (Oct-Apr in NSW/VIC/ACT/TAS/SA)
+    - cron: "0 20 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
