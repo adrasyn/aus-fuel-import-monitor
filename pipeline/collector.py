@@ -132,7 +132,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
         # Region-based retention: all tankers in AU_APPROACH; elsewhere
         # only vessels whose declared destination parses as Australian.
         region = classify_region(vessel["lat"], vessel["lon"])
-        vessel["region"] = region or ""
+        vessel["region"] = region
         if not should_keep_vessel(region, vessel["destination_parsed"]):
             continue
 

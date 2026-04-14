@@ -1,6 +1,11 @@
 """Tests for pipeline.regions."""
 
-from pipeline.regions import classify_region
+from pipeline.regions import (
+    REGIONS,
+    bounding_boxes_for_subscription,
+    classify_region,
+    should_keep_vessel,
+)
 
 
 def test_classify_region_in_au_approach():
@@ -58,9 +63,6 @@ def test_classify_region_boundary_inclusive():
     assert classify_region(-50.0, 90.0) == "AU_APPROACH"
 
 
-from pipeline.regions import should_keep_vessel
-
-
 def test_should_keep_au_approach_without_destination():
     assert should_keep_vessel("AU_APPROACH", None) is True
 
@@ -88,9 +90,6 @@ def test_drop_vessel_outside_all_regions():
 
 def test_drop_vessel_outside_all_regions_even_with_destination():
     assert should_keep_vessel(None, "Fremantle") is False
-
-
-from pipeline.regions import REGIONS, bounding_boxes_for_subscription
 
 
 def test_bounding_boxes_for_subscription_shape():
