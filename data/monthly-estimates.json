@@ -6,9 +6,9 @@
       "arrived_crude_tonnes": 0,
       "arrived_product_tonnes": 0,
       "arrival_count": 0,
-      "en_route_crude_litres": 0,
-      "en_route_product_litres": 91500000,
-      "last_updated": "2026-04-13T21:27:00.589893+00:00"
+      "en_route_crude_litres": 332744196,
+      "en_route_product_litres": 104698182,
+      "last_updated": "2026-04-14T12:31:35.477783+00:00"
     }
   }
 }
