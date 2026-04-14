@@ -1,7 +1,26 @@
 """Vessel database management, keyed by IMO number."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pipeline.cargo import classify_vessel, TANKER_CLASSES
+
+STALENESS_DAYS = 14
+
+# Dynamic fields copied from a snapshot row into the in_transit block.
+# Static fields (name, length, beam, ship_type, vessel_class, dwt) stay on
+# the parent vessel record and must not be duplicated here.
+_IN_TRANSIT_FIELDS = (
+    "mmsi", "lat", "lon", "speed", "course", "heading", "draught",
+    "destination", "destination_parsed", "region",
+    "cargo_litres", "cargo_tonnes", "load_factor",
+    "is_ballast", "draught_missing",
+)
+
+
+def build_in_transit(snapshot_row: dict, now: str) -> dict:
+    """Build an in_transit block from a vessel's row in the latest snapshot."""
+    in_transit = {field: snapshot_row.get(field) for field in _IN_TRANSIT_FIELDS}
+    in_transit["last_position_update"] = now
+    return in_transit
 
 
 def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | None = None) -> dict:

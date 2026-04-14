@@ -53,3 +53,62 @@ def test_increment_arrival_count():
     new_arrivals = [{"imo": "9876543", "port": "Geelong"}]
     updated = update_vessel_db(db, [], new_arrivals=new_arrivals)
     assert updated["9876543"]["arrival_count"] == 3
+
+
+from pipeline.vessels import build_in_transit
+
+
+def test_build_in_transit_copies_dynamic_fields():
+    snapshot_row = {
+        "imo": "9876543",
+        "mmsi": "636019825",
+        "name": "Test Tanker",
+        "ship_type": "crude",
+        "lat": -25.5, "lon": 130.2,
+        "speed": 12.4, "course": 180.0, "heading": 180.0,
+        "draught": 14.5,
+        "destination": "AU GLT",
+        "destination_parsed": "Gladstone",
+        "region": "AU_APPROACH",
+        "cargo_litres": 95_000_000,
+        "cargo_tonnes": 80_000,
+        "load_factor": 0.95,
+        "is_ballast": False,
+        "draught_missing": False,
+        "vessel_class": "Aframax",
+        "dwt": 80_000,
+        "length": 250, "beam": 44,
+        "last_update": "2026-04-14T12:30:00Z",
+    }
+    in_transit = build_in_transit(snapshot_row, now="2026-04-14T13:00:00Z")
+    assert in_transit["mmsi"] == "636019825"
+    assert in_transit["lat"] == -25.5
+    assert in_transit["lon"] == 130.2
+    assert in_transit["destination_parsed"] == "Gladstone"
+    assert in_transit["region"] == "AU_APPROACH"
+    assert in_transit["cargo_litres"] == 95_000_000
+    assert in_transit["is_ballast"] is False
+    assert in_transit["last_position_update"] == "2026-04-14T13:00:00Z"
+
+
+def test_build_in_transit_omits_static_top_level_fields():
+    # Static fields like name/length/beam/ship_type live on the parent
+    # vessel record; they must NOT also appear in in_transit.
+    snapshot_row = {
+        "imo": "9876543", "mmsi": "636019825", "name": "Test Tanker",
+        "ship_type": "crude", "length": 250, "beam": 44,
+        "vessel_class": "Aframax", "dwt": 80_000,
+        "lat": 0.0, "lon": 0.0, "speed": 0.0, "course": 0.0, "heading": 0.0,
+        "draught": 0.0, "destination": "", "destination_parsed": None,
+        "region": "AU_APPROACH",
+        "cargo_litres": 0, "cargo_tonnes": 0, "load_factor": 0.0,
+        "is_ballast": True, "draught_missing": True,
+        "last_update": "2026-04-14T12:30:00Z",
+    }
+    in_transit = build_in_transit(snapshot_row, now="2026-04-14T13:00:00Z")
+    assert "name" not in in_transit
+    assert "length" not in in_transit
+    assert "beam" not in in_transit
+    assert "ship_type" not in in_transit
+    assert "vessel_class" not in in_transit
+    assert "dwt" not in in_transit
