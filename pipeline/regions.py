@@ -8,6 +8,11 @@ region are kept only if their destination parses as Australian.
 from __future__ import annotations
 
 REGIONS: dict[str, tuple[tuple[float, float], tuple[float, float]]] = {
+    # JAVA_SEA must come BEFORE AU_APPROACH: it carves out the Indonesian
+    # Java Sea (north of Java) from the broader AU_APPROACH box so domestic
+    # Indonesian tankers (e.g. Lamongan, Tuban, Paciran) don't get retained
+    # unconditionally. classify_region returns the first match.
+    "JAVA_SEA":      (( -7.5,  105.0), ( -3.0,  117.0)),
     "AU_APPROACH":   ((-50.0,   90.0), ( -5.0,  170.0)),
     "SE_ASIA":       (( -5.0,   95.0), ( 10.0,  120.0)),
     "PHILIPPINES":   ((  5.0,  117.0), ( 20.0,  127.0)),

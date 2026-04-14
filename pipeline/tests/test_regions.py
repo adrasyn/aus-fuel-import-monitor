@@ -108,3 +108,34 @@ def test_bounding_boxes_for_subscription_shape():
 def test_bounding_boxes_for_subscription_includes_au_approach():
     boxes = bounding_boxes_for_subscription()
     assert [[-50.0, 90.0], [-5.0, 170.0]] in boxes
+
+
+def test_classify_region_java_sea_off_lamongan():
+    # Java Sea cluster observed in real data
+    assert classify_region(-6.85, 112.44) == "JAVA_SEA"
+
+
+def test_classify_region_java_sea_takes_priority_over_au_approach():
+    # The carve-out must be listed BEFORE AU_APPROACH so Java Sea wins
+    # at lat -6.85 (which is also inside the broad AU_APPROACH box).
+    assert classify_region(-6.85, 112.44) == "JAVA_SEA"
+
+
+def test_classify_region_south_of_java_sea_still_au_approach():
+    # South of the Java coast (-7.5 cutoff) → falls through to AU_APPROACH
+    assert classify_region(-8.0, 112.0) == "AU_APPROACH"
+
+
+def test_classify_region_east_of_java_sea_still_au_approach():
+    # East of lon 117 (Bali/Flores Sea) → falls through to AU_APPROACH
+    assert classify_region(-7.0, 121.0) == "AU_APPROACH"
+
+
+def test_should_drop_java_sea_vessel_without_au_destination():
+    # Java Sea vessel with Indonesian destination — must be dropped
+    assert should_keep_vessel("JAVA_SEA", None) is False
+
+
+def test_should_keep_java_sea_vessel_with_au_destination():
+    # Hypothetical: a vessel in the Java Sea with AU destination → keep
+    assert should_keep_vessel("JAVA_SEA", "Fremantle") is True

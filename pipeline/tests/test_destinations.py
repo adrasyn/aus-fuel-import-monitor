@@ -69,3 +69,57 @@ def test_au_glad_still_matches_gladstone():
 def test_freeport_does_not_false_match_fremantle():
     # "fre" is a substring of "freeport" but not a word inside it
     assert parse_destination("FREEPORT") is None
+
+
+def test_locode_aubtb_botany():
+    assert parse_destination("AUBTB") == "Sydney / Botany"
+
+
+def test_locode_aukwi_fremantle():
+    # Kwinana is part of the Fremantle metro port complex
+    assert parse_destination("AUKWI") == "Fremantle"
+
+
+def test_locode_aubuy_bunbury():
+    assert parse_destination("AUBUY") == "Bunbury"
+
+
+def test_locode_auglt_gladstone():
+    assert parse_destination("AUGLT") == "Gladstone"
+
+
+def test_locode_aufre_fremantle():
+    assert parse_destination("AUFRE") == "Fremantle"
+
+
+def test_locode_aumel_melbourne():
+    assert parse_destination("AUMEL") == "Melbourne"
+
+
+def test_locode_ausyd_sydney():
+    assert parse_destination("AUSYD") == "Sydney / Botany"
+
+
+def test_locode_audar_darwin():
+    assert parse_destination("AUDAR") == "Darwin"
+
+
+def test_locode_aubne_brisbane():
+    assert parse_destination("AUBNE") == "Brisbane"
+
+
+def test_locode_autsv_townsville():
+    assert parse_destination("AUTSV") == "Townsville"
+
+
+def test_locode_auadl_adelaide():
+    assert parse_destination("AUADL") == "Adelaide"
+
+
+def test_locode_aupkl_port_kembla():
+    assert parse_destination("AUPKL") == "Port Kembla"
+
+
+def test_bunbury_full_name():
+    # New port entry added alongside the LOCODE
+    assert parse_destination("BUNBURY") == "Bunbury"

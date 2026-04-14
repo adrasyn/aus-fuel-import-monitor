@@ -3,16 +3,17 @@
 import re
 
 _PORT_PATTERNS: list[tuple[list[str], str]] = [
-    (["port kembla", "kembla", "pt kembla", "ptkembla"], "Port Kembla"),
-    (["botany", "sydney", "syd", "au syd", "pt botany"], "Sydney / Botany"),
+    (["port kembla", "kembla", "pt kembla", "ptkembla", "aupkl"], "Port Kembla"),
+    (["botany", "sydney", "syd", "au syd", "pt botany", "ausyd", "aubtb"], "Sydney / Botany"),
     (["geelong", "gee", "au gee", "geelg"], "Geelong"),
-    (["melbourne", "melb", "au mel", "au melb", "melbne"], "Melbourne"),
-    (["brisbane", "bris", "au bri", "bne"], "Brisbane"),
-    (["gladstone", "glad", "au gla"], "Gladstone"),
-    (["fremantle", "freo", "fre", "au fre", "fremantl"], "Fremantle"),
-    (["adelaide", "adel", "au ade", "adl"], "Adelaide"),
-    (["darwin", "drw", "au dar"], "Darwin"),
-    (["townsville", "tsv", "au tow", "twnsv"], "Townsville"),
+    (["melbourne", "melb", "au mel", "au melb", "melbne", "aumel"], "Melbourne"),
+    (["brisbane", "bris", "au bri", "bne", "aubne"], "Brisbane"),
+    (["gladstone", "glad", "au gla", "auglt"], "Gladstone"),
+    (["fremantle", "freo", "fre", "au fre", "fremantl", "aufre", "aukwi"], "Fremantle"),
+    (["adelaide", "adel", "au ade", "adl", "auadl"], "Adelaide"),
+    (["darwin", "drw", "au dar", "audar"], "Darwin"),
+    (["townsville", "tsv", "au tow", "twnsv", "autsv"], "Townsville"),
+    (["bunbury", "aubuy"], "Bunbury"),
 ]
 
 # Kept substring-based: entries encode their own whitespace delimiters
