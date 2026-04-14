@@ -41,7 +41,7 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel }: Ve
     imo ? `https://www.marinetraffic.com/en/ais/details/ships/imo:${imo}` : "#";
 
   return (
-    <div className="border border-border overflow-x-auto h-[400px] md:h-full min-h-[300px] overflow-y-auto">
+    <div className="border border-border overflow-x-auto h-[420px] md:h-[520px] min-h-[300px] overflow-y-auto">
       <table className="w-full text-[11px] min-w-[500px]">
         <thead>
           <tr className="bg-panel border-b border-border text-[9px] uppercase tracking-label text-label font-semibold">
