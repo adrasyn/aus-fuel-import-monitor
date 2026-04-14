@@ -10,14 +10,13 @@ import websockets
 
 from pipeline.cargo import estimate_cargo
 from pipeline.destinations import parse_destination
+from pipeline.regions import (
+    bounding_boxes_for_subscription,
+    classify_region,
+    should_keep_vessel,
+)
 
 AISSTREAM_URL = "wss://stream.aisstream.io/v0/stream"
-
-# Bounding box covering approaches to Australia + SE Asia shipping lanes
-# AISStream format: [[lat_min, lon_min], [lat_max, lon_max]]
-AU_BOUNDING_BOX = [
-    [[-50.0, 90.0], [-5.0, 170.0]]
-]
 
 # AIS ship type codes for tankers (excluding LNG/LPG)
 TANKER_TYPE_CODES = set(range(80, 90))
@@ -39,7 +38,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
     subscription = {
         "APIKey": api_key,
-        "BoundingBoxes": AU_BOUNDING_BOX,
+        "BoundingBoxes": bounding_boxes_for_subscription(),
         "FilterMessageTypes": ["PositionReport", "ShipStaticData"],
     }
 
@@ -83,6 +82,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
                         "beam": 0,
                         "destination": "",
                         "destination_parsed": None,
+                        "region": "",
                         "last_update": "",
                     }
 
@@ -127,6 +127,13 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
         # Only keep tankers (type 80-89) — skip vessels where we never got static data
         if vessel["ais_type_code"] not in TANKER_TYPE_CODES:
+            continue
+
+        # Region-based retention: all tankers in AU_APPROACH; elsewhere
+        # only vessels whose declared destination parses as Australian.
+        region = classify_region(vessel["lat"], vessel["lon"])
+        vessel["region"] = region or ""
+        if not should_keep_vessel(region, vessel["destination_parsed"]):
             continue
 
         cargo = estimate_cargo(
