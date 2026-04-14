@@ -74,10 +74,10 @@ export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartP
           }}
         />
         <Tooltip
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          formatter={(value: any) =>
-            value == null ? "—" : [`${Math.round(value as number)} ML`]
-          }
+          formatter={(value) => {
+            const ml = value as number | null;
+            return ml === null ? "—" : [`${Math.round(ml)} ML`];
+          }}
           labelFormatter={(label) => formatDate(String(label))}
         />
         <Legend wrapperStyle={{ fontSize: 10 }} />
