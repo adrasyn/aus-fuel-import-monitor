@@ -1,3 +1,15 @@
 {
-  "arrivals": []
+  "arrivals": [
+    {
+      "imo": "9906685",
+      "name": "GRAND WINNER 1",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-14T21:12:19.881566+00:00",
+      "ship_type": "crude",
+      "vessel_class": "MR",
+      "cargo_tonnes": 22769,
+      "cargo_litres": 26480615,
+      "draught_missing": false
+    }
+  ]
 }
