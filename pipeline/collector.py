@@ -35,6 +35,8 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
     vessels: dict[str, dict] = {}  # keyed by MMSI
     start_time = time.time()
     msg_count = 0
+    type_counts: dict[str, int] = {}
+    non_ais_samples: list[str] = []  # capture a few non-AIS messages for diagnosis
 
     subscription = {
         "APIKey": api_key,
@@ -56,10 +58,16 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
                 msg = json.loads(raw)
                 msg_type = msg.get("MessageType", "")
+                type_counts[msg_type] = type_counts.get(msg_type, 0) + 1
+
                 meta = msg.get("MetaData", {})
                 mmsi = str(meta.get("MMSI", ""))
 
                 if not mmsi:
+                    # No MMSI → likely an AISStream control/error frame.
+                    # Capture the first few for post-run diagnosis.
+                    if len(non_ais_samples) < 5:
+                        non_ais_samples.append(raw[:500])
                     continue
 
                 msg_count += 1
@@ -116,7 +124,15 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
     except Exception as e:
         print(f"Collection error: {e}")
 
+    elapsed = time.time() - start_time
     print(f"  Received {msg_count} messages, {len(vessels)} unique vessels")
+    if type_counts:
+        print(f"  Message type breakdown: {type_counts}")
+    print(f"  Elapsed: {elapsed:.0f}s, effective rate: {msg_count / elapsed if elapsed > 0 else 0:.1f} msg/s")
+    if non_ais_samples:
+        print(f"  Captured {len(non_ais_samples)} non-AIS messages (first {min(3, len(non_ais_samples))} shown):")
+        for sample in non_ais_samples[:3]:
+            print(f"    {sample}")
 
     # Post-process: filter to tankers only, add cargo estimates
     result_vessels = []
