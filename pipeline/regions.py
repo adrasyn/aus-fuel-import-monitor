@@ -25,3 +25,17 @@ def classify_region(lat: float, lon: float) -> str | None:
         if lat_min <= lat <= lat_max and lon_min <= lon <= lon_max:
             return name
     return None
+
+
+def should_keep_vessel(region: str | None, destination_parsed: str | None) -> bool:
+    """Decide whether to keep a tanker based on its region and parsed destination.
+
+    - AU_APPROACH: keep unconditionally (arrival zone).
+    - Other known regions: keep only if destination parses as Australian.
+    - Unknown region (outside every box): drop.
+    """
+    if region is None:
+        return False
+    if region == "AU_APPROACH":
+        return True
+    return destination_parsed is not None

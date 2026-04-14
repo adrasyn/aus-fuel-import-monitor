@@ -56,3 +56,35 @@ def test_classify_region_outside_all_boxes():
 def test_classify_region_boundary_inclusive():
     # Exact lat_min / lon_min of AU_APPROACH is considered inside
     assert classify_region(-50.0, 90.0) == "AU_APPROACH"
+
+
+from pipeline.regions import should_keep_vessel
+
+
+def test_should_keep_au_approach_without_destination():
+    assert should_keep_vessel("AU_APPROACH", None) is True
+
+
+def test_should_keep_au_approach_with_destination():
+    assert should_keep_vessel("AU_APPROACH", "Fremantle") is True
+
+
+def test_should_keep_origin_region_with_au_destination():
+    assert should_keep_vessel("MIDDLE_EAST", "Fremantle") is True
+
+
+def test_should_keep_origin_region_with_au_unknown_port():
+    assert should_keep_vessel("US_GULF", "Australia (port unknown)") is True
+
+
+def test_drop_origin_region_without_destination():
+    assert should_keep_vessel("US_GULF", None) is False
+
+
+def test_drop_vessel_outside_all_regions():
+    # region is None — vessel is not in any subscribed box
+    assert should_keep_vessel(None, None) is False
+
+
+def test_drop_vessel_outside_all_regions_even_with_destination():
+    assert should_keep_vessel(None, "Fremantle") is False
