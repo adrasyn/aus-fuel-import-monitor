@@ -15,6 +15,8 @@ _PORT_PATTERNS: list[tuple[list[str], str]] = [
     (["townsville", "tsv", "au tow", "twnsv"], "Townsville"),
 ]
 
+# Kept substring-based: entries encode their own whitespace delimiters
+# (e.g. "au ", " au") which word-boundary regex would mishandle at string ends.
 _AU_INDICATORS = ["australia", "au ", "aust", " au"]
 
 # Precompile each port pattern with word boundaries so short abbreviations
