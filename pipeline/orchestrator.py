@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from pipeline.collector import run_collector
 from pipeline.arrivals import detect_arrivals, load_ports
 from pipeline.vessels import update_vessel_db
+from pipeline.daily_estimates import update_daily_estimates
 from pipeline.petroleum_stats import download_latest_excel, build_imports_json
 
 DATA_DIR = "data"
@@ -77,6 +78,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     arrivals_data = load_json(f"{DATA_DIR}/arrivals.json", {"arrivals": []})
     vessel_db = load_json(f"{DATA_DIR}/vessels.json", {})
     monthly = load_json(f"{DATA_DIR}/monthly-estimates.json", {"months": {}})
+    daily = load_json(f"{DATA_DIR}/daily-estimates.json", {"days": {}})
     ports = load_ports(f"{DATA_DIR}/ports.json")
 
     print("Step 1: Collecting from AISStream...")
@@ -100,7 +102,11 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     monthly = update_monthly_estimates(monthly, new_arrivals, vessel_db)
     save_json(f"{DATA_DIR}/monthly-estimates.json", monthly)
 
-    print("Step 5: Checking petroleum statistics...")
+    print("Step 5: Updating daily estimates...")
+    daily = update_daily_estimates(daily, vessel_db, datetime.now(timezone.utc))
+    save_json(f"{DATA_DIR}/daily-estimates.json", daily)
+
+    print("Step 6: Checking petroleum statistics...")
     try:
         download_latest_excel(EXCEL_CACHE)
         imports_data = build_imports_json(EXCEL_CACHE)
