@@ -89,6 +89,16 @@ export interface MonthlyEstimates {
   months: Record<string, MonthEstimate>;
 }
 
+export interface DailyEstimate {
+  en_route_crude_litres: number;
+  en_route_product_litres: number;
+  captured_at: string;
+}
+
+export interface DailyEstimates {
+  days: Record<string, DailyEstimate>;
+}
+
 export interface ImportRecord {
   month: string;
   crude_oil_ml: number;
@@ -118,5 +128,6 @@ export interface DashboardData {
   snapshot: Snapshot;
   arrivals: Arrival[];
   monthlyEstimates: MonthlyEstimates;
+  dailyEstimates: DailyEstimates;
   imports: ImportsData;
 }
