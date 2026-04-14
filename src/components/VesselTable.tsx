@@ -9,7 +9,7 @@ interface VesselTableProps {
   onSelectVessel: (imo: string | null) => void;
 }
 
-type SortKey = "name" | "ship_type" | "destination_parsed" | "cargo_litres" | "vessel_class" | "speed" | "last_update";
+type SortKey = "name" | "ship_type" | "destination_parsed" | "cargo_litres" | "vessel_class" | "last_update";
 type SortDir = "asc" | "desc";
 
 export default function VesselTable({ vessels, selectedImo, onSelectVessel }: VesselTableProps) {
@@ -41,7 +41,7 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel }: Ve
     imo ? `https://www.marinetraffic.com/en/ais/details/ships/imo:${imo}` : "#";
 
   return (
-    <div className="border border-border overflow-x-auto h-[400px] md:h-full min-h-[300px] overflow-y-auto">
+    <div className="border border-border overflow-x-auto h-[420px] md:h-[520px] min-h-[300px] overflow-y-auto">
       <table className="w-full text-[11px] min-w-[500px]">
         <thead>
           <tr className="bg-panel border-b border-border text-[9px] uppercase tracking-label text-label font-semibold">
@@ -50,7 +50,6 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel }: Ve
             <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("destination_parsed")}>Dest.{arrow("destination_parsed")}</th>
             <th className="text-right px-3 py-2 cursor-pointer" onClick={() => handleSort("cargo_litres")}>Est. cargo{arrow("cargo_litres")}</th>
             <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("vessel_class")}>Class{arrow("vessel_class")}</th>
-            <th className="text-right px-3 py-2 cursor-pointer" onClick={() => handleSort("speed")}>Speed{arrow("speed")}</th>
           </tr>
         </thead>
         <tbody>
@@ -62,7 +61,7 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel }: Ve
               } ${v.is_ballast ? "opacity-40" : ""}`}
               onClick={() => onSelectVessel(v.imo === selectedImo ? null : v.imo)}
             >
-              <td className="px-3 py-[7px] font-medium">
+              <td className="px-3 py-1 font-medium">
                 {v.imo ? (
                   <a href={marineTrafficUrl(v.imo)} target="_blank" rel="noopener noreferrer"
                     className="hover:underline" onClick={(e) => e.stopPropagation()}>
@@ -70,21 +69,20 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel }: Ve
                   </a>
                 ) : (v.name || "Unknown")}
               </td>
-              <td className={`px-3 py-[7px] ${v.ship_type === "crude" ? "text-crude" : "text-product"}`}>
-                {v.is_ballast ? "Ballast" : v.ship_type === "crude" ? "Crude" : "Product"}
+              <td className={`px-3 py-1 ${v.ship_type === "crude" ? "text-crude" : "text-product"}`}>
+                {v.is_ballast ? "Ballast (empty)" : v.ship_type === "crude" ? "Crude" : "Product"}
               </td>
-              <td className="px-3 py-[7px]">{v.destination_parsed || v.destination || "Unknown"}</td>
-              <td className="px-3 py-[7px] text-right">
+              <td className="px-3 py-1">{v.destination_parsed || v.destination || "Unknown"}</td>
+              <td className="px-3 py-1 text-right whitespace-nowrap">
                 {(v.cargo_litres / 1_000_000).toFixed(0)}M L
                 {v.draught_missing && <span className="text-label-light" title="Draught data unavailable"> *</span>}
               </td>
-              <td className="px-3 py-[7px]">{v.vessel_class}</td>
-              <td className="px-3 py-[7px] text-right">{v.speed.toFixed(1)} kn</td>
+              <td className="px-3 py-1">{v.vessel_class}</td>
             </tr>
           ))}
           {sorted.length === 0 && (
             <tr>
-              <td colSpan={6} className="px-3 py-8 text-center text-label-light">
+              <td colSpan={5} className="px-3 py-8 text-center text-label-light">
                 No vessels currently tracked
               </td>
             </tr>

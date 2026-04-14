@@ -88,8 +88,9 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
 
   const formatMonth = (month: string) => {
     const [y, m] = month.split("-");
-    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
-    return `${months[parseInt(m) - 1]} ${y.slice(2)}`;
+    const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const label = `${monthLabels[parseInt(m) - 1]} ${y.slice(2)}`;
+    return month === currentMonth ? `${label} MTD` : label;
   };
 
   return (
@@ -125,9 +126,10 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
           </Bar>
         </BarChart>
       </ResponsiveContainer>
-      <div className="flex gap-4 mt-2 text-[9px] text-label-light">
+      <div className="flex flex-wrap gap-4 mt-2 text-[9px] text-label-light">
         <span><span className="inline-block w-3 h-3 bg-border-heavy mr-1 align-middle" /> Solid = government data</span>
         <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle" /> Faded = AIS estimate (provisional)</span>
+        <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle border border-dashed border-border-heavy" /> Dashed = current month (to date)</span>
       </div>
     </div>
   );
