@@ -1,16 +1,37 @@
 """Vessel database management, keyed by IMO number."""
 
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pipeline.cargo import classify_vessel, TANKER_CLASSES
+
+STALENESS_DAYS = 14
+
+# Dynamic fields copied from a snapshot row into the in_transit block.
+# Static fields (name, length, beam, ship_type, vessel_class, dwt) stay on
+# the parent vessel record and must not be duplicated here.
+_IN_TRANSIT_FIELDS = (
+    "mmsi", "lat", "lon", "speed", "course", "heading", "draught",
+    "destination", "destination_parsed", "region",
+    "cargo_litres", "cargo_tonnes", "load_factor",
+    "is_ballast", "draught_missing",
+)
+
+
+def build_in_transit(snapshot_row: dict, now: str) -> dict:
+    """Build an in_transit block from a vessel's row in the latest snapshot."""
+    in_transit = {field: snapshot_row.get(field) for field in _IN_TRANSIT_FIELDS}
+    in_transit["last_position_update"] = now
+    return in_transit
 
 
 def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | None = None) -> dict:
     now = datetime.now(timezone.utc).isoformat()
 
+    pinged_imos = set()
     for vessel in vessels:
         imo = vessel.get("imo", "")
         if not imo:
             continue
+        pinged_imos.add(imo)
 
         vessel_class = classify_vessel(vessel.get("length", 0), vessel.get("beam", 0))
         dwt = TANKER_CLASSES[vessel_class]["dwt"]
@@ -31,10 +52,34 @@ def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | N
                 "arrival_count": 0,
             }
 
+        # Rebuild in_transit from this fresh ping
+        db[imo]["in_transit"] = build_in_transit(vessel, now=now)
+
     if new_arrivals:
         for arrival in new_arrivals:
             imo = arrival.get("imo", "")
             if imo in db:
                 db[imo]["arrival_count"] += 1
+                db[imo]["in_transit"] = None  # arrived → no longer in transit
+
+    prune_stale_in_transit(db, now=now)
 
     return db
+
+
+def prune_stale_in_transit(db: dict, now: str) -> None:
+    """Clear in_transit on any vessel last pinged > STALENESS_DAYS ago.
+
+    Mutates db in place. No-op for records without an in_transit block.
+    """
+    cutoff = datetime.fromisoformat(now.replace("Z", "+00:00")) - timedelta(days=STALENESS_DAYS)
+    for record in db.values():
+        in_transit = record.get("in_transit")
+        if not in_transit:
+            continue
+        last = in_transit.get("last_position_update")
+        if not last:
+            continue
+        last_dt = datetime.fromisoformat(last.replace("Z", "+00:00"))
+        if last_dt < cutoff:
+            record["in_transit"] = None

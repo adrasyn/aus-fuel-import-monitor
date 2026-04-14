@@ -20,7 +20,42 @@ export interface Vessel {
   is_ballast: boolean;
   draught_missing: boolean;
   last_update: string;
+  last_position_update: string;
 }
+
+interface VesselDbInTransit {
+  mmsi: string;
+  lat: number;
+  lon: number;
+  speed: number;
+  course: number;
+  heading: number;
+  draught: number;
+  destination: string;
+  destination_parsed: string | null;
+  region: string;
+  cargo_litres: number;
+  cargo_tonnes: number;
+  load_factor: number;
+  is_ballast: boolean;
+  draught_missing: boolean;
+  last_position_update: string;
+}
+
+export interface VesselDbRecord {
+  name: string;
+  vessel_class: string;
+  dwt: number;
+  length: number;
+  beam: number;
+  ship_type: "crude" | "product";
+  first_seen: string;
+  last_seen: string;
+  arrival_count: number;
+  in_transit: VesselDbInTransit | null;
+}
+
+export type VesselDb = Record<string, VesselDbRecord>;
 
 export interface Snapshot {
   timestamp: string;

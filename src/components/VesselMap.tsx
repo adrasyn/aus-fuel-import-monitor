@@ -52,7 +52,23 @@ export default function VesselMap({ vessels, selectedImo, onSelectVessel }: Vess
         const isSelected = vessel.imo === selectedImo;
         const color = vessel.ship_type === "crude" ? "#dc2626" : "#1e40af";
         const radius = isSelected ? 8 : 5;
-        const opacity = vessel.is_ballast ? 0.3 : 1;
+
+        const lastSeenMs = vessel.last_position_update
+          ? Date.now() - new Date(vessel.last_position_update).getTime()
+          : 0;
+        const staleHours = lastSeenMs / 3_600_000;
+        const isStale = staleHours > 24;
+
+        const ballastFactor = vessel.is_ballast ? 0.3 : 1;
+        const staleFactor = isStale ? 0.4 : 1;
+        const opacity = ballastFactor * staleFactor;
+
+        const lastSeenLabel = (() => {
+          if (!isStale) return null;
+          const days = Math.floor(staleHours / 24);
+          if (days >= 1) return `Last seen ${days}d ago`;
+          return `Last seen ${Math.floor(staleHours)}h ago`;
+        })();
 
         return (
           <CircleMarker
@@ -80,6 +96,9 @@ export default function VesselMap({ vessels, selectedImo, onSelectVessel }: Vess
                 <p>Dest: {vessel.destination_parsed || vessel.destination || "Unknown"}</p>
                 <p>Speed: {vessel.speed.toFixed(1)} kn</p>
                 {vessel.is_ballast && <p className="text-label-light italic">Ballast (empty)</p>}
+                {lastSeenLabel && (
+                  <p className="text-label-light italic">{lastSeenLabel}</p>
+                )}
               </div>
             </Popup>
           </CircleMarker>

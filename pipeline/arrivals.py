@@ -28,9 +28,24 @@ def is_within_port(lat: float, lon: float, ports: list[dict]) -> str | None:
     return None
 
 
-def detect_arrivals(current_snapshot: dict, previous_snapshot: dict, ports: list[dict], existing_arrivals: list[dict]) -> list[dict]:
+def detect_arrivals(
+    current_snapshot: dict,
+    vessel_db: dict,
+    ports: list[dict],
+    existing_arrivals: list[dict],
+) -> list[dict]:
+    """Detect new port arrivals.
+
+    A vessel counts as a new arrival when:
+    - it appears in the current snapshot at speed < 1.0 inside a port radius
+    - the roster has it as in_transit (we previously knew it was on a trip)
+    - the (imo, port) pair has not already been recorded
+    """
     arrived_imos = {(a["imo"], a["port"]) for a in existing_arrivals}
-    previous_imos = {v["imo"] for v in previous_snapshot.get("vessels", [])}
+    in_transit_imos = {
+        imo for imo, record in vessel_db.items()
+        if record.get("in_transit") is not None
+    }
     new_arrivals = []
     now = datetime.now(timezone.utc).isoformat()
 
@@ -45,7 +60,7 @@ def detect_arrivals(current_snapshot: dict, previous_snapshot: dict, ports: list
         port_name = is_within_port(lat, lon, ports)
         if port_name is None:
             continue
-        if imo not in previous_imos:
+        if imo not in in_transit_imos:
             continue
         if (imo, port_name) in arrived_imos:
             continue

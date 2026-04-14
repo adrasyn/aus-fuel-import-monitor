@@ -27,7 +27,7 @@ def save_json(path: str, data) -> None:
     print(f"  Saved {path}")
 
 
-def update_monthly_estimates(monthly: dict, new_arrivals: list[dict], current_snapshot: dict) -> dict:
+def update_monthly_estimates(monthly: dict, new_arrivals: list[dict], vessel_db: dict) -> dict:
     now = datetime.now(timezone.utc)
     month_key = now.strftime("%Y-%m")
 
@@ -53,13 +53,16 @@ def update_monthly_estimates(monthly: dict, new_arrivals: list[dict], current_sn
 
     en_route_crude_litres = 0
     en_route_product_litres = 0
-    for v in current_snapshot.get("vessels", []):
-        if v.get("is_ballast"):
+    for record in vessel_db.values():
+        in_transit = record.get("in_transit")
+        if not in_transit:
             continue
-        if v.get("ship_type") == "crude":
-            en_route_crude_litres += v.get("cargo_litres", 0)
+        if in_transit.get("is_ballast"):
+            continue
+        if record.get("ship_type") == "crude":
+            en_route_crude_litres += in_transit.get("cargo_litres", 0)
         else:
-            en_route_product_litres += v.get("cargo_litres", 0)
+            en_route_product_litres += in_transit.get("cargo_litres", 0)
 
     month["en_route_crude_litres"] = en_route_crude_litres
     month["en_route_product_litres"] = en_route_product_litres
@@ -71,7 +74,6 @@ def update_monthly_estimates(monthly: dict, new_arrivals: list[dict], current_sn
 def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
 
-    previous_snapshot = load_json(f"{DATA_DIR}/snapshot.json", {"vessels": []})
     arrivals_data = load_json(f"{DATA_DIR}/arrivals.json", {"arrivals": []})
     vessel_db = load_json(f"{DATA_DIR}/vessels.json", {})
     monthly = load_json(f"{DATA_DIR}/monthly-estimates.json", {"months": {}})
@@ -83,7 +85,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
 
     print("Step 2: Detecting port arrivals...")
     new_arrivals = detect_arrivals(
-        current_snapshot, previous_snapshot, ports, arrivals_data["arrivals"]
+        current_snapshot, vessel_db, ports, arrivals_data["arrivals"]
     )
     arrivals_data["arrivals"].extend(new_arrivals)
     save_json(f"{DATA_DIR}/arrivals.json", arrivals_data)
@@ -95,7 +97,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     print(f"  {len(vessel_db)} vessels in database")
 
     print("Step 4: Updating monthly estimates...")
-    monthly = update_monthly_estimates(monthly, new_arrivals, current_snapshot)
+    monthly = update_monthly_estimates(monthly, new_arrivals, vessel_db)
     save_json(f"{DATA_DIR}/monthly-estimates.json", monthly)
 
     print("Step 5: Checking petroleum statistics...")
