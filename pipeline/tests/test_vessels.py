@@ -112,3 +112,70 @@ def test_build_in_transit_omits_static_top_level_fields():
     assert "ship_type" not in in_transit
     assert "vessel_class" not in in_transit
     assert "dwt" not in in_transit
+
+
+from pipeline.vessels import prune_stale_in_transit, STALENESS_DAYS
+
+
+def test_prune_clears_in_transit_older_than_threshold():
+    db = {
+        "9000001": {
+            "name": "Old Tanker", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-03-01T00:00:00Z",
+            "last_seen": "2026-03-31T00:00:00Z",
+            "arrival_count": 0,
+            "in_transit": {
+                "lat": -10.0, "lon": 110.0, "speed": 12.0,
+                "course": 180.0, "heading": 180.0, "draught": 14.5,
+                "destination": "AU FRE", "destination_parsed": "Fremantle",
+                "region": "AU_APPROACH",
+                "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
+                "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
+                "mmsi": "100000001",
+                "last_position_update": "2026-03-31T00:00:00Z",  # 14+ days old
+            },
+        }
+    }
+    prune_stale_in_transit(db, now="2026-04-14T12:00:00Z")
+    assert db["9000001"]["in_transit"] is None
+
+
+def test_prune_keeps_in_transit_within_threshold():
+    db = {
+        "9000002": {
+            "name": "Recent Tanker", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-13T00:00:00Z",
+            "arrival_count": 0,
+            "in_transit": {
+                "lat": -10.0, "lon": 110.0, "speed": 12.0,
+                "course": 180.0, "heading": 180.0, "draught": 14.5,
+                "destination": "AU FRE", "destination_parsed": "Fremantle",
+                "region": "AU_APPROACH",
+                "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
+                "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
+                "mmsi": "100000002",
+                "last_position_update": "2026-04-13T00:00:00Z",  # 1 day old
+            },
+        }
+    }
+    prune_stale_in_transit(db, now="2026-04-14T12:00:00Z")
+    assert db["9000002"]["in_transit"] is not None
+
+
+def test_prune_skips_records_without_in_transit():
+    # Already-arrived (or migration) records have no in_transit. No mutation.
+    db = {
+        "9000003": {
+            "name": "Arrived Tanker", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-03-01T00:00:00Z",
+            "last_seen": "2026-04-13T00:00:00Z",
+            "arrival_count": 1,
+            # no in_transit key at all
+        }
+    }
+    prune_stale_in_transit(db, now="2026-04-14T12:00:00Z")
+    assert "in_transit" not in db["9000003"]
