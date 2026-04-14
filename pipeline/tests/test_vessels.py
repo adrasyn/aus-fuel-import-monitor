@@ -386,3 +386,102 @@ def test_migrate_multiple_records_mixed():
     assert db["9000001"]["in_transit"] is not None
     assert db["9000002"]["in_transit"]["last_position_update"] == "2026-04-14T00:00:00Z"
     assert "in_transit" not in db["9000003"]
+
+
+# ---------- revalidate_in_transit ----------
+from pipeline.vessels import revalidate_in_transit
+
+
+def _record_with_in_transit(lat: float, lon: float, destination_parsed, region: str = "STALE") -> dict:
+    return {
+        "name": "Test Tanker", "vessel_class": "Aframax", "dwt": 100000,
+        "length": 245, "beam": 44, "ship_type": "crude",
+        "first_seen": "2026-04-13T00:00:00Z",
+        "last_seen": "2026-04-14T12:00:00Z",
+        "arrival_count": 0,
+        "in_transit": {
+            "mmsi": "636000000",
+            "lat": lat, "lon": lon,
+            "speed": 12.0, "course": 180.0, "heading": 180.0, "draught": 14.0,
+            "destination": "", "destination_parsed": destination_parsed,
+            "region": region,
+            "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
+            "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
+            "last_position_update": "2026-04-14T12:00:00Z",
+        },
+    }
+
+
+def test_revalidate_clears_java_sea_record_with_no_au_destination():
+    # Java Sea coordinates, no AU destination — should be dropped under current rules.
+    # Simulates the Indonesia bug: data from an era where the record was tagged
+    # AU_APPROACH, now reclassifies as JAVA_SEA which requires AU destination.
+    db = {
+        "9000001": _record_with_in_transit(-6.85, 112.44, destination_parsed=None, region="AU_APPROACH"),
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 1
+    assert db["9000001"]["in_transit"] is None
+
+
+def test_revalidate_keeps_au_approach_record_without_destination():
+    # Deep inside AU_APPROACH with no destination is still valid — AU_APPROACH
+    # keeps unconditionally.
+    db = {
+        "9000002": _record_with_in_transit(-32.0, 115.0, destination_parsed=None, region="AU_APPROACH"),
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 0
+    assert db["9000002"]["in_transit"] is not None
+
+
+def test_revalidate_updates_stored_region_to_current_classification():
+    # A record previously stored as AU_APPROACH but whose coordinates now
+    # classify as JAVA_SEA — retention still passes (it has an AU destination)
+    # but the stored region should be refreshed to JAVA_SEA.
+    db = {
+        "9000003": _record_with_in_transit(-6.85, 112.44, destination_parsed="Fremantle", region="AU_APPROACH"),
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 0
+    assert db["9000003"]["in_transit"]["region"] == "JAVA_SEA"
+
+
+def test_revalidate_skips_records_without_in_transit():
+    db = {
+        "9000004": {
+            "name": "Arrived Tanker", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-13T00:00:00Z",
+            "arrival_count": 1,
+            # no in_transit key
+        },
+        "9000005": {
+            "name": "Arrived Tanker 2", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-13T00:00:00Z",
+            "arrival_count": 1,
+            "in_transit": None,  # explicit None
+        },
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 0
+    assert "in_transit" not in db["9000004"]
+    assert db["9000005"]["in_transit"] is None
+
+
+def test_revalidate_multiple_records_mixed():
+    db = {
+        "9000001": _record_with_in_transit(-6.85, 112.44, destination_parsed=None),       # Java Sea, no AU dest → clear
+        "9000002": _record_with_in_transit(-32.0, 115.0, destination_parsed=None),        # AU_APPROACH → keep
+        "9000003": _record_with_in_transit(-6.85, 112.44, destination_parsed="Fremantle"), # Java Sea with AU dest → keep (region updated)
+        "9000004": _record_with_in_transit(0.0, -30.0, destination_parsed=None),           # mid-Atlantic → classify_region returns None → clear
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 2
+    assert db["9000001"]["in_transit"] is None
+    assert db["9000002"]["in_transit"] is not None
+    assert db["9000003"]["in_transit"]["region"] == "JAVA_SEA"
+    assert db["9000004"]["in_transit"] is None
