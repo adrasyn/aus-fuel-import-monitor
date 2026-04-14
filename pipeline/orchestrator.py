@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 from pipeline.collector import run_collector
 from pipeline.arrivals import detect_arrivals, load_ports
-from pipeline.vessels import update_vessel_db, migrate_missing_in_transit
+from pipeline.vessels import update_vessel_db, migrate_missing_in_transit, revalidate_in_transit
 from pipeline.daily_estimates import update_daily_estimates
 from pipeline.petroleum_stats import download_latest_excel, build_imports_json
 
@@ -83,8 +83,12 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     ports = load_ports(f"{DATA_DIR}/ports.json")
 
     migrated = migrate_missing_in_transit(vessel_db, previous_snapshot)
+    revalidated = revalidate_in_transit(vessel_db)
     if migrated:
         print(f"Migration: backfilled in_transit on {migrated} record(s) from previous snapshot")
+    if revalidated:
+        print(f"Revalidation: cleared in_transit on {revalidated} record(s) (no longer pass current retention rule)")
+    if migrated or revalidated:
         save_json(f"{DATA_DIR}/vessels.json", vessel_db)
 
     print("Step 1: Collecting from AISStream...")

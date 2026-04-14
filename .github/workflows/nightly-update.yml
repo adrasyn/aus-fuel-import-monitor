@@ -1,22 +1,21 @@
-name: Nightly Data Update & Deploy
+name: Nightly Data Update
 
 on:
   schedule:
-    # Run at 16:00 UTC (02:00 AEST)
-    - cron: "0 16 * * *"
+    # 02:00 UTC = 03:00 BST (currently) / 02:00 GMT (in winter)
+    - cron: "0 2 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
+# Prevent overlapping runs from racing on data/vessels.json, etc.
 concurrency:
-  group: "pages"
+  group: nightly-update
   cancel-in-progress: false
 
 jobs:
-  collect-and-deploy:
+  collect:
     runs-on: ubuntu-latest
     timeout-minutes: 45
 
@@ -52,23 +51,3 @@ jobs:
           git commit -m "data: nightly update $(date -u +%Y-%m-%d)"
           git pull --rebase origin main
           git push
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
-
-      - name: Install Node dependencies
-        run: npm ci
-
-      - name: Build Next.js static site
-        run: npm run build
-
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: out
-
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4

@@ -2,6 +2,7 @@
 
 from datetime import datetime, timedelta, timezone
 from pipeline.cargo import classify_vessel, TANKER_CLASSES
+from pipeline.regions import classify_region, should_keep_vessel
 
 STALENESS_DAYS = 14
 
@@ -94,6 +95,30 @@ def migrate_missing_in_transit(db: dict, snapshot: dict) -> int:
         record["in_transit"] = build_in_transit(snap_row, now=timestamp)
         count += 1
     return count
+
+
+def revalidate_in_transit(db: dict) -> int:
+    """Re-apply current region classification and retention rule to every
+    in_transit block. Clears in_transit on records that no longer qualify,
+    and updates the stored region on records that still do.
+
+    Returns the number of records whose in_transit was cleared.
+    """
+    cleared = 0
+    for record in db.values():
+        in_transit = record.get("in_transit")
+        if not in_transit:
+            continue
+        lat = in_transit.get("lat", 0.0)
+        lon = in_transit.get("lon", 0.0)
+        destination_parsed = in_transit.get("destination_parsed")
+        region = classify_region(lat, lon)
+        if not should_keep_vessel(region, destination_parsed):
+            record["in_transit"] = None
+            cleared += 1
+            continue
+        in_transit["region"] = region or ""
+    return cleared
 
 
 def prune_stale_in_transit(db: dict, now: str) -> None:
