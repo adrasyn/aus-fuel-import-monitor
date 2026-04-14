@@ -29,6 +29,7 @@ Replace the single `AU_BOUNDING_BOX` constant with a named list of regions, each
 |---|---|---|
 | `AU_APPROACH` | `-50, 90 → -5, 170` (current) | keep all tankers |
 | `SE_ASIA` | `-5, 95 → 10, 120` (Singapore, Malaysia, Indonesian straits) | keep only AU-destined |
+| `PHILIPPINES` | `5, 117 → 20, 127` (Luzon + Visayas + Mindanao export ports) | keep only AU-destined |
 | `CHINA` | `18, 108 → 41, 125` (east-coast export ports) | keep only AU-destined |
 | `KOREA_JAPAN` | `30, 125 → 45, 145` | keep only AU-destined |
 | `INDIA` | `5, 65 → 25, 90` | keep only AU-destined |
