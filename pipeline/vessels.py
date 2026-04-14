@@ -26,10 +26,12 @@ def build_in_transit(snapshot_row: dict, now: str) -> dict:
 def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | None = None) -> dict:
     now = datetime.now(timezone.utc).isoformat()
 
+    pinged_imos = set()
     for vessel in vessels:
         imo = vessel.get("imo", "")
         if not imo:
             continue
+        pinged_imos.add(imo)
 
         vessel_class = classify_vessel(vessel.get("length", 0), vessel.get("beam", 0))
         dwt = TANKER_CLASSES[vessel_class]["dwt"]
@@ -50,11 +52,17 @@ def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | N
                 "arrival_count": 0,
             }
 
+        # Rebuild in_transit from this fresh ping
+        db[imo]["in_transit"] = build_in_transit(vessel, now=now)
+
     if new_arrivals:
         for arrival in new_arrivals:
             imo = arrival.get("imo", "")
             if imo in db:
                 db[imo]["arrival_count"] += 1
+                db[imo]["in_transit"] = None  # arrived → no longer in transit
+
+    prune_stale_in_transit(db, now=now)
 
     return db
 

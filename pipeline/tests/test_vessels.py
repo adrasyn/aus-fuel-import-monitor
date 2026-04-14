@@ -179,3 +179,99 @@ def test_prune_skips_records_without_in_transit():
     }
     prune_stale_in_transit(db, now="2026-04-14T12:00:00Z")
     assert "in_transit" not in db["9000003"]
+
+
+def test_update_vessel_db_populates_in_transit_for_pinged_vessels():
+    db = {}
+    vessels = [
+        {
+            "imo": "9876543", "mmsi": "636019825", "name": "Test Tanker",
+            "length": 245, "beam": 44, "draught": 14.5,
+            "ship_type": "crude",
+            "lat": -25.5, "lon": 130.2,
+            "speed": 12.4, "course": 180.0, "heading": 180.0,
+            "destination": "AU GLT", "destination_parsed": "Gladstone",
+            "region": "AU_APPROACH",
+            "cargo_litres": 95_000_000, "cargo_tonnes": 80_000,
+            "load_factor": 0.95, "is_ballast": False, "draught_missing": False,
+        }
+    ]
+    updated = update_vessel_db(db, vessels)
+    assert updated["9876543"]["in_transit"] is not None
+    assert updated["9876543"]["in_transit"]["destination_parsed"] == "Gladstone"
+    assert updated["9876543"]["in_transit"]["lat"] == -25.5
+
+
+def test_update_vessel_db_preserves_in_transit_for_unseen_vessel():
+    # Vessel was in the roster yesterday with in_transit set; not pinged today.
+    # Today's snapshot is empty for this IMO — in_transit must persist.
+    yesterday_in_transit = {
+        "mmsi": "636019825", "lat": -10.0, "lon": 100.0,
+        "speed": 12.0, "course": 90.0, "heading": 90.0, "draught": 14.5,
+        "destination": "AU FRE", "destination_parsed": "Fremantle",
+        "region": "AU_APPROACH",
+        "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
+        "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
+        "last_position_update": "2026-04-13T00:00:00Z",
+    }
+    db = {
+        "9876543": {
+            "name": "Test Tanker", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-13T00:00:00Z",
+            "arrival_count": 0,
+            "in_transit": yesterday_in_transit,
+        }
+    }
+    updated = update_vessel_db(db, [])  # empty snapshot
+    assert updated["9876543"]["in_transit"] == yesterday_in_transit
+
+
+def test_update_vessel_db_clears_in_transit_on_arrival():
+    db = {
+        "9876543": {
+            "name": "Test Tanker", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-13T00:00:00Z",
+            "arrival_count": 0,
+            "in_transit": {
+                "mmsi": "636019825", "lat": -38.0, "lon": 144.4,
+                "speed": 0.5, "course": 0.0, "heading": 0.0, "draught": 14.5,
+                "destination": "AU GEE", "destination_parsed": "Geelong",
+                "region": "AU_APPROACH",
+                "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
+                "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
+                "last_position_update": "2026-04-13T22:00:00Z",
+            },
+        }
+    }
+    new_arrivals = [{"imo": "9876543", "port": "Geelong"}]
+    updated = update_vessel_db(db, [], new_arrivals=new_arrivals)
+    assert updated["9876543"]["in_transit"] is None
+    assert updated["9876543"]["arrival_count"] == 1
+
+
+def test_update_vessel_db_prunes_stale_in_transit():
+    # Vessel last pinged 20 days ago — must be cleared.
+    db = {
+        "9876543": {
+            "name": "Old Tanker", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-03-01T00:00:00Z",
+            "last_seen": "2026-03-25T00:00:00Z",
+            "arrival_count": 0,
+            "in_transit": {
+                "mmsi": "636019825", "lat": -10.0, "lon": 110.0,
+                "speed": 12.0, "course": 180.0, "heading": 180.0, "draught": 14.5,
+                "destination": "AU FRE", "destination_parsed": "Fremantle",
+                "region": "AU_APPROACH",
+                "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
+                "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
+                "last_position_update": "2026-03-25T00:00:00Z",
+            },
+        }
+    }
+    updated = update_vessel_db(db, [])  # no fresh ping
+    assert updated["9876543"]["in_transit"] is None
