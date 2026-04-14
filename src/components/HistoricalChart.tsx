@@ -61,7 +61,16 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
   const now = new Date();
   const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
 
+  // Hide the pipeline's starting (incomplete) month: if the earliest AIS-estimate
+  // month IS the current month, we have no complete historical data for it, just
+  // a partial collection since project start. Skip it until the next month begins.
+  const earliestEstimateMonth = estimateMonths.length > 0 ? estimateMonths[0][0] : null;
+  const hideStartingMonth = earliestEstimateMonth === currentMonth;
+
   for (const [month, est] of estimateMonths) {
+    if (hideStartingMonth && month === currentMonth) {
+      continue;
+    }
     const isCurrent = month === currentMonth;
     const crudeMl = (est.arrived_crude_litres + (isCurrent ? est.en_route_crude_litres : 0)) / 1_000_000;
     const productMl = (est.arrived_product_litres + (isCurrent ? est.en_route_product_litres : 0)) / 1_000_000;
@@ -129,7 +138,9 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
       <div className="flex flex-wrap gap-4 mt-2 text-[9px] text-label-light">
         <span><span className="inline-block w-3 h-3 bg-border-heavy mr-1 align-middle" /> Solid = government data</span>
         <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle" /> Faded = AIS estimate (provisional)</span>
-        <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle border border-dashed border-border-heavy" /> Dashed = current month (to date)</span>
+        {chartData.some((r) => r.source === "current_month") && (
+          <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle border border-dashed border-border-heavy" /> Dashed = current month (to date)</span>
+        )}
       </div>
     </div>
   );
