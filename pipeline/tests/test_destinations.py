@@ -44,3 +44,28 @@ def test_gladstone():
 
 def test_adelaide():
     assert parse_destination("ADELAIDE") == "Adelaide"
+
+
+def test_everglades_does_not_false_match_gladstone():
+    # "glad" is a substring of "everglades" but not a word inside it
+    assert parse_destination("EVERGLADES") is None
+
+
+def test_port_everglades_does_not_false_match_gladstone():
+    # Real-world false positive observed in first multi-region run
+    assert parse_destination("PORT EVERGLADES") is None
+
+
+def test_bare_glad_still_matches_gladstone():
+    # Whitespace-delimited bare abbreviation must still resolve
+    assert parse_destination("GLAD") == "Gladstone"
+
+
+def test_au_glad_still_matches_gladstone():
+    # Country-prefixed short form must still resolve
+    assert parse_destination("AU GLAD") == "Gladstone"
+
+
+def test_freeport_does_not_false_match_fremantle():
+    # "fre" is a substring of "freeport" but not a word inside it
+    assert parse_destination("FREEPORT") is None
