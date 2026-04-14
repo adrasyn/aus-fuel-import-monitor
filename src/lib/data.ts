@@ -6,6 +6,7 @@ import type {
   VesselDb,
   Arrival,
   MonthlyEstimates,
+  DailyEstimates,
   ImportsData,
   DashboardData,
 } from "./types";
@@ -73,6 +74,10 @@ export function loadDashboardData(): DashboardData {
     "monthly-estimates.json",
     { months: {} }
   );
+  const dailyEstimates = readJson<DailyEstimates>(
+    "daily-estimates.json",
+    { days: {} }
+  );
   const imports = readJson<ImportsData>("imports.json", {
     imports_by_month: [],
     consumption_cover: [],
@@ -81,6 +86,7 @@ export function loadDashboardData(): DashboardData {
     snapshot,
     arrivals: arrivalsData.arrivals,
     monthlyEstimates,
+    dailyEstimates,
     imports,
   };
 }
