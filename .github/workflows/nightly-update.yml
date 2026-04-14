@@ -9,6 +9,11 @@ on:
 permissions:
   contents: write
 
+# Prevent overlapping runs from racing on data/vessels.json, etc.
+concurrency:
+  group: nightly-update
+  cancel-in-progress: false
+
 jobs:
   collect:
     runs-on: ubuntu-latest
