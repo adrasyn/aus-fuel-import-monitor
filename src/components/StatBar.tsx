@@ -1,4 +1,5 @@
 import type { Vessel, MsoReserve } from "@/lib/types";
+import { formatLitres } from "@/lib/data";
 
 interface StatBarProps {
   vessels: Vessel[];
@@ -36,20 +37,14 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
   const crudeLitres = crude.reduce((sum, v) => sum + v.cargo_litres, 0);
   const productLitres = product.reduce((sum, v) => sum + v.cargo_litres, 0);
 
-  const formatBL = (litres: number) => {
-    if (litres >= 1_000_000_000) return `${(litres / 1_000_000_000).toFixed(1)}B L`;
-    if (litres >= 1_000_000) return `${(litres / 1_000_000).toFixed(0)}M L`;
-    return `${litres.toLocaleString()} L`;
-  };
-
   return (
     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-5 mb-6 border-b border-border">
       <div className="flex flex-col gap-3">
         <div className="flex flex-wrap gap-x-8 gap-y-4">
           <Stat value={String(crude.length)} label="Crude oil tankers" />
           <Stat value={String(product.length)} label="Product tankers" />
-          <Stat value={formatBL(crudeLitres)} label="Crude oil est." />
-          <Stat value={formatBL(productLitres)} label="Refined products est." />
+          <Stat value={formatLitres(crudeLitres)} label="Crude oil est." />
+          <Stat value={formatLitres(productLitres)} label="Refined products est." />
           {msoReserve?.fuels?.map((fuel) => (
             <Stat
               key={fuel.key}
@@ -65,6 +60,7 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
               href={msoReserve.source_url}
               target="_blank"
               rel="noopener noreferrer"
+              aria-label="DCCEEW Minimum Stockholding Obligation statistics source"
               className="underline hover:text-label"
             >
               source
