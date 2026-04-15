@@ -39,23 +39,26 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
 
   return (
     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-5 mb-6 border-b border-border">
-      <div className="flex flex-col gap-3">
-        <div className="flex flex-wrap gap-x-8 gap-y-4">
-          <Stat value={String(crude.length)} label="Crude oil tankers" />
-          <Stat value={String(product.length)} label="Product tankers" />
-          <Stat value={formatLitres(crudeLitres)} label="Crude oil est." />
-          <Stat value={formatLitres(productLitres)} label="Refined products est." />
-          {msoReserve?.fuels?.map((fuel) => (
-            <Stat
-              key={fuel.key}
-              value={String(fuel.days)}
-              label={`${fuel.label} days`}
-            />
-          ))}
-        </div>
+      <div className="flex flex-wrap gap-x-8 gap-y-4">
+        <Stat value={String(crude.length)} label="Crude oil tankers" />
+        <Stat value={String(product.length)} label="Product tankers" />
+        <Stat value={formatLitres(crudeLitres)} label="Crude oil est." />
+        <Stat value={formatLitres(productLitres)} label="Refined products est." />
+        {msoReserve?.fuels?.map((fuel) => (
+          <Stat
+            key={fuel.key}
+            value={String(fuel.days)}
+            label={`Days of ${fuel.label.toLowerCase()} reserves`}
+          />
+        ))}
+      </div>
+      <div className="flex flex-col gap-2 max-w-[280px] md:text-right leading-snug">
+        <p className="text-[10px] text-label-light">
+          Tracking only ships within terrestrial AIS range (~30nm of coastal receivers). Vessels mid-ocean &mdash; e.g. crossing the Pacific &mdash; won&apos;t appear until they&apos;re near a receiver.
+        </p>
         {msoReserve && (
           <p className="text-[10px] text-label-light">
-            MSO reserve · as of {formatAsOf(msoReserve.as_of)} ·{" "}
+            MSO reserve &middot; as of {formatAsOf(msoReserve.as_of)} &middot;{" "}
             <a
               href={msoReserve.source_url}
               target="_blank"
@@ -68,9 +71,6 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
           </p>
         )}
       </div>
-      <p className="text-[10px] text-label-light max-w-[280px] md:text-right leading-snug">
-        Tracking only ships within terrestrial AIS range (~30nm of coastal receivers). Vessels mid-ocean &mdash; e.g. crossing the Pacific &mdash; won&apos;t appear until they&apos;re near a receiver.
-      </p>
     </div>
   );
 }
