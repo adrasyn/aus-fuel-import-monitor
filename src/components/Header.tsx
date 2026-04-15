@@ -34,13 +34,15 @@ export default function Header({ snapshot, totalLitres, vesselCount }: HeaderPro
           {vesselCount} tankers carrying an estimated {litresFormatted} of fuel
           are en route to Australia
         </h1>
-        <p className="text-[10px] text-label-light whitespace-nowrap text-right hidden sm:block">
-          Updated {timestamp}
-        </p>
+        <div className="text-[10px] text-label-light whitespace-nowrap text-right hidden sm:block leading-snug">
+          <p>Updated daily at 6am AEST</p>
+          <p>Last updated {timestamp}</p>
+        </div>
       </div>
-      <p className="text-[10px] text-label-light mt-1 sm:hidden">
-        Updated {timestamp}
-      </p>
+      <div className="text-[10px] text-label-light mt-1 sm:hidden leading-snug">
+        <p>Updated daily at 6am AEST</p>
+        <p>Last updated {timestamp}</p>
+      </div>
     </header>
   );
 }
