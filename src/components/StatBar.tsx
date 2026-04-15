@@ -39,18 +39,24 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
 
   return (
     <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 pb-5 mb-6 border-b border-border">
-      <div className="flex flex-wrap gap-x-8 gap-y-4">
-        <Stat value={String(crude.length)} label="Crude oil tankers" />
-        <Stat value={String(product.length)} label="Product tankers" />
-        <Stat value={formatLitres(crudeLitres)} label="Crude oil est." />
-        <Stat value={formatLitres(productLitres)} label="Refined products est." />
-        {msoReserve?.fuels?.map((fuel) => (
-          <Stat
-            key={fuel.key}
-            value={String(fuel.days)}
-            label={`Days of ${fuel.label.toLowerCase()} reserves`}
-          />
-        ))}
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-wrap gap-x-8 gap-y-4">
+          <Stat value={String(crude.length)} label="Crude oil tankers" />
+          <Stat value={String(product.length)} label="Product tankers" />
+          <Stat value={formatLitres(crudeLitres)} label="Crude oil est." />
+          <Stat value={formatLitres(productLitres)} label="Refined products est." />
+        </div>
+        {msoReserve?.fuels && msoReserve.fuels.length > 0 && (
+          <div className="flex flex-wrap gap-x-8 gap-y-4">
+            {msoReserve.fuels.map((fuel) => (
+              <Stat
+                key={fuel.key}
+                value={String(fuel.days)}
+                label={`Days of ${fuel.label.toLowerCase()} reserves`}
+              />
+            ))}
+          </div>
+        )}
       </div>
       <div className="flex flex-col gap-2 max-w-[280px] md:text-right leading-snug">
         <p className="text-[10px] text-label-light">
