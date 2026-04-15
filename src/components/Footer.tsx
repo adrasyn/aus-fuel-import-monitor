@@ -8,6 +8,9 @@ export default function Footer() {
         readings. This site is not affiliated with AMSA or the Australian Government.
       </p>
       <p className="text-[10px] text-label-light mt-3">
+        Data refreshes daily at 06:00 AEST.
+      </p>
+      <p className="text-[10px] text-label-light mt-3">
         With love from{" "}
         <a href="https://x.com/jameswilson" target="_blank" rel="noopener noreferrer"
           className="underline hover:text-label">James Wilson</a>
