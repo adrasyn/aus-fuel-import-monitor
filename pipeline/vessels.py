@@ -12,7 +12,7 @@ STALENESS_DAYS = 14
 # Static fields (name, length, beam, ship_type, vessel_class, dwt) stay on
 # the parent vessel record and must not be duplicated here.
 _IN_TRANSIT_FIELDS = (
-    "mmsi", "lat", "lon", "speed", "course", "heading", "draught",
+    "mmsi", "lat", "lon", "speed", "course", "draught",
     "destination", "destination_parsed", "region",
     "cargo_litres", "cargo_tonnes", "load_factor",
     "is_ballast", "draught_missing",

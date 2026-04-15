@@ -28,8 +28,14 @@ def save_json(path: str, data) -> None:
     print(f"  Saved {path}")
 
 
-def update_monthly_estimates(monthly: dict, new_arrivals: list[dict], vessel_db: dict) -> dict:
-    now = datetime.now(timezone.utc)
+def update_monthly_estimates(
+    monthly: dict,
+    new_arrivals: list[dict],
+    vessel_db: dict,
+    now: datetime | None = None,
+) -> dict:
+    if now is None:
+        now = datetime.now(timezone.utc)
     month_key = now.strftime("%Y-%m")
 
     if month_key not in monthly.get("months", {}):
@@ -75,6 +81,10 @@ def update_monthly_estimates(monthly: dict, new_arrivals: list[dict], vessel_db:
 def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     os.makedirs(DATA_DIR, exist_ok=True)
 
+    # One `now` per pipeline run — ensures monthly and daily estimates agree
+    # on the date boundary even if the run straddles UTC midnight.
+    now = datetime.now(timezone.utc)
+
     previous_snapshot = load_json(f"{DATA_DIR}/snapshot.json", {"vessels": []})
     arrivals_data = load_json(f"{DATA_DIR}/arrivals.json", {"arrivals": []})
     vessel_db = load_json(f"{DATA_DIR}/vessels.json", {})
@@ -113,11 +123,11 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     print(f"  {len(vessel_db)} vessels in database")
 
     print("Step 4: Updating monthly estimates...")
-    monthly = update_monthly_estimates(monthly, new_arrivals, vessel_db)
+    monthly = update_monthly_estimates(monthly, new_arrivals, vessel_db, now=now)
     save_json(f"{DATA_DIR}/monthly-estimates.json", monthly)
 
     print("Step 5: Updating daily estimates...")
-    daily = update_daily_estimates(daily, vessel_db, datetime.now(timezone.utc))
+    daily = update_daily_estimates(daily, vessel_db, now)
     save_json(f"{DATA_DIR}/daily-estimates.json", daily)
 
     print("Step 6: Checking petroleum statistics...")

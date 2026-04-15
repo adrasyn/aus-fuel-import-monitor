@@ -76,11 +76,14 @@ export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartP
         <Tooltip
           formatter={(value) => {
             const ml = value as number | null;
-            return ml === null ? "—" : [`${Math.round(ml)} ML`];
+            return ml === null ? ["—"] : [`${Math.round(ml)} ML`];
           }}
           labelFormatter={(label) => formatDate(String(label))}
         />
-        <Legend wrapperStyle={{ fontSize: 10, color: "#000" }} />
+        <Legend
+          wrapperStyle={{ fontSize: 10 }}
+          formatter={(value) => <span style={{ color: "#000" }}>{value}</span>}
+        />
         <Area
           type="monotone"
           dataKey="product"

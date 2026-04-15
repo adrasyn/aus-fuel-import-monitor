@@ -1,4 +1,7 @@
 interface StaleBannerProps {
+  // timestamp is max(last_position_update) across the current in-transit
+  // roster — i.e. the freshest ping we have for any tracked vessel. Shifts
+  // forward as individual vessels re-broadcast even between pipeline runs.
   timestamp: string;
 }
 

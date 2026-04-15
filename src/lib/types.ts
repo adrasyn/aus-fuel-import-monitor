@@ -29,7 +29,6 @@ interface VesselDbInTransit {
   lon: number;
   speed: number;
   course: number;
-  heading: number;
   draught: number;
   destination: string;
   destination_parsed: string | null;

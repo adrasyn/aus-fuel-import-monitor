@@ -93,7 +93,7 @@ export default function VesselMap({ vessels, selectedImo, onSelectVessel }: Vess
                   </span>
                 </p>
                 <p>Est. cargo: {(vessel.cargo_litres / 1_000_000).toFixed(0)}M L{vessel.draught_missing && " *"}</p>
-                <p>Dest: {vessel.destination_parsed || vessel.destination || "Unknown"}</p>
+                <p>Dest: {vessel.destination || "—"}</p>
                 <p>Speed: {vessel.speed.toFixed(1)} kn</p>
                 {vessel.is_ballast && <p className="text-label-light italic">Ballast (empty)</p>}
                 {lastSeenLabel && (

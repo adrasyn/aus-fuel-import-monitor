@@ -3,6 +3,7 @@
 import asyncio
 import json
 import os
+import re
 import time
 from datetime import datetime, timezone
 
@@ -23,6 +24,10 @@ AISSTREAM_URL = "wss://stream.aisstream.io/v0/stream"
 # and drop non-tankers; the crude/product split is done later via
 # pipeline.classification (AIS codes don't distinguish the two reliably).
 TANKER_TYPE_CODES = set(range(80, 90))
+
+# 5-letter UN/LOCODE starting with AU. Destinations matching this but failing
+# the parser flag unknown Australian ports we could add to the pattern list.
+_AU_LOCODE_RE = re.compile(r"^AU[A-Z]{3}$")
 
 
 async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
@@ -129,6 +134,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
     # Post-process: filter to tankers only, add cargo estimates
     overrides = load_overrides()
+    unknown_au_locodes: dict[str, int] = {}
     result_vessels = []
     for vessel in vessels.values():
         # Skip vessels with no position
@@ -153,6 +159,12 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
             imo=vessel.get("imo"),
             overrides=overrides,
         )
+
+        # Track AU LOCODE-shaped destinations the parser didn't recognise,
+        # so we can grow the port pattern list as new codes appear.
+        raw_dest = (vessel.get("destination") or "").strip().upper()
+        if _AU_LOCODE_RE.match(raw_dest) and vessel.get("destination_parsed") is None:
+            unknown_au_locodes[raw_dest] = unknown_au_locodes.get(raw_dest, 0) + 1
 
         # Region-based retention: all tankers in AU_APPROACH; elsewhere
         # only vessels whose declared destination parses as Australian.
@@ -181,6 +193,8 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
     count = len(result_vessels)
     tanker_count = len([v for v in result_vessels if not v["is_ballast"]])
     print(f"  Filtered to {count} tanker vessels ({tanker_count} laden, {count - tanker_count} ballast)")
+    if unknown_au_locodes:
+        print(f"  Unrecognised AU LOCODEs ({len(unknown_au_locodes)} unique): {unknown_au_locodes}")
 
     return {
         "timestamp": datetime.now(timezone.utc).isoformat(),
