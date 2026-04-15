@@ -8,6 +8,7 @@ import type {
   MonthlyEstimates,
   DailyEstimates,
   ImportsData,
+  MsoReserve,
   DashboardData,
 } from "./types";
 
@@ -82,12 +83,14 @@ export function loadDashboardData(): DashboardData {
     imports_by_month: [],
     consumption_cover: [],
   });
+  const msoReserve = readJson<MsoReserve | null>("mso-reserves.json", null);
   return {
     snapshot,
     arrivals: arrivalsData.arrivals,
     monthlyEstimates,
     dailyEstimates,
     imports,
+    msoReserve,
   };
 }
 

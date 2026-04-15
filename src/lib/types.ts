@@ -124,10 +124,24 @@ export interface ImportsData {
   consumption_cover: ConsumptionRecord[];
 }
 
+export interface MsoReserveFuel {
+  key: string;
+  label: string;
+  days: number;
+}
+
+export interface MsoReserve {
+  source: string;
+  source_url: string;
+  as_of: string; // ISO YYYY-MM-DD
+  fuels: MsoReserveFuel[];
+}
+
 export interface DashboardData {
   snapshot: Snapshot;
   arrivals: Arrival[];
   monthlyEstimates: MonthlyEstimates;
   dailyEstimates: DailyEstimates;
   imports: ImportsData;
+  msoReserve: MsoReserve | null;
 }
