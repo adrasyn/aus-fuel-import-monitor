@@ -1,10 +1,5 @@
 {
   "days": {
-    "2026-04-14": {
-      "en_route_crude_litres": 468204848,
-      "en_route_product_litres": 104698182,
-      "captured_at": "2026-04-14T21:12:19.882898+00:00"
-    },
     "2026-04-15": {
       "en_route_crude_litres": 0,
       "en_route_product_litres": 367753100,
