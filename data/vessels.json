@@ -112,7 +112,7 @@
       "heading": 38,
       "draught": 5.6,
       "destination": "AU GLT",
-      "destination_parsed": "Australia (port unknown)",
+      "destination_parsed": "Gladstone",
       "region": "AU_APPROACH",
       "cargo_litres": 5751564,
       "cargo_tonnes": 4945,
@@ -194,7 +194,7 @@
       "heading": 168,
       "draught": 11.3,
       "destination": "AU KWI",
-      "destination_parsed": "Australia (port unknown)",
+      "destination_parsed": "Fremantle",
       "region": "AU_APPROACH",
       "cargo_litres": 45088615,
       "cargo_tonnes": 38769,
@@ -334,7 +334,7 @@
       "heading": 189,
       "draught": 10.3,
       "destination": "AU KWI",
-      "destination_parsed": "Australia (port unknown)",
+      "destination_parsed": "Fremantle",
       "region": "AU_APPROACH",
       "cargo_litres": 19771000,
       "cargo_tonnes": 17000,
@@ -564,23 +564,6 @@
     "first_seen": "2026-04-14T21:12:19.881850+00:00",
     "last_seen": "2026-04-14T21:12:19.881850+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "525008120",
-      "lat": 1.21547,
-      "lon": 103.81613,
-      "speed": 0.1,
-      "course": 144.6,
-      "heading": 155,
-      "draught": 8,
-      "destination": "BAU-BAU  IDN",
-      "destination_parsed": "Australia (port unknown)",
-      "region": "SE_ASIA",
-      "cargo_litres": 21470769,
-      "cargo_tonnes": 18462,
-      "load_factor": 0.462,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T21:12:19.881850+00:00"
-    }
+    "in_transit": null
   }
 }

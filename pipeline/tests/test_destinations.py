@@ -125,6 +125,43 @@ def test_bunbury_full_name():
     assert parse_destination("BUNBURY") == "Bunbury"
 
 
+def test_bau_bau_idn_does_not_false_match_australia():
+    # Real-world false positive: the substring "au " inside "BAU  IDN"
+    # (note double space) tripped the old substring-based AU indicator check.
+    # Bau-Bau is an Indonesian port; must not resolve as AU.
+    assert parse_destination("BAU-BAU  IDN") is None
+
+
+def test_bau_bau_single_space_does_not_false_match():
+    # Same class of bug with a single space between tokens
+    assert parse_destination("BAU-BAU IDN") is None
+
+
+# ---------- spaced LOCODE forms ----------
+# AIS operators often type the country code separately from the port code
+# ("AU GLT" instead of "AUGLT"). Both forms must resolve to the same port.
+
+
+def test_locode_au_glt_spaced_gladstone():
+    assert parse_destination("AU GLT") == "Gladstone"
+
+
+def test_locode_au_kwi_spaced_fremantle():
+    assert parse_destination("AU KWI") == "Fremantle"
+
+
+def test_locode_au_buy_spaced_bunbury():
+    assert parse_destination("AU BUY") == "Bunbury"
+
+
+def test_locode_au_btb_spaced_botany():
+    assert parse_destination("AU BTB") == "Sydney / Botany"
+
+
+def test_locode_au_pkl_spaced_port_kembla():
+    assert parse_destination("AU PKL") == "Port Kembla"
+
+
 # ---------- looks_foreign ----------
 
 def test_looks_foreign_nz_with_space():

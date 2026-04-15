@@ -3,22 +3,27 @@
 import re
 
 _PORT_PATTERNS: list[tuple[list[str], str]] = [
-    (["port kembla", "kembla", "pt kembla", "ptkembla", "aupkl"], "Port Kembla"),
-    (["botany", "sydney", "syd", "au syd", "pt botany", "ausyd", "aubtb"], "Sydney / Botany"),
+    (["port kembla", "kembla", "pt kembla", "ptkembla", "aupkl", "au pkl"], "Port Kembla"),
+    (["botany", "sydney", "syd", "au syd", "pt botany", "ausyd", "aubtb", "au btb"], "Sydney / Botany"),
     (["geelong", "gee", "au gee", "geelg"], "Geelong"),
     (["melbourne", "melb", "au mel", "au melb", "melbne", "aumel"], "Melbourne"),
     (["brisbane", "bris", "au bri", "bne", "aubne"], "Brisbane"),
-    (["gladstone", "glad", "au gla", "auglt"], "Gladstone"),
-    (["fremantle", "freo", "fre", "au fre", "fremantl", "aufre", "aukwi"], "Fremantle"),
+    (["gladstone", "glad", "au gla", "auglt", "au glt"], "Gladstone"),
+    (["fremantle", "freo", "fre", "au fre", "fremantl", "aufre", "aukwi", "au kwi"], "Fremantle"),
     (["adelaide", "adel", "au ade", "adl", "auadl"], "Adelaide"),
     (["darwin", "drw", "au dar", "audar"], "Darwin"),
     (["townsville", "tsv", "au tow", "twnsv", "autsv"], "Townsville"),
-    (["bunbury", "aubuy"], "Bunbury"),
+    (["bunbury", "aubuy", "au buy"], "Bunbury"),
 ]
 
-# Kept substring-based: entries encode their own whitespace delimiters
-# (e.g. "au ", " au") which word-boundary regex would mishandle at string ends.
-_AU_INDICATORS = ["australia", "au ", "aust", " au"]
+# Word-boundary regex so "au" as a standalone token / "aust*" prefix are
+# matched, but substrings inside larger words (e.g. "bau" in "BAU-BAU IDN")
+# are not. Previously these were plain substrings and "au " false-matched
+# inside "bau " before whitespace.
+_AU_INDICATOR_PATTERNS: list[re.Pattern[str]] = [
+    re.compile(r"\bau\b"),      # "AU" as a standalone country-code token
+    re.compile(r"\baust"),      # "aust", "austral", "australia", "australian"
+]
 
 # Precompile each port pattern with word boundaries so short abbreviations
 # like "glad" no longer substring-match inside words like "everglades".
@@ -37,9 +42,8 @@ def parse_destination(raw: str | None) -> str | None:
     for compiled_patterns, port_name in _COMPILED_PORT_PATTERNS:
         if any(p.search(cleaned) for p in compiled_patterns):
             return port_name
-    for indicator in _AU_INDICATORS:
-        if indicator in cleaned:
-            return "Australia (port unknown)"
+    if any(p.search(cleaned) for p in _AU_INDICATOR_PATTERNS):
+        return "Australia (port unknown)"
     return None
 
 
@@ -72,9 +76,8 @@ def looks_foreign(raw: str | None) -> bool:
         return False
     if parse_destination(raw) is not None:
         return False
-    for indicator in _AU_INDICATORS:
-        if indicator in cleaned:
-            return False
+    if any(p.search(cleaned) for p in _AU_INDICATOR_PATTERNS):
+        return False
     tokens = cleaned.split()
     if not tokens:
         return False
