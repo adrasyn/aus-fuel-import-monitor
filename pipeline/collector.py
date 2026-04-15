@@ -8,7 +8,8 @@ from datetime import datetime, timezone
 
 import websockets
 
-from pipeline.cargo import estimate_cargo
+from pipeline.cargo import classify_vessel, estimate_cargo
+from pipeline.classification import classify_ship_type, is_lng_carrier, load_overrides
 from pipeline.destinations import parse_destination
 from pipeline.regions import (
     bounding_boxes_for_subscription,
@@ -18,17 +19,10 @@ from pipeline.regions import (
 
 AISSTREAM_URL = "wss://stream.aisstream.io/v0/stream"
 
-# AIS ship type codes for tankers (excluding LNG/LPG)
+# AIS ship type code range for tankers. Used only as a gate to keep tankers
+# and drop non-tankers; the crude/product split is done later via
+# pipeline.classification (AIS codes don't distinguish the two reliably).
 TANKER_TYPE_CODES = set(range(80, 90))
-
-CRUDE_CODES = {80, 81, 82, 83, 84}
-PRODUCT_CODES = {85, 86, 87, 88, 89}
-
-
-def classify_ship_type(ais_type: int) -> str:
-    if ais_type in CRUDE_CODES:
-        return "crude"
-    return "product"
 
 
 async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
@@ -110,7 +104,6 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
                     # Ship type is in the static data message, NOT in MetaData
                     ais_type = static.get("Type", 0)
                     vessel["ais_type_code"] = ais_type
-                    vessel["ship_type"] = classify_ship_type(ais_type)
                     vessel["imo"] = str(static.get("ImoNumber", ""))
                     vessel["name"] = static.get("Name", vessel["name"]).strip()
                     vessel["draught"] = static.get("MaximumStaticDraught", 0.0)
@@ -135,6 +128,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
             print(f"    {sample}")
 
     # Post-process: filter to tankers only, add cargo estimates
+    overrides = load_overrides()
     result_vessels = []
     for vessel in vessels.values():
         # Skip vessels with no position
@@ -144,6 +138,21 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
         # Only keep tankers (type 80-89) — skip vessels where we never got static data
         if vessel["ais_type_code"] not in TANKER_TYPE_CODES:
             continue
+
+        # LNG carriers: excluded by project scope (AIS can't distinguish them
+        # from other tankers by type code, so we filter by vessel name).
+        if is_lng_carrier(vessel.get("name", "")):
+            continue
+
+        # Classify hull size, then resolve crude vs product via name + size
+        # heuristics plus the optional data/vessel-overrides.json.
+        vessel_class = classify_vessel(vessel["length"], vessel["beam"])
+        vessel["ship_type"] = classify_ship_type(
+            vessel.get("name"),
+            vessel_class,
+            imo=vessel.get("imo"),
+            overrides=overrides,
+        )
 
         # Region-based retention: all tankers in AU_APPROACH; elsewhere
         # only vessels whose declared destination parses as Australian.

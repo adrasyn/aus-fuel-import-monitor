@@ -2,6 +2,7 @@
 
 from datetime import datetime, timedelta, timezone
 from pipeline.cargo import classify_vessel, TANKER_CLASSES
+from pipeline.classification import classify_ship_type, is_lng_carrier, load_overrides
 from pipeline.destinations import parse_destination
 from pipeline.regions import classify_region, should_keep_vessel
 
@@ -41,6 +42,10 @@ def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | N
         if imo in db:
             db[imo]["last_seen"] = now
             db[imo]["name"] = vessel.get("name", db[imo]["name"])
+            # Refresh ship_type from the current classifier output — lets
+            # classifier changes or override-file edits propagate to records
+            # that were first ingested under older rules.
+            db[imo]["ship_type"] = vessel.get("ship_type", db[imo]["ship_type"])
         else:
             db[imo] = {
                 "name": vessel.get("name", "Unknown"),
@@ -99,22 +104,31 @@ def migrate_missing_in_transit(db: dict, snapshot: dict) -> int:
 
 
 def revalidate_in_transit(db: dict) -> int:
-    """Re-apply current region classification, destination parsing, and
-    retention rule to every in_transit block. Clears in_transit on records
-    that no longer qualify; refreshes stored region and destination_parsed
-    on records that still do.
+    """Re-apply current classification and retention rules to every
+    in_transit block. Clears in_transit on records that no longer qualify;
+    refreshes stored region, destination_parsed, and ship_type on records
+    that still do.
 
-    Re-parsing the destination here matters: stored destination_parsed is
-    a cached output of a function that's been fixed since (e.g. word-boundary
-    bug that mis-mapped "PORT EVERGLADES" → "Gladstone"). Trusting the cache
-    would let those vessels survive forever.
+    Re-running these here matters because each of them is a cached output
+    of a function we may have fixed since the record was written:
+    - destination_parsed (word-boundary bug once mis-mapped PORT EVERGLADES
+      to "Gladstone")
+    - ship_type (originally classified off AIS type codes, now off size +
+      name + overrides — mis-tagged product tankers need to self-correct)
+    - LNG exclusion (project scope excludes LNG; any LNG carrier that
+      slipped in via an older filter gets dropped here)
 
     Returns the number of records whose in_transit was cleared.
     """
+    overrides = load_overrides()
     cleared = 0
-    for record in db.values():
+    for imo, record in db.items():
         in_transit = record.get("in_transit")
         if not in_transit:
+            continue
+        if is_lng_carrier(record.get("name")):
+            record["in_transit"] = None
+            cleared += 1
             continue
         lat = in_transit.get("lat", 0.0)
         lon = in_transit.get("lon", 0.0)
@@ -127,6 +141,14 @@ def revalidate_in_transit(db: dict) -> int:
             cleared += 1
             continue
         in_transit["region"] = region or ""
+        # Refresh ship_type on the parent record (crude/product affects
+        # en_route totals and the table's colour coding).
+        record["ship_type"] = classify_ship_type(
+            record.get("name"),
+            record.get("vessel_class", ""),
+            imo=imo,
+            overrides=overrides,
+        )
     return cleared
 
 
