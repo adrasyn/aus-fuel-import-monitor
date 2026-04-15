@@ -6,6 +6,6 @@ __pycache__/
 .env
 .env.local
 .superpowers/
-.claude/
+.claude/settings.local.json
 .worktrees/
 data/petroleum_stats_cache.xlsx
