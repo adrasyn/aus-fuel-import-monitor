@@ -50,7 +50,7 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
           <Stat value={String(product.length)} label="Product tankers" />
           <Stat value={formatBL(crudeLitres)} label="Crude oil est." />
           <Stat value={formatBL(productLitres)} label="Refined products est." />
-          {msoReserve?.fuels.map((fuel) => (
+          {msoReserve?.fuels?.map((fuel) => (
             <Stat
               key={fuel.key}
               value={String(fuel.days)}
