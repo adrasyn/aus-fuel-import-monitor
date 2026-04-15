@@ -9,24 +9,7 @@
     "first_seen": "2026-04-13T21:27:00.589555+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "525100350",
-      "lat": -7.3708,
-      "lon": 113.278,
-      "speed": 0,
-      "course": 248.2,
-      "heading": 511,
-      "draught": 0,
-      "destination": "-FUL??UL",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 91500000,
-      "cargo_tonnes": 75000,
-      "load_factor": 0.75,
-      "is_ballast": false,
-      "draught_missing": true,
-      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
-    }
+    "in_transit": null
   },
   "1097799": {
     "name": "YONG WANG DA 69",
@@ -38,24 +21,7 @@
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "667002065",
-      "lat": -6.85132,
-      "lon": 112.43694,
-      "speed": 0.4,
-      "course": 152.2,
-      "heading": 86,
-      "draught": 3.8,
-      "destination": "LAMONGAN IDN",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 0,
-      "cargo_tonnes": 0,
-      "load_factor": 0.0,
-      "is_ballast": true,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
-    }
+    "in_transit": null
   },
   "9948281": {
     "name": "DAT MERCURY",
@@ -96,24 +62,7 @@
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "525019644",
-      "lat": -6.71387,
-      "lon": 112.15324,
-      "speed": 0,
-      "course": 360,
-      "heading": 511,
-      "draught": 8,
-      "destination": "TUBAN",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 14378909,
-      "cargo_tonnes": 12364,
-      "load_factor": 0.727,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
-    }
+    "in_transit": null
   },
   "9654737": {
     "name": "MACLEAY",
@@ -183,24 +132,7 @@
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "525601836",
-      "lat": -6.8486,
-      "lon": 112.40567,
-      "speed": 0.1,
-      "course": 360,
-      "heading": 511,
-      "draught": 4.9,
-      "destination": "LAMONGAN",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 3235255,
-      "cargo_tonnes": 2782,
-      "load_factor": 0.164,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
-    }
+    "in_transit": null
   },
   "9576648": {
     "name": "ANARGYA 1",
@@ -212,24 +144,7 @@
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "525101819",
-      "lat": -7.22924,
-      "lon": 113.31888,
-      "speed": 0,
-      "course": 316.9,
-      "heading": 73,
-      "draught": 7,
-      "destination": "CAMPLONG",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 10784182,
-      "cargo_tonnes": 9273,
-      "load_factor": 0.545,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
-    }
+    "in_transit": null
   },
   "9732709": {
     "name": "HAFNIA MIKALA",
@@ -340,24 +255,7 @@
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "367102000",
-      "lat": 26.09334,
-      "lon": -80.12228,
-      "speed": 0,
-      "course": 297,
-      "heading": 88,
-      "draught": 8.5,
-      "destination": "PORT EVERGLADES",
-      "destination_parsed": "Gladstone",
-      "region": "US_GULF",
-      "cargo_litres": 25049231,
-      "cargo_tonnes": 21538,
-      "load_factor": 0.538,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
-    }
+    "in_transit": null
   },
   "9803247": {
     "name": "ROSTELLA",
@@ -456,24 +354,7 @@
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
     "last_seen": "2026-04-14T12:31:35.477529+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "525018215",
-      "lat": -6.85506,
-      "lon": 112.38083,
-      "speed": 0.3,
-      "course": 115.7,
-      "heading": 511,
-      "draught": 4,
-      "destination": "PACIRAN",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 0,
-      "cargo_tonnes": 0,
-      "load_factor": 0.0,
-      "is_ballast": true,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T12:31:35.475072+00:00"
-    }
+    "in_transit": null
   },
   "9662837": {
     "name": "AURIGA TITAN",
@@ -543,24 +424,7 @@
     "first_seen": "2026-04-14T21:12:19.881850+00:00",
     "last_seen": "2026-04-14T21:12:19.881850+00:00",
     "arrival_count": 0,
-    "in_transit": {
-      "mmsi": "356178000",
-      "lat": -26.77922,
-      "lon": 153.30004,
-      "speed": 10.1,
-      "course": 120,
-      "heading": 120,
-      "draught": 8,
-      "destination": "NZ NPL",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 20523529,
-      "cargo_tonnes": 17647,
-      "load_factor": 0.176,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-04-14T21:12:19.881850+00:00"
-    }
+    "in_transit": null
   },
   "9956721": {
     "name": "ICS TENACIOUS",

@@ -9,7 +9,7 @@ interface VesselTableProps {
   onSelectVessel: (imo: string | null) => void;
 }
 
-type SortKey = "name" | "ship_type" | "destination_parsed" | "cargo_litres" | "vessel_class" | "last_update";
+type SortKey = "name" | "ship_type" | "destination" | "cargo_litres" | "vessel_class" | "last_update";
 type SortDir = "asc" | "desc";
 
 export default function VesselTable({ vessels, selectedImo, onSelectVessel }: VesselTableProps) {
@@ -47,7 +47,7 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel }: Ve
           <tr className="bg-panel border-b border-border text-[9px] uppercase tracking-label text-label font-semibold">
             <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("name")}>Vessel{arrow("name")}</th>
             <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("ship_type")}>Type{arrow("ship_type")}</th>
-            <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("destination_parsed")}>Dest.{arrow("destination_parsed")}</th>
+            <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("destination")}>Dest.{arrow("destination")}</th>
             <th className="text-right px-3 py-2 cursor-pointer" onClick={() => handleSort("cargo_litres")}>Est. cargo{arrow("cargo_litres")}</th>
             <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("vessel_class")}>Class{arrow("vessel_class")}</th>
           </tr>
@@ -72,7 +72,7 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel }: Ve
               <td className={`px-3 py-1 ${v.ship_type === "crude" ? "text-crude" : "text-product"}`}>
                 {v.is_ballast ? "Ballast (empty)" : v.ship_type === "crude" ? "Crude" : "Product"}
               </td>
-              <td className="px-3 py-1">{v.destination_parsed || v.destination || "Unknown"}</td>
+              <td className="px-3 py-1">{v.destination || "—"}</td>
               <td className="px-3 py-1 text-right whitespace-nowrap">
                 {(v.cargo_litres / 1_000_000).toFixed(0)}M L
                 {v.draught_missing && <span className="text-label-light" title="Draught data unavailable"> *</span>}

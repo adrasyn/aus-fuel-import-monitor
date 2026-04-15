@@ -1,4 +1,4 @@
-from pipeline.destinations import parse_destination
+from pipeline.destinations import parse_destination, looks_foreign
 
 def test_exact_match():
     assert parse_destination("MELBOURNE") == "Melbourne"
@@ -123,3 +123,63 @@ def test_locode_aupkl_port_kembla():
 def test_bunbury_full_name():
     # New port entry added alongside the LOCODE
     assert parse_destination("BUNBURY") == "Bunbury"
+
+
+# ---------- looks_foreign ----------
+
+def test_looks_foreign_nz_with_space():
+    # Real-world: SOUTHERN LEADER transiting east AU coast en route to NZ
+    assert looks_foreign("NZ NPL") is True
+
+
+def test_looks_foreign_nz_locode():
+    assert looks_foreign("NZNPL") is True
+
+
+def test_looks_foreign_us_locode():
+    assert looks_foreign("USFLL") is True
+
+
+def test_looks_foreign_us_with_space():
+    assert looks_foreign("US LAX") is True
+
+
+def test_looks_foreign_au_locode_is_not_foreign():
+    # AUKWI starts with "au" — must not trip the foreign check
+    assert looks_foreign("AUKWI") is False
+
+
+def test_looks_foreign_au_word_is_not_foreign():
+    assert looks_foreign("AU MEL") is False
+
+
+def test_looks_foreign_known_au_port_is_not_foreign():
+    # Anything that already parses as an AU port is, by definition, not foreign
+    assert looks_foreign("MELBOURNE") is False
+
+
+def test_looks_foreign_mixed_route_with_au_terminus():
+    # "SG SIN >> AU DAM" — leg starts in Singapore but terminates in Darwin
+    assert looks_foreign("SG SIN >> AU DAM") is False
+
+
+def test_looks_foreign_unknown_text_without_country_code():
+    # "PORT EVERGLADES" has no country code; foreign-check shouldn't fire here.
+    # The region check (US_GULF + parse=None) is what drops these vessels.
+    assert looks_foreign("PORT EVERGLADES") is False
+
+
+def test_looks_foreign_empty_string():
+    assert looks_foreign("") is False
+
+
+def test_looks_foreign_none():
+    assert looks_foreign(None) is False
+
+
+def test_looks_foreign_singapore_locode():
+    assert looks_foreign("SGSIN") is True
+
+
+def test_looks_foreign_japan_locode():
+    assert looks_foreign("JPYOK") is True

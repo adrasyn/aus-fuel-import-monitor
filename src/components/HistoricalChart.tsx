@@ -110,7 +110,7 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
           <XAxis dataKey="month" tickFormatter={formatMonth} tick={{ fontSize: 10, fill: "#6b7280" }} interval="preserveStartEnd" />
           <YAxis tick={{ fontSize: 10, fill: "#6b7280" }} label={{ value: "Megalitres", angle: -90, position: "insideLeft", style: { fontSize: 10, fill: "#6b7280" } }} />
           <Tooltip formatter={(value) => [`${value} ML`]} labelFormatter={(label) => formatMonth(String(label))} />
-          <Legend wrapperStyle={{ fontSize: 10 }} />
+          <Legend wrapperStyle={{ fontSize: 10, color: "#000" }} />
           <Bar dataKey="crude" name="Crude oil" stackId="fuel" fill={FUEL_COLORS.crude}>
             {chartData.map((entry, i) => (
               <Cell key={i} fillOpacity={entry.source === "government" ? 1 : 0.4}

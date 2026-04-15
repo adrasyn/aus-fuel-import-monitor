@@ -149,7 +149,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
         # only vessels whose declared destination parses as Australian.
         region = classify_region(vessel["lat"], vessel["lon"])
         vessel["region"] = region or ""
-        if not should_keep_vessel(region, vessel["destination_parsed"]):
+        if not should_keep_vessel(region, vessel["destination_parsed"], vessel["destination"]):
             continue
 
         cargo = estimate_cargo(

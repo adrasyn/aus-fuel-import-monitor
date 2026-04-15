@@ -139,3 +139,23 @@ def test_should_drop_java_sea_vessel_without_au_destination():
 def test_should_keep_java_sea_vessel_with_au_destination():
     # Hypothetical: a vessel in the Java Sea with AU destination → keep
     assert should_keep_vessel("JAVA_SEA", "Fremantle") is True
+
+
+def test_should_drop_au_approach_vessel_with_explicit_foreign_destination():
+    # Real-world: SOUTHERN LEADER off SE QLD, raw destination "NZ NPL".
+    # AU_APPROACH normally keeps unconditionally — but explicit foreign overrides.
+    assert should_keep_vessel("AU_APPROACH", None, destination_raw="NZ NPL") is False
+
+
+def test_should_drop_au_approach_vessel_with_foreign_locode():
+    assert should_keep_vessel("AU_APPROACH", None, destination_raw="USFLL") is False
+
+
+def test_should_keep_au_approach_vessel_with_au_destination_passed_raw():
+    # Backwards-compatible: passing a raw AU destination is fine
+    assert should_keep_vessel("AU_APPROACH", "Fremantle", destination_raw="AUKWI") is True
+
+
+def test_should_keep_au_approach_vessel_when_raw_omitted():
+    # Backwards-compatible: caller may omit destination_raw
+    assert should_keep_vessel("AU_APPROACH", None) is True

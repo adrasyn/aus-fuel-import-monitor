@@ -2,6 +2,7 @@
 
 from datetime import datetime, timedelta, timezone
 from pipeline.cargo import classify_vessel, TANKER_CLASSES
+from pipeline.destinations import parse_destination
 from pipeline.regions import classify_region, should_keep_vessel
 
 STALENESS_DAYS = 14
@@ -98,9 +99,15 @@ def migrate_missing_in_transit(db: dict, snapshot: dict) -> int:
 
 
 def revalidate_in_transit(db: dict) -> int:
-    """Re-apply current region classification and retention rule to every
-    in_transit block. Clears in_transit on records that no longer qualify,
-    and updates the stored region on records that still do.
+    """Re-apply current region classification, destination parsing, and
+    retention rule to every in_transit block. Clears in_transit on records
+    that no longer qualify; refreshes stored region and destination_parsed
+    on records that still do.
+
+    Re-parsing the destination here matters: stored destination_parsed is
+    a cached output of a function that's been fixed since (e.g. word-boundary
+    bug that mis-mapped "PORT EVERGLADES" → "Gladstone"). Trusting the cache
+    would let those vessels survive forever.
 
     Returns the number of records whose in_transit was cleared.
     """
@@ -111,9 +118,11 @@ def revalidate_in_transit(db: dict) -> int:
             continue
         lat = in_transit.get("lat", 0.0)
         lon = in_transit.get("lon", 0.0)
-        destination_parsed = in_transit.get("destination_parsed")
+        raw_destination = in_transit.get("destination")
         region = classify_region(lat, lon)
-        if not should_keep_vessel(region, destination_parsed):
+        destination_parsed = parse_destination(raw_destination)
+        in_transit["destination_parsed"] = destination_parsed
+        if not should_keep_vessel(region, destination_parsed, raw_destination):
             record["in_transit"] = None
             cleared += 1
             continue

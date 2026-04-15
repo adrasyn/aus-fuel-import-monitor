@@ -7,6 +7,8 @@ region are kept only if their destination parses as Australian.
 
 from __future__ import annotations
 
+from pipeline.destinations import looks_foreign
+
 REGIONS: dict[str, tuple[tuple[float, float], tuple[float, float]]] = {
     # JAVA_SEA must come BEFORE AU_APPROACH: it carves out the Indonesian
     # Java Sea (north of Java) from the broader AU_APPROACH box so domestic
@@ -32,14 +34,22 @@ def classify_region(lat: float, lon: float) -> str | None:
     return None
 
 
-def should_keep_vessel(region: str | None, destination_parsed: str | None) -> bool:
-    """Decide whether to keep a tanker based on its region and parsed destination.
+def should_keep_vessel(
+    region: str | None,
+    destination_parsed: str | None,
+    destination_raw: str | None = None,
+) -> bool:
+    """Decide whether to keep a tanker based on its region and destination.
 
-    - AU_APPROACH: keep unconditionally (arrival zone).
-    - Other known regions: keep only if destination parses as Australian.
     - Unknown region (outside every box): drop.
+    - Explicit foreign destination (e.g. "NZ NPL", "USFLL"): drop, even
+      inside AU_APPROACH — the vessel is transiting, not arriving.
+    - AU_APPROACH: otherwise keep unconditionally (arrival zone).
+    - Other known regions: keep only if destination parses as Australian.
     """
     if region is None:
+        return False
+    if destination_raw is not None and looks_foreign(destination_raw):
         return False
     if region == "AU_APPROACH":
         return True

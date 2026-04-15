@@ -392,7 +392,10 @@ def test_migrate_multiple_records_mixed():
 from pipeline.vessels import revalidate_in_transit
 
 
-def _record_with_in_transit(lat: float, lon: float, destination_parsed, region: str = "STALE") -> dict:
+def _record_with_in_transit(
+    lat: float, lon: float, destination_parsed, region: str = "STALE",
+    destination_raw: str = "",
+) -> dict:
     return {
         "name": "Test Tanker", "vessel_class": "Aframax", "dwt": 100000,
         "length": 245, "beam": 44, "ship_type": "crude",
@@ -403,7 +406,7 @@ def _record_with_in_transit(lat: float, lon: float, destination_parsed, region: 
             "mmsi": "636000000",
             "lat": lat, "lon": lon,
             "speed": 12.0, "course": 180.0, "heading": 180.0, "draught": 14.0,
-            "destination": "", "destination_parsed": destination_parsed,
+            "destination": destination_raw, "destination_parsed": destination_parsed,
             "region": region,
             "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
             "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
@@ -440,7 +443,10 @@ def test_revalidate_updates_stored_region_to_current_classification():
     # classify as JAVA_SEA — retention still passes (it has an AU destination)
     # but the stored region should be refreshed to JAVA_SEA.
     db = {
-        "9000003": _record_with_in_transit(-6.85, 112.44, destination_parsed="Fremantle", region="AU_APPROACH"),
+        "9000003": _record_with_in_transit(
+            -6.85, 112.44, destination_parsed="Fremantle",
+            region="AU_APPROACH", destination_raw="AU FRE",
+        ),
     }
     cleared = revalidate_in_transit(db)
     assert cleared == 0
@@ -476,7 +482,7 @@ def test_revalidate_multiple_records_mixed():
     db = {
         "9000001": _record_with_in_transit(-6.85, 112.44, destination_parsed=None),       # Java Sea, no AU dest → clear
         "9000002": _record_with_in_transit(-32.0, 115.0, destination_parsed=None),        # AU_APPROACH → keep
-        "9000003": _record_with_in_transit(-6.85, 112.44, destination_parsed="Fremantle"), # Java Sea with AU dest → keep (region updated)
+        "9000003": _record_with_in_transit(-6.85, 112.44, destination_parsed="Fremantle", destination_raw="AU FRE"), # Java Sea with AU dest → keep (region updated)
         "9000004": _record_with_in_transit(0.0, -30.0, destination_parsed=None),           # mid-Atlantic → classify_region returns None → clear
     }
     cleared = revalidate_in_transit(db)
@@ -485,3 +491,50 @@ def test_revalidate_multiple_records_mixed():
     assert db["9000002"]["in_transit"] is not None
     assert db["9000003"]["in_transit"]["region"] == "JAVA_SEA"
     assert db["9000004"]["in_transit"] is None
+
+
+def test_revalidate_reparses_destination_to_heal_stale_parser_output():
+    # Garden State scenario: raw destination "PORT EVERGLADES" was incorrectly
+    # parsed as "Gladstone" before the word-boundary fix. Revalidation must
+    # re-derive the parse so the stale value gets corrected.
+    db = {
+        "9698006": _record_with_in_transit(
+            26.09, -80.12,                       # Florida — region US_GULF
+            destination_parsed="Gladstone",      # stale
+            destination_raw="PORT EVERGLADES",
+        ),
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 1
+    assert db["9698006"]["in_transit"] is None
+
+
+def test_revalidate_drops_au_approach_vessel_with_explicit_foreign_destination():
+    # SOUTHERN LEADER scenario: in AU_APPROACH off SE QLD, raw dest "NZ NPL"
+    # — must be dropped despite AU_APPROACH normally being unconditional.
+    db = {
+        "9000010": _record_with_in_transit(
+            -26.78, 153.30,
+            destination_parsed=None,
+            destination_raw="NZ NPL",
+        ),
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 1
+    assert db["9000010"]["in_transit"] is None
+
+
+def test_revalidate_updates_stored_destination_parsed_after_reparse():
+    # When a record survives revalidation, its stored destination_parsed
+    # should reflect the current parser, not the historical (possibly stale)
+    # snapshot it was written with.
+    db = {
+        "9000011": _record_with_in_transit(
+            -32.0, 115.0,                       # AU_APPROACH — kept
+            destination_parsed="Gladstone",     # stale, wrong
+            destination_raw="AUKWI",            # current parser → "Fremantle"
+        ),
+    }
+    cleared = revalidate_in_transit(db)
+    assert cleared == 0
+    assert db["9000011"]["in_transit"]["destination_parsed"] == "Fremantle"

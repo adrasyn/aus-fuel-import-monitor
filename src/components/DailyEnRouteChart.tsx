@@ -80,7 +80,7 @@ export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartP
           }}
           labelFormatter={(label) => formatDate(String(label))}
         />
-        <Legend wrapperStyle={{ fontSize: 10 }} />
+        <Legend wrapperStyle={{ fontSize: 10, color: "#000" }} />
         <Area
           type="monotone"
           dataKey="product"
