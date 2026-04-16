@@ -8,6 +8,7 @@ on:
 
 permissions:
   contents: write
+  actions: write
 
 # Prevent overlapping runs from racing on data/vessels.json, etc.
 concurrency:
@@ -51,3 +52,8 @@ jobs:
           git commit -m "data: nightly update $(date -u +%Y-%m-%d)"
           git pull --rebase origin main
           git push
+
+      - name: Trigger Pages deploy
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: gh workflow run deploy.yml --ref main
