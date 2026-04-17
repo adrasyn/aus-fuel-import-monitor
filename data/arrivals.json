@@ -10,6 +10,39 @@
       "cargo_tonnes": 22769,
       "cargo_litres": 26480615,
       "draught_missing": false
+    },
+    {
+      "imo": "9662837",
+      "name": "AURIGA TITAN",
+      "port": "Brisbane",
+      "timestamp": "2026-04-17T21:21:19.549283+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 618,
+      "cargo_litres": 754182,
+      "draught_missing": false
+    },
+    {
+      "imo": "9461843",
+      "name": "TORM GLORIA",
+      "port": "Melbourne",
+      "timestamp": "2026-04-17T21:21:19.549283+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 99200,
+      "cargo_litres": 121024000,
+      "draught_missing": false
+    },
+    {
+      "imo": "9719719",
+      "name": "STI STEADFAST",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-17T21:21:19.549283+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 28800,
+      "cargo_litres": 35136000,
+      "draught_missing": false
     }
   ]
 }
