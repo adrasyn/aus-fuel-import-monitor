@@ -43,6 +43,17 @@
       "cargo_tonnes": 28800,
       "cargo_litres": 35136000,
       "draught_missing": false
+    },
+    {
+      "imo": "9944132",
+      "name": "NORD VIRAGE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-18T21:11:04.010605+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false
     }
   ]
 }
