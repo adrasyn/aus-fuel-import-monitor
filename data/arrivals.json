@@ -54,6 +54,17 @@
       "cargo_tonnes": 40000,
       "cargo_litres": 48800000,
       "draught_missing": false
+    },
+    {
+      "imo": "9956721",
+      "name": "ICS TENACIOUS",
+      "port": "Geelong",
+      "timestamp": "2026-04-19T21:12:23.073250+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8655,
+      "cargo_litres": 10558545,
+      "draught_missing": false
     }
   ]
 }
