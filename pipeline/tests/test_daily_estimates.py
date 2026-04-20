@@ -17,7 +17,7 @@ def _in_transit(cargo_litres: int, is_ballast: bool = False) -> dict:
     }
 
 
-def _vessel_record(ship_type: str, in_transit: dict | None) -> dict:
+def _vessel_record(ship_type: str, in_transit: dict | None, departed_au: bool = True) -> dict:
     return {
         "name": "Test Tanker", "vessel_class": "Aframax", "dwt": 100000,
         "length": 245, "beam": 44, "ship_type": ship_type,
@@ -25,6 +25,7 @@ def _vessel_record(ship_type: str, in_transit: dict | None) -> dict:
         "last_seen": "2026-04-14T12:00:00Z",
         "arrival_count": 0,
         "in_transit": in_transit,
+        "departed_au_since_arrival": departed_au,
     }
 
 
@@ -62,6 +63,21 @@ def test_update_daily_estimates_skips_arrived_records():
         "9000001": _vessel_record("crude", _in_transit(320_000_000)),
         # Arrived — in_transit is None — must not contribute
         "9000002": _vessel_record("crude", None),
+    }
+    now = datetime(2026, 4, 14, 12, 30, tzinfo=timezone.utc)
+    updated = update_daily_estimates(daily, vessel_db, now)
+
+    assert updated["days"]["2026-04-14"]["en_route_crude_litres"] == 320_000_000
+
+
+def test_update_daily_estimates_skips_coastal_legs():
+    # Vessel on a coastal hop (already arrived at an AU port, not yet observed
+    # offshore) must not contribute to en-route totals — its cargo was already
+    # counted on the international leg.
+    daily = {"days": {}}
+    vessel_db = {
+        "9000001": _vessel_record("crude", _in_transit(320_000_000), departed_au=True),
+        "9000002": _vessel_record("crude", _in_transit(100_000_000), departed_au=False),
     }
     now = datetime(2026, 4, 14, 12, 30, tzinfo=timezone.utc)
     updated = update_daily_estimates(daily, vessel_db, now)

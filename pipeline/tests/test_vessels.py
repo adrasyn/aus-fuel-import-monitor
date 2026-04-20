@@ -524,6 +524,164 @@ def test_revalidate_drops_au_approach_vessel_with_explicit_foreign_destination()
     assert db["9000010"]["in_transit"] is None
 
 
+# ---------- departed_au_since_arrival state machine ----------
+from pipeline.vessels import apply_departed_au_rules, migrate_departed_au_flag
+
+
+def _record_flagged(flag: bool, last_seen: str, arrival_count: int = 1) -> dict:
+    return {
+        "name": "Test Tanker", "vessel_class": "Aframax", "dwt": 100000,
+        "length": 245, "beam": 44, "ship_type": "crude",
+        "first_seen": "2026-03-01T00:00:00Z",
+        "last_seen": last_seen,
+        "arrival_count": arrival_count,
+        "departed_au_since_arrival": flag,
+        "in_transit": {
+            "mmsi": "636000000", "lat": -32.0, "lon": 115.0,
+            "speed": 12.0, "course": 180.0, "heading": 180.0, "draught": 14.0,
+            "destination": "AU FRE", "destination_parsed": "Fremantle",
+            "region": "AU_APPROACH",
+            "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
+            "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
+            "last_position_update": last_seen,
+        },
+    }
+
+
+def test_new_vessel_defaults_flag_true():
+    db = {}
+    vessels = [{
+        "imo": "9876543", "name": "Test Tanker", "length": 245, "beam": 44,
+        "draught": 14.5, "ship_type": "crude", "region": "AU_APPROACH",
+    }]
+    updated = update_vessel_db(db, vessels)
+    assert updated["9876543"]["departed_au_since_arrival"] is True
+
+
+def test_arrival_flips_flag_false():
+    db = {
+        "9876543": _record_flagged(True, "2026-04-14T00:00:00+00:00", arrival_count=0)
+    }
+    new_arrivals = [{"imo": "9876543", "port": "Geelong"}]
+    updated = update_vessel_db(db, [], new_arrivals=new_arrivals)
+    assert updated["9876543"]["departed_au_since_arrival"] is False
+
+
+def test_apply_rules_flips_false_to_true_on_offshore_ping():
+    db = {"9876543": _record_flagged(False, "2026-04-13T00:00:00+00:00")}
+    current = [{"imo": "9876543", "region": "SE_ASIA"}]
+    flipped = apply_departed_au_rules(db, current, now="2026-04-14T12:00:00+00:00")
+    assert flipped == 1
+    assert db["9876543"]["departed_au_since_arrival"] is True
+
+
+def test_apply_rules_keeps_false_for_au_approach_ping():
+    db = {"9876543": _record_flagged(False, "2026-04-13T00:00:00+00:00")}
+    current = [{"imo": "9876543", "region": "AU_APPROACH"}]
+    flipped = apply_departed_au_rules(db, current, now="2026-04-14T12:00:00+00:00")
+    assert flipped == 0
+    assert db["9876543"]["departed_au_since_arrival"] is False
+
+
+def test_apply_rules_flips_false_to_true_on_long_gap():
+    # Vessel was silent for 20 days, now pings back inside AU_APPROACH.
+    # Assume it was offshore during the gap.
+    db = {"9876543": _record_flagged(False, "2026-03-25T00:00:00+00:00")}
+    current = [{"imo": "9876543", "region": "AU_APPROACH"}]
+    flipped = apply_departed_au_rules(db, current, now="2026-04-14T12:00:00+00:00")
+    assert flipped == 1
+    assert db["9876543"]["departed_au_since_arrival"] is True
+
+
+def test_apply_rules_no_op_on_unpinged_vessels():
+    # Vessel didn't ping this run — can't infer anything new, leave flag alone.
+    db = {"9876543": _record_flagged(False, "2026-03-25T00:00:00+00:00")}
+    current = []
+    flipped = apply_departed_au_rules(db, current, now="2026-04-14T12:00:00+00:00")
+    assert flipped == 0
+    assert db["9876543"]["departed_au_since_arrival"] is False
+
+
+def test_apply_rules_idempotent_on_flag_true():
+    db = {"9876543": _record_flagged(True, "2026-04-13T00:00:00+00:00")}
+    current = [{"imo": "9876543", "region": "SE_ASIA"}]
+    flipped = apply_departed_au_rules(db, current, now="2026-04-14T12:00:00+00:00")
+    assert flipped == 0
+    assert db["9876543"]["departed_au_since_arrival"] is True
+
+
+def test_migrate_departed_au_flag_defaults_true_for_no_arrivals():
+    db = {
+        "9000001": {
+            "name": "Never Arrived", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-14T00:00:00Z",
+            "last_seen": "2026-04-14T00:00:00Z",
+            "arrival_count": 0,
+            "in_transit": None,
+        }
+    }
+    count = migrate_departed_au_flag(db)
+    assert count == 1
+    assert db["9000001"]["departed_au_since_arrival"] is True
+
+
+def test_migrate_departed_au_flag_false_for_arrived_in_au_approach():
+    # Matches GRAND WINNER 1 scenario: arrived once, still sitting in AU_APPROACH.
+    db = {
+        "9000002": {
+            "name": "Stuck at Port", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-14T00:00:00Z",
+            "arrival_count": 1,
+            "in_transit": {
+                "lat": -34.0, "lon": 151.0, "region": "AU_APPROACH",
+                "destination": "AUBTB", "is_ballast": False,
+                "cargo_litres": 10_000_000,
+                "last_position_update": "2026-04-14T00:00:00Z",
+            },
+        }
+    }
+    count = migrate_departed_au_flag(db)
+    assert count == 1
+    assert db["9000002"]["departed_au_since_arrival"] is False
+
+
+def test_migrate_departed_au_flag_true_for_arrived_but_in_transit_null():
+    # Arrived previously, no current in_transit — nothing to double-count now.
+    # Default to True so a future ping counts normally.
+    db = {
+        "9000003": {
+            "name": "Departed", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-05T00:00:00Z",
+            "arrival_count": 1,
+            "in_transit": None,
+        }
+    }
+    migrate_departed_au_flag(db)
+    assert db["9000003"]["departed_au_since_arrival"] is True
+
+
+def test_migrate_departed_au_flag_idempotent():
+    db = {
+        "9000004": {
+            "name": "Already Tagged", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-14T00:00:00Z",
+            "arrival_count": 0,
+            "in_transit": None,
+            "departed_au_since_arrival": False,  # preset — don't clobber
+        }
+    }
+    count = migrate_departed_au_flag(db)
+    assert count == 0
+    assert db["9000004"]["departed_au_since_arrival"] is False
+
+
 def test_revalidate_updates_stored_destination_parsed_after_reparse():
     # When a record survives revalidation, its stored destination_parsed
     # should reflect the current parser, not the historical (possibly stale)

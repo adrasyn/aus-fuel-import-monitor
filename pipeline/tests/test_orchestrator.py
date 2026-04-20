@@ -1,4 +1,4 @@
-from pipeline.orchestrator import update_monthly_estimates
+from pipeline.orchestrator import update_monthly_estimates, migrate_coastal_on_arrivals
 
 
 def test_update_monthly_estimates_sums_en_route_from_roster():
@@ -69,3 +69,108 @@ def test_update_monthly_estimates_sums_en_route_from_roster():
     month = next(iter(months.values()))
     assert month["en_route_crude_litres"] == 320_000_000
     assert month["en_route_product_litres"] == 60_000_000
+
+
+def test_update_monthly_estimates_excludes_coastal_arrivals_from_totals():
+    monthly = {"months": {}}
+    new_arrivals = [
+        {
+            "imo": "9000001", "ship_type": "crude",
+            "cargo_litres": 100_000_000, "cargo_tonnes": 90_000,
+            "coastal": False,
+        },
+        {
+            "imo": "9000002", "ship_type": "product",
+            "cargo_litres": 40_000_000, "cargo_tonnes": 35_000,
+            "coastal": True,  # must not bump counters
+        },
+    ]
+    updated = update_monthly_estimates(monthly, new_arrivals, {})
+    month = next(iter(updated["months"].values()))
+    assert month["arrival_count"] == 1
+    assert month["arrived_crude_litres"] == 100_000_000
+    assert month["arrived_product_litres"] == 0
+
+
+def test_update_monthly_estimates_excludes_coastal_from_en_route():
+    monthly = {"months": {}}
+    vessel_db = {
+        "9000001": {
+            "name": "International", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-14T12:00:00Z",
+            "arrival_count": 0,
+            "departed_au_since_arrival": True,
+            "in_transit": {
+                "cargo_litres": 200_000_000, "is_ballast": False,
+                "lat": -10.0, "lon": 110.0,
+                "last_position_update": "2026-04-14T12:00:00Z",
+            },
+        },
+        "9000002": {
+            "name": "Coastal Hop", "vessel_class": "Aframax", "dwt": 100000,
+            "length": 245, "beam": 44, "ship_type": "crude",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-14T12:00:00Z",
+            "arrival_count": 1,
+            "departed_au_since_arrival": False,
+            "in_transit": {
+                "cargo_litres": 50_000_000, "is_ballast": False,
+                "lat": -34.0, "lon": 151.0,
+                "last_position_update": "2026-04-14T12:00:00Z",
+            },
+        },
+    }
+    updated = update_monthly_estimates(monthly, [], vessel_db)
+    month = next(iter(updated["months"].values()))
+    assert month["en_route_crude_litres"] == 200_000_000
+
+
+def test_migrate_coastal_on_arrivals_first_arrival_not_coastal():
+    arrivals = [{"imo": "A", "port": "Brisbane", "timestamp": "2026-04-01T00:00:00+00:00"}]
+    migrated = migrate_coastal_on_arrivals(arrivals)
+    assert migrated == 1
+    assert arrivals[0]["coastal"] is False
+
+
+def test_migrate_coastal_on_arrivals_within_window_flagged_coastal():
+    arrivals = [
+        {"imo": "A", "port": "Brisbane", "timestamp": "2026-04-01T00:00:00+00:00"},
+        {"imo": "A", "port": "Westernport", "timestamp": "2026-04-08T00:00:00+00:00"},
+    ]
+    migrated = migrate_coastal_on_arrivals(arrivals)
+    assert migrated == 2
+    assert arrivals[0]["coastal"] is False
+    assert arrivals[1]["coastal"] is True  # 7-day gap, different port
+
+
+def test_migrate_coastal_on_arrivals_outside_window_not_coastal():
+    arrivals = [
+        {"imo": "A", "port": "Brisbane", "timestamp": "2026-03-01T00:00:00+00:00"},
+        {"imo": "A", "port": "Westernport", "timestamp": "2026-04-10T00:00:00+00:00"},
+    ]
+    migrated = migrate_coastal_on_arrivals(arrivals)
+    assert migrated == 2
+    assert arrivals[1]["coastal"] is False  # 40-day gap → international trip
+
+
+def test_migrate_coastal_on_arrivals_idempotent():
+    arrivals = [
+        {"imo": "A", "port": "Brisbane", "timestamp": "2026-04-01T00:00:00+00:00",
+         "coastal": True},
+    ]
+    migrated = migrate_coastal_on_arrivals(arrivals)
+    assert migrated == 0
+    assert arrivals[0]["coastal"] is True  # preserved
+
+
+def test_migrate_coastal_on_arrivals_separates_by_imo():
+    # Different vessels — arrivals don't influence each other's coastal status.
+    arrivals = [
+        {"imo": "A", "port": "Brisbane", "timestamp": "2026-04-01T00:00:00+00:00"},
+        {"imo": "B", "port": "Westernport", "timestamp": "2026-04-03T00:00:00+00:00"},
+    ]
+    migrate_coastal_on_arrivals(arrivals)
+    assert arrivals[0]["coastal"] is False
+    assert arrivals[1]["coastal"] is False

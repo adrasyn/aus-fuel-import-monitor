@@ -9,7 +9,8 @@
       "vessel_class": "MR",
       "cargo_tonnes": 22769,
       "cargo_litres": 26480615,
-      "draught_missing": false
+      "draught_missing": false,
+      "coastal": false
     },
     {
       "imo": "9662837",
@@ -20,7 +21,8 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 618,
       "cargo_litres": 754182,
-      "draught_missing": false
+      "draught_missing": false,
+      "coastal": false
     },
     {
       "imo": "9461843",
@@ -31,7 +33,8 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 99200,
       "cargo_litres": 121024000,
-      "draught_missing": false
+      "draught_missing": false,
+      "coastal": false
     },
     {
       "imo": "9719719",
@@ -42,7 +45,8 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 28800,
       "cargo_litres": 35136000,
-      "draught_missing": false
+      "draught_missing": false,
+      "coastal": false
     },
     {
       "imo": "9944132",
@@ -53,7 +57,8 @@
       "vessel_class": "MR",
       "cargo_tonnes": 40000,
       "cargo_litres": 48800000,
-      "draught_missing": false
+      "draught_missing": false,
+      "coastal": false
     },
     {
       "imo": "9956721",
@@ -64,7 +69,8 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 8655,
       "cargo_litres": 10558545,
-      "draught_missing": false
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

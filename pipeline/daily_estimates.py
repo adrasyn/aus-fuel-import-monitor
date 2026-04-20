@@ -22,6 +22,11 @@ def update_daily_estimates(daily: dict, vessel_db: dict, now: datetime) -> dict:
             continue
         if in_transit.get("is_ballast"):
             continue
+        # Coastal leg: vessel arrived at an AU port and hasn't been observed
+        # offshore since. Its current cargo was already counted on the prior
+        # international leg, so excluding it avoids double-counting.
+        if not record.get("departed_au_since_arrival", True):
+            continue
         cargo = in_transit.get("cargo_litres", 0)
         if record.get("ship_type") == "crude":
             crude += cargo

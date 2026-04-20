@@ -113,6 +113,47 @@ def test_detect_arrivals_vessel_still_at_sea():
     assert len(new_arrivals) == 0
 
 
+def test_detect_arrivals_stamps_coastal_false_when_vessel_has_departed():
+    # Default case: vessel was on an international leg, departed_au flag True.
+    ports = [{"name": "Geelong", "lat": -38.15, "lon": 144.36, "radius_km": 5}]
+    vessel_db = _vessel_db_with("1234567", in_transit={
+        "lat": -36.0, "lon": 144.0, "speed": 12.0, "destination": "GEELONG",
+        "last_position_update": "2026-04-13T22:00:00Z",
+    })
+    vessel_db["1234567"]["departed_au_since_arrival"] = True
+    current_snapshot = {
+        "vessels": [
+            {"imo": "1234567", "name": "Test Tanker", "lat": -38.15, "lon": 144.36,
+             "speed": 0.3, "ship_type": "crude", "length": 245, "beam": 44,
+             "draught": 14.5, "destination": "GEELONG"}
+        ]
+    }
+    new_arrivals = detect_arrivals(current_snapshot, vessel_db, ports, [])
+    assert len(new_arrivals) == 1
+    assert new_arrivals[0]["coastal"] is False
+
+
+def test_detect_arrivals_stamps_coastal_true_when_vessel_on_coastal_hop():
+    # Vessel arrived previously and hasn't been observed offshore — coastal.
+    ports = [{"name": "Geelong", "lat": -38.15, "lon": 144.36, "radius_km": 5}]
+    vessel_db = _vessel_db_with("1234567", in_transit={
+        "lat": -36.0, "lon": 144.0, "speed": 12.0, "destination": "GEELONG",
+        "last_position_update": "2026-04-13T22:00:00Z",
+    })
+    vessel_db["1234567"]["departed_au_since_arrival"] = False
+    vessel_db["1234567"]["arrival_count"] = 1
+    current_snapshot = {
+        "vessels": [
+            {"imo": "1234567", "name": "Test Tanker", "lat": -38.15, "lon": 144.36,
+             "speed": 0.3, "ship_type": "crude", "length": 245, "beam": 44,
+             "draught": 14.5, "destination": "GEELONG"}
+        ]
+    }
+    new_arrivals = detect_arrivals(current_snapshot, vessel_db, ports, [])
+    assert len(new_arrivals) == 1
+    assert new_arrivals[0]["coastal"] is True
+
+
 def test_detect_arrivals_no_duplicate():
     ports = [{"name": "Geelong", "lat": -38.15, "lon": 144.36, "radius_km": 5}]
     vessel_db = _vessel_db_with("1234567", in_transit={

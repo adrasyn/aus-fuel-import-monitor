@@ -72,6 +72,13 @@ def detect_arrivals(
             ship_type=vessel.get("ship_type", "product"),
         )
 
+        # Coastal = this vessel hasn't left AU_APPROACH since its last arrival.
+        # A coastal arrival isn't a fresh import; we record it (so the dedupe
+        # key still works for subsequent runs) but tag it so import totals can
+        # exclude it.
+        record = vessel_db.get(imo, {})
+        departed = record.get("departed_au_since_arrival", True)
+
         new_arrivals.append({
             "imo": imo,
             "name": vessel.get("name", "Unknown"),
@@ -82,6 +89,7 @@ def detect_arrivals(
             "cargo_tonnes": cargo["cargo_tonnes"],
             "cargo_litres": cargo["cargo_litres"],
             "draught_missing": cargo["draught_missing"],
+            "coastal": not departed,
         })
 
     return new_arrivals

@@ -8,6 +8,12 @@ from pipeline.regions import classify_region, should_keep_vessel
 
 STALENESS_DAYS = 14
 
+# Window after which a silent vessel is assumed to have left AU_APPROACH,
+# so its next reappearance is treated as a fresh international leg rather
+# than a coastal continuation. Matches STALENESS_DAYS by design — if we'd
+# have pruned the in_transit block by now, we assume a new trip is starting.
+GAP_THRESHOLD_DAYS = 14
+
 # Dynamic fields copied from a snapshot row into the in_transit block.
 # Static fields (name, length, beam, ship_type, vessel_class, dwt) stay on
 # the parent vessel record and must not be duplicated here.
@@ -57,6 +63,9 @@ def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | N
                 "first_seen": now,
                 "last_seen": now,
                 "arrival_count": 0,
+                # New vessels have no prior AU arrival, so their next arrival
+                # is a genuine import until proven otherwise.
+                "departed_au_since_arrival": True,
             }
 
         # Rebuild in_transit from this fresh ping
@@ -68,6 +77,9 @@ def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | N
             if imo in db:
                 db[imo]["arrival_count"] += 1
                 db[imo]["in_transit"] = None  # arrived → no longer in transit
+                # Vessel is now parked in AU — must be observed offshore or go
+                # silent > GAP_THRESHOLD_DAYS before we'll count it again.
+                db[imo]["departed_au_since_arrival"] = False
 
     prune_stale_in_transit(db, now=now)
 
@@ -150,6 +162,81 @@ def revalidate_in_transit(db: dict) -> int:
             overrides=overrides,
         )
     return cleared
+
+
+def apply_departed_au_rules(db: dict, current_vessels: list[dict], now: str) -> int:
+    """Flip departed_au_since_arrival → True for vessels now inferred to be
+    on a fresh international leg.
+
+    Two triggers, both keyed on the current ping batch:
+    - Region rule: vessel pings with region != "AU_APPROACH" — we've directly
+      observed it offshore.
+    - Gap rule: vessel pings now but last_seen was > GAP_THRESHOLD_DAYS ago —
+      a long silence is evidence of a trip we missed, since an in-AU vessel
+      with AIS on would have kept pinging.
+
+    Must be called BEFORE detect_arrivals so that any arrival this run has the
+    latest flag available for its coastal stamp. Idempotent: vessels already
+    flagged True are left alone.
+
+    Returns the number of records flipped this run.
+    """
+    now_dt = datetime.fromisoformat(now.replace("Z", "+00:00"))
+    gap_cutoff = now_dt - timedelta(days=GAP_THRESHOLD_DAYS)
+    pinged_regions: dict[str, str | None] = {
+        v.get("imo", ""): v.get("region")
+        for v in current_vessels
+        if v.get("imo")
+    }
+    flipped = 0
+    for imo, record in db.items():
+        if record.get("departed_au_since_arrival", True):
+            continue
+        if imo not in pinged_regions:
+            continue
+        region = pinged_regions[imo]
+
+        triggered = False
+        if region is not None and region != "AU_APPROACH":
+            triggered = True
+        else:
+            last_seen = record.get("last_seen")
+            if last_seen:
+                last_seen_dt = datetime.fromisoformat(last_seen.replace("Z", "+00:00"))
+                if last_seen_dt < gap_cutoff:
+                    triggered = True
+
+        if triggered:
+            record["departed_au_since_arrival"] = True
+            flipped += 1
+    return flipped
+
+
+def migrate_departed_au_flag(db: dict) -> int:
+    """Backfill departed_au_since_arrival on records that don't have it yet.
+
+    Conservative policy: a vessel currently inside AU_APPROACH with one or more
+    prior arrivals is assumed to be on a coastal leg (flag False) until we see
+    it offshore again. Everything else defaults to True. Under-counts slightly
+    (a genuine inbound vessel with a prior AU arrival will be flagged False
+    until its next offshore ping flips it back) but that's preferable to the
+    over-count we're fixing.
+
+    Returns the number of records migrated.
+    """
+    count = 0
+    for record in db.values():
+        if "departed_au_since_arrival" in record:
+            continue
+        arrival_count = record.get("arrival_count", 0)
+        in_transit = record.get("in_transit") or {}
+        region = in_transit.get("region") if in_transit else None
+        if arrival_count > 0 and region == "AU_APPROACH":
+            record["departed_au_since_arrival"] = False
+        else:
+            record["departed_au_since_arrival"] = True
+        count += 1
+    return count
 
 
 def prune_stale_in_transit(db: dict, now: str) -> None:

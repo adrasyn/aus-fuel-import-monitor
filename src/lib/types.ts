@@ -52,6 +52,7 @@ export interface VesselDbRecord {
   last_seen: string;
   arrival_count: number;
   in_transit: VesselDbInTransit | null;
+  departed_au_since_arrival: boolean;
 }
 
 export type VesselDb = Record<string, VesselDbRecord>;
@@ -71,6 +72,7 @@ export interface Arrival {
   cargo_tonnes: number;
   cargo_litres: number;
   draught_missing: boolean;
+  coastal: boolean;
 }
 
 export interface MonthEstimate {

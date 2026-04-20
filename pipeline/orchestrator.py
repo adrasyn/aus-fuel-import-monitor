@@ -7,7 +7,13 @@ from datetime import datetime, timezone
 
 from pipeline.collector import run_collector
 from pipeline.arrivals import detect_arrivals, load_ports
-from pipeline.vessels import update_vessel_db, migrate_missing_in_transit, revalidate_in_transit
+from pipeline.vessels import (
+    update_vessel_db,
+    migrate_missing_in_transit,
+    migrate_departed_au_flag,
+    revalidate_in_transit,
+    apply_departed_au_rules,
+)
 from pipeline.daily_estimates import update_daily_estimates
 from pipeline.petroleum_stats import download_latest_excel, build_imports_json
 
@@ -26,6 +32,58 @@ def save_json(path: str, data) -> None:
     with open(path, "w") as f:
         json.dump(data, f, indent=2)
     print(f"  Saved {path}")
+
+
+COASTAL_HEURISTIC_WINDOW_DAYS = 14
+
+
+def migrate_coastal_on_arrivals(arrivals: list[dict]) -> int:
+    """Backfill the coastal flag on arrivals that don't have it yet.
+
+    We have no AIS ping history to replay, so classify heuristically: an
+    arrival is coastal if the same vessel's immediately prior arrival was at
+    a DIFFERENT AU port within COASTAL_HEURISTIC_WINDOW_DAYS. International
+    voyages are longer; intra-AU hops are typically <14 days apart.
+
+    Idempotent: records that already have the field are left alone.
+    Returns the number migrated.
+    """
+    from collections import defaultdict
+
+    by_imo: dict[str, list[dict]] = defaultdict(list)
+    for a in arrivals:
+        imo = a.get("imo")
+        if imo:
+            by_imo[imo].append(a)
+
+    migrated = 0
+    for arrival_list in by_imo.values():
+        arrival_list.sort(key=lambda x: x.get("timestamp", ""))
+        for i, arrival in enumerate(arrival_list):
+            if "coastal" in arrival:
+                continue
+            if i == 0:
+                arrival["coastal"] = False
+                migrated += 1
+                continue
+            prev = arrival_list[i - 1]
+            if prev.get("port") == arrival.get("port"):
+                # Same port — already deduped at detection time, but belt-and-
+                # braces: not a coastal import signal.
+                arrival["coastal"] = False
+                migrated += 1
+                continue
+            try:
+                t_prev = datetime.fromisoformat(prev["timestamp"].replace("Z", "+00:00"))
+                t_cur = datetime.fromisoformat(arrival["timestamp"].replace("Z", "+00:00"))
+            except (KeyError, ValueError):
+                arrival["coastal"] = False
+                migrated += 1
+                continue
+            gap_days = (t_cur - t_prev).days
+            arrival["coastal"] = gap_days <= COASTAL_HEURISTIC_WINDOW_DAYS
+            migrated += 1
+    return migrated
 
 
 def update_monthly_estimates(
@@ -50,6 +108,10 @@ def update_monthly_estimates(
     month = monthly["months"][month_key]
 
     for arrival in new_arrivals:
+        # Coastal hops (e.g. Brisbane → Westernport) aren't new imports; the
+        # cargo was counted on the original international leg.
+        if arrival.get("coastal"):
+            continue
         month["arrival_count"] += 1
         if arrival["ship_type"] == "crude":
             month["arrived_crude_litres"] += arrival["cargo_litres"]
@@ -65,6 +127,8 @@ def update_monthly_estimates(
         if not in_transit:
             continue
         if in_transit.get("is_ballast"):
+            continue
+        if not record.get("departed_au_since_arrival", True):
             continue
         if record.get("ship_type") == "crude":
             en_route_crude_litres += in_transit.get("cargo_litres", 0)
@@ -93,13 +157,21 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     ports = load_ports(f"{DATA_DIR}/ports.json")
 
     migrated = migrate_missing_in_transit(vessel_db, previous_snapshot)
+    departed_migrated = migrate_departed_au_flag(vessel_db)
+    arrivals_migrated = migrate_coastal_on_arrivals(arrivals_data.get("arrivals", []))
     revalidated = revalidate_in_transit(vessel_db)
     if migrated:
         print(f"Migration: backfilled in_transit on {migrated} record(s) from previous snapshot")
+    if departed_migrated:
+        print(f"Migration: backfilled departed_au_since_arrival on {departed_migrated} record(s)")
+    if arrivals_migrated:
+        print(f"Migration: backfilled coastal flag on {arrivals_migrated} arrival record(s)")
     if revalidated:
         print(f"Revalidation: cleared in_transit on {revalidated} record(s) (no longer pass current retention rule)")
-    if migrated or revalidated:
+    if migrated or departed_migrated or revalidated:
         save_json(f"{DATA_DIR}/vessels.json", vessel_db)
+    if arrivals_migrated:
+        save_json(f"{DATA_DIR}/arrivals.json", arrivals_data)
 
     print("Step 1: Collecting from AISStream...")
     current_snapshot = run_collector(api_key, duration_seconds)
@@ -108,6 +180,12 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
         print("Pipeline complete (no-op run).")
         return
     save_json(f"{DATA_DIR}/snapshot.json", current_snapshot)
+
+    flipped = apply_departed_au_rules(
+        vessel_db, current_snapshot["vessels"], now=now.isoformat()
+    )
+    if flipped:
+        print(f"  Flipped departed_au_since_arrival=True on {flipped} vessel(s) after fresh ping (offshore or gap > threshold)")
 
     print("Step 2: Detecting port arrivals...")
     new_arrivals = detect_arrivals(
