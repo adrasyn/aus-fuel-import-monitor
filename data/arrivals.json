@@ -71,6 +71,18 @@
       "cargo_litres": 10558545,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9869447",
+      "name": "ABSOLUTE",
+      "port": "Fremantle",
+      "timestamp": "2026-04-21T21:27:16.246102+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10818,
+      "cargo_litres": 13198182,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
