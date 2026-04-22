@@ -83,6 +83,18 @@
       "cargo_litres": 13198182,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9935911",
+      "name": "LARGO EAGLE",
+      "port": "Melbourne",
+      "timestamp": "2026-04-22T21:29:52.765654+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
