@@ -31,6 +31,10 @@ function rosterToSnapshot(db: VesselDb): Snapshot {
   for (const [imo, record] of Object.entries(db)) {
     const it = record.in_transit;
     if (!it) continue;
+    // Parked in AU after a prior arrival — pipeline knows it hasn't left yet,
+    // so it's not "en route" even though its in_transit block keeps refreshing
+    // while it pings from the anchorage.
+    if (record.departed_au_since_arrival === false) continue;
 
     vessels.push({
       mmsi: it.mmsi,

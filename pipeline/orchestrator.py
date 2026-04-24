@@ -6,7 +6,7 @@ import sys
 from datetime import datetime, timezone
 
 from pipeline.collector import run_collector
-from pipeline.arrivals import detect_arrivals, load_ports
+from pipeline.arrivals import detect_arrivals, detect_silent_arrivals, load_ports
 from pipeline.vessels import (
     update_vessel_db,
     migrate_missing_in_transit,
@@ -186,6 +186,14 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     )
     if flipped:
         print(f"  Flipped departed_au_since_arrival=True on {flipped} vessel(s) after fresh ping (offshore or gap > threshold)")
+
+    print("Step 2a: Sweeping roster for silent arrivals...")
+    silent_arrivals = detect_silent_arrivals(
+        vessel_db, ports, arrivals_data["arrivals"]
+    )
+    arrivals_data["arrivals"].extend(silent_arrivals)
+    if silent_arrivals:
+        print(f"  {len(silent_arrivals)} silent arrival(s) caught from stale in-transit positions")
 
     print("Step 2: Detecting port arrivals...")
     new_arrivals = detect_arrivals(

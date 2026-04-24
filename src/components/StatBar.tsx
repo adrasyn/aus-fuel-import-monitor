@@ -60,7 +60,7 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
       </div>
       <div className="flex flex-col gap-2 max-w-[280px] md:text-right leading-snug">
         <p className="text-[10px] text-label-light">
-          Tracking only ships within terrestrial AIS range (~30nm of coastal receivers). Vessels mid-ocean &mdash; e.g. crossing the Pacific &mdash; won&apos;t appear until they&apos;re near a receiver.
+          Tracking only ships within terrestrial AIS range (~30nm of coastal receivers). Vessels mid-ocean &mdash; e.g. crossing the Pacific &mdash; won&apos;t appear until they&apos;re near a receiver. A vessel drops out of the en-route count once it&apos;s been silent for 14 days, so tankers that have quietly berthed may linger in the total for up to two weeks.
         </p>
         {msoReserve && (
           <p className="text-[10px] text-label-light">

@@ -1,4 +1,9 @@
-from pipeline.arrivals import haversine_km, is_within_port, detect_arrivals
+from pipeline.arrivals import (
+    haversine_km,
+    is_within_port,
+    detect_arrivals,
+    detect_silent_arrivals,
+)
 
 
 def test_haversine_known_distance():
@@ -172,3 +177,130 @@ def test_detect_arrivals_no_duplicate():
     ]
     new_arrivals = detect_arrivals(current_snapshot, vessel_db, ports, existing_arrivals)
     assert len(new_arrivals) == 0
+
+
+# ---------- detect_silent_arrivals ----------
+
+
+def _silent_record(imo: str, lat: float, lon: float, speed: float = 0.0,
+                   ship_type: str = "product", arrival_count: int = 0,
+                   departed: bool = True) -> dict:
+    return {
+        imo: {
+            "name": "Silent Tanker",
+            "vessel_class": "MR",
+            "dwt": 50000,
+            "length": 183,
+            "beam": 32,
+            "ship_type": ship_type,
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-15T00:00:00Z",
+            "arrival_count": arrival_count,
+            "departed_au_since_arrival": departed,
+            "in_transit": {
+                "lat": lat,
+                "lon": lon,
+                "speed": speed,
+                "draught": 9.0,
+                "destination": "AU FRE",
+                "destination_parsed": "Fremantle",
+                "region": "AU_APPROACH",
+                "cargo_litres": 50_000_000,
+                "cargo_tonnes": 40_000,
+                "load_factor": 0.9,
+                "is_ballast": False,
+                "draught_missing": False,
+                "last_position_update": "2026-04-15T00:00:00Z",
+            },
+        }
+    }
+
+
+def test_silent_arrival_detected_when_parked_at_port():
+    ports = [{"name": "Fremantle", "lat": -32.05, "lon": 115.74, "radius_km": 5}]
+    db = _silent_record("9000001", lat=-32.05, lon=115.74, speed=0.0)
+
+    arrivals = detect_silent_arrivals(db, ports, existing_arrivals=[])
+
+    assert len(arrivals) == 1
+    assert arrivals[0]["port"] == "Fremantle"
+    assert arrivals[0]["coastal"] is False  # departed=True → not coastal
+    # Roster mutated: in_transit cleared, counters bumped, parked-flag set
+    assert db["9000001"]["in_transit"] is None
+    assert db["9000001"]["arrival_count"] == 1
+    assert db["9000001"]["departed_au_since_arrival"] is False
+
+
+def test_silent_arrival_skipped_when_moving():
+    ports = [{"name": "Fremantle", "lat": -32.05, "lon": 115.74, "radius_km": 5}]
+    db = _silent_record("9000002", lat=-32.05, lon=115.74, speed=8.0)
+
+    arrivals = detect_silent_arrivals(db, ports, existing_arrivals=[])
+
+    assert arrivals == []
+    assert db["9000002"]["in_transit"] is not None
+
+
+def test_silent_arrival_skipped_when_outside_port_radius():
+    ports = [{"name": "Fremantle", "lat": -32.05, "lon": 115.74, "radius_km": 5}]
+    # Far offshore — even at speed 0 (drifting), not at any port
+    db = _silent_record("9000003", lat=-30.0, lon=110.0, speed=0.0)
+
+    arrivals = detect_silent_arrivals(db, ports, existing_arrivals=[])
+
+    assert arrivals == []
+    assert db["9000003"]["in_transit"] is not None
+
+
+def test_silent_arrival_dedupes_against_existing_record():
+    # Vessel was already recorded as arrived on a prior run; sweep should clear
+    # the lingering in_transit but NOT add a duplicate arrival row.
+    ports = [{"name": "Fremantle", "lat": -32.05, "lon": 115.74, "radius_km": 5}]
+    db = _silent_record(
+        "9000004", lat=-32.05, lon=115.74, speed=0.0,
+        arrival_count=1, departed=False,
+    )
+    existing = [{"imo": "9000004", "port": "Fremantle", "timestamp": "2026-04-10T00:00:00Z"}]
+
+    arrivals = detect_silent_arrivals(db, ports, existing_arrivals=existing)
+
+    assert arrivals == []
+    assert db["9000004"]["in_transit"] is None
+    # Counter not bumped — existing arrival was authoritative
+    assert db["9000004"]["arrival_count"] == 1
+
+
+def test_silent_arrival_marks_coastal_when_vessel_already_in_au():
+    # Vessel previously arrived in AU and hasn't been observed offshore since
+    # — its next "arrival" (e.g. from a coastal hop) is not a fresh import.
+    ports = [{"name": "Brisbane", "lat": -27.38, "lon": 153.17, "radius_km": 5}]
+    db = _silent_record(
+        "9000005", lat=-27.38, lon=153.17, speed=0.0,
+        arrival_count=1, departed=False,
+    )
+
+    arrivals = detect_silent_arrivals(db, ports, existing_arrivals=[])
+
+    assert len(arrivals) == 1
+    assert arrivals[0]["coastal"] is True
+    assert db["9000005"]["arrival_count"] == 2
+
+
+def test_silent_arrival_no_in_transit_skipped():
+    # Vessel not currently in transit (already cleared) — nothing to do.
+    db = {
+        "9000006": {
+            "name": "Done", "vessel_class": "MR", "dwt": 50000,
+            "length": 183, "beam": 32, "ship_type": "product",
+            "first_seen": "2026-04-01T00:00:00Z",
+            "last_seen": "2026-04-15T00:00:00Z",
+            "arrival_count": 1,
+            "departed_au_since_arrival": False,
+            "in_transit": None,
+        }
+    }
+    ports = [{"name": "Fremantle", "lat": -32.05, "lon": 115.74, "radius_km": 5}]
+
+    arrivals = detect_silent_arrivals(db, ports, existing_arrivals=[])
+
+    assert arrivals == []

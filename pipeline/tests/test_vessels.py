@@ -690,9 +690,9 @@ def test_revalidate_updates_stored_destination_parsed_after_reparse():
         "9000011": _record_with_in_transit(
             -32.0, 115.0,                       # AU_APPROACH — kept
             destination_parsed="Gladstone",     # stale, wrong
-            destination_raw="AUKWI",            # current parser → "Fremantle"
+            destination_raw="AUKWI",            # current parser → "Kwinana"
         ),
     }
     cleared = revalidate_in_transit(db)
     assert cleared == 0
-    assert db["9000011"]["in_transit"]["destination_parsed"] == "Fremantle"
+    assert db["9000011"]["in_transit"]["destination_parsed"] == "Kwinana"

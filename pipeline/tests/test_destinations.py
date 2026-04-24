@@ -75,9 +75,11 @@ def test_locode_aubtb_botany():
     assert parse_destination("AUBTB") == "Sydney / Botany"
 
 
-def test_locode_aukwi_fremantle():
-    # Kwinana is part of the Fremantle metro port complex
-    assert parse_destination("AUKWI") == "Fremantle"
+def test_locode_aukwi_kwinana():
+    # Kwinana is a distinct anchorage from Fremantle proper (~20km south,
+    # in Cockburn Sound) and gets its own geofence — so we surface it as a
+    # separate destination rather than folding it into Fremantle.
+    assert parse_destination("AUKWI") == "Kwinana"
 
 
 def test_locode_aubuy_bunbury():
@@ -146,8 +148,8 @@ def test_locode_au_glt_spaced_gladstone():
     assert parse_destination("AU GLT") == "Gladstone"
 
 
-def test_locode_au_kwi_spaced_fremantle():
-    assert parse_destination("AU KWI") == "Fremantle"
+def test_locode_au_kwi_spaced_kwinana():
+    assert parse_destination("AU KWI") == "Kwinana"
 
 
 def test_locode_au_buy_spaced_bunbury():
@@ -220,3 +222,104 @@ def test_looks_foreign_singapore_locode():
 
 def test_looks_foreign_japan_locode():
     assert looks_foreign("JPYOK") is True
+
+
+# ---------- new ports ----------
+
+
+def test_locode_auntl_newcastle():
+    assert parse_destination("AUNTL") == "Newcastle"
+
+
+def test_au_ntl_spaced_newcastle():
+    assert parse_destination("AU NTL") == "Newcastle"
+
+
+def test_newcastle_full_name():
+    assert parse_destination("NEWCASTLE") == "Newcastle"
+
+
+def test_locode_aucns_cairns():
+    assert parse_destination("AUCNS") == "Cairns"
+
+
+def test_cairns_full_name():
+    assert parse_destination("CAIRNS") == "Cairns"
+
+
+def test_locode_auget_geraldton():
+    assert parse_destination("AUGET") == "Geraldton"
+
+
+def test_locode_augex_geraldton():
+    # Some operators use AUGEX as the alternate Geraldton LOCODE
+    assert parse_destination("AUGEX") == "Geraldton"
+
+
+def test_geraldton_full_name():
+    assert parse_destination("GERALDTON") == "Geraldton"
+
+
+def test_locode_audpo_devonport():
+    assert parse_destination("AUDPO") == "Devonport"
+
+
+def test_devonport_full_name():
+    assert parse_destination("DEVONPORT") == "Devonport"
+
+
+def test_locode_auhba_hobart():
+    assert parse_destination("AUHBA") == "Hobart"
+
+
+def test_hobart_full_name():
+    assert parse_destination("HOBART") == "Hobart"
+
+
+def test_kwinana_distinct_from_fremantle():
+    # Kwinana is a separate port within the Fremantle metro complex; we now
+    # surface it as its own arrival destination so we can geofence it.
+    assert parse_destination("KWINANA") == "Kwinana"
+    assert parse_destination("AUKWI") == "Kwinana"
+
+
+# ---------- route-leg parsing (multi-segment destinations) ----------
+
+
+def test_route_leg_outbound_drops_origin_match():
+    # Real-world: ORCHID KEFALONIA bound out of Brisbane for the US Gulf.
+    # The leading "AUBNE" is the *origin*; matching it as the destination
+    # was the bug. Last leg is "USMRZ" which has no AU pattern, so we should
+    # return None (the foreign region check then drops the vessel).
+    assert parse_destination("AUBNE>USMRZ") is None
+
+
+def test_route_leg_inbound_uses_last_segment():
+    # USCP4>AUBTB — origin US, terminus Sydney/Botany. Must still resolve.
+    assert parse_destination("USCP4>AUBTB") == "Sydney / Botany"
+
+
+def test_route_leg_double_arrow():
+    # Some operators use ">>" — splitter must collapse empty segments.
+    assert parse_destination("AUGLT>>AUBNE") == "Brisbane"
+
+
+def test_route_leg_au_to_au_coastal():
+    # Coastal hop: terminus is Newcastle, not Sydney/Botany (the origin).
+    assert parse_destination("AUBTB>AUNTL") == "Newcastle"
+
+
+def test_route_leg_with_spaces():
+    # Spaced separator — strip per-segment.
+    assert parse_destination("CN DGG > AU KWI") == "Kwinana"
+
+
+def test_looks_foreign_route_outbound_to_us():
+    # AUBNE>USMRZ: origin AU, terminus US — should be flagged foreign so the
+    # AU_APPROACH retention rule drops it before it pads the en-route count.
+    assert looks_foreign("AUBNE>USMRZ") is True
+
+
+def test_looks_foreign_route_inbound_from_us_not_foreign():
+    # Origin US, terminus AU — must NOT be foreign.
+    assert looks_foreign("USCP4>AUBTB") is False
