@@ -119,6 +119,30 @@
       "cargo_litres": 6410545,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9718090",
+      "name": "CL ZHAOGE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-24T21:24:23.099761+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9930832",
+      "name": "GOLDEN AXIS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-24T21:24:23.099761+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 13291,
+      "cargo_litres": 16214909,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
