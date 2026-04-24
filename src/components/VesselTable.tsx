@@ -10,7 +10,7 @@ interface VesselTableProps {
   snapshotTimestamp: string;
 }
 
-type SortKey = "name" | "ship_type" | "destination" | "cargo_litres" | "vessel_class" | "last_update";
+type SortKey = "name" | "ship_type" | "destination" | "cargo_litres" | "last_update";
 type SortDir = "asc" | "desc";
 
 const STALE_THRESHOLD_DAYS = 7;
@@ -73,7 +73,6 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel, snap
             <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("ship_type")}>Type{arrow("ship_type")}</th>
             <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("destination")}>Dest.{arrow("destination")}</th>
             <th className="text-right px-3 py-2 cursor-pointer" onClick={() => handleSort("cargo_litres")}>Est. cargo{arrow("cargo_litres")}</th>
-            <th className="text-left px-3 py-2 cursor-pointer" onClick={() => handleSort("vessel_class")}>Class{arrow("vessel_class")}</th>
             <th className="text-right px-3 py-2 cursor-pointer" onClick={() => handleSort("last_update")}>Last seen{arrow("last_update")}</th>
           </tr>
         </thead>
@@ -108,7 +107,6 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel, snap
                 {(v.cargo_litres / 1_000_000).toFixed(0)}M L
                 {v.draught_missing && <span className="text-label-light" title="Draught data unavailable"> *</span>}
               </td>
-              <td className="px-3 py-1">{v.vessel_class}</td>
               <td
                 className={`px-3 py-1 text-right whitespace-nowrap ${
                   isStale ? "italic text-label-light" : "text-label"
@@ -122,7 +120,7 @@ export default function VesselTable({ vessels, selectedImo, onSelectVessel, snap
           })}
           {sorted.length === 0 && (
             <tr>
-              <td colSpan={6} className="px-3 py-8 text-center text-label-light">
+              <td colSpan={5} className="px-3 py-8 text-center text-label-light">
                 No vessels currently tracked
               </td>
             </tr>
