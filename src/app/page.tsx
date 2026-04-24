@@ -24,7 +24,7 @@ export default function Home() {
         vessels={data.snapshot.vessels}
         msoReserve={data.msoReserve}
       />
-      <DashboardGrid vessels={data.snapshot.vessels} />
+      <DashboardGrid vessels={data.snapshot.vessels} snapshotTimestamp={data.snapshot.timestamp} />
       <div className="mb-6">
         <p className="text-[10px] uppercase tracking-label text-label mb-2">Monthly fuel imports by type</p>
         <HistoricalChart imports={data.imports.imports_by_month} monthlyEstimates={data.monthlyEstimates} />

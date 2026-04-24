@@ -7,9 +7,10 @@ import VesselTable from "./VesselTable";
 
 interface DashboardGridProps {
   vessels: Vessel[];
+  snapshotTimestamp: string;
 }
 
-export default function DashboardGrid({ vessels }: DashboardGridProps) {
+export default function DashboardGrid({ vessels, snapshotTimestamp }: DashboardGridProps) {
   const [selectedImo, setSelectedImo] = useState<string | null>(null);
 
   return (
@@ -34,6 +35,7 @@ export default function DashboardGrid({ vessels }: DashboardGridProps) {
           vessels={vessels}
           selectedImo={selectedImo}
           onSelectVessel={setSelectedImo}
+          snapshotTimestamp={snapshotTimestamp}
         />
       </div>
     </div>
