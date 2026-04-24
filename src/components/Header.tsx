@@ -30,10 +30,15 @@ export default function Header({ snapshot, totalLitres, vesselCount }: HeaderPro
         Australian Fuel Import Monitor
       </p>
       <div className="flex justify-between items-baseline gap-8">
-        <h1 className="font-headline text-2xl md:text-3xl leading-tight">
-          {vesselCount} tankers carrying an estimated {litresFormatted} of fuel
-          are en route to Australia
-        </h1>
+        <div className="flex flex-col gap-1">
+          <h1 className="font-headline text-2xl md:text-3xl leading-tight">
+            {vesselCount} tankers tracked en route to Australia, carrying an
+            estimated {litresFormatted} of fuel
+          </h1>
+          <p className="text-[11px] text-label-light italic">
+            Snapshot of AIS-tracked tankers active in the last 14 days
+          </p>
+        </div>
         <div className="text-[10px] text-label-light whitespace-nowrap text-right hidden sm:block leading-snug">
           <p>Updated daily at 6am AEST</p>
           <p>Last updated {timestamp}</p>

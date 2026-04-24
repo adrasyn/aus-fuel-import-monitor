@@ -5,7 +5,7 @@ export default function Footer() {
         This site provides estimates based on publicly available AIS vessel
         tracking data and Australian Government petroleum statistics. Cargo
         volumes are approximations derived from vessel dimensions and draught
-        readings. This site is not affiliated with AMSA or the Australian Government.
+        readings.
       </p>
       <p className="text-[10px] text-label-light mt-3">
         Data refreshes daily at 06:00 AEST.
