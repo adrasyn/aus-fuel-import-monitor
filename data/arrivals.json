@@ -371,6 +371,54 @@
       "cargo_litres": 40541538,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9317250",
+      "name": "THERESA MICRONESIA",
+      "port": "Melbourne",
+      "timestamp": "2026-04-26T21:12:50.911172+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 2473,
+      "cargo_litres": 3016727,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9747089",
+      "name": "LIAN HUAN HU",
+      "port": "Kwinana",
+      "timestamp": "2026-04-26T21:12:50.911172+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1024613",
+      "name": "INSPIRATION",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-26T21:12:50.911624+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 84800,
+      "cargo_litres": 98622400,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9573684",
+      "name": "MP MR TANKER 3",
+      "port": "Newcastle",
+      "timestamp": "2026-04-26T21:12:50.911624+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
