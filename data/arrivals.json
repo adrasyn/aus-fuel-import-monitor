@@ -419,6 +419,66 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9845958",
+      "name": "YUAN JU WAN",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-27T21:36:20.433333+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 62400,
+      "cargo_litres": 72571200,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9943334",
+      "name": "CL PEARL BUCK",
+      "port": "Kwinana",
+      "timestamp": "2026-04-27T21:36:20.433800+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38769,
+      "cargo_litres": 47298462,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9587439",
+      "name": "ICS RELIANCE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-27T21:36:20.433800+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5255,
+      "cargo_litres": 6410545,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9539523",
+      "name": "MORNING IBIS",
+      "port": "Brisbane",
+      "timestamp": "2026-04-27T21:36:20.433800+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 34533,
+      "cargo_litres": 42130667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1051214",
+      "name": "SEA ADMIRAL",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-27T21:36:20.433800+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 28923,
+      "cargo_litres": 35286154,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
