@@ -479,6 +479,30 @@
       "cargo_litres": 35286154,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9785718",
+      "name": "STI LA BOCA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-04-28T21:39:48.721667+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9749398",
+      "name": "MTM NEW ORLEANS",
+      "port": "Melbourne",
+      "timestamp": "2026-04-28T21:39:48.722101+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 13538,
+      "cargo_litres": 16516923,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
