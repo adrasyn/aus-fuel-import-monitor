@@ -503,6 +503,18 @@
       "cargo_litres": 16516923,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "1032191",
+      "name": "BALDER",
+      "port": "Bunbury",
+      "timestamp": "2026-05-01T21:26:58.532995+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 40992000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
