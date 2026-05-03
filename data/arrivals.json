@@ -539,6 +539,30 @@
       "cargo_litres": 21772308,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9740770",
+      "name": "CHEM COBALT",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-03T21:19:57.315677+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11745,
+      "cargo_litres": 14329455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9896244",
+      "name": "YUAN JING HE",
+      "port": "Kwinana",
+      "timestamp": "2026-05-03T21:19:57.315677+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
