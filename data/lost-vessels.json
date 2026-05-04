@@ -1,0 +1,20 @@
+{
+  "events": [
+    {
+      "imo": "9682265",
+      "name": "NAVIGATOR CELTIC",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 17723273,
+      "cargo_tonnes": 14527,
+      "is_ballast": false,
+      "last_lat": -31.84337,
+      "last_lon": 115.57446,
+      "last_destination": "CN DGG> AU KWI",
+      "last_destination_parsed": "Kwinana",
+      "last_position_update": "2026-04-20T21:22:42.340233+00:00",
+      "cleared_at": "2026-05-04T21:41:35.728725+00:00",
+      "reason": "stale_prune_14d"
+    }
+  ]
+}
