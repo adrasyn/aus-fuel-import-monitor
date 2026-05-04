@@ -103,15 +103,12 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
     }
   }
 
-  // Size the "no data" stub at ~3% of the tallest stack so it's visible
-  // but obviously not a real volume.
-  const maxStack = chartData.reduce((acc, r) => {
-    const total = r.crude + r.gasoline + r.diesel + r.jet_fuel + r.fuel_oil + r.lpg + r.product;
-    return total > acc ? total : acc;
-  }, 0);
-  const noDataStubHeight = Math.max(1, Math.round(maxStack * 0.03));
+  // No-data placeholder bars: render at a fixed 5000 ML so they're clearly
+  // sized as a placeholder (close to a typical full-month total) without
+  // pretending to be real data. The bar carries a rotated "No data" label.
+  const NO_DATA_BAR_HEIGHT = 5000;
   for (const row of chartData) {
-    if (row.source === "no_data") row.no_data = noDataStubHeight;
+    if (row.source === "no_data") row.no_data = NO_DATA_BAR_HEIGHT;
   }
 
   if (chartData.length === 0) {
@@ -196,11 +193,35 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
                 strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.product)} />
             ))}
           </Bar>
-          <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none">
+          <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none"
+            label={(props: unknown) => {
+              const p = props as { x?: number | string; y?: number | string; width?: number | string; height?: number | string; index?: number };
+              const idx = p.index;
+              const x = typeof p.x === "number" ? p.x : Number(p.x);
+              const y = typeof p.y === "number" ? p.y : Number(p.y);
+              const width = typeof p.width === "number" ? p.width : Number(p.width);
+              const height = typeof p.height === "number" ? p.height : Number(p.height);
+              if (idx === undefined || chartData[idx]?.source !== "no_data" ||
+                  !Number.isFinite(x) || !Number.isFinite(y) ||
+                  !Number.isFinite(width) || !Number.isFinite(height)) {
+                return <g />;
+              }
+              const cx = x + width / 2;
+              const cy = y + height / 2;
+              return (
+                <text
+                  x={cx} y={cy}
+                  transform={`rotate(-90, ${cx}, ${cy})`}
+                  textAnchor="middle" dominantBaseline="middle"
+                  fontSize={10} fill="#6b7280"
+                >
+                  No data
+                </text>
+              );
+            }}
+          >
             {chartData.map((entry, i) => (
-              <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.6 : 0}
-                stroke={entry.source === "no_data" ? "#9ca3af" : undefined}
-                strokeDasharray={entry.source === "no_data" ? "2 2" : undefined} />
+              <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.6 : 0} />
             ))}
           </Bar>
         </BarChart>
@@ -212,7 +233,7 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
           <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle border border-dashed border-border-heavy" /> Dashed = current month (to date)</span>
         )}
         {chartData.some((r) => r.source === "no_data") && (
-          <span><span className="inline-block w-3 h-3 mr-1 align-middle" style={{ background: "#e5e7eb", border: "1px dashed #9ca3af" }} /> Hatched stub = no data available</span>
+          <span><span className="inline-block w-3 h-3 mr-1 align-middle" style={{ background: "#e5e7eb" }} /> Grey = no data available (placeholder height)</span>
         )}
       </div>
     </div>
