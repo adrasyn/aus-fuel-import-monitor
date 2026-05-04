@@ -19,7 +19,9 @@ interface ChartRow {
   jet_fuel: number;
   fuel_oil: number;
   lpg: number;
-  source: "government" | "ais_estimate" | "current_month";
+  product: number;
+  no_data: number;
+  source: "government" | "ais_estimate" | "current_month" | "no_data";
 }
 
 const FUEL_COLORS = {
@@ -29,6 +31,7 @@ const FUEL_COLORS = {
   jet_fuel: "#9ca3af",
   fuel_oil: "#d1d5db",
   lpg: "#e5e7eb",
+  product: "#6b7280",
 };
 
 export default function HistoricalChart({ imports, monthlyEstimates }: HistoricalChartProps) {
@@ -49,42 +52,66 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
       jet_fuel: record.jet_fuel_ml,
       fuel_oil: record.fuel_oil_ml,
       lpg: record.lpg_ml,
+      product: 0,
+      no_data: 0,
       source: "government",
     });
   }
 
-  // AIS estimate months
-  const estimateMonths = Object.entries(monthlyEstimates.months)
-    .filter(([month]) => month > lastGovtMonth)
-    .sort(([a], [b]) => a.localeCompare(b));
-
   const now = new Date();
   const currentMonth = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, "0")}`;
 
-  // Hide the pipeline's starting (incomplete) month: if the earliest AIS-estimate
-  // month IS the current month, we have no complete historical data for it, just
-  // a partial collection since project start. Skip it until the next month begins.
-  const earliestEstimateMonth = estimateMonths.length > 0 ? estimateMonths[0][0] : null;
-  const hideStartingMonth = earliestEstimateMonth === currentMonth;
+  // AIS estimate months: only the current month is treated as a partial estimate
+  // (with en-route vessels). Past months between the last government month and
+  // the current month are rendered as "no data" placeholders — the AIS scrape
+  // does not have complete coverage of them.
+  const estimateMonths = Object.entries(monthlyEstimates.months)
+    .filter(([month]) => month > lastGovtMonth)
+    .sort(([a], [b]) => a.localeCompare(b));
+  const estimateByMonth = new Map(estimateMonths);
 
-  for (const [month, est] of estimateMonths) {
-    if (hideStartingMonth && month === currentMonth) {
-      continue;
+  const addMonths = (ym: string, delta: number) => {
+    const [y, m] = ym.split("-").map(Number);
+    const d = new Date(Date.UTC(y, m - 1 + delta, 1));
+    return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
+  };
+
+  if (lastGovtMonth) {
+    let cursor = addMonths(lastGovtMonth, 1);
+    while (cursor <= currentMonth) {
+      if (cursor === currentMonth) {
+        const est = estimateByMonth.get(cursor);
+        const crudeMl = est ? (est.arrived_crude_litres + est.en_route_crude_litres) / 1_000_000 : 0;
+        const productMl = est ? (est.arrived_product_litres + est.en_route_product_litres) / 1_000_000 : 0;
+        chartData.push({
+          month: cursor,
+          crude: Math.round(crudeMl),
+          gasoline: 0, diesel: 0, jet_fuel: 0, fuel_oil: 0, lpg: 0,
+          product: Math.round(productMl),
+          no_data: 0,
+          source: "current_month",
+        });
+      } else {
+        chartData.push({
+          month: cursor,
+          crude: 0, gasoline: 0, diesel: 0, jet_fuel: 0, fuel_oil: 0, lpg: 0, product: 0,
+          no_data: 1,
+          source: "no_data",
+        });
+      }
+      cursor = addMonths(cursor, 1);
     }
-    const isCurrent = month === currentMonth;
-    const crudeMl = (est.arrived_crude_litres + (isCurrent ? est.en_route_crude_litres : 0)) / 1_000_000;
-    const productMl = (est.arrived_product_litres + (isCurrent ? est.en_route_product_litres : 0)) / 1_000_000;
+  }
 
-    chartData.push({
-      month,
-      crude: Math.round(crudeMl),
-      gasoline: 0,
-      diesel: Math.round(productMl * 0.5),
-      jet_fuel: Math.round(productMl * 0.25),
-      fuel_oil: Math.round(productMl * 0.15),
-      lpg: Math.round(productMl * 0.1),
-      source: isCurrent ? "current_month" : "ais_estimate",
-    });
+  // Size the "no data" stub at ~3% of the tallest stack so it's visible
+  // but obviously not a real volume.
+  const maxStack = chartData.reduce((acc, r) => {
+    const total = r.crude + r.gasoline + r.diesel + r.jet_fuel + r.fuel_oil + r.lpg + r.product;
+    return total > acc ? total : acc;
+  }, 0);
+  const noDataStubHeight = Math.max(1, Math.round(maxStack * 0.03));
+  for (const row of chartData) {
+    if (row.source === "no_data") row.no_data = noDataStubHeight;
   }
 
   if (chartData.length === 0) {
@@ -102,6 +129,13 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
     return month === currentMonth ? `${label} MTD` : label;
   };
 
+  const cellOpacity = (source: ChartRow["source"]) =>
+    source === "government" ? 1 : source === "no_data" ? 0 : 0.4;
+  const cellStroke = (source: ChartRow["source"], color: string) =>
+    source === "current_month" ? color : undefined;
+  const cellDash = (source: ChartRow["source"]) =>
+    source === "current_month" ? "4 2" : undefined;
+
   return (
     <div>
       <ResponsiveContainer width="100%" height={350}>
@@ -109,40 +143,76 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
           <XAxis dataKey="month" tickFormatter={formatMonth} tick={{ fontSize: 10, fill: "#6b7280" }} interval="preserveStartEnd" />
           <YAxis tick={{ fontSize: 10, fill: "#6b7280" }} label={{ value: "Megalitres", angle: -90, position: "insideLeft", style: { fontSize: 10, fill: "#6b7280" } }} />
-          <Tooltip formatter={(value) => [`${value} ML`]} labelFormatter={(label) => formatMonth(String(label))} />
+          <Tooltip
+            labelFormatter={(label) => formatMonth(String(label))}
+            formatter={(value, name) => {
+              if (name === "No data") return ["—", "No data"];
+              return [`${value} ML`, name];
+            }}
+          />
           <Legend
             wrapperStyle={{ fontSize: 10 }}
             formatter={(value) => <span style={{ color: "#000" }}>{value}</span>}
           />
           <Bar dataKey="crude" name="Crude oil" stackId="fuel" fill={FUEL_COLORS.crude}>
             {chartData.map((entry, i) => (
-              <Cell key={i} fillOpacity={entry.source === "government" ? 1 : 0.4}
-                strokeDasharray={entry.source === "current_month" ? "4 2" : undefined}
-                stroke={entry.source === "current_month" ? FUEL_COLORS.crude : undefined} />
+              <Cell key={i} fillOpacity={cellOpacity(entry.source)}
+                strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.crude)} />
             ))}
           </Bar>
           <Bar dataKey="diesel" name="Diesel" stackId="fuel" fill={FUEL_COLORS.diesel}>
-            {chartData.map((entry, i) => (<Cell key={i} fillOpacity={entry.source === "government" ? 1 : 0.4} />))}
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={cellOpacity(entry.source)}
+                strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.diesel)} />
+            ))}
           </Bar>
           <Bar dataKey="gasoline" name="Gasoline" stackId="fuel" fill={FUEL_COLORS.gasoline}>
-            {chartData.map((entry, i) => (<Cell key={i} fillOpacity={entry.source === "government" ? 1 : 0.4} />))}
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={cellOpacity(entry.source)}
+                strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.gasoline)} />
+            ))}
           </Bar>
           <Bar dataKey="jet_fuel" name="Jet fuel" stackId="fuel" fill={FUEL_COLORS.jet_fuel}>
-            {chartData.map((entry, i) => (<Cell key={i} fillOpacity={entry.source === "government" ? 1 : 0.4} />))}
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={cellOpacity(entry.source)}
+                strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.jet_fuel)} />
+            ))}
           </Bar>
           <Bar dataKey="fuel_oil" name="Fuel oil" stackId="fuel" fill={FUEL_COLORS.fuel_oil}>
-            {chartData.map((entry, i) => (<Cell key={i} fillOpacity={entry.source === "government" ? 1 : 0.4} />))}
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={cellOpacity(entry.source)}
+                strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.fuel_oil)} />
+            ))}
           </Bar>
           <Bar dataKey="lpg" name="LPG" stackId="fuel" fill={FUEL_COLORS.lpg}>
-            {chartData.map((entry, i) => (<Cell key={i} fillOpacity={entry.source === "government" ? 1 : 0.4} />))}
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={cellOpacity(entry.source)}
+                strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.lpg)} />
+            ))}
+          </Bar>
+          <Bar dataKey="product" name="Product (unspecified)" stackId="fuel" fill={FUEL_COLORS.product}>
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={cellOpacity(entry.source)}
+                strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.product)} />
+            ))}
+          </Bar>
+          <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none">
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.6 : 0}
+                stroke={entry.source === "no_data" ? "#9ca3af" : undefined}
+                strokeDasharray={entry.source === "no_data" ? "2 2" : undefined} />
+            ))}
           </Bar>
         </BarChart>
       </ResponsiveContainer>
       <div className="flex flex-wrap gap-4 mt-2 text-[9px] text-label-light">
         <span><span className="inline-block w-3 h-3 bg-border-heavy mr-1 align-middle" /> Solid = government data</span>
-        <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle" /> Faded = AIS estimate (provisional)</span>
+        <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle" /> Faded = AIS estimate (current month, includes en-route)</span>
         {chartData.some((r) => r.source === "current_month") && (
           <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle border border-dashed border-border-heavy" /> Dashed = current month (to date)</span>
+        )}
+        {chartData.some((r) => r.source === "no_data") && (
+          <span><span className="inline-block w-3 h-3 mr-1 align-middle" style={{ background: "#e5e7eb", border: "1px dashed #9ca3af" }} /> Hatched stub = no data available</span>
         )}
       </div>
     </div>
