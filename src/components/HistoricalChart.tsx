@@ -10,6 +10,10 @@ import type { ImportRecord, MonthlyEstimates } from "@/lib/types";
 interface HistoricalChartProps {
   imports: ImportRecord[];
   monthlyEstimates: MonthlyEstimates;
+  // First month from which the AIS pipeline had full coverage. Past months
+  // before this remain "no data" placeholders even if they have partial
+  // estimate values.
+  aisCompleteFromMonth?: string;
 }
 
 interface ChartRow {
@@ -22,7 +26,7 @@ interface ChartRow {
   lpg: number;
   product: number;
   no_data: number;
-  source: "government" | "ais_estimate" | "current_month" | "no_data";
+  source: "government" | "ais_complete" | "current_month" | "no_data";
 }
 
 const FUEL_COLORS = {
@@ -123,7 +127,7 @@ function NoDataLabels({ chartData }: { chartData: ChartRow[] }) {
   );
 }
 
-export default function HistoricalChart({ imports, monthlyEstimates }: HistoricalChartProps) {
+export default function HistoricalChart({ imports, monthlyEstimates, aisCompleteFromMonth }: HistoricalChartProps) {
   const chartData: ChartRow[] = [];
 
   // Government data (last 24 months)
@@ -168,17 +172,26 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
   if (lastGovtMonth) {
     let cursor = addMonths(lastGovtMonth, 1);
     while (cursor <= currentMonth) {
-      if (cursor === currentMonth) {
-        const est = estimateByMonth.get(cursor);
-        const crudeMl = est ? (est.arrived_crude_litres + est.en_route_crude_litres) / 1_000_000 : 0;
-        const productMl = est ? (est.arrived_product_litres + est.en_route_product_litres) / 1_000_000 : 0;
+      const est = estimateByMonth.get(cursor);
+      const isCurrent = cursor === currentMonth;
+      const hasFullAisCoverage =
+        aisCompleteFromMonth !== undefined && cursor >= aisCompleteFromMonth;
+
+      if ((isCurrent || hasFullAisCoverage) && est) {
+        // Both branches use arrived_* only — that's an honest cumulative
+        // count of cargo discharged at AU ports this month. en_route_* is
+        // intentionally excluded: it has no ETA-window filter, so adding it
+        // would inflate the bar with vessels that will actually land in the
+        // following month, double-counting them on the boundary.
+        const crudeMl = est.arrived_crude_litres / 1_000_000;
+        const productMl = est.arrived_product_litres / 1_000_000;
         chartData.push({
           month: cursor,
           crude: Math.round(crudeMl),
           gasoline: 0, diesel: 0, jet_fuel: 0, fuel_oil: 0, lpg: 0,
           product: Math.round(productMl),
           no_data: 0,
-          source: "current_month",
+          source: isCurrent ? "current_month" : "ais_complete",
         });
       } else {
         chartData.push({
@@ -286,9 +299,11 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
       </ResponsiveContainer>
       <div className="flex flex-wrap gap-4 mt-2 text-[9px] text-label-light">
         <span><span className="inline-block w-3 h-3 bg-border-heavy mr-1 align-middle" /> Solid = government data</span>
-        <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle" /> Faded = AIS estimate (current month, includes en-route)</span>
+        {chartData.some((r) => r.source === "ais_complete") && (
+          <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle" /> Faded = AIS arrivals (pre-government)</span>
+        )}
         {chartData.some((r) => r.source === "current_month") && (
-          <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle border border-dashed border-border-heavy" /> Dashed = current month (to date)</span>
+          <span><span className="inline-block w-3 h-3 bg-border-heavy/40 mr-1 align-middle border border-dashed border-border-heavy" /> Dashed = current month (arrivals to date)</span>
         )}
         {chartData.some((r) => r.source === "no_data") && (
           <span><span className="inline-block w-3 h-3 mr-1 align-middle" style={{ background: "#e5e7eb" }} /> Grey = no data available (placeholder height)</span>

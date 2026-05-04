@@ -12,6 +12,20 @@ export default function Home() {
   const laden = data.snapshot.vessels.filter((v) => !v.is_ballast);
   const totalLitres = laden.reduce((sum, v) => sum + v.cargo_litres, 0);
 
+  // First month with full AIS pipeline coverage = the month AFTER the
+  // earliest detected arrival. (The pipeline started part-way through that
+  // earliest month, so it doesn't have full coverage of it.)
+  const earliestArrivalTs = data.arrivals
+    .map((a) => a.timestamp)
+    .filter(Boolean)
+    .sort()[0];
+  let aisCompleteFromMonth: string | undefined;
+  if (earliestArrivalTs) {
+    const d = new Date(earliestArrivalTs);
+    const next = new Date(Date.UTC(d.getUTCFullYear(), d.getUTCMonth() + 1, 1));
+    aisCompleteFromMonth = `${next.getUTCFullYear()}-${String(next.getUTCMonth() + 1).padStart(2, "0")}`;
+  }
+
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
       <StaleBanner timestamp={data.snapshot.timestamp} />
@@ -27,7 +41,7 @@ export default function Home() {
       <DashboardGrid vessels={data.snapshot.vessels} snapshotTimestamp={data.snapshot.timestamp} />
       <div className="mb-6">
         <p className="text-[10px] uppercase tracking-label text-label mb-2">Monthly fuel imports by type</p>
-        <HistoricalChart imports={data.imports.imports_by_month} monthlyEstimates={data.monthlyEstimates} />
+        <HistoricalChart imports={data.imports.imports_by_month} monthlyEstimates={data.monthlyEstimates} aisCompleteFromMonth={aisCompleteFromMonth} />
         <p className="text-[9px] text-label-light mt-2">Source: Australian Petroleum Statistics, Dept of Climate Change, Energy, the Environment and Water</p>
       </div>
       <div className="mb-6">
