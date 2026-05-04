@@ -2,7 +2,8 @@
 
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  ResponsiveContainer, Cell, LabelList,
+  ResponsiveContainer, Cell,
+  useXAxisScale, useYAxisScale,
 } from "recharts";
 import type { ImportRecord, MonthlyEstimates } from "@/lib/types";
 
@@ -33,6 +34,96 @@ const FUEL_COLORS = {
   lpg: "#e5e7eb",
   product: "#6b7280",
 };
+
+const FUEL_LABELS: Record<string, string> = {
+  crude: "Crude oil",
+  diesel: "Diesel",
+  gasoline: "Gasoline",
+  jet_fuel: "Jet fuel",
+  fuel_oil: "Fuel oil",
+  lpg: "LPG",
+  product: "Product (unspecified)",
+};
+
+const FUEL_ORDER = ["crude", "diesel", "gasoline", "jet_fuel", "fuel_oil", "lpg", "product"] as const;
+
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: Array<{ payload?: ChartRow }>;
+  label?: string | number;
+  currentMonth: string;
+}
+
+function CustomTooltip({ active, payload, label, currentMonth }: CustomTooltipProps) {
+  if (!active || !payload || payload.length === 0) return null;
+  const row = payload[0]?.payload;
+  if (!row) return null;
+
+  const formatMonth = (month: string) => {
+    const [y, m] = month.split("-");
+    const monthLabels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    const lbl = `${monthLabels[parseInt(m) - 1]} ${y.slice(2)}`;
+    return month === currentMonth ? `${lbl} MTD` : lbl;
+  };
+
+  return (
+    <div style={{
+      background: "#fff", border: "1px solid #d1d5db", padding: "4px 6px",
+      fontSize: 10, lineHeight: 1.4, color: "#111827",
+    }}>
+      <div style={{ fontWeight: 600, marginBottom: 2 }}>{formatMonth(String(label))}</div>
+      {row.source === "no_data" ? (
+        <div style={{ color: "#6b7280" }}>No data available</div>
+      ) : (
+        FUEL_ORDER.filter((k) => (row[k] ?? 0) > 0).map((k) => (
+          <div key={k} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+            <span style={{
+              display: "inline-block", width: 8, height: 8,
+              background: FUEL_COLORS[k as keyof typeof FUEL_COLORS],
+              border: "1px solid #6b7280",
+            }} />
+            <span>{FUEL_LABELS[k]}: {row[k]} ML</span>
+          </div>
+        ))
+      )}
+    </div>
+  );
+}
+
+function NoDataLabels({ chartData }: { chartData: ChartRow[] }) {
+  const xScale = useXAxisScale();
+  const yScale = useYAxisScale();
+  if (!xScale || !yScale) return null;
+
+  const NO_DATA_BAR_HEIGHT = 5000;
+  const yTop = yScale(NO_DATA_BAR_HEIGHT);
+  const yBot = yScale(0);
+  if (typeof yTop !== "number" || typeof yBot !== "number") return null;
+  const cy = (yTop + yBot) / 2;
+  const bandwidth = (xScale as { bandwidth?: () => number }).bandwidth?.() ?? 0;
+
+  return (
+    <g pointerEvents="none">
+      {chartData.map((d, i) => {
+        if (d.source !== "no_data") return null;
+        const xVal = xScale(d.month);
+        if (typeof xVal !== "number") return null;
+        const cx = xVal + bandwidth / 2;
+        return (
+          <text
+            key={i}
+            x={cx} y={cy}
+            transform={`rotate(-90, ${cx}, ${cy})`}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize={10} fill="#6b7280"
+          >
+            No data
+          </text>
+        );
+      })}
+    </g>
+  );
+}
 
 export default function HistoricalChart({ imports, monthlyEstimates }: HistoricalChartProps) {
   const chartData: ChartRow[] = [];
@@ -140,27 +231,7 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
           <CartesianGrid strokeDasharray="3 3" stroke="#e2e8f0" />
           <XAxis dataKey="month" tickFormatter={formatMonth} tick={{ fontSize: 10, fill: "#6b7280" }} interval="preserveStartEnd" />
           <YAxis tick={{ fontSize: 10, fill: "#6b7280" }} label={{ value: "Megalitres", angle: -90, position: "insideLeft", style: { fontSize: 10, fill: "#6b7280" } }} />
-          <Tooltip
-            contentStyle={{ fontSize: 10, padding: "4px 6px", lineHeight: 1.3 }}
-            labelStyle={{ fontSize: 10, fontWeight: 600, marginBottom: 2, color: "#111827" }}
-            itemStyle={{ padding: 0, color: "#111827" }}
-            labelFormatter={(label) => formatMonth(String(label))}
-            formatter={(value, name, item) => {
-              if (name === "No data") return ["—", "No data"];
-              const swatch = (
-                <span
-                  style={{
-                    display: "inline-block",
-                    width: 8, height: 8, marginRight: 4,
-                    background: (item as { color?: string })?.color ?? "#6b7280",
-                    border: "1px solid #6b7280",
-                    verticalAlign: "middle",
-                  }}
-                />
-              );
-              return [`${value} ML`, <>{swatch}{name}</>];
-            }}
-          />
+          <Tooltip content={<CustomTooltip currentMonth={currentMonth} />} />
           <Legend
             wrapperStyle={{ fontSize: 10 }}
             formatter={(value) => <span style={{ color: "#000" }}>{value}</span>}
@@ -211,36 +282,8 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
             {chartData.map((entry, i) => (
               <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.6 : 0} />
             ))}
-            <LabelList
-              dataKey="no_data"
-              content={(props: unknown) => {
-                const p = props as { x?: number | string; y?: number | string; width?: number | string; height?: number | string; index?: number };
-                const idx = p.index;
-                const x = typeof p.x === "number" ? p.x : Number(p.x);
-                const y = typeof p.y === "number" ? p.y : Number(p.y);
-                const width = typeof p.width === "number" ? p.width : Number(p.width);
-                const height = typeof p.height === "number" ? p.height : Number(p.height);
-                if (idx === undefined || chartData[idx]?.source !== "no_data" ||
-                    !Number.isFinite(x) || !Number.isFinite(y) ||
-                    !Number.isFinite(width) || !Number.isFinite(height) ||
-                    height < 8) {
-                  return null;
-                }
-                const cx = x + width / 2;
-                const cy = y + height / 2;
-                return (
-                  <text
-                    x={cx} y={cy}
-                    transform={`rotate(-90, ${cx}, ${cy})`}
-                    textAnchor="middle" dominantBaseline="middle"
-                    fontSize={10} fill="#6b7280"
-                  >
-                    No data
-                  </text>
-                );
-              }}
-            />
           </Bar>
+          <NoDataLabels chartData={chartData} />
         </BarChart>
       </ResponsiveContainer>
       <div className="flex flex-wrap gap-4 mt-2 text-[9px] text-label-light">
