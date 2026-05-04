@@ -2,7 +2,7 @@
 
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
-  ResponsiveContainer, Cell,
+  ResponsiveContainer, Cell, LabelList,
 } from "recharts";
 import type { ImportRecord, MonthlyEstimates } from "@/lib/types";
 
@@ -141,10 +141,24 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
           <XAxis dataKey="month" tickFormatter={formatMonth} tick={{ fontSize: 10, fill: "#6b7280" }} interval="preserveStartEnd" />
           <YAxis tick={{ fontSize: 10, fill: "#6b7280" }} label={{ value: "Megalitres", angle: -90, position: "insideLeft", style: { fontSize: 10, fill: "#6b7280" } }} />
           <Tooltip
+            contentStyle={{ fontSize: 10, padding: "4px 6px", lineHeight: 1.3 }}
+            labelStyle={{ fontSize: 10, fontWeight: 600, marginBottom: 2, color: "#111827" }}
+            itemStyle={{ padding: 0, color: "#111827" }}
             labelFormatter={(label) => formatMonth(String(label))}
-            formatter={(value, name) => {
+            formatter={(value, name, item) => {
               if (name === "No data") return ["—", "No data"];
-              return [`${value} ML`, name];
+              const swatch = (
+                <span
+                  style={{
+                    display: "inline-block",
+                    width: 8, height: 8, marginRight: 4,
+                    background: (item as { color?: string })?.color ?? "#6b7280",
+                    border: "1px solid #6b7280",
+                    verticalAlign: "middle",
+                  }}
+                />
+              );
+              return [`${value} ML`, <>{swatch}{name}</>];
             }}
           />
           <Legend
@@ -193,36 +207,39 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
                 strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.product)} />
             ))}
           </Bar>
-          <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none"
-            label={(props: unknown) => {
-              const p = props as { x?: number | string; y?: number | string; width?: number | string; height?: number | string; index?: number };
-              const idx = p.index;
-              const x = typeof p.x === "number" ? p.x : Number(p.x);
-              const y = typeof p.y === "number" ? p.y : Number(p.y);
-              const width = typeof p.width === "number" ? p.width : Number(p.width);
-              const height = typeof p.height === "number" ? p.height : Number(p.height);
-              if (idx === undefined || chartData[idx]?.source !== "no_data" ||
-                  !Number.isFinite(x) || !Number.isFinite(y) ||
-                  !Number.isFinite(width) || !Number.isFinite(height)) {
-                return <g />;
-              }
-              const cx = x + width / 2;
-              const cy = y + height / 2;
-              return (
-                <text
-                  x={cx} y={cy}
-                  transform={`rotate(-90, ${cx}, ${cy})`}
-                  textAnchor="middle" dominantBaseline="middle"
-                  fontSize={10} fill="#6b7280"
-                >
-                  No data
-                </text>
-              );
-            }}
-          >
+          <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none" isAnimationActive={false}>
             {chartData.map((entry, i) => (
               <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.6 : 0} />
             ))}
+            <LabelList
+              dataKey="no_data"
+              content={(props: unknown) => {
+                const p = props as { x?: number | string; y?: number | string; width?: number | string; height?: number | string; index?: number };
+                const idx = p.index;
+                const x = typeof p.x === "number" ? p.x : Number(p.x);
+                const y = typeof p.y === "number" ? p.y : Number(p.y);
+                const width = typeof p.width === "number" ? p.width : Number(p.width);
+                const height = typeof p.height === "number" ? p.height : Number(p.height);
+                if (idx === undefined || chartData[idx]?.source !== "no_data" ||
+                    !Number.isFinite(x) || !Number.isFinite(y) ||
+                    !Number.isFinite(width) || !Number.isFinite(height) ||
+                    height < 8) {
+                  return null;
+                }
+                const cx = x + width / 2;
+                const cy = y + height / 2;
+                return (
+                  <text
+                    x={cx} y={cy}
+                    transform={`rotate(-90, ${cx}, ${cy})`}
+                    textAnchor="middle" dominantBaseline="middle"
+                    fontSize={10} fill="#6b7280"
+                  >
+                    No data
+                  </text>
+                );
+              }}
+            />
           </Bar>
         </BarChart>
       </ResponsiveContainer>
