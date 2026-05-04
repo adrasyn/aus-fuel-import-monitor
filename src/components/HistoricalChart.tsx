@@ -100,22 +100,20 @@ function NoDataLabels({ chartData }: { chartData: ChartRow[] }) {
   const yBot = yScale(0);
   if (typeof yTop !== "number" || typeof yBot !== "number") return null;
   const cy = (yTop + yBot) / 2;
-  const bandwidth = (xScale as { bandwidth?: () => number }).bandwidth?.() ?? 0;
 
   return (
     <g pointerEvents="none">
       {chartData.map((d, i) => {
         if (d.source !== "no_data") return null;
-        const xVal = xScale(d.month);
-        if (typeof xVal !== "number") return null;
-        const cx = xVal + bandwidth / 2;
+        const cx = xScale(d.month, { position: "middle" });
+        if (typeof cx !== "number") return null;
         return (
           <text
             key={i}
             x={cx} y={cy}
             transform={`rotate(-90, ${cx}, ${cy})`}
             textAnchor="middle" dominantBaseline="middle"
-            fontSize={10} fill="#6b7280"
+            fontSize={10} fontWeight={500} fill="#374151"
           >
             No data
           </text>
@@ -280,7 +278,7 @@ export default function HistoricalChart({ imports, monthlyEstimates }: Historica
           </Bar>
           <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none" isAnimationActive={false}>
             {chartData.map((entry, i) => (
-              <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.6 : 0} />
+              <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.35 : 0} />
             ))}
           </Bar>
           <NoDataLabels chartData={chartData} />
