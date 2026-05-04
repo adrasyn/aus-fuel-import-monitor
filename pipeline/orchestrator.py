@@ -86,6 +86,25 @@ def migrate_coastal_on_arrivals(arrivals: list[dict]) -> int:
     return migrated
 
 
+def _empty_month_bucket() -> dict:
+    return {
+        "arrived_crude_litres": 0,
+        "arrived_product_litres": 0,
+        "arrived_crude_tonnes": 0,
+        "arrived_product_tonnes": 0,
+        "arrival_count": 0,
+    }
+
+
+def _arrival_month_key(arrival: dict, fallback: str) -> str:
+    """An arrival's import month is its own timestamp, not the pipeline
+    run-time. Silent arrivals detected on May 1 for ships that actually
+    berthed in late April should still bucket into April.
+    """
+    ts = arrival.get("timestamp") or ""
+    return ts[:7] if len(ts) >= 7 else fallback
+
+
 def update_monthly_estimates(
     monthly: dict,
     new_arrivals: list[dict],
@@ -94,24 +113,17 @@ def update_monthly_estimates(
 ) -> dict:
     if now is None:
         now = datetime.now(timezone.utc)
-    month_key = now.strftime("%Y-%m")
+    fallback_key = now.strftime("%Y-%m")
 
-    if month_key not in monthly.get("months", {}):
-        monthly.setdefault("months", {})[month_key] = {
-            "arrived_crude_litres": 0,
-            "arrived_product_litres": 0,
-            "arrived_crude_tonnes": 0,
-            "arrived_product_tonnes": 0,
-            "arrival_count": 0,
-        }
-
-    month = monthly["months"][month_key]
+    months = monthly.setdefault("months", {})
 
     for arrival in new_arrivals:
         # Coastal hops (e.g. Brisbane → Westernport) aren't new imports; the
         # cargo was counted on the original international leg.
         if arrival.get("coastal"):
             continue
+        month_key = _arrival_month_key(arrival, fallback_key)
+        month = months.setdefault(month_key, _empty_month_bucket())
         month["arrival_count"] += 1
         if arrival["ship_type"] == "crude":
             month["arrived_crude_litres"] += arrival["cargo_litres"]
@@ -119,6 +131,10 @@ def update_monthly_estimates(
         else:
             month["arrived_product_litres"] += arrival["cargo_litres"]
             month["arrived_product_tonnes"] += arrival["cargo_tonnes"]
+
+    # En-route bucket is always written to the current month, since it's a
+    # live snapshot of inbound traffic right now.
+    month = months.setdefault(fallback_key, _empty_month_bucket())
 
     en_route_crude_litres = 0
     en_route_product_litres = 0
@@ -138,6 +154,41 @@ def update_monthly_estimates(
     month["en_route_crude_litres"] = en_route_crude_litres
     month["en_route_product_litres"] = en_route_product_litres
     month["last_updated"] = now.isoformat()
+
+    return monthly
+
+
+def rebucket_monthly_from_arrivals(monthly: dict, arrivals: list[dict]) -> dict:
+    """One-shot recompute of every month's arrived_* and arrival_count
+    fields from arrivals.json. Idempotent — safe to re-run.
+
+    Bucketing rule matches `update_monthly_estimates`: by arrival timestamp,
+    coastal hops excluded. Existing en_route_* and last_updated fields are
+    preserved.
+    """
+    months = monthly.setdefault("months", {})
+    for m in months.values():
+        m["arrived_crude_litres"] = 0
+        m["arrived_product_litres"] = 0
+        m["arrived_crude_tonnes"] = 0
+        m["arrived_product_tonnes"] = 0
+        m["arrival_count"] = 0
+
+    for arrival in arrivals:
+        if arrival.get("coastal"):
+            continue
+        ts = arrival.get("timestamp") or ""
+        if len(ts) < 7:
+            continue
+        month_key = ts[:7]
+        month = months.setdefault(month_key, _empty_month_bucket())
+        month["arrival_count"] += 1
+        if arrival["ship_type"] == "crude":
+            month["arrived_crude_litres"] += arrival["cargo_litres"]
+            month["arrived_crude_tonnes"] += arrival["cargo_tonnes"]
+        else:
+            month["arrived_product_litres"] += arrival["cargo_litres"]
+            month["arrived_product_tonnes"] += arrival["cargo_tonnes"]
 
     return monthly
 
@@ -226,7 +277,13 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
         print(f"  {len(new_lost)} vessel(s) cleared from in-transit without arrival (logged to lost-vessels.json)")
 
     print("Step 4: Updating monthly estimates...")
-    monthly = update_monthly_estimates(monthly, new_arrivals, vessel_db, now=now)
+    # Self-heal: recompute arrived_* totals from the full arrivals.json
+    # rather than incrementing only with this run's new detections. Older
+    # logic mis-bucketed silent arrivals into the wrong month and dropped
+    # silent arrivals entirely — this rebuild keeps the file consistent
+    # with arrivals.json on every run.
+    monthly = rebucket_monthly_from_arrivals(monthly, arrivals_data["arrivals"])
+    monthly = update_monthly_estimates(monthly, [], vessel_db, now=now)
     save_json(f"{DATA_DIR}/monthly-estimates.json", monthly)
 
     print("Step 5: Updating daily estimates...")
