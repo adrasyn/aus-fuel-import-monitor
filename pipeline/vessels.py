@@ -32,7 +32,39 @@ def build_in_transit(snapshot_row: dict, now: str) -> dict:
     return in_transit
 
 
-def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | None = None) -> dict:
+def _record_lost(record: dict, imo: str, reason: str, now: str, log: list | None) -> None:
+    """Capture a snapshot of an in_transit record before it's cleared without
+    a corresponding arrival. Drives `data/lost-vessels.json`, which exists so
+    we can audit how often the en-route bar drains into nothing — silent
+    undercount on the MTD imports figure.
+
+    Reason codes:
+      - "stale_prune_14d": last AIS ping is older than STALENESS_DAYS
+      - "destination_disqualified": destination/region no longer parses to AU
+      - "lng_excluded": vessel reclassified as LNG carrier (not in scope)
+    """
+    if log is None:
+        return
+    in_transit = record.get("in_transit") or {}
+    log.append({
+        "imo": imo,
+        "name": record.get("name", "Unknown"),
+        "ship_type": record.get("ship_type", "product"),
+        "vessel_class": record.get("vessel_class"),
+        "cargo_litres": in_transit.get("cargo_litres", 0),
+        "cargo_tonnes": in_transit.get("cargo_tonnes", 0),
+        "is_ballast": in_transit.get("is_ballast", False),
+        "last_lat": in_transit.get("lat"),
+        "last_lon": in_transit.get("lon"),
+        "last_destination": in_transit.get("destination"),
+        "last_destination_parsed": in_transit.get("destination_parsed"),
+        "last_position_update": in_transit.get("last_position_update"),
+        "cleared_at": now,
+        "reason": reason,
+    })
+
+
+def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | None = None, lost_log: list | None = None) -> dict:
     now = datetime.now(timezone.utc).isoformat()
 
     pinged_imos = set()
@@ -81,7 +113,7 @@ def update_vessel_db(db: dict, vessels: list[dict], new_arrivals: list[dict] | N
                 # silent > GAP_THRESHOLD_DAYS before we'll count it again.
                 db[imo]["departed_au_since_arrival"] = False
 
-    prune_stale_in_transit(db, now=now)
+    prune_stale_in_transit(db, now=now, lost_log=lost_log)
 
     return db
 
@@ -115,7 +147,7 @@ def migrate_missing_in_transit(db: dict, snapshot: dict) -> int:
     return count
 
 
-def revalidate_in_transit(db: dict) -> int:
+def revalidate_in_transit(db: dict, lost_log: list | None = None) -> int:
     """Re-apply current classification and retention rules to every
     in_transit block. Clears in_transit on records that no longer qualify;
     refreshes stored region, destination_parsed, and ship_type on records
@@ -133,12 +165,14 @@ def revalidate_in_transit(db: dict) -> int:
     Returns the number of records whose in_transit was cleared.
     """
     overrides = load_overrides()
+    now = datetime.now(timezone.utc).isoformat()
     cleared = 0
     for imo, record in db.items():
         in_transit = record.get("in_transit")
         if not in_transit:
             continue
         if is_lng_carrier(record.get("name")):
+            _record_lost(record, imo, "lng_excluded", now, lost_log)
             record["in_transit"] = None
             cleared += 1
             continue
@@ -149,6 +183,7 @@ def revalidate_in_transit(db: dict) -> int:
         destination_parsed = parse_destination(raw_destination)
         in_transit["destination_parsed"] = destination_parsed
         if not should_keep_vessel(region, destination_parsed, raw_destination):
+            _record_lost(record, imo, "destination_disqualified", now, lost_log)
             record["in_transit"] = None
             cleared += 1
             continue
@@ -239,13 +274,13 @@ def migrate_departed_au_flag(db: dict) -> int:
     return count
 
 
-def prune_stale_in_transit(db: dict, now: str) -> None:
+def prune_stale_in_transit(db: dict, now: str, lost_log: list | None = None) -> None:
     """Clear in_transit on any vessel last pinged > STALENESS_DAYS ago.
 
     Mutates db in place. No-op for records without an in_transit block.
     """
     cutoff = datetime.fromisoformat(now.replace("Z", "+00:00")) - timedelta(days=STALENESS_DAYS)
-    for record in db.values():
+    for imo, record in db.items():
         in_transit = record.get("in_transit")
         if not in_transit:
             continue
@@ -254,4 +289,5 @@ def prune_stale_in_transit(db: dict, now: str) -> None:
             continue
         last_dt = datetime.fromisoformat(last.replace("Z", "+00:00"))
         if last_dt < cutoff:
+            _record_lost(record, imo, "stale_prune_14d", now, lost_log)
             record["in_transit"] = None

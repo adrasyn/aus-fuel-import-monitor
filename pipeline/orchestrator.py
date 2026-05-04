@@ -3,7 +3,7 @@
 import json
 import os
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 from pipeline.collector import run_collector
 from pipeline.arrivals import detect_arrivals, detect_silent_arrivals, load_ports
@@ -155,11 +155,16 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     monthly = load_json(f"{DATA_DIR}/monthly-estimates.json", {"months": {}})
     daily = load_json(f"{DATA_DIR}/daily-estimates.json", {"days": {}})
     ports = load_ports(f"{DATA_DIR}/ports.json")
+    lost_vessels = load_json(f"{DATA_DIR}/lost-vessels.json", {"events": []})
+
+    # Audit log of in_transit clears that aren't paired with an arrival —
+    # appended to during this run and merged into lost-vessels.json.
+    new_lost: list[dict] = []
 
     migrated = migrate_missing_in_transit(vessel_db, previous_snapshot)
     departed_migrated = migrate_departed_au_flag(vessel_db)
     arrivals_migrated = migrate_coastal_on_arrivals(arrivals_data.get("arrivals", []))
-    revalidated = revalidate_in_transit(vessel_db)
+    revalidated = revalidate_in_transit(vessel_db, lost_log=new_lost)
     if migrated:
         print(f"Migration: backfilled in_transit on {migrated} record(s) from previous snapshot")
     if departed_migrated:
@@ -204,9 +209,21 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     print(f"  {len(new_arrivals)} new arrivals detected")
 
     print("Step 3: Updating vessel database...")
-    vessel_db = update_vessel_db(vessel_db, current_snapshot["vessels"], new_arrivals)
+    vessel_db = update_vessel_db(vessel_db, current_snapshot["vessels"], new_arrivals, lost_log=new_lost)
     save_json(f"{DATA_DIR}/vessels.json", vessel_db)
     print(f"  {len(vessel_db)} vessels in database")
+
+    if new_lost:
+        lost_vessels.setdefault("events", []).extend(new_lost)
+        # Retain ~365 days of audit history; trims forward only so manual
+        # edits to old events stay untouched until they age out.
+        cutoff = (now - timedelta(days=365)).isoformat()
+        lost_vessels["events"] = [
+            e for e in lost_vessels["events"]
+            if (e.get("cleared_at") or "") >= cutoff
+        ]
+        save_json(f"{DATA_DIR}/lost-vessels.json", lost_vessels)
+        print(f"  {len(new_lost)} vessel(s) cleared from in-transit without arrival (logged to lost-vessels.json)")
 
     print("Step 4: Updating monthly estimates...")
     monthly = update_monthly_estimates(monthly, new_arrivals, vessel_db, now=now)
