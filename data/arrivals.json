@@ -587,6 +587,42 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9435600",
+      "name": "SHAN HU ZUO",
+      "port": "Melbourne",
+      "timestamp": "2026-05-05T21:36:07.294241+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 68133,
+      "cargo_litres": 83122667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9713856",
+      "name": "HAFNIA WREN",
+      "port": "Gladstone",
+      "timestamp": "2026-05-05T21:36:07.294241+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 27692,
+      "cargo_litres": 33784615,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9807229",
+      "name": "SEA DOLPHIN",
+      "port": "Newcastle",
+      "timestamp": "2026-05-05T21:36:07.294906+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 32615,
+      "cargo_litres": 39790769,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
