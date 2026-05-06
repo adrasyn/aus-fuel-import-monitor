@@ -623,6 +623,42 @@
       "cargo_litres": 39790769,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9919840",
+      "name": "GASCHEM ODYSSEY",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-06T21:43:29.050365+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8036,
+      "cargo_litres": 9804364,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1035777",
+      "name": "TP PROGRESS",
+      "port": "Kwinana",
+      "timestamp": "2026-05-06T21:43:29.050365+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 84706,
+      "cargo_litres": 98512941,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9433846",
+      "name": "FPMC 26",
+      "port": "Cairns",
+      "timestamp": "2026-05-06T21:43:29.050934+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 14769,
+      "cargo_litres": 18018462,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
