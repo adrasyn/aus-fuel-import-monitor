@@ -659,6 +659,30 @@
       "cargo_litres": 18018462,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1028542",
+      "name": "OMERA LIBERTY",
+      "port": "Brisbane",
+      "timestamp": "2026-05-07T21:37:04.727575+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 80000,
+      "cargo_litres": 93040000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9384033",
+      "name": "PALMA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-07T21:37:04.727575+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 35692,
+      "cargo_litres": 43544615,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

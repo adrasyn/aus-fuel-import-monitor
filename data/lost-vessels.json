@@ -47,6 +47,38 @@
       "last_position_update": "2026-04-22T21:29:52.765955+00:00",
       "cleared_at": "2026-05-06T21:43:29.051728+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9758313",
+      "name": "GOLDEN ASPIRANT",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13198182,
+      "cargo_tonnes": 10818,
+      "is_ballast": false,
+      "last_lat": -26.68999,
+      "last_lon": 153.23372,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-04-23T21:26:44.603866+00:00",
+      "cleared_at": "2026-05-07T21:37:04.728989+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9528366",
+      "name": "FPMC 27",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 48800000,
+      "cargo_tonnes": 40000,
+      "is_ballast": false,
+      "last_lat": -32.07383,
+      "last_lon": 115.69024,
+      "last_destination": "AU KWI",
+      "last_destination_parsed": "Kwinana",
+      "last_position_update": "2026-04-23T21:26:44.603866+00:00",
+      "cleared_at": "2026-05-07T21:37:04.728989+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
