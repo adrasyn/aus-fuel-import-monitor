@@ -79,6 +79,54 @@
       "last_position_update": "2026-04-23T21:26:44.603866+00:00",
       "cleared_at": "2026-05-07T21:37:04.728989+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9919838",
+      "name": "GASCHEM ILIAD",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 6033455,
+      "cargo_tonnes": 4945,
+      "is_ballast": false,
+      "last_lat": -27.29236,
+      "last_lon": 153.2564,
+      "last_destination": "AU HAS",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-04-24T21:24:23.100204+00:00",
+      "cleared_at": "2026-05-08T21:35:04.041223+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9571674",
+      "name": "FANG CHENG GANG",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 5656364,
+      "cargo_tonnes": 4636,
+      "is_ballast": false,
+      "last_lat": -38.92121,
+      "last_lon": 143.33257,
+      "last_destination": "SINGARPORE",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-04-24T21:24:23.100204+00:00",
+      "cleared_at": "2026-05-08T21:35:04.041223+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9435569",
+      "name": "QI LIN ZUO",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 62626667,
+      "cargo_tonnes": 51333,
+      "is_ballast": false,
+      "last_lat": -31.9082,
+      "last_lon": 115.67404,
+      "last_destination": "KWINANA AU",
+      "last_destination_parsed": "Kwinana",
+      "last_position_update": "2026-04-24T21:24:23.100204+00:00",
+      "cleared_at": "2026-05-08T21:35:04.041223+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
