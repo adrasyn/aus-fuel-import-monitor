@@ -731,6 +731,18 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9745524",
+      "name": "PACIFIC GAS",
+      "port": "Kwinana",
+      "timestamp": "2026-05-09T21:20:19.322758+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 24000,
+      "cargo_litres": 29280000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
