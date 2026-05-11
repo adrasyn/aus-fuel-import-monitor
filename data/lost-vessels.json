@@ -239,6 +239,22 @@
       "last_position_update": "2026-04-26T21:12:50.912287+00:00",
       "cleared_at": "2026-05-10T21:23:00.186198+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9747089",
+      "name": "LIAN HUAN HU",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 18769231,
+      "cargo_tonnes": 15385,
+      "is_ballast": false,
+      "last_lat": -31.95285,
+      "last_lon": 115.62134,
+      "last_destination": "SINGAPORE",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-04-27T21:36:20.434463+00:00",
+      "cleared_at": "2026-05-11T21:50:20.394159+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

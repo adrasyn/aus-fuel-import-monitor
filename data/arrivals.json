@@ -767,6 +767,42 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9718428",
+      "name": "SILVER ENTALINA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-11T21:50:20.392632+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25846,
+      "cargo_litres": 31532308,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9883560",
+      "name": "BUENA AMISTAD",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-11T21:50:20.393226+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 1855,
+      "cargo_litres": 2262545,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1015870",
+      "name": "GEM SAPPHIRE",
+      "port": "Brisbane",
+      "timestamp": "2026-05-11T21:50:20.393226+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
