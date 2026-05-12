@@ -255,6 +255,22 @@
       "last_position_update": "2026-04-27T21:36:20.434463+00:00",
       "cleared_at": "2026-05-11T21:50:20.394159+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9367695",
+      "name": "HANSA SEALANCER",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 15015385,
+      "cargo_tonnes": 12308,
+      "is_ballast": false,
+      "last_lat": -38.08837,
+      "last_lon": 144.38876,
+      "last_destination": "AU GEX",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-04-28T21:39:48.722772+00:00",
+      "cleared_at": "2026-05-12T21:52:16.181383+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
