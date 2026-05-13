@@ -815,6 +815,42 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9806665",
+      "name": "SWAN PRIDE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-13T21:57:24.700511+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5873,
+      "cargo_litres": 7164727,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9242326",
+      "name": "MANILA I",
+      "port": "Kwinana",
+      "timestamp": "2026-05-13T21:57:24.700511+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 24000,
+      "cargo_litres": 29280000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9757254",
+      "name": "PALANCA MIAMI",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-13T21:57:24.700511+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 32615,
+      "cargo_litres": 39790769,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
