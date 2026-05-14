@@ -851,6 +851,42 @@
       "cargo_litres": 39790769,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1035064",
+      "name": "CAPE BONNY",
+      "port": "Kwinana",
+      "timestamp": "2026-05-14T21:43:42.155696+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9903786",
+      "name": "FOREVER CONFIDENCE",
+      "port": "Melbourne",
+      "timestamp": "2026-05-14T21:43:42.155696+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9669940",
+      "name": "STI OPERA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-14T21:43:42.156133+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 32615,
+      "cargo_litres": 39790769,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
