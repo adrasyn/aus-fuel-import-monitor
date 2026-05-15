@@ -887,6 +887,42 @@
       "cargo_litres": 39790769,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "1024625",
+      "name": "SH UNITY",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-15T21:35:42.047362+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 84800,
+      "cargo_litres": 98622400,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9903968",
+      "name": "FRONT FAVOUR",
+      "port": "Brisbane",
+      "timestamp": "2026-05-15T21:35:42.047972+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 30400,
+      "cargo_litres": 35355200,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9812121",
+      "name": "JASTELLA",
+      "port": "Gladstone",
+      "timestamp": "2026-05-15T21:35:42.047972+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4945,
+      "cargo_litres": 6033455,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

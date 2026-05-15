@@ -367,6 +367,38 @@
       "last_position_update": "2026-04-30T21:34:48.663732+00:00",
       "cleared_at": "2026-05-14T21:43:42.156900+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9461843",
+      "name": "TORM GLORIA",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 35136000,
+      "cargo_tonnes": 28800,
+      "is_ballast": false,
+      "last_lat": -35.7201,
+      "last_lon": 117.50354,
+      "last_destination": "AUPRL",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-05-01T21:26:58.533714+00:00",
+      "cleared_at": "2026-05-15T21:35:42.049010+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9832121",
+      "name": "LOTSTELLA",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 12066909,
+      "cargo_tonnes": 9891,
+      "is_ballast": false,
+      "last_lat": -32.91571,
+      "last_lon": 151.77442,
+      "last_destination": "GLADSTONE",
+      "last_destination_parsed": "Gladstone",
+      "last_position_update": "2026-05-01T21:26:58.533714+00:00",
+      "cleared_at": "2026-05-15T21:35:42.049010+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
