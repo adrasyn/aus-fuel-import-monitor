@@ -51,6 +51,49 @@ const formatDate = (key: string) => {
   return `${parts[2]} ${months[parseInt(parts[1]) - 1]}`;
 };
 
+const SERIES_ORDER = ["crude", "product"] as const;
+const SERIES_LABELS: Record<string, string> = {
+  crude: "Crude oil",
+  product: "Product",
+};
+
+interface CustomTooltipProps {
+  active?: boolean;
+  payload?: Array<{ payload?: ChartRow }>;
+  label?: string | number;
+}
+
+function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
+  if (!active || !payload || payload.length === 0) return null;
+  const row = payload[0]?.payload;
+  if (!row) return null;
+
+  const hasData = SERIES_ORDER.some((k) => row[k] !== null && (row[k] ?? 0) > 0);
+
+  return (
+    <div style={{
+      background: "#fff", border: "1px solid #d1d5db", padding: "4px 6px",
+      fontSize: 10, lineHeight: 1.4, color: "#111827",
+    }}>
+      <div style={{ fontWeight: 600, marginBottom: 2 }}>{formatDate(String(label))}</div>
+      {!hasData ? (
+        <div style={{ color: "#6b7280" }}>No data available</div>
+      ) : (
+        SERIES_ORDER.filter((k) => row[k] !== null && (row[k] ?? 0) > 0).map((k) => (
+          <div key={k} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+            <span style={{
+              display: "inline-block", width: 8, height: 8,
+              background: COLORS[k as keyof typeof COLORS],
+              border: "1px solid #6b7280",
+            }} />
+            <span>{SERIES_LABELS[k]}: {Math.round(row[k] as number)} ML</span>
+          </div>
+        ))
+      )}
+    </div>
+  );
+}
+
 export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartProps) {
   const chartData = buildChartData(dailyEstimates);
 
@@ -73,13 +116,7 @@ export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartP
             style: { fontSize: 10, fill: "#6b7280" },
           }}
         />
-        <Tooltip
-          formatter={(value) => {
-            const ml = value as number | null;
-            return ml === null ? ["—"] : [`${Math.round(ml)} ML`];
-          }}
-          labelFormatter={(label) => formatDate(String(label))}
-        />
+        <Tooltip content={<CustomTooltip />} />
         <Legend
           wrapperStyle={{ fontSize: 10 }}
           formatter={(value) => <span style={{ color: "#000" }}>{value}</span>}
