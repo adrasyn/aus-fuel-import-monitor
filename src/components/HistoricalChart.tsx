@@ -127,6 +127,38 @@ function NoDataLabels({ chartData }: { chartData: ChartRow[] }) {
   );
 }
 
+function ExperimentalLabels({ chartData }: { chartData: ChartRow[] }) {
+  const xScale = useXAxisScale();
+  const yScale = useYAxisScale();
+  if (!xScale || !yScale) return null;
+
+  return (
+    <g pointerEvents="none">
+      {chartData.map((d, i) => {
+        if (d.source !== "current_month") return null;
+        const total = d.crude + d.gasoline + d.diesel + d.jet_fuel + d.fuel_oil + d.lpg + d.product;
+        if (total <= 0) return null;
+        const cx = xScale(d.month, { position: "middle" });
+        const yTop = yScale(total);
+        const yBot = yScale(0);
+        if (typeof cx !== "number" || typeof yTop !== "number" || typeof yBot !== "number") return null;
+        const cy = (yTop + yBot) / 2;
+        return (
+          <text
+            key={i}
+            x={cx} y={cy}
+            transform={`rotate(-90, ${cx}, ${cy})`}
+            textAnchor="middle" dominantBaseline="middle"
+            fontSize={10} fontWeight={500} fill="#dc2626"
+          >
+            Experimental
+          </text>
+        );
+      })}
+    </g>
+  );
+}
+
 export default function HistoricalChart({ imports, monthlyEstimates, aisCompleteFromMonth }: HistoricalChartProps) {
   const chartData: ChartRow[] = [];
 
@@ -295,6 +327,7 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
             ))}
           </Bar>
           <NoDataLabels chartData={chartData} />
+          <ExperimentalLabels chartData={chartData} />
         </BarChart>
       </ResponsiveContainer>
       <div className="flex flex-wrap gap-4 mt-2 text-[9px] text-label-light">
