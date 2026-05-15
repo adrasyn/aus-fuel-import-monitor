@@ -40,14 +40,14 @@ export default function Home() {
       />
       <DashboardGrid vessels={data.snapshot.vessels} snapshotTimestamp={data.snapshot.timestamp} />
       <div className="mb-6">
-        <p className="text-[10px] uppercase tracking-label text-label mb-2">Monthly fuel imports by type</p>
-        <HistoricalChart imports={data.imports.imports_by_month} monthlyEstimates={data.monthlyEstimates} aisCompleteFromMonth={aisCompleteFromMonth} />
-        <p className="text-[9px] text-label-light mt-2">Source: Australian Petroleum Statistics, Dept of Climate Change, Energy, the Environment and Water</p>
-      </div>
-      <div className="mb-6">
         <p className="text-[10px] uppercase tracking-label text-label mb-2">Daily volume en route (last 30 days)</p>
         <DailyEnRouteChart dailyEstimates={data.dailyEstimates} />
         <p className="text-[9px] text-label-light mt-2">Each day&apos;s value is the total cargo on tankers en route at the time. A vessel is counted while AIS-active within the last 14 days; it drops out of the daily total once arrived or silent past that window.</p>
+      </div>
+      <div className="mb-6">
+        <p className="text-[10px] uppercase tracking-label text-label mb-2">Monthly fuel imports by type</p>
+        <HistoricalChart imports={data.imports.imports_by_month} monthlyEstimates={data.monthlyEstimates} aisCompleteFromMonth={aisCompleteFromMonth} />
+        <p className="text-[9px] text-label-light mt-2">Source: Australian Petroleum Statistics, Dept of Climate Change, Energy, the Environment and Water</p>
       </div>
       <Footer />
     </main>
