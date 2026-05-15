@@ -47,7 +47,7 @@ export default function StatBar({ vessels, msoReserve }: StatBarProps) {
           <Stat value={formatLitres(productLitres)} label="Refined products est." />
         </div>
         {msoReserve?.fuels && msoReserve.fuels.length > 0 && (
-          <div className="flex flex-wrap gap-x-8 gap-y-4">
+          <div className="flex flex-wrap gap-x-8 gap-y-4 pt-4 border-t border-border">
             {msoReserve.fuels.map((fuel) => (
               <Stat
                 key={fuel.key}
