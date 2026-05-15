@@ -132,11 +132,21 @@ function ExperimentalLabels({ chartData }: { chartData: ChartRow[] }) {
   const yScale = useYAxisScale();
   if (!xScale || !yScale) return null;
 
-  // Anchor the label at the vertical midpoint of the plot area (not the
-  // midpoint of the partial MTD bar, which sits low and is hard to read).
-  const yRange = (yScale as unknown as { range?: () => number[] }).range?.();
-  if (!yRange || yRange.length < 2) return null;
-  const cy = (yRange[0] + yRange[1]) / 2;
+  // Anchor the label at the vertical midpoint of the chart's data range,
+  // not the midpoint of the partial MTD bar. We compute the max bar height
+  // across all rows and place the label at half that value — this puts it
+  // visually near the centre of the plotted area regardless of how low
+  // the current month's MTD bar sits.
+  const maxBar = Math.max(
+    ...chartData.map((d) =>
+      d.source === "no_data"
+        ? d.no_data
+        : d.crude + d.gasoline + d.diesel + d.jet_fuel + d.fuel_oil + d.lpg + d.product,
+    ),
+    1,
+  );
+  const yMid = yScale(maxBar / 2);
+  if (typeof yMid !== "number") return null;
 
   return (
     <g pointerEvents="none">
@@ -146,6 +156,7 @@ function ExperimentalLabels({ chartData }: { chartData: ChartRow[] }) {
         if (total <= 0) return null;
         const cx = xScale(d.month, { position: "middle" });
         if (typeof cx !== "number") return null;
+        const cy = yMid;
         return (
           <text
             key={i}
