@@ -923,6 +923,30 @@
       "cargo_litres": 6033455,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9665803",
+      "name": "MORNING SWAN",
+      "port": "Brisbane",
+      "timestamp": "2026-05-16T21:23:33.212033+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 30800,
+      "cargo_litres": 37576000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9367712",
+      "name": "HANSA SEALEADER",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-16T21:23:33.212706+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
