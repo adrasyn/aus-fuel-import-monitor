@@ -947,6 +947,66 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1064546",
+      "name": "GRAND WINNER 6",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-17T21:27:21.637504+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9906697",
+      "name": "GRAND WINNER 2",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-17T21:27:21.637504+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9845996",
+      "name": "YUAN HE WAN",
+      "port": "Brisbane",
+      "timestamp": "2026-05-17T21:27:21.637504+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 80000,
+      "cargo_litres": 93040000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9802578",
+      "name": "GUANG ZHOU WAN",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-17T21:27:21.637504+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9891,
+      "cargo_litres": 12066909,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9708576",
+      "name": "GH UMEKO",
+      "port": "Kwinana",
+      "timestamp": "2026-05-17T21:27:21.638142+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 107200,
+      "cargo_litres": 124673600,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
