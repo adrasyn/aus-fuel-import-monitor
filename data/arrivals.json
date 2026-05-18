@@ -1007,6 +1007,42 @@
       "cargo_litres": 124673600,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9384033",
+      "name": "PALMA",
+      "port": "Hobart",
+      "timestamp": "2026-05-18T21:44:58.229891+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 20923,
+      "cargo_litres": 25526154,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9803118",
+      "name": "DA WEI SHAN",
+      "port": "Brisbane",
+      "timestamp": "2026-05-18T21:44:58.229891+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9796494",
+      "name": "HAFNIA DESPINA",
+      "port": "Melbourne",
+      "timestamp": "2026-05-18T21:44:58.229891+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 107200,
+      "cargo_litres": 130784000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
