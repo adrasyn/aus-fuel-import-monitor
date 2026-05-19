@@ -1043,6 +1043,42 @@
       "cargo_litres": 130784000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9552800",
+      "name": "TOPAZ EXPRESS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-19T21:52:16.826417+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9367724",
+      "name": "ZOBU START",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-19T21:52:16.826417+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 19692,
+      "cargo_litres": 24024615,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9800324",
+      "name": "HAFNIA THALASSA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-19T21:52:16.826417+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 102400,
+      "cargo_litres": 124928000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

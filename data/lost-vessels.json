@@ -575,6 +575,22 @@
       "last_position_update": "2026-05-04T21:41:35.728725+00:00",
       "cleared_at": "2026-05-18T21:44:58.231661+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1032191",
+      "name": "BALDER",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 43269333,
+      "cargo_tonnes": 35467,
+      "is_ballast": false,
+      "last_lat": -31.90889,
+      "last_lon": 115.66558,
+      "last_destination": "AU BUY>AU KWI",
+      "last_destination_parsed": "Kwinana",
+      "last_position_update": "2026-05-05T21:36:07.295633+00:00",
+      "cleared_at": "2026-05-19T21:52:16.828189+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
