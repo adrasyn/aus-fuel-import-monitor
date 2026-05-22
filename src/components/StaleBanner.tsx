@@ -1,26 +1,9 @@
-interface StaleBannerProps {
-  // timestamp is max(last_position_update) across the current in-transit
-  // roster — i.e. the freshest ping we have for any tracked vessel. Shifts
-  // forward as individual vessels re-broadcast even between pipeline runs.
-  timestamp: string;
-}
-
-export default function StaleBanner({ timestamp }: StaleBannerProps) {
-  if (!timestamp) return null;
-  const lastUpdate = new Date(timestamp);
-  const now = new Date();
-  const hoursAgo = (now.getTime() - lastUpdate.getTime()) / (1000 * 60 * 60);
-  if (hoursAgo < 36) return null;
-
-  const formatted = lastUpdate.toLocaleDateString("en-AU", {
-    day: "numeric", month: "long", year: "numeric",
-    hour: "2-digit", minute: "2-digit",
-    timeZone: "Australia/Sydney", timeZoneName: "short",
-  });
-
+export default function StaleBanner() {
   return (
     <div className="bg-panel border border-border px-4 py-3 mb-6 text-sm text-label">
-      Data last updated {formatted}. Live collection unavailable — showing most recent snapshot.
+      Note: The AIS service we use, aisstream.io, was not accessible for 21 May
+      and 22 May due to their SSL certificate expiring. There is no data
+      available for those dates.
     </div>
   );
 }
