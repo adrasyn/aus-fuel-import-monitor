@@ -7,9 +7,10 @@ export default function StaleBanner() {
         available for those dates.
       </p>
       <p>
-        We've added a workaround but aisstream.io's service still appears to be
-        degraded and isn't allowing us the full 30 minutes listening period
-        we've previously relied on. We'll keep you posted as we learn more.
+        We&rsquo;ve added a workaround but aisstream.io&rsquo;s service still
+        appears to be degraded and isn&rsquo;t allowing us the full 30 minutes
+        listening period we&rsquo;ve previously relied on. We&rsquo;ll keep you
+        posted as we learn more.
       </p>
     </div>
   );
