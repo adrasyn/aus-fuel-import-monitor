@@ -4,6 +4,8 @@ import asyncio
 import json
 import os
 import re
+import socket
+import ssl
 import time
 from datetime import datetime, timezone
 
@@ -19,6 +21,33 @@ from pipeline.regions import (
 )
 
 AISSTREAM_URL = "wss://stream.aisstream.io/v0/stream"
+_AISSTREAM_HOST = "stream.aisstream.io"
+_AISSTREAM_PORT = 443
+
+
+def _aisstream_cert_verifies() -> bool:
+    # Workaround for AISStream upstream cert outage (aisstream/issues#192). We
+    # try a verifying TLS handshake against their host first; if it fails
+    # specifically with a cert-verification error, the caller falls back to
+    # an unverified context. Any other error (DNS, network) is treated as
+    # "probably fine" so we don't silently downgrade trust for unrelated
+    # flakes.
+    try:
+        ctx = ssl.create_default_context()
+        with socket.create_connection((_AISSTREAM_HOST, _AISSTREAM_PORT), timeout=5) as sock:
+            with ctx.wrap_socket(sock, server_hostname=_AISSTREAM_HOST):
+                return True
+    except ssl.SSLCertVerificationError:
+        return False
+    except Exception:
+        return True
+
+
+def _insecure_ssl_context() -> ssl.SSLContext:
+    ctx = ssl.create_default_context()
+    ctx.check_hostname = False
+    ctx.verify_mode = ssl.CERT_NONE
+    return ctx
 
 # AIS ship type code range for tankers. Used only as a gate to keep tankers
 # and drop non-tankers; the crude/product split is done later via
@@ -45,8 +74,14 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
     print(f"Connecting to AISStream, collecting for {duration_seconds}s...")
 
+    if _aisstream_cert_verifies():
+        ssl_ctx = ssl.create_default_context()
+    else:
+        print("  WARNING: AISStream TLS cert failed verification — connecting with SSL verification DISABLED (aisstream/issues#192)")
+        ssl_ctx = _insecure_ssl_context()
+
     try:
-        async with websockets.connect(AISSTREAM_URL) as ws:
+        async with websockets.connect(AISSTREAM_URL, ssl=ssl_ctx) as ws:
             await ws.send(json.dumps(subscription))
 
             while (time.time() - start_time) < duration_seconds:
