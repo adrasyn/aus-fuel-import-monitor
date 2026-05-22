@@ -1115,6 +1115,18 @@
       "cargo_litres": 52704000,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9442160",
+      "name": "JANESIA ASPHALT V",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-22T21:44:36.954481+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6491,
+      "cargo_litres": 7918909,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
