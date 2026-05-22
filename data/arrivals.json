@@ -1103,6 +1103,18 @@
       "cargo_litres": 20740000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9800324",
+      "name": "HAFNIA THALASSA",
+      "port": "Brisbane",
+      "timestamp": "2026-05-22T08:09:38.202127+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 43200,
+      "cargo_litres": 52704000,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
