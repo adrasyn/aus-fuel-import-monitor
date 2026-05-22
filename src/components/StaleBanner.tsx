@@ -8,9 +8,7 @@ export default function StaleBanner() {
       </p>
       <p>
         We&rsquo;ve added a workaround but aisstream.io&rsquo;s service still
-        appears to be degraded and isn&rsquo;t allowing us the full 30 minutes
-        listening period we&rsquo;ve previously relied on. We&rsquo;ll keep you
-        posted as we learn more.
+        appears to be degraded. We&rsquo;ll keep you posted.
       </p>
     </div>
   );
