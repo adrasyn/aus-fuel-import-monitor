@@ -1079,6 +1079,30 @@
       "cargo_litres": 124928000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1041477",
+      "name": "WECO ANDREA",
+      "port": "Bunbury",
+      "timestamp": "2026-05-22T06:46:28.298812+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 36923,
+      "cargo_litres": 45046154,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9400849",
+      "name": "IMPERIAL",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-22T06:46:28.298812+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 17000,
+      "cargo_litres": 20740000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
