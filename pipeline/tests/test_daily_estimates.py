@@ -98,13 +98,14 @@ def test_update_daily_estimates_same_day_rerun_overwrites():
     vessel_db = {
         "9000001": _vessel_record("crude", _in_transit(500_000_000)),
     }
-    now = datetime(2026, 4, 14, 23, 30, tzinfo=timezone.utc)
+    # 13:30 UTC = 23:30 AEST same Sydney day (2026-04-14)
+    now = datetime(2026, 4, 14, 13, 30, tzinfo=timezone.utc)
     updated = update_daily_estimates(daily, vessel_db, now)
 
     entry = updated["days"]["2026-04-14"]
     assert entry["en_route_crude_litres"] == 500_000_000
     assert entry["en_route_product_litres"] == 0
-    assert entry["captured_at"] == "2026-04-14T23:30:00+00:00"
+    assert entry["captured_at"] == "2026-04-14T13:30:00+00:00"
     assert len(updated["days"]) == 1
 
 

@@ -3,6 +3,9 @@
 from __future__ import annotations
 
 from datetime import datetime
+from zoneinfo import ZoneInfo
+
+SYDNEY_TZ = ZoneInfo("Australia/Sydney")
 
 
 def update_daily_estimates(daily: dict, vessel_db: dict, now: datetime) -> dict:
@@ -10,9 +13,11 @@ def update_daily_estimates(daily: dict, vessel_db: dict, now: datetime) -> dict:
 
     Sums cargo_litres from each record's in_transit block, grouped by
     ship_type. Skips ballast vessels and arrived records (in_transit=None).
-    Overwrites any prior entry for today's UTC date.
+    Overwrites any prior entry for today's Sydney-local date so a run at
+    ~07:00 AEST lands on the date Australians call "today" instead of
+    yesterday-UTC.
     """
-    day_key = now.strftime("%Y-%m-%d")
+    day_key = now.astimezone(SYDNEY_TZ).strftime("%Y-%m-%d")
 
     crude = 0
     product = 0
