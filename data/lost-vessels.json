@@ -655,6 +655,38 @@
       "last_position_update": "2026-05-08T21:35:04.041223+00:00",
       "cleared_at": "2026-05-22T21:44:36.955628+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9543536",
+      "name": "ALEGRIA 1",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 23260000,
+      "cargo_tonnes": 20000,
+      "is_ballast": false,
+      "last_lat": -38.08988,
+      "last_lon": 144.38749,
+      "last_destination": "AU GEX",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-05-09T21:20:19.323730+00:00",
+      "cleared_at": "2026-05-23T21:27:02.787701+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9334038",
+      "name": "BEST SHANGHAI",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 38310588,
+      "cargo_tonnes": 32941,
+      "is_ballast": false,
+      "last_lat": -37.97823,
+      "last_lon": 144.84934,
+      "last_destination": "AU GEX",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-05-09T21:20:19.323730+00:00",
+      "cleared_at": "2026-05-23T21:27:02.787701+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

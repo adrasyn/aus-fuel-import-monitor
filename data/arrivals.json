@@ -1127,6 +1127,30 @@
       "cargo_litres": 7918909,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9654579",
+      "name": "ARDMORE ENCOUNTER",
+      "port": "Cairns",
+      "timestamp": "2026-05-23T21:27:02.786565+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 19692,
+      "cargo_litres": 24024615,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9803120",
+      "name": "DA TAI SHAN",
+      "port": "Kwinana",
+      "timestamp": "2026-05-23T21:27:02.786565+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6182,
+      "cargo_litres": 7541818,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
