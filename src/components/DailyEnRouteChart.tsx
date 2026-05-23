@@ -33,6 +33,11 @@ function sydneyDateKey(d: Date): string {
   return sydneyDateFmt.format(d); // en-CA gives YYYY-MM-DD
 }
 
+// Earliest Sydney date with stable readings. Captures from 16–19 Apr Sydney
+// were excluded because the vessel roster was still warming up (crude
+// readings hadn't reached their baseline).
+const CHART_START_DATE = "2026-04-20";
+
 function buildChartData(daily: DailyEstimates): ChartRow[] {
   // Re-bucket entries by Sydney local date derived from captured_at,
   // so a run at 07:14 AEST falls into today rather than yesterday-UTC.
@@ -47,12 +52,16 @@ function buildChartData(daily: DailyEstimates): ChartRow[] {
     };
   }
 
-  const rows: ChartRow[] = [];
+  const [sy, sm, sd] = CHART_START_DATE.split("-").map(Number);
+  const startMs = Date.UTC(sy, sm - 1, sd);
   const todayKey = sydneyDateKey(new Date());
   const [ty, tm, td] = todayKey.split("-").map(Number);
-  const anchor = Date.UTC(ty, tm - 1, td);
-  for (let offset = 29; offset >= 0; offset--) {
-    const d = new Date(anchor - offset * 86_400_000);
+  const endMs = Date.UTC(ty, tm - 1, td);
+  const dayCount = Math.round((endMs - startMs) / 86_400_000) + 1;
+
+  const rows: ChartRow[] = [];
+  for (let i = 0; i < dayCount; i++) {
+    const d = new Date(startMs + i * 86_400_000);
     const key = sydneyDateKey(d);
     const entry = localByDate[key];
     rows.push({
@@ -124,7 +133,7 @@ export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartP
           dataKey="date"
           tickFormatter={formatDate}
           tick={{ fontSize: 10, fill: "#6b7280" }}
-          interval="preserveStartEnd"
+          interval={6}
         />
         <YAxis
           tick={{ fontSize: 10, fill: "#6b7280" }}
