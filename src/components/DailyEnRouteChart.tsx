@@ -21,25 +21,44 @@ const COLORS = {
   product: "#374151", // matches HistoricalChart FUEL_COLORS.diesel
 };
 
-function utcDateKey(d: Date): string {
-  const yyyy = d.getUTCFullYear();
-  const mm = String(d.getUTCMonth() + 1).padStart(2, "0");
-  const dd = String(d.getUTCDate()).padStart(2, "0");
-  return `${yyyy}-${mm}-${dd}`;
+const SYDNEY_TZ = "Australia/Sydney";
+const sydneyDateFmt = new Intl.DateTimeFormat("en-CA", {
+  timeZone: SYDNEY_TZ,
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+});
+
+function sydneyDateKey(d: Date): string {
+  return sydneyDateFmt.format(d); // en-CA gives YYYY-MM-DD
 }
 
 function buildChartData(daily: DailyEstimates): ChartRow[] {
+  // Re-bucket entries by Sydney local date derived from captured_at,
+  // so a run at 07:14 AEST falls into today rather than yesterday-UTC.
+  const localByDate: Record<string, { crude: number; product: number }> = {};
+  for (const entry of Object.values(daily.days)) {
+    const capturedAt = entry.captured_at;
+    if (!capturedAt) continue;
+    const key = sydneyDateKey(new Date(capturedAt));
+    localByDate[key] = {
+      crude: entry.en_route_crude_litres,
+      product: entry.en_route_product_litres,
+    };
+  }
+
   const rows: ChartRow[] = [];
-  const today = new Date();
+  const todayKey = sydneyDateKey(new Date());
+  const [ty, tm, td] = todayKey.split("-").map(Number);
+  const anchor = Date.UTC(ty, tm - 1, td);
   for (let offset = 29; offset >= 0; offset--) {
-    const d = new Date(today);
-    d.setUTCDate(today.getUTCDate() - offset);
-    const key = utcDateKey(d);
-    const entry = daily.days[key];
+    const d = new Date(anchor - offset * 86_400_000);
+    const key = sydneyDateKey(d);
+    const entry = localByDate[key];
     rows.push({
       date: key,
-      crude: entry ? entry.en_route_crude_litres / 1_000_000 : null,
-      product: entry ? entry.en_route_product_litres / 1_000_000 : null,
+      crude: entry ? entry.crude / 1_000_000 : null,
+      product: entry ? entry.product / 1_000_000 : null,
     });
   }
   return rows;
