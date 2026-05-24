@@ -1151,6 +1151,18 @@
       "cargo_litres": 7541818,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9737527",
+      "name": "STARLING",
+      "port": "Brisbane",
+      "timestamp": "2026-05-24T21:29:43.844845+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 64400,
+      "cargo_litres": 78568000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
