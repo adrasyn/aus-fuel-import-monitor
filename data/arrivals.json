@@ -1163,6 +1163,18 @@
       "cargo_litres": 78568000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9883560",
+      "name": "BUENA AMISTAD",
+      "port": "Brisbane",
+      "timestamp": "2026-05-25T21:42:17.733468+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4018,
+      "cargo_litres": 4902182,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
