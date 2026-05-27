@@ -1187,6 +1187,30 @@
       "cargo_litres": 46547692,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9735593",
+      "name": "HAFNIA EXPEDITE",
+      "port": "Melbourne",
+      "timestamp": "2026-05-27T22:28:56.579227+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 56000,
+      "cargo_litres": 68320000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9384033",
+      "name": "PALMA",
+      "port": "Kwinana",
+      "timestamp": "2026-05-27T22:28:56.579776+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 17231,
+      "cargo_litres": 21021538,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
