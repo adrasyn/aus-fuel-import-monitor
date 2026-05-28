@@ -847,6 +847,38 @@
       "last_position_update": "2026-05-13T21:57:24.701460+00:00",
       "cleared_at": "2026-05-27T22:28:56.580976+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9757254",
+      "name": "PALANCA MIAMI",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 33784615,
+      "cargo_tonnes": 27692,
+      "is_ballast": false,
+      "last_lat": -32.75318,
+      "last_lon": 152.74596,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-05-14T21:43:42.156900+00:00",
+      "cleared_at": "2026-05-28T22:27:57.671095+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9687667",
+      "name": "ARAGO",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 4902182,
+      "cargo_tonnes": 4018,
+      "is_ballast": false,
+      "last_lat": -26.68627,
+      "last_lon": 153.20896,
+      "last_destination": "",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-05-14T21:43:42.156900+00:00",
+      "cleared_at": "2026-05-28T22:27:57.671095+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
