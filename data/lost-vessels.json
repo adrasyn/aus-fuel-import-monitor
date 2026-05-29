@@ -879,6 +879,38 @@
       "last_position_update": "2026-05-14T21:43:42.156900+00:00",
       "cleared_at": "2026-05-28T22:27:57.671095+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9927213",
+      "name": "GREEN ANAX",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 27912000,
+      "cargo_tonnes": 24000,
+      "is_ballast": false,
+      "last_lat": -38.09041,
+      "last_lon": 144.38657,
+      "last_destination": "GEELONG",
+      "last_destination_parsed": "Geelong",
+      "last_position_update": "2026-05-15T21:35:42.049010+00:00",
+      "cleared_at": "2026-05-29T22:23:40.815139+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9683001",
+      "name": "KANATA SPIRIT",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 33494400,
+      "cargo_tonnes": 28800,
+      "is_ballast": false,
+      "last_lat": -37.96538,
+      "last_lon": 144.85568,
+      "last_destination": "AU GEX",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-05-15T21:35:42.049010+00:00",
+      "cleared_at": "2026-05-29T22:23:40.815139+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
