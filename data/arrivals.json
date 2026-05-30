@@ -1211,6 +1211,30 @@
       "cargo_litres": 21021538,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9943358",
+      "name": "CL MARGUERITE DURAS",
+      "port": "Brisbane",
+      "timestamp": "2026-05-30T21:32:12.845526+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 33846,
+      "cargo_litres": 41292308,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1068889",
+      "name": "HONG BO 16",
+      "port": "Brisbane",
+      "timestamp": "2026-05-30T21:32:12.845526+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11127,
+      "cargo_litres": 13575273,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
