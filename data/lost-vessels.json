@@ -911,6 +911,22 @@
       "last_position_update": "2026-05-15T21:35:42.049010+00:00",
       "cleared_at": "2026-05-29T22:23:40.815139+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9812121",
+      "name": "JASTELLA",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 6787636,
+      "cargo_tonnes": 5564,
+      "is_ballast": false,
+      "last_lat": -16.7674,
+      "last_lon": 145.86318,
+      "last_destination": "CAIRNS",
+      "last_destination_parsed": "Cairns",
+      "last_position_update": "2026-05-17T21:27:21.639213+00:00",
+      "cleared_at": "2026-05-31T21:32:26.213029+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

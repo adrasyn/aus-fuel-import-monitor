@@ -1235,6 +1235,18 @@
       "cargo_litres": 13575273,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9772058",
+      "name": "PACIFIC DEBBIE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-05-31T21:32:26.211667+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 17733,
+      "cargo_litres": 21634667,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
