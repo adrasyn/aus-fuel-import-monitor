@@ -1247,6 +1247,30 @@
       "cargo_litres": 21634667,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1088451",
+      "name": "ORIENTAL GREENSTONE",
+      "port": "Brisbane",
+      "timestamp": "2026-06-01T23:03:45.271048+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 21538,
+      "cargo_litres": 26276923,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9469314",
+      "name": "PENG HU WAN",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-01T23:03:45.271048+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8345,
+      "cargo_litres": 10181455,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
