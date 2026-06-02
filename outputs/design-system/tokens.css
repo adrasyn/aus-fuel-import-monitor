@@ -1,0 +1,156 @@
+/* ============================================================
+   Petrol Press — design tokens
+   Editorial data-journalism aesthetic.
+   Pair with: Instrument Serif (headlines) + Inter (body).
+   ============================================================ */
+
+:root {
+  /* --- Type ------------------------------------------------ */
+  --font-headline: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --font-body:     "Inter", system-ui, -apple-system, sans-serif;
+
+  --tracking-label: 0.15em;
+
+  /* --- Greyscale (the page) -------------------------------- */
+  --paper:       #ffffff;
+  --panel:       #f8fafc;
+  --rule:        #e2e8f0;
+  --rule-soft:   #d1d5db;
+  --label-light: #9ca3af;
+  --label:       #6b7280;
+  --ink-soft:    #374151;
+  --ink:         #111827;
+
+  /* --- Accent ramp ----------------------------------------- */
+  /* Use only where colour encodes meaning:                   */
+  /*   - low/high binary state pairs                          */
+  /*   - continuous data scales (gradient)                    */
+  /*   - ordinal sequences (5-stop ramp)                      */
+  --accent-low:  #034159;   /* petrol teal — minimum  */
+  --accent-high: #0CF25D;   /* spring green — maximum */
+
+  --accent-0: #034159;
+  --accent-1: #057D80;
+  --accent-2: #06A88A;
+  --accent-3: #08CD7B;
+  --accent-4: #0CF25D;
+
+  /* Linear ramp as a reusable background-image */
+  --ramp: linear-gradient(90deg,
+    var(--accent-0) 0%,
+    var(--accent-1) 25%,
+    var(--accent-2) 50%,
+    var(--accent-3) 75%,
+    var(--accent-4) 100%);
+
+  /* Smooth two-stop fallback (for fills where the 5-stop
+     midpoints aren't needed). */
+  --ramp-smooth: linear-gradient(90deg, var(--accent-low), var(--accent-high));
+
+  /* --- Reserved alert (use sparingly) ---------------------- */
+  --alert: #dc2626;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--paper);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  text-decoration-thickness: 1px;
+}
+a:hover { color: var(--label); }
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--rule);
+  margin: 0;
+}
+
+/* ============================================================
+   Utilities
+   ============================================================ */
+
+.headline       { font-family: var(--font-headline); font-weight: 400; line-height: 1.1; letter-spacing: 0; }
+.headline-light { font-family: var(--font-headline); font-weight: 300; line-height: 1.1; }
+
+.label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--label);
+}
+
+.footnote {
+  font-size: 10px;
+  line-height: 1.5;
+  color: var(--label-light);
+}
+
+.footnote-xs {
+  font-size: 9px;
+  line-height: 1.5;
+  color: var(--label-light);
+}
+
+.rule-heavy { border-bottom: 2.5px solid var(--ink); }
+.rule       { border-bottom: 1px solid var(--rule); }
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+@media (min-width: 640px) { .container { padding: 32px 24px; } }
+
+/* Stat — large serif number over a tracked-out label */
+.stat__value {
+  font-family: var(--font-headline);
+  font-weight: 300;
+  font-size: 30px;
+  line-height: 1;
+}
+.stat__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-label);
+  color: var(--label);
+  margin-top: 4px;
+}
+
+/* Gradient legend bar (for continuous scales) */
+.ramp-bar {
+  height: 8px;
+  width: 100%;
+  background: var(--ramp);
+  border: 1px solid var(--rule-soft);
+}
+
+/* Accent swatch chips (for ordinal legends) */
+.swatch {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 1px solid var(--rule-soft);
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.swatch--0 { background: var(--accent-0); }
+.swatch--1 { background: var(--accent-1); }
+.swatch--2 { background: var(--accent-2); }
+.swatch--3 { background: var(--accent-3); }
+.swatch--4 { background: var(--accent-4); }

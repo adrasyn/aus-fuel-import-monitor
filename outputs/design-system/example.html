@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Petrol Press — design system preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css" />
+<style>
+  /* Example-only layout — system rules live in tokens.css */
+  .grid-2  { display: grid; grid-template-columns: 1fr; gap: 32px; }
+  @media (min-width: 720px) { .grid-2 { grid-template-columns: 2fr 1fr; } }
+
+  .stat-row { display: flex; flex-wrap: wrap; gap: 16px 32px; align-items: flex-end; }
+
+  .deck { font-size: 11px; font-style: italic; color: var(--label-light); margin-top: 4px; }
+
+  .chart {
+    height: 220px;
+    background:
+      linear-gradient(to top, var(--rule) 1px, transparent 1px) 0 0 / 100% 25%,
+      var(--paper);
+    border-left: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+    position: relative;
+    padding: 12px;
+    display: flex;
+    align-items: flex-end;
+    gap: 6px;
+  }
+  .bar {
+    flex: 1;
+    background: var(--ink);
+    opacity: 0.85;
+  }
+  /* A short row of bars whose height is a fixed visual rhythm */
+  .bar:nth-child(1) { height: 30%; }
+  .bar:nth-child(2) { height: 55%; }
+  .bar:nth-child(3) { height: 42%; }
+  .bar:nth-child(4) { height: 68%; }
+  .bar:nth-child(5) { height: 78%; }
+  .bar:nth-child(6) { height: 90%; }
+  .bar:nth-child(7) { height: 72%; }
+  .bar:nth-child(8) { height: 60%; }
+  .bar:nth-child(9) { height: 50%; }
+  .bar:nth-child(10){ height: 38%; }
+  .bar:nth-child(11){ height: 44%; }
+  .bar:nth-child(12){ height: 62%; opacity: 0.4; outline: 1px dashed var(--ink); outline-offset: -1px; }
+
+  /* Continuous-scale demo: a row of swatches encoded by value */
+  .scale {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 2px;
+    margin-top: 8px;
+  }
+  .scale > div {
+    height: 22px;
+    border: 1px solid var(--rule-soft);
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 6px;
+    font-size: 9px;
+    color: var(--label-light);
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+  }
+
+  table.tbl {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  table.tbl th, table.tbl td {
+    text-align: left;
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  table.tbl th {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: var(--tracking-label);
+    color: var(--label);
+    font-weight: 400;
+    border-bottom: 1px solid var(--ink);
+  }
+  table.tbl tbody tr:hover { background: var(--panel); }
+  .num { font-variant-numeric: tabular-nums; text-align: right; }
+
+  .pill {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 10px;
+    letter-spacing: 0.05em;
+    border: 1px solid currentColor;
+    color: var(--accent-low);
+  }
+  .pill--high { color: var(--accent-high); }
+</style>
+</head>
+<body>
+
+<main class="container">
+
+  <!-- ============================================================
+       MASTHEAD
+       ============================================================ -->
+  <header class="rule-heavy" style="padding-bottom: 12px; margin-bottom: 24px;">
+    <p class="label" style="margin: 0 0 4px;">Petrol Press &nbsp;/&nbsp; design system preview</p>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; gap: 32px;">
+      <div>
+        <h1 class="headline" style="font-size: 30px; margin: 0;">
+          A restrained, editorial design system for data-heavy interfaces — set in serif, ruled in hairlines, accented in petrol&nbsp;and lime.
+        </h1>
+        <p class="deck">Tokens, type, and a value-encoded accent ramp from #034159 to #0CF25D</p>
+      </div>
+      <div class="footnote" style="text-align: right; white-space: nowrap;">
+        <div>Preview build</div>
+        <div>v0.1 — 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       STAT BAR
+       ============================================================ -->
+  <section style="padding-bottom: 20px; margin-bottom: 24px; border-bottom: 1px solid var(--rule);">
+    <div class="stat-row">
+      <div>
+        <div class="stat__value">37</div>
+        <div class="stat__label">Tankers en route</div>
+      </div>
+      <div>
+        <div class="stat__value">12</div>
+        <div class="stat__label">Crude oil tankers</div>
+      </div>
+      <div>
+        <div class="stat__value">25</div>
+        <div class="stat__label">Product tankers</div>
+      </div>
+      <div>
+        <div class="stat__value">1.4B</div>
+        <div class="stat__label">Litres en route</div>
+      </div>
+      <div>
+        <div class="stat__value">28</div>
+        <div class="stat__label">Days of diesel reserves</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CHART + CONTINUOUS SCALE
+       ============================================================ -->
+  <div class="grid-2" style="margin-bottom: 24px;">
+
+    <section>
+      <p class="label" style="margin: 0 0 8px;">Monthly volume imported</p>
+      <div class="chart">
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+        <div class="bar"></div><div class="bar"></div><div class="bar"></div>
+      </div>
+      <p class="footnote-xs" style="margin: 8px 0 0;">
+        Solid = government data &middot; Dashed = current month to date.
+        Source: Australian Petroleum Statistics, DCCEEW.
+      </p>
+    </section>
+
+    <section>
+      <p class="label" style="margin: 0 0 8px;">Vessel density (continuous)</p>
+      <div class="ramp-bar" aria-hidden="true"></div>
+      <div class="legend">
+        <span>Low&nbsp;·&nbsp;#034159</span>
+        <span>High&nbsp;·&nbsp;#0CF25D</span>
+      </div>
+      <p class="footnote" style="margin: 16px 0 8px;">
+        The accent ramp is reserved for value-encoded fills — choropleths, density maps,
+        ordinal heatmaps. Anything that isn't encoding a value stays in greyscale.
+      </p>
+      <p class="label" style="margin: 16px 0 6px;">Five-stop discrete ramp</p>
+      <div class="scale" aria-hidden="true">
+        <div style="background: var(--accent-0);"></div>
+        <div style="background: var(--accent-0);"></div>
+        <div style="background: var(--accent-1);"></div>
+        <div style="background: var(--accent-1);"></div>
+        <div style="background: var(--accent-2);"></div>
+        <div style="background: var(--accent-2);"></div>
+        <div style="background: var(--accent-3);"></div>
+        <div style="background: var(--accent-3);"></div>
+        <div style="background: var(--accent-4);"></div>
+        <div style="background: var(--accent-4);"></div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ============================================================
+       TABLE
+       ============================================================ -->
+  <section style="margin-bottom: 32px;">
+    <p class="label" style="margin: 0 0 8px;">In-transit tanker roster</p>
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Vessel</th>
+          <th>Type</th>
+          <th>Origin</th>
+          <th>ETA</th>
+          <th class="num">Cargo (kL)</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Maran Centaurus</td>
+          <td>Crude</td>
+          <td>Yanbu, SA</td>
+          <td>21 May</td>
+          <td class="num">316,000</td>
+          <td><span class="pill pill--high">Active</span></td>
+        </tr>
+        <tr>
+          <td>British Cormorant</td>
+          <td>Product</td>
+          <td>Singapore</td>
+          <td>17 May</td>
+          <td class="num">42,500</td>
+          <td><span class="pill pill--high">Active</span></td>
+        </tr>
+        <tr>
+          <td>STI Beryl</td>
+          <td>Product</td>
+          <td>Ulsan, KR</td>
+          <td>—</td>
+          <td class="num">38,200</td>
+          <td><span class="pill">Idle</span></td>
+        </tr>
+        <tr>
+          <td>Front Falcon</td>
+          <td>Crude</td>
+          <td>Basra, IQ</td>
+          <td>02 Jun</td>
+          <td class="num">298,400</td>
+          <td><span class="pill pill--high">Active</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer style="border-top: 1px solid var(--rule); padding: 24px 0 32px;">
+    <p class="footnote" style="margin: 0;">
+      This page demonstrates the Petrol Press design system. Tokens live in
+      <code>tokens.css</code>; full guidance lives in <code>SKILL.md</code>.
+      The accent ramp (#034159 → #0CF25D) is reserved for value-encoded fills —
+      everything else is set in the greyscale.
+    </p>
+    <p class="footnote" style="margin-top: 12px;">
+      With love from <a href="#">James Wilson</a>
+    </p>
+  </footer>
+
+</main>
+</body>
+</html>
