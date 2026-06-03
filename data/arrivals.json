@@ -1319,6 +1319,18 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1023932",
+      "name": "MH GLADIATOR",
+      "port": "Brisbane",
+      "timestamp": "2026-06-03T22:59:07.622111+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 91765,
+      "cargo_litres": 106722353,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
