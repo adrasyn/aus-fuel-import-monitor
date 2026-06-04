@@ -1331,6 +1331,18 @@
       "cargo_litres": 106722353,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9566203",
+      "name": "GOLDEN CHIE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-04T22:13:18.951792+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5255,
+      "cargo_litres": 6410545,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
