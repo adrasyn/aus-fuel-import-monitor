@@ -1343,6 +1343,30 @@
       "cargo_litres": 6410545,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9915258",
+      "name": "GASCHEM HOMER",
+      "port": "Brisbane",
+      "timestamp": "2026-06-05T21:57:21.409966+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8036,
+      "cargo_litres": 9804364,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9959371",
+      "name": "STELLA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-05T21:57:21.409966+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 3400,
+      "cargo_litres": 4148000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
