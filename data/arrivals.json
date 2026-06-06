@@ -1367,6 +1367,42 @@
       "cargo_litres": 4148000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9435612",
+      "name": "JING YU ZUO",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-06T21:37:51.243250+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 66267,
+      "cargo_litres": 80845333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1078509",
+      "name": "ELISABETH",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-06T21:37:51.243818+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10818,
+      "cargo_litres": 13198182,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9867073",
+      "name": "GOLDEN SAGITTARIUS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-06T21:37:51.243818+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
