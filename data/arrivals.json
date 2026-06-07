@@ -1403,6 +1403,54 @@
       "cargo_litres": 12821091,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1088451",
+      "name": "ORIENTAL GREENSTONE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-07T21:46:54.829142+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 32615,
+      "cargo_litres": 39790769,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9783370",
+      "name": "LIAN BAI HU",
+      "port": "Melbourne",
+      "timestamp": "2026-06-07T21:46:54.829710+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 60667,
+      "cargo_litres": 74013333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1032206",
+      "name": "BASTION",
+      "port": "Bunbury",
+      "timestamp": "2026-06-07T21:46:54.829710+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 37333,
+      "cargo_litres": 45546667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9573684",
+      "name": "MP MR TANKER 3",
+      "port": "Cairns",
+      "timestamp": "2026-06-07T21:46:54.829710+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 19692,
+      "cargo_litres": 24024615,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
