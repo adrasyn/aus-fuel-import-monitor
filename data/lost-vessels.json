@@ -1167,6 +1167,54 @@
       "last_position_update": "2026-05-23T21:27:02.787701+00:00",
       "cleared_at": "2026-06-06T21:37:51.245321+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9919838",
+      "name": "GASCHEM ILIAD",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 6410545,
+      "cargo_tonnes": 5255,
+      "is_ballast": false,
+      "last_lat": -27.35492,
+      "last_lon": 153.17784,
+      "last_destination": "AU HAS",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-05-25T21:42:17.734625+00:00",
+      "cleared_at": "2026-06-08T22:21:52.377359+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9587439",
+      "name": "ICS RELIANCE",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 4902182,
+      "cargo_tonnes": 4018,
+      "is_ballast": false,
+      "last_lat": -38.12696,
+      "last_lon": 144.43991,
+      "last_destination": "AUGEX",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-05-25T21:42:17.734625+00:00",
+      "cleared_at": "2026-06-08T22:21:52.377359+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9344150",
+      "name": "SC SAPPHIRE",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 45796923,
+      "cargo_tonnes": 37538,
+      "is_ballast": false,
+      "last_lat": -35.84113,
+      "last_lon": 117.65072,
+      "last_destination": "AUBEL",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-05-25T21:42:17.734625+00:00",
+      "cleared_at": "2026-06-08T22:21:52.377359+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
