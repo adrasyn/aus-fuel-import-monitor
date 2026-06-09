@@ -6,6 +6,7 @@ from pipeline.arrivals import (
     detect_arrivals,
     detect_silent_arrivals,
     detect_probable_arrivals,
+    reconcile_probable_arrivals,
 )
 
 
@@ -432,3 +433,57 @@ def test_probable_already_marked_is_idempotent():
     # Second call on the same (now-marked) db yields nothing new.
     second = detect_probable_arrivals(db, PORTS, [], first, NOW)
     assert second == []
+
+
+# ---------- reconcile_probable_arrivals ----------
+
+
+def test_reconcile_upgrade_drops_probable_on_confirmed():
+    # A confirmed arrival exists for the same (imo, port) as a probable row.
+    db = _roster("2000001", _it(-38.13, 144.36))
+    db["2000001"]["probable_arrival"] = {"port": "Geelong", "since": NOW}
+    arrivals = [
+        {"imo": "2000001", "port": "Geelong", "status": "probable", "cargo_litres": 1},
+        {"imo": "2000001", "port": "Geelong", "status": "confirmed", "cargo_litres": 1},
+    ]
+    removed = reconcile_probable_arrivals(db, [], arrivals)
+    assert removed == 1
+    assert [a for a in arrivals if a.get("status") == "probable"] == []
+    assert db["2000001"].get("probable_arrival") is None
+
+
+def test_reconcile_reversal_when_vessel_reappears():
+    # Marked probable, but the vessel pinged again this run and was NOT confirmed.
+    db = _roster("2000002", _it(-38.13, 144.36))
+    db["2000002"]["probable_arrival"] = {"port": "Geelong", "since": NOW}
+    arrivals = [{"imo": "2000002", "port": "Geelong", "status": "probable", "cargo_litres": 1}]
+    current = [{"imo": "2000002", "lat": -36.0, "lon": 144.0}]
+    removed = reconcile_probable_arrivals(db, current, arrivals)
+    assert removed == 1
+    assert arrivals == []
+    assert db["2000002"].get("probable_arrival") is None
+
+
+def test_reconcile_keeps_probable_when_still_dark():
+    db = _roster("2000003", _it(-38.13, 144.36))
+    db["2000003"]["probable_arrival"] = {"port": "Geelong", "since": NOW}
+    arrivals = [{"imo": "2000003", "port": "Geelong", "status": "probable", "cargo_litres": 1}]
+    removed = reconcile_probable_arrivals(db, [], arrivals)
+    assert removed == 0
+    assert len(arrivals) == 1
+    assert db["2000003"]["probable_arrival"] is not None
+
+
+def test_detect_arrivals_not_blocked_by_probable_row():
+    # Existing probable row must NOT prevent a confirmed arrival being detected.
+    ports = [{"name": "Geelong", "lat": -38.15, "lon": 144.36, "radius_km": 5}]
+    db = _roster("2000004", _it(-38.15, 144.36))
+    existing = [{"imo": "2000004", "port": "Geelong", "status": "probable"}]
+    snapshot = {"vessels": [{
+        "imo": "2000004", "name": "PROB TANKER", "lat": -38.15, "lon": 144.36,
+        "speed": 0.2, "ship_type": "product", "length": 183, "beam": 32,
+        "draught": 11.0, "destination": "GEELONG",
+    }]}
+    rows = detect_arrivals(snapshot, db, ports, existing)
+    assert len(rows) == 1
+    assert rows[0]["port"] == "Geelong"

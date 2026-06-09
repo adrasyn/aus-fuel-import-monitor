@@ -69,7 +69,10 @@ def detect_arrivals(
     - the roster has it as in_transit (we previously knew it was on a trip)
     - the (imo, port) pair has not already been recorded
     """
-    arrived_imos = {(a["imo"], a["port"]) for a in existing_arrivals}
+    arrived_imos = {
+        (a["imo"], a["port"]) for a in existing_arrivals
+        if a.get("status") != "probable"
+    }
     in_transit_imos = {
         imo for imo, record in vessel_db.items()
         if record.get("in_transit") is not None
@@ -146,7 +149,10 @@ def detect_silent_arrivals(
     is skipped. The expectation is that the orchestrator runs this *before*
     `detect_arrivals` so the live pass sees an up-to-date in_transit set.
     """
-    arrived_imos = {(a["imo"], a["port"]) for a in existing_arrivals}
+    arrived_imos = {
+        (a["imo"], a["port"]) for a in existing_arrivals
+        if a.get("status") != "probable"
+    }
     new_arrivals = []
     now = datetime.now(timezone.utc).isoformat()
 
@@ -193,6 +199,56 @@ def detect_silent_arrivals(
         record["departed_au_since_arrival"] = False
 
     return new_arrivals
+
+
+def reconcile_probable_arrivals(
+    vessel_db: dict,
+    current_vessels: list[dict],
+    arrivals: list[dict],
+) -> int:
+    """Resolve probable rows against confirmations and reappearances.
+
+    1. Upgrade: drop any probable row whose (imo, port) now has a confirmed
+       arrival (incl. backfilled probables superseded by a real berth).
+    2. Reversal: for a record still marked probable that pinged this run but was
+       NOT confirmed, the "vanished" inference is void — drop its probable row
+       and clear the marker so it returns to normal in-transit tracking.
+
+    Mutates `arrivals` in place. Returns the number of probable rows removed.
+    """
+    pinged = {v.get("imo", "") for v in current_vessels if v.get("imo")}
+    confirmed_keys = {
+        (a["imo"], a["port"]) for a in arrivals
+        if a.get("status") != "probable"
+    }
+
+    removed = 0
+    kept = []
+    for a in arrivals:
+        if a.get("status") == "probable" and (a["imo"], a["port"]) in confirmed_keys:
+            removed += 1
+            continue
+        kept.append(a)
+    arrivals[:] = kept
+
+    for imo, record in vessel_db.items():
+        pa = record.get("probable_arrival")
+        if not pa:
+            continue
+        port = pa["port"]
+        if (imo, port) in confirmed_keys:
+            record["probable_arrival"] = None  # upgraded; row already dropped above
+            continue
+        if imo in pinged:
+            before = len(arrivals)
+            arrivals[:] = [
+                a for a in arrivals
+                if not (a.get("status") == "probable" and a["imo"] == imo and a["port"] == port)
+            ]
+            removed += before - len(arrivals)
+            record["probable_arrival"] = None
+
+    return removed
 
 
 def _resolve_probable_port(in_transit: dict, lat: float, lon: float, ports: list[dict]):
