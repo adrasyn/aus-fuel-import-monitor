@@ -202,6 +202,8 @@ def _resolve_probable_port(in_transit: dict, lat: float, lon: float, ports: list
     APPROACH_KM; otherwise the nearest port within APPROACH_KM. Returns
     (port_dict, distance_km) or (None, None) if nothing is in range.
     """
+    if not ports:
+        return None, None
     dest = in_transit.get("destination_parsed")
     if dest:
         named = [p for p in ports if p["name"] == dest]

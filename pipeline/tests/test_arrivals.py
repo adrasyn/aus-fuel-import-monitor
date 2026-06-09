@@ -414,3 +414,21 @@ def test_probable_dedupe_existing_confirmed():
     db = _roster("1000009", _it(-38.13, 144.36))
     existing = [{"imo": "1000009", "port": "Geelong", "status": "confirmed"}]
     assert detect_probable_arrivals(db, PORTS, [], existing, NOW) == []
+
+
+def test_probable_outer_band_slow_speed_included():
+    # ~90km south of Geelong, nearly stopped, pointed AWAY from port —
+    # slow speed alone qualifies in the outer band, no heading check needed.
+    db = _roster("1000010", _it(-38.95, 144.36, speed=0.5, course=180.0))
+    rows = detect_probable_arrivals(db, PORTS, [], [], NOW)
+    assert len(rows) == 1 and rows[0]["port"] == "Geelong"
+
+
+def test_probable_already_marked_is_idempotent():
+    # A record already carrying a probable_arrival marker must not be re-emitted.
+    db = _roster("1000011", _it(-38.13, 144.36))
+    first = detect_probable_arrivals(db, PORTS, [], [], NOW)
+    assert len(first) == 1
+    # Second call on the same (now-marked) db yields nothing new.
+    second = detect_probable_arrivals(db, PORTS, [], first, NOW)
+    assert second == []
