@@ -20,6 +20,7 @@ from pipeline.vessels import (
     revalidate_in_transit,
     apply_departed_au_rules,
 )
+from pipeline.backfill_probable import backfill_probable_arrivals
 from pipeline.daily_estimates import update_daily_estimates
 from pipeline.petroleum_stats import download_latest_excel, build_imports_json
 
@@ -268,6 +269,12 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
         save_json(f"{DATA_DIR}/vessels.json", vessel_db)
     if arrivals_migrated:
         save_json(f"{DATA_DIR}/arrivals.json", arrivals_data)
+
+    backfilled = backfill_probable_arrivals(lost_vessels, arrivals_data, ports)
+    if backfilled:
+        print(f"Backfill: recovered {backfilled} probable arrival(s) from lost-vessels.json")
+        save_json(f"{DATA_DIR}/arrivals.json", arrivals_data)
+        save_json(f"{DATA_DIR}/lost-vessels.json", lost_vessels)
 
     print("Step 1: Collecting from AISStream...")
     current_snapshot = run_collector(api_key, duration_seconds)
