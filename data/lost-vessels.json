@@ -14,7 +14,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-04-20T21:22:42.340233+00:00",
       "cleared_at": "2026-05-04T21:41:35.728725+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9786217",
@@ -30,7 +31,8 @@
       "last_destination_parsed": "Sydney / Botany",
       "last_position_update": "2026-04-22T21:29:52.765955+00:00",
       "cleared_at": "2026-05-06T21:43:29.051728+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9722766",
@@ -46,7 +48,8 @@
       "last_destination_parsed": "Newcastle",
       "last_position_update": "2026-04-22T21:29:52.765955+00:00",
       "cleared_at": "2026-05-06T21:43:29.051728+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9758313",
@@ -62,7 +65,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-04-23T21:26:44.603866+00:00",
       "cleared_at": "2026-05-07T21:37:04.728989+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9528366",
@@ -78,7 +82,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-04-23T21:26:44.603866+00:00",
       "cleared_at": "2026-05-07T21:37:04.728989+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9919838",
@@ -94,7 +99,8 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-04-24T21:24:23.100204+00:00",
       "cleared_at": "2026-05-08T21:35:04.041223+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9571674",
@@ -126,7 +132,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-04-24T21:24:23.100204+00:00",
       "cleared_at": "2026-05-08T21:35:04.041223+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9906685",
@@ -142,7 +149,8 @@
       "last_destination_parsed": "Cairns",
       "last_position_update": "2026-04-25T21:12:37.455965+00:00",
       "cleared_at": "2026-05-09T21:20:19.323730+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9944132",
@@ -158,7 +166,8 @@
       "last_destination_parsed": "Newcastle",
       "last_position_update": "2026-04-25T21:12:37.455965+00:00",
       "cleared_at": "2026-05-09T21:20:19.323730+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9946477",
@@ -190,7 +199,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-04-25T21:12:37.455965+00:00",
       "cleared_at": "2026-05-09T21:20:19.323730+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9952103",
@@ -206,7 +216,8 @@
       "last_destination_parsed": "Sydney / Botany",
       "last_position_update": "2026-04-25T21:12:37.455965+00:00",
       "cleared_at": "2026-05-09T21:20:19.323730+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9861990",
@@ -222,7 +233,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-04-26T21:12:50.912287+00:00",
       "cleared_at": "2026-05-10T21:23:00.186198+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9783916",
@@ -238,7 +250,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-04-26T21:12:50.912287+00:00",
       "cleared_at": "2026-05-10T21:23:00.186198+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9747089",
@@ -254,7 +267,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-04-27T21:36:20.434463+00:00",
       "cleared_at": "2026-05-11T21:50:20.394159+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9367695",
@@ -270,7 +284,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-04-28T21:39:48.722772+00:00",
       "cleared_at": "2026-05-12T21:52:16.181383+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9635810",
@@ -286,7 +301,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-04-29T21:39:26.240661+00:00",
       "cleared_at": "2026-05-13T21:57:24.701460+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9930832",
@@ -302,7 +318,8 @@
       "last_destination_parsed": "Melbourne",
       "last_position_update": "2026-04-29T21:39:26.240661+00:00",
       "cleared_at": "2026-05-13T21:57:24.701460+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9901415",
@@ -318,7 +335,8 @@
       "last_destination_parsed": "Sydney / Botany",
       "last_position_update": "2026-04-30T21:34:48.663732+00:00",
       "cleared_at": "2026-05-14T21:43:42.156900+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9874583",
@@ -350,7 +368,8 @@
       "last_destination_parsed": "Newcastle",
       "last_position_update": "2026-04-30T21:34:48.663732+00:00",
       "cleared_at": "2026-05-14T21:43:42.156900+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9708588",
@@ -366,7 +385,8 @@
       "last_destination_parsed": "Sydney / Botany",
       "last_position_update": "2026-04-30T21:34:48.663732+00:00",
       "cleared_at": "2026-05-14T21:43:42.156900+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9461843",
@@ -398,7 +418,8 @@
       "last_destination_parsed": "Gladstone",
       "last_position_update": "2026-05-01T21:26:58.533714+00:00",
       "cleared_at": "2026-05-15T21:35:42.049010+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9890939",
@@ -414,7 +435,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-05-02T21:18:16.847416+00:00",
       "cleared_at": "2026-05-16T21:23:33.213721+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9424596",
@@ -430,7 +452,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-02T21:18:16.847416+00:00",
       "cleared_at": "2026-05-16T21:23:33.213721+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9405916",
@@ -462,7 +485,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-03T21:19:57.316451+00:00",
       "cleared_at": "2026-05-17T21:27:21.639213+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9811074",
@@ -478,7 +502,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-05-03T21:19:57.316451+00:00",
       "cleared_at": "2026-05-17T21:27:21.639213+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9853539",
@@ -494,7 +519,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-03T21:19:57.316451+00:00",
       "cleared_at": "2026-05-17T21:27:21.639213+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9749398",
@@ -510,7 +536,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-05-04T21:41:35.728725+00:00",
       "cleared_at": "2026-05-18T21:44:58.231661+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9769817",
@@ -526,7 +553,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-05-04T21:41:35.728725+00:00",
       "cleared_at": "2026-05-18T21:44:58.231661+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9819911",
@@ -542,7 +570,8 @@
       "last_destination_parsed": "Hobart",
       "last_position_update": "2026-05-04T21:41:35.728725+00:00",
       "cleared_at": "2026-05-18T21:44:58.231661+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9838242",
@@ -558,7 +587,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-05-04T21:41:35.728725+00:00",
       "cleared_at": "2026-05-18T21:44:58.231661+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9977995",
@@ -574,7 +604,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-05-04T21:41:35.728725+00:00",
       "cleared_at": "2026-05-18T21:44:58.231661+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "1032191",
@@ -590,7 +621,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-05-05T21:36:07.295633+00:00",
       "cleared_at": "2026-05-19T21:52:16.828189+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9543081",
@@ -606,7 +638,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-05-07T21:37:04.728989+00:00",
       "cleared_at": "2026-05-22T06:46:28.299813+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9615999",
@@ -622,7 +655,8 @@
       "last_destination_parsed": "Adelaide",
       "last_position_update": "2026-05-07T21:37:04.728989+00:00",
       "cleared_at": "2026-05-22T06:46:28.299813+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9807229",
@@ -654,7 +688,8 @@
       "last_destination_parsed": "Townsville",
       "last_position_update": "2026-05-08T21:35:04.041223+00:00",
       "cleared_at": "2026-05-22T21:44:36.955628+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9543536",
@@ -670,7 +705,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-09T21:20:19.323730+00:00",
       "cleared_at": "2026-05-23T21:27:02.787701+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9334038",
@@ -686,7 +722,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-09T21:20:19.323730+00:00",
       "cleared_at": "2026-05-23T21:27:02.787701+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9212452",
@@ -718,7 +755,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-05-10T21:23:00.186198+00:00",
       "cleared_at": "2026-05-24T21:29:43.845714+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9942847",
@@ -734,7 +772,8 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-05-10T21:23:00.186198+00:00",
       "cleared_at": "2026-05-24T21:29:43.845714+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9903425",
@@ -750,7 +789,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-05-10T21:23:00.186198+00:00",
       "cleared_at": "2026-05-24T21:29:43.845714+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9835056",
@@ -814,7 +854,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-05-12T21:52:16.181383+00:00",
       "cleared_at": "2026-05-26T22:17:30.061370+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9738662",
@@ -830,7 +871,8 @@
       "last_destination_parsed": "Fremantle",
       "last_position_update": "2026-05-12T21:52:16.181383+00:00",
       "cleared_at": "2026-05-26T22:17:30.061370+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9423906",
@@ -878,7 +920,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-05-14T21:43:42.156900+00:00",
       "cleared_at": "2026-05-28T22:27:57.671095+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9927213",
@@ -894,7 +937,8 @@
       "last_destination_parsed": "Geelong",
       "last_position_update": "2026-05-15T21:35:42.049010+00:00",
       "cleared_at": "2026-05-29T22:23:40.815139+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9683001",
@@ -910,7 +954,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-15T21:35:42.049010+00:00",
       "cleared_at": "2026-05-29T22:23:40.815139+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9812121",
@@ -926,7 +971,8 @@
       "last_destination_parsed": "Cairns",
       "last_position_update": "2026-05-17T21:27:21.639213+00:00",
       "cleared_at": "2026-05-31T21:32:26.213029+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9903968",
@@ -942,7 +988,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-05-18T21:44:58.231661+00:00",
       "cleared_at": "2026-06-01T23:03:45.272271+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9796913",
@@ -958,7 +1005,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-05-18T21:44:58.231661+00:00",
       "cleared_at": "2026-06-01T23:03:45.272271+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "1028542",
@@ -974,7 +1022,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-05-19T21:52:16.828189+00:00",
       "cleared_at": "2026-06-02T22:53:49.636840+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9661235",
@@ -990,7 +1039,8 @@
       "last_destination_parsed": "Hobart",
       "last_position_update": "2026-05-19T21:52:16.828189+00:00",
       "cleared_at": "2026-06-02T22:53:49.636840+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9635846",
@@ -1022,7 +1072,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-19T21:52:16.828189+00:00",
       "cleared_at": "2026-06-02T22:53:49.636840+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9887621",
@@ -1038,7 +1089,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-22T21:44:36.955628+00:00",
       "cleared_at": "2026-06-05T21:57:21.411349+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9955143",
@@ -1070,7 +1122,8 @@
       "last_destination_parsed": "Gladstone",
       "last_position_update": "2026-05-22T08:09:38.203793+00:00",
       "cleared_at": "2026-06-05T21:57:21.411349+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9779757",
@@ -1086,7 +1139,8 @@
       "last_destination_parsed": "Geelong",
       "last_position_update": "2026-05-22T21:44:36.955628+00:00",
       "cleared_at": "2026-06-05T21:57:21.411349+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9882748",
@@ -1102,7 +1156,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-05-22T06:46:28.299813+00:00",
       "cleared_at": "2026-06-05T21:57:21.411349+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9718789",
@@ -1118,7 +1173,8 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-05-22T08:09:38.203793+00:00",
       "cleared_at": "2026-06-05T21:57:21.411349+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9880398",
@@ -1134,7 +1190,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-05-23T21:27:02.787701+00:00",
       "cleared_at": "2026-06-06T21:37:51.245321+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9800324",
@@ -1182,7 +1239,8 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-05-25T21:42:17.734625+00:00",
       "cleared_at": "2026-06-08T22:21:52.377359+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9587439",
@@ -1198,7 +1256,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-05-25T21:42:17.734625+00:00",
       "cleared_at": "2026-06-08T22:21:52.377359+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9344150",

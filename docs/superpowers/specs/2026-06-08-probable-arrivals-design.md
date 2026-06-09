@@ -38,14 +38,17 @@ Applying the rule + backfill to existing `lost-vessels.json`:
 
 | May 2026 | Total | Crude | Product | Arrivals |
 |---|---|---|---|---|
-| Confirmed (today) | 2,482 ML (47%) | 543 (62%) | 1,939 (44%) | 55 |
-| + Probable | +614 ML | +246 | +368 | +25 |
-| **Confirmed + probable** | **3,096 ML (58%)** | **789 (90%)** | **2,307 (52%)** | **80** |
+| Confirmed | 2,482 ML (47%) | 543 (62%) | 1,939 (44%) | 55 |
+| + Probable | +942 ML | +313 | +630 | +35 |
+| **Confirmed + probable** | **3,425 ML (65%)** | **856 (97%)** | **2,569 (58%)** | **90** |
 
-> **Shipped** figures (after the same-voyage backfill dedup — see Backfill). A
-> pre-implementation projection put May at ~3,181 ML; the dedup correctly removed
-> ~4 same-voyage duplicates (a probable near a confirmed berth at an adjacent
-> port), landing at 3,096 ML — a more honest band.
+> Figures are **as of the 2026-06-08 nightly data** (after the same-voyage backfill
+> dedup — see Backfill). The probable total is not static: it grows as nightly
+> lost-vessel data accrues (May ships that go dark in late May only hit the 14-day
+> prune — and so become recoverable — in early June). A design-time projection
+> against the 2026-06-01 snapshot put May at ~3,100 ML; a week of further data
+> lifts it to ~3,425 ML. The backfill is idempotent, so each nightly run simply
+> re-derives the current band.
 
 Crude is near-complete; the residual gap is overwhelmingly *product* tankers
 never tracked. The backfill also lifts April (+796 ML / 19 vessels), as cargoes
