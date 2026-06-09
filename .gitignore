@@ -11,3 +11,4 @@ __pycache__/
 data/petroleum_stats_cache.xlsx
 .DS_Store
 tsconfig.tsbuildinfo
+.venv/
