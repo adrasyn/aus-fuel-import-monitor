@@ -20,6 +20,21 @@ def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return R * 2 * math.atan2(math.sqrt(a), math.sqrt(1 - a))
 
 
+def bearing_deg(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
+    """Initial great-circle bearing from point 1 to point 2, in degrees (0-360, 0=N)."""
+    p1, p2 = math.radians(lat1), math.radians(lat2)
+    dlon = math.radians(lon2 - lon1)
+    x = math.sin(dlon) * math.cos(p2)
+    y = math.cos(p1) * math.sin(p2) - math.sin(p1) * math.cos(p2) * math.cos(dlon)
+    return (math.degrees(math.atan2(x, y)) + 360.0) % 360.0
+
+
+def angular_diff(a: float, b: float) -> float:
+    """Smallest absolute difference between two compass bearings, in degrees (0-180)."""
+    d = abs(a - b) % 360.0
+    return min(d, 360.0 - d)
+
+
 def load_ports(ports_path: str = "data/ports.json") -> list[dict]:
     with open(ports_path) as f:
         return json.load(f)["ports"]

@@ -1,5 +1,7 @@
 from pipeline.arrivals import (
     haversine_km,
+    bearing_deg,
+    angular_diff,
     is_within_port,
     detect_arrivals,
     detect_silent_arrivals,
@@ -14,6 +16,22 @@ def test_haversine_known_distance():
 def test_haversine_same_point():
     dist = haversine_km(-33.87, 151.21, -33.87, 151.21)
     assert dist == 0.0
+
+
+def test_bearing_due_north():
+    # From equator origin straight up in latitude → ~0° (north)
+    assert abs(bearing_deg(0.0, 0.0, 1.0, 0.0) - 0.0) < 1.0
+
+
+def test_bearing_due_east():
+    assert abs(bearing_deg(0.0, 0.0, 0.0, 1.0) - 90.0) < 1.0
+
+
+def test_angular_diff_wraps():
+    assert angular_diff(350.0, 10.0) == 20.0
+    assert angular_diff(10.0, 350.0) == 20.0
+    assert angular_diff(90.0, 90.0) == 0.0
+    assert angular_diff(0.0, 180.0) == 180.0
 
 
 def test_is_within_port_true():
