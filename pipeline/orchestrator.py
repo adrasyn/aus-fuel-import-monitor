@@ -312,11 +312,11 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     save_json(f"{DATA_DIR}/vessels.json", vessel_db)
     print(f"  {len(vessel_db)} vessels in database")
 
-    reversed_count = reconcile_probable_arrivals(
+    reconciled_count = reconcile_probable_arrivals(
         vessel_db, current_snapshot["vessels"], arrivals_data["arrivals"]
     )
-    if reversed_count:
-        print(f"  Reconciled {reversed_count} probable arrival(s) (upgraded to confirmed or reversed)")
+    if reconciled_count:
+        print(f"  Reconciled {reconciled_count} probable arrival(s) (upgraded to confirmed or reversed)")
     save_json(f"{DATA_DIR}/arrivals.json", arrivals_data)
     save_json(f"{DATA_DIR}/vessels.json", vessel_db)
 
