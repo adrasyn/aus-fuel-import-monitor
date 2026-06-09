@@ -6,7 +6,13 @@ import sys
 from datetime import datetime, timedelta, timezone
 
 from pipeline.collector import run_collector
-from pipeline.arrivals import detect_arrivals, detect_silent_arrivals, load_ports
+from pipeline.arrivals import (
+    detect_arrivals,
+    detect_silent_arrivals,
+    detect_probable_arrivals,
+    reconcile_probable_arrivals,
+    load_ports,
+)
 from pipeline.vessels import (
     update_vessel_db,
     migrate_missing_in_transit,
@@ -293,10 +299,26 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     save_json(f"{DATA_DIR}/arrivals.json", arrivals_data)
     print(f"  {len(new_arrivals)} new arrivals detected")
 
+    print("Step 2c: Detecting probable arrivals (approached then vanished)...")
+    probable = detect_probable_arrivals(
+        vessel_db, ports, current_snapshot["vessels"], arrivals_data["arrivals"], now.isoformat()
+    )
+    arrivals_data["arrivals"].extend(probable)
+    if probable:
+        print(f"  {len(probable)} probable arrival(s) inferred from vanished in-transit vessels")
+
     print("Step 3: Updating vessel database...")
     vessel_db = update_vessel_db(vessel_db, current_snapshot["vessels"], new_arrivals, lost_log=new_lost)
     save_json(f"{DATA_DIR}/vessels.json", vessel_db)
     print(f"  {len(vessel_db)} vessels in database")
+
+    reversed_count = reconcile_probable_arrivals(
+        vessel_db, current_snapshot["vessels"], arrivals_data["arrivals"]
+    )
+    if reversed_count:
+        print(f"  Reconciled {reversed_count} probable arrival(s) (upgraded to confirmed or reversed)")
+    save_json(f"{DATA_DIR}/arrivals.json", arrivals_data)
+    save_json(f"{DATA_DIR}/vessels.json", vessel_db)
 
     if new_lost:
         lost_vessels.setdefault("events", []).extend(new_lost)
