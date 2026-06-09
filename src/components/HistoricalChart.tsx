@@ -25,6 +25,8 @@ interface ChartRow {
   fuel_oil: number;
   lpg: number;
   product: number;
+  probable_crude: number;
+  probable_product: number;
   no_data: number;
   source: "government" | "ais_complete" | "current_month" | "no_data";
 }
@@ -37,6 +39,8 @@ const FUEL_COLORS = {
   fuel_oil: "#d1d5db",
   lpg: "#e5e7eb",
   product: "#6b7280",
+  probable_crude: "#9ca3af",
+  probable_product: "#cbd5e1",
 };
 
 const FUEL_LABELS: Record<string, string> = {
@@ -47,6 +51,8 @@ const FUEL_LABELS: Record<string, string> = {
   fuel_oil: "Fuel oil",
   lpg: "LPG",
   product: "Product (unspecified)",
+  probable_crude: "Crude (probable)",
+  probable_product: "Product (probable)",
 };
 
 const FUEL_ORDER = ["crude", "diesel", "gasoline", "jet_fuel", "fuel_oil", "lpg", "product"] as const;
@@ -79,16 +85,23 @@ function CustomTooltip({ active, payload, label, currentMonth }: CustomTooltipPr
       {row.source === "no_data" ? (
         <div style={{ color: "#6b7280" }}>No data available</div>
       ) : (
-        FUEL_ORDER.filter((k) => (row[k] ?? 0) > 0).map((k) => (
-          <div key={k} style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            <span style={{
-              display: "inline-block", width: 8, height: 8,
-              background: FUEL_COLORS[k as keyof typeof FUEL_COLORS],
-              border: "1px solid #6b7280",
-            }} />
-            <span>{FUEL_LABELS[k]}: {row[k]} ML</span>
-          </div>
-        ))
+        <>
+          {FUEL_ORDER.filter((k) => (row[k] ?? 0) > 0).map((k) => (
+            <div key={k} style={{ display: "flex", alignItems: "center", gap: 4 }}>
+              <span style={{
+                display: "inline-block", width: 8, height: 8,
+                background: FUEL_COLORS[k as keyof typeof FUEL_COLORS],
+                border: "1px solid #6b7280",
+              }} />
+              <span>{FUEL_LABELS[k]}: {row[k]} ML</span>
+            </div>
+          ))}
+          {(row.probable_crude + row.probable_product) > 0 && (
+            <div style={{ marginTop: 2, paddingTop: 2, borderTop: "1px dashed #d1d5db", color: "#6b7280" }}>
+              + probable: {row.probable_crude + row.probable_product} ML
+            </div>
+          )}
+        </>
       )}
     </div>
   );
@@ -192,6 +205,8 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
       fuel_oil: record.fuel_oil_ml,
       lpg: record.lpg_ml,
       product: 0,
+      probable_crude: 0,
+      probable_product: 0,
       no_data: 0,
       source: "government",
     });
@@ -231,11 +246,15 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
         // following month, double-counting them on the boundary.
         const crudeMl = est.arrived_crude_litres / 1_000_000;
         const productMl = est.arrived_product_litres / 1_000_000;
+        const probCrudeMl = (est.probable_crude_litres ?? 0) / 1_000_000;
+        const probProductMl = (est.probable_product_litres ?? 0) / 1_000_000;
         chartData.push({
           month: cursor,
           crude: Math.round(crudeMl),
           gasoline: 0, diesel: 0, jet_fuel: 0, fuel_oil: 0, lpg: 0,
           product: Math.round(productMl),
+          probable_crude: Math.round(probCrudeMl),
+          probable_product: Math.round(probProductMl),
           no_data: 0,
           source: isCurrent ? "current_month" : "ais_complete",
         });
@@ -243,6 +262,7 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
         chartData.push({
           month: cursor,
           crude: 0, gasoline: 0, diesel: 0, jet_fuel: 0, fuel_oil: 0, lpg: 0, product: 0,
+          probable_crude: 0, probable_product: 0,
           no_data: 1,
           source: "no_data",
         });
@@ -335,6 +355,18 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
                 strokeDasharray={cellDash(entry.source)} stroke={cellStroke(entry.source, FUEL_COLORS.product)} />
             ))}
           </Bar>
+          <Bar dataKey="probable_crude" name="Crude (probable)" stackId="fuel" fill={FUEL_COLORS.probable_crude}>
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={entry.source === "no_data" ? 0 : 0.25}
+                strokeDasharray="3 2" stroke={entry.source === "no_data" ? undefined : "#6b7280"} />
+            ))}
+          </Bar>
+          <Bar dataKey="probable_product" name="Product (probable)" stackId="fuel" fill={FUEL_COLORS.probable_product}>
+            {chartData.map((entry, i) => (
+              <Cell key={i} fillOpacity={entry.source === "no_data" ? 0 : 0.25}
+                strokeDasharray="3 2" stroke={entry.source === "no_data" ? undefined : "#6b7280"} />
+            ))}
+          </Bar>
           <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none" isAnimationActive={false}>
             {chartData.map((entry, i) => (
               <Cell key={i} fillOpacity={entry.source === "no_data" ? 0.35 : 0} />
@@ -354,6 +386,9 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
         )}
         {chartData.some((r) => r.source === "no_data") && (
           <span><span className="inline-block w-3 h-3 mr-1 align-middle" style={{ background: "#e5e7eb" }} /> Grey = no data available (placeholder height)</span>
+        )}
+        {chartData.some((r) => (r.probable_crude + r.probable_product) > 0) && (
+          <span><span className="inline-block w-3 h-3 mr-1 align-middle border border-dashed border-border-heavy" style={{ background: "#cbd5e1", opacity: 0.4 }} /> Lighter cap = probable arrivals (AIS-inferred)</span>
         )}
       </div>
     </div>
