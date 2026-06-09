@@ -154,7 +154,7 @@ function ExperimentalLabels({ chartData }: { chartData: ChartRow[] }) {
     ...chartData.map((d) =>
       d.source === "no_data"
         ? d.no_data
-        : d.crude + d.gasoline + d.diesel + d.jet_fuel + d.fuel_oil + d.lpg + d.product,
+        : d.crude + d.gasoline + d.diesel + d.jet_fuel + d.fuel_oil + d.lpg + d.product + d.probable_crude + d.probable_product,
     ),
     1,
   );
@@ -358,13 +358,13 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
           <Bar dataKey="probable_crude" name="Crude (probable)" stackId="fuel" fill={FUEL_COLORS.probable_crude}>
             {chartData.map((entry, i) => (
               <Cell key={i} fillOpacity={entry.source === "no_data" ? 0 : 0.25}
-                strokeDasharray="3 2" stroke={entry.source === "no_data" ? undefined : "#6b7280"} />
+                strokeDasharray="3 2" stroke={entry.source === "current_month" || entry.source === "ais_complete" ? "#6b7280" : undefined} />
             ))}
           </Bar>
           <Bar dataKey="probable_product" name="Product (probable)" stackId="fuel" fill={FUEL_COLORS.probable_product}>
             {chartData.map((entry, i) => (
               <Cell key={i} fillOpacity={entry.source === "no_data" ? 0 : 0.25}
-                strokeDasharray="3 2" stroke={entry.source === "no_data" ? undefined : "#6b7280"} />
+                strokeDasharray="3 2" stroke={entry.source === "current_month" || entry.source === "ais_complete" ? "#6b7280" : undefined} />
             ))}
           </Bar>
           <Bar dataKey="no_data" name="No data" stackId="fuel" fill="#e5e7eb" legendType="none" isAnimationActive={false}>
@@ -388,7 +388,7 @@ export default function HistoricalChart({ imports, monthlyEstimates, aisComplete
           <span><span className="inline-block w-3 h-3 mr-1 align-middle" style={{ background: "#e5e7eb" }} /> Grey = no data available (placeholder height)</span>
         )}
         {chartData.some((r) => (r.probable_crude + r.probable_product) > 0) && (
-          <span><span className="inline-block w-3 h-3 mr-1 align-middle border border-dashed border-border-heavy" style={{ background: "#cbd5e1", opacity: 0.4 }} /> Lighter cap = probable arrivals (AIS-inferred)</span>
+          <span><span className="inline-block w-3 h-3 mr-1 align-middle border border-dashed border-border-heavy" style={{ background: "rgba(203, 213, 225, 0.4)" }} /> Lighter cap = probable arrivals (AIS-inferred)</span>
         )}
       </div>
     </div>
