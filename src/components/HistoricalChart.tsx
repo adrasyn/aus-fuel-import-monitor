@@ -146,10 +146,10 @@ function ExperimentalLabels({ chartData }: { chartData: ChartRow[] }) {
   if (!xScale || !yScale) return null;
 
   // Anchor the label at the vertical midpoint of the chart's data range,
-  // not the midpoint of the partial MTD bar. We compute the max bar height
+  // not the midpoint of any single bar. We compute the max bar height
   // across all rows and place the label at half that value — this puts it
-  // visually near the centre of the plotted area regardless of how low
-  // the current month's MTD bar sits.
+  // visually near the centre of the plotted area regardless of how low an
+  // individual experimental bar sits.
   const maxBar = Math.max(
     ...chartData.map((d) =>
       d.source === "no_data"
@@ -164,8 +164,11 @@ function ExperimentalLabels({ chartData }: { chartData: ChartRow[] }) {
   return (
     <g pointerEvents="none">
       {chartData.map((d, i) => {
-        if (d.source !== "current_month") return null;
-        const total = d.crude + d.gasoline + d.diesel + d.jet_fuel + d.fuel_oil + d.lpg + d.product;
+        // Label every month that uses our experimental AIS estimates — the
+        // current month (MTD) and completed months not yet replaced by DCCEEW
+        // actuals (ais_complete). Government and no-data columns stay unlabelled.
+        if (d.source !== "current_month" && d.source !== "ais_complete") return null;
+        const total = d.crude + d.gasoline + d.diesel + d.jet_fuel + d.fuel_oil + d.lpg + d.product + d.probable_crude + d.probable_product;
         if (total <= 0) return null;
         const cx = xScale(d.month, { position: "middle" });
         if (typeof cx !== "number") return null;
