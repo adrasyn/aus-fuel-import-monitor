@@ -82,6 +82,11 @@ export interface MonthEstimate {
   arrived_product_tonnes: number;
   en_route_crude_litres: number;
   en_route_product_litres: number;
+  probable_crude_litres?: number;
+  probable_product_litres?: number;
+  probable_crude_tonnes?: number;
+  probable_product_tonnes?: number;
+  probable_count?: number;
   arrival_count: number;
   last_updated: string;
 }
