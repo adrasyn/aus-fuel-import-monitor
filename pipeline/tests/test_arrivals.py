@@ -5,6 +5,7 @@ from pipeline.arrivals import (
     is_within_port,
     detect_arrivals,
     detect_silent_arrivals,
+    detect_probable_arrivals,
 )
 
 
@@ -322,3 +323,94 @@ def test_silent_arrival_no_in_transit_skipped():
     arrivals = detect_silent_arrivals(db, ports, existing_arrivals=[])
 
     assert arrivals == []
+
+
+# ---------- detect_probable_arrivals ----------
+
+PORTS = [
+    {"name": "Geelong", "lat": -38.15, "lon": 144.36, "radius_km": 5},
+    {"name": "Brisbane", "lat": -27.38, "lon": 153.17, "radius_km": 5},
+]
+
+
+def _roster(imo, in_transit, departed_au=True, length=183, beam=32, ship_type="product"):
+    return {imo: {
+        "name": "PROB TANKER", "vessel_class": "MR", "dwt": 40000,
+        "length": length, "beam": beam, "ship_type": ship_type,
+        "first_seen": "2026-05-01T00:00:00+00:00",
+        "last_seen": "2026-05-05T00:00:00+00:00",
+        "arrival_count": 0, "departed_au_since_arrival": departed_au,
+        "in_transit": in_transit,
+    }}
+
+
+def _it(lat, lon, speed=0.0, course=0.0, last="2026-05-05T00:00:00+00:00",
+        dest="GEELONG", dest_parsed="Geelong", is_ballast=False, draught=11.0):
+    return {
+        "lat": lat, "lon": lon, "speed": speed, "course": course,
+        "destination": dest, "destination_parsed": dest_parsed,
+        "draught": draught, "is_ballast": is_ballast,
+        "cargo_litres": 48000000, "cargo_tonnes": 40000,
+        "last_position_update": last,
+    }
+
+
+NOW = "2026-05-12T00:00:00+00:00"  # 7 days after last ping → dark
+
+
+def test_probable_inner_band_stationary():
+    # Parked 3km from Geelong, dark 7 days → probable, no kinematic check needed
+    db = _roster("1000001", _it(-38.13, 144.36, speed=0.0))
+    rows = detect_probable_arrivals(db, PORTS, [], [], NOW)
+    assert len(rows) == 1
+    assert rows[0]["status"] == "probable"
+    assert rows[0]["port"] == "Geelong"
+    assert rows[0]["timestamp"] == "2026-05-05T00:00:00+00:00"  # dark date, not NOW
+    assert db["1000001"]["probable_arrival"]["port"] == "Geelong"
+
+
+def test_probable_ballast_excluded():
+    db = _roster("1000002", _it(-38.13, 144.36, is_ballast=True))
+    assert detect_probable_arrivals(db, PORTS, [], [], NOW) == []
+
+
+def test_probable_coastal_leg_excluded():
+    db = _roster("1000003", _it(-38.13, 144.36), departed_au=False)
+    assert detect_probable_arrivals(db, PORTS, [], [], NOW) == []
+
+
+def test_probable_not_dark_enough_excluded():
+    # last ping only 2 days ago
+    db = _roster("1000004", _it(-38.13, 144.36, last="2026-05-10T00:00:00+00:00"))
+    assert detect_probable_arrivals(db, PORTS, [], [], NOW) == []
+
+
+def test_probable_still_pinging_excluded():
+    db = _roster("1000005", _it(-38.13, 144.36))
+    current = [{"imo": "1000005", "lat": -38.13, "lon": 144.36}]
+    assert detect_probable_arrivals(db, PORTS, current, [], NOW) == []
+
+
+def test_probable_far_outside_approach_excluded():
+    # 600km+ from any port
+    db = _roster("1000006", _it(-20.0, 130.0))
+    assert detect_probable_arrivals(db, PORTS, [], [], NOW) == []
+
+
+def test_probable_outer_band_closing_heading_included():
+    # ~90km south of Geelong, moving, course pointed north (toward port)
+    db = _roster("1000007", _it(-38.95, 144.36, speed=11.0, course=0.0))
+    rows = detect_probable_arrivals(db, PORTS, [], [], NOW)
+    assert len(rows) == 1 and rows[0]["port"] == "Geelong"
+
+
+def test_probable_outer_band_heading_away_excluded():
+    # ~90km south of Geelong, moving, course pointed south (away from port)
+    db = _roster("1000008", _it(-38.95, 144.36, speed=11.0, course=180.0))
+    assert detect_probable_arrivals(db, PORTS, [], [], NOW) == []
+
+
+def test_probable_dedupe_existing_confirmed():
+    db = _roster("1000009", _it(-38.13, 144.36))
+    existing = [{"imo": "1000009", "port": "Geelong", "status": "confirmed"}]
+    assert detect_probable_arrivals(db, PORTS, [], existing, NOW) == []

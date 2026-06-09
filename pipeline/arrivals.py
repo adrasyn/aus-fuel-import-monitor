@@ -2,13 +2,21 @@
 
 import json
 import math
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pipeline.cargo import estimate_cargo
 
 # Speed cap for "the vessel is parked" — slightly looser than the live-ping
 # cap (1.0kn) because the roster pass works on a possibly-old position whose
 # instantaneous speed may have been a drift reading just before AIS dropped.
 _SILENT_ARRIVAL_SPEED_CAP = 1.0
+
+# Probable-arrival ("approached then vanished") tunables. A laden, AU-bound
+# vessel that goes AIS-dark near a port is inferred to have berthed.
+DARK_DAYS = 4          # days silent before a probable arrival fires
+INNER_KM = 50          # within this of a port → proximity alone (no kinematic check)
+APPROACH_KM = 150      # outer max distance from a port for "approached"
+SLOW_KN = 1.5          # at/below → treated as anchored/slowing (outer band)
+HEADING_TOL = 75.0     # max course deviation from bearing-to-port for "closing" (outer band)
 
 
 def haversine_km(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
@@ -185,3 +193,114 @@ def detect_silent_arrivals(
         record["departed_au_since_arrival"] = False
 
     return new_arrivals
+
+
+def _resolve_probable_port(in_transit: dict, lat: float, lon: float, ports: list[dict]):
+    """Pick the port P a vanished vessel is most likely heading to.
+
+    Prefer the declared destination if it names a known port within
+    APPROACH_KM; otherwise the nearest port within APPROACH_KM. Returns
+    (port_dict, distance_km) or (None, None) if nothing is in range.
+    """
+    dest = in_transit.get("destination_parsed")
+    if dest:
+        named = [p for p in ports if p["name"] == dest]
+        if named:
+            p = min(named, key=lambda pt: haversine_km(lat, lon, pt["lat"], pt["lon"]))
+            d = haversine_km(lat, lon, p["lat"], p["lon"])
+            if d <= APPROACH_KM:
+                return p, d
+    p = min(ports, key=lambda pt: haversine_km(lat, lon, pt["lat"], pt["lon"]))
+    d = haversine_km(lat, lon, p["lat"], p["lon"])
+    if d <= APPROACH_KM:
+        return p, d
+    return None, None
+
+
+def detect_probable_arrivals(
+    vessel_db: dict,
+    ports: list[dict],
+    current_vessels: list[dict],
+    existing_arrivals: list[dict],
+    now: str,
+) -> list[dict]:
+    """Infer arrivals for laden, AU-bound vessels that went AIS-dark near a port.
+
+    Fires on roster records that: are laden, on a fresh international leg, NOT in
+    the current ping batch (vanished), dark >= DARK_DAYS, and last seen within
+    APPROACH_KM of a port. Within INNER_KM proximity alone qualifies; in the
+    50-150km band the vessel must also be anchored/slowing OR on a closing
+    heading. Sets record["probable_arrival"] and returns new probable rows.
+    Idempotent: skips records already marked or already having a confirmed
+    arrival at the resolved port.
+    """
+    now_dt = datetime.fromisoformat(now.replace("Z", "+00:00"))
+    dark_cutoff = now_dt - timedelta(days=DARK_DAYS)
+    pinged = {v.get("imo", "") for v in current_vessels if v.get("imo")}
+    confirmed_keys = {
+        (a["imo"], a["port"]) for a in existing_arrivals
+        if a.get("status") != "probable"
+    }
+
+    new_rows = []
+    for imo, record in vessel_db.items():
+        in_transit = record.get("in_transit")
+        if not in_transit:
+            continue
+        if record.get("probable_arrival"):
+            continue
+        if in_transit.get("is_ballast"):
+            continue
+        if not record.get("departed_au_since_arrival", True):
+            continue
+        if imo in pinged:
+            continue
+        last = in_transit.get("last_position_update")
+        if not last:
+            continue
+        if datetime.fromisoformat(last.replace("Z", "+00:00")) >= dark_cutoff:
+            continue
+        lat, lon = in_transit.get("lat"), in_transit.get("lon")
+        if lat is None or lon is None:
+            continue
+
+        port, dist = _resolve_probable_port(in_transit, lat, lon, ports)
+        if port is None:
+            continue
+        port_name = port["name"]
+        if (imo, port_name) in confirmed_keys:
+            continue
+
+        if dist > INNER_KM:
+            speed = in_transit.get("speed", 99) or 0.0
+            closing = speed < SLOW_KN
+            if not closing:
+                course = in_transit.get("course")
+                if course is not None:
+                    brg = bearing_deg(lat, lon, port["lat"], port["lon"])
+                    closing = angular_diff(course, brg) <= HEADING_TOL
+            if not closing:
+                continue
+
+        cargo = estimate_cargo(
+            length=record.get("length", 0),
+            beam=record.get("beam", 0),
+            draught=in_transit.get("draught", 0),
+            ship_type=record.get("ship_type", "product"),
+        )
+        new_rows.append({
+            "imo": imo,
+            "name": record.get("name", "Unknown"),
+            "port": port_name,
+            "timestamp": last,
+            "ship_type": record.get("ship_type", "product"),
+            "vessel_class": cargo["vessel_class"],
+            "cargo_tonnes": cargo["cargo_tonnes"],
+            "cargo_litres": cargo["cargo_litres"],
+            "draught_missing": cargo["draught_missing"],
+            "coastal": False,
+            "status": "probable",
+        })
+        record["probable_arrival"] = {"port": port_name, "since": now}
+
+    return new_rows
