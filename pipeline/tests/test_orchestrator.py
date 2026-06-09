@@ -1,4 +1,6 @@
-from pipeline.orchestrator import update_monthly_estimates, migrate_coastal_on_arrivals
+from datetime import datetime, timezone
+
+from pipeline.orchestrator import rebucket_monthly_from_arrivals, update_monthly_estimates, migrate_coastal_on_arrivals
 
 
 def test_update_monthly_estimates_sums_en_route_from_roster():
@@ -174,3 +176,35 @@ def test_migrate_coastal_on_arrivals_separates_by_imo():
     migrate_coastal_on_arrivals(arrivals)
     assert arrivals[0]["coastal"] is False
     assert arrivals[1]["coastal"] is False
+
+
+def test_rebucket_splits_confirmed_and_probable():
+    arrivals = [
+        {"imo": "a", "port": "Geelong", "timestamp": "2026-05-03T00:00:00+00:00",
+         "ship_type": "product", "cargo_litres": 100, "cargo_tonnes": 80, "status": "confirmed"},
+        {"imo": "b", "port": "Geelong", "timestamp": "2026-05-04T00:00:00+00:00",
+         "ship_type": "product", "cargo_litres": 40, "cargo_tonnes": 33, "status": "probable"},
+        {"imo": "c", "port": "Brisbane", "timestamp": "2026-05-05T00:00:00+00:00",
+         "ship_type": "crude", "cargo_litres": 90, "cargo_tonnes": 77},  # no status → confirmed
+    ]
+    monthly = rebucket_monthly_from_arrivals({"months": {}}, arrivals)
+    m = monthly["months"]["2026-05"]
+    assert m["arrived_product_litres"] == 100
+    assert m["arrived_crude_litres"] == 90
+    assert m["arrival_count"] == 2  # confirmed only
+    assert m["probable_product_litres"] == 40
+    assert m["probable_count"] == 1
+
+
+def test_en_route_excludes_probable_marked_records():
+    db = {
+        "x": {"ship_type": "product", "departed_au_since_arrival": True,
+              "in_transit": {"is_ballast": False, "cargo_litres": 500}},
+        "y": {"ship_type": "product", "departed_au_since_arrival": True,
+              "probable_arrival": {"port": "Geelong", "since": "z"},
+              "in_transit": {"is_ballast": False, "cargo_litres": 999}},
+    }
+    monthly = update_monthly_estimates({"months": {}}, [], db,
+                                       now=datetime(2026, 5, 20, tzinfo=timezone.utc))
+    m = monthly["months"]["2026-05"]
+    assert m["en_route_product_litres"] == 500  # y excluded

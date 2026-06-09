@@ -32,6 +32,8 @@ def update_daily_estimates(daily: dict, vessel_db: dict, now: datetime) -> dict:
         # international leg, so excluding it avoids double-counting.
         if not record.get("departed_au_since_arrival", True):
             continue
+        if record.get("probable_arrival"):
+            continue
         cargo = in_transit.get("cargo_litres", 0)
         if record.get("ship_type") == "crude":
             crude += cargo

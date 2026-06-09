@@ -93,6 +93,11 @@ def _empty_month_bucket() -> dict:
         "arrived_crude_tonnes": 0,
         "arrived_product_tonnes": 0,
         "arrival_count": 0,
+        "probable_crude_litres": 0,
+        "probable_product_litres": 0,
+        "probable_crude_tonnes": 0,
+        "probable_product_tonnes": 0,
+        "probable_count": 0,
     }
 
 
@@ -146,6 +151,8 @@ def update_monthly_estimates(
             continue
         if not record.get("departed_au_since_arrival", True):
             continue
+        if record.get("probable_arrival"):
+            continue
         if record.get("ship_type") == "crude":
             en_route_crude_litres += in_transit.get("cargo_litres", 0)
         else:
@@ -173,6 +180,11 @@ def rebucket_monthly_from_arrivals(monthly: dict, arrivals: list[dict]) -> dict:
         m["arrived_crude_tonnes"] = 0
         m["arrived_product_tonnes"] = 0
         m["arrival_count"] = 0
+        m["probable_crude_litres"] = 0
+        m["probable_product_litres"] = 0
+        m["probable_crude_tonnes"] = 0
+        m["probable_product_tonnes"] = 0
+        m["probable_count"] = 0
 
     for arrival in arrivals:
         if arrival.get("coastal"):
@@ -182,13 +194,24 @@ def rebucket_monthly_from_arrivals(monthly: dict, arrivals: list[dict]) -> dict:
             continue
         month_key = ts[:7]
         month = months.setdefault(month_key, _empty_month_bucket())
-        month["arrival_count"] += 1
-        if arrival["ship_type"] == "crude":
-            month["arrived_crude_litres"] += arrival["cargo_litres"]
-            month["arrived_crude_tonnes"] += arrival["cargo_tonnes"]
+        is_probable = arrival.get("status") == "probable"
+        is_crude = arrival["ship_type"] == "crude"
+        if is_probable:
+            month["probable_count"] += 1
+            if is_crude:
+                month["probable_crude_litres"] += arrival["cargo_litres"]
+                month["probable_crude_tonnes"] += arrival["cargo_tonnes"]
+            else:
+                month["probable_product_litres"] += arrival["cargo_litres"]
+                month["probable_product_tonnes"] += arrival["cargo_tonnes"]
         else:
-            month["arrived_product_litres"] += arrival["cargo_litres"]
-            month["arrived_product_tonnes"] += arrival["cargo_tonnes"]
+            month["arrival_count"] += 1
+            if is_crude:
+                month["arrived_crude_litres"] += arrival["cargo_litres"]
+                month["arrived_crude_tonnes"] += arrival["cargo_tonnes"]
+            else:
+                month["arrived_product_litres"] += arrival["cargo_litres"]
+                month["arrived_product_tonnes"] += arrival["cargo_tonnes"]
 
     return monthly
 
