@@ -236,8 +236,14 @@ def test_update_vessel_db_populates_in_transit_for_pinged_vessels():
 
 
 def test_update_vessel_db_preserves_in_transit_for_unseen_vessel():
-    # Vessel was in the roster yesterday with in_transit set; not pinged today.
-    # Today's snapshot is empty for this IMO — in_transit must persist.
+    # Vessel was in the roster recently with in_transit set; not pinged today.
+    # Today's snapshot is empty for this IMO — in_transit must persist because
+    # it's still within the staleness window. The timestamps are relative to
+    # now (one day ago) rather than hardcoded, so the test doesn't rot once the
+    # wall clock advances past the staleness threshold from a fixed date.
+    from datetime import datetime, timezone, timedelta
+
+    recent = (datetime.now(timezone.utc) - timedelta(days=1)).isoformat()
     yesterday_in_transit = {
         "mmsi": "636019825", "lat": -10.0, "lon": 100.0,
         "speed": 12.0, "course": 90.0, "heading": 90.0, "draught": 14.5,
@@ -245,14 +251,14 @@ def test_update_vessel_db_preserves_in_transit_for_unseen_vessel():
         "region": "AU_APPROACH",
         "cargo_litres": 80_000_000, "cargo_tonnes": 70_000,
         "load_factor": 0.9, "is_ballast": False, "draught_missing": False,
-        "last_position_update": "2026-04-13T00:00:00Z",
+        "last_position_update": recent,
     }
     db = {
         "9876543": {
             "name": "Test Tanker", "vessel_class": "Aframax", "dwt": 100000,
             "length": 245, "beam": 44, "ship_type": "crude",
             "first_seen": "2026-04-01T00:00:00Z",
-            "last_seen": "2026-04-13T00:00:00Z",
+            "last_seen": recent,
             "arrival_count": 0,
             "in_transit": yesterday_in_transit,
         }
