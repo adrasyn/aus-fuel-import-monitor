@@ -1274,6 +1274,22 @@
       "last_position_update": "2026-05-25T21:42:17.734625+00:00",
       "cleared_at": "2026-06-08T22:21:52.377359+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9737527",
+      "name": "STARLING",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 26189333,
+      "cargo_tonnes": 21467,
+      "is_ballast": false,
+      "last_lat": -27.28192,
+      "last_lon": 153.27665,
+      "last_destination": "AUBNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-05-26T22:17:30.061370+00:00",
+      "cleared_at": "2026-06-09T22:19:13.056866+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
