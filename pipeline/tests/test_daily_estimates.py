@@ -109,6 +109,23 @@ def test_update_daily_estimates_same_day_rerun_overwrites():
     assert len(updated["days"]) == 1
 
 
+def test_daily_excludes_probable_marked_records():
+    # A vessel marked probable_arrival has been inferred to have berthed;
+    # it must not contribute to the en-route total.
+    daily = {"days": {}}
+    plain = _vessel_record("product", _in_transit(80_000_000))
+    probable = _vessel_record("product", _in_transit(50_000_000))
+    probable["probable_arrival"] = True
+    vessel_db = {
+        "9000001": plain,
+        "9000002": probable,
+    }
+    now = datetime(2026, 4, 14, 12, 30, tzinfo=timezone.utc)
+    updated = update_daily_estimates(daily, vessel_db, now)
+
+    assert updated["days"]["2026-04-14"]["en_route_product_litres"] == 80_000_000
+
+
 def test_update_daily_estimates_preserves_prior_days():
     daily = {
         "days": {

@@ -12,8 +12,9 @@ def update_daily_estimates(daily: dict, vessel_db: dict, now: datetime) -> dict:
     """Write today's en-route totals into daily["days"][YYYY-MM-DD].
 
     Sums cargo_litres from each record's in_transit block, grouped by
-    ship_type. Skips ballast vessels and arrived records (in_transit=None).
-    Overwrites any prior entry for today's Sydney-local date so a run at
+    ship_type. Skips ballast vessels, arrived records (in_transit=None), and
+    records marked probable_arrival (inferred to have berthed, no longer en
+    route). Overwrites any prior entry for today's Sydney-local date so a run at
     ~07:00 AEST lands on the date Australians call "today" instead of
     yesterday-UTC.
     """

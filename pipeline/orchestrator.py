@@ -129,13 +129,24 @@ def update_monthly_estimates(
             continue
         month_key = _arrival_month_key(arrival, fallback_key)
         month = months.setdefault(month_key, _empty_month_bucket())
-        month["arrival_count"] += 1
-        if arrival["ship_type"] == "crude":
-            month["arrived_crude_litres"] += arrival["cargo_litres"]
-            month["arrived_crude_tonnes"] += arrival["cargo_tonnes"]
+        is_probable = arrival.get("status") == "probable"
+        is_crude = arrival["ship_type"] == "crude"
+        if is_probable:
+            month["probable_count"] += 1
+            if is_crude:
+                month["probable_crude_litres"] += arrival["cargo_litres"]
+                month["probable_crude_tonnes"] += arrival["cargo_tonnes"]
+            else:
+                month["probable_product_litres"] += arrival["cargo_litres"]
+                month["probable_product_tonnes"] += arrival["cargo_tonnes"]
         else:
-            month["arrived_product_litres"] += arrival["cargo_litres"]
-            month["arrived_product_tonnes"] += arrival["cargo_tonnes"]
+            month["arrival_count"] += 1
+            if is_crude:
+                month["arrived_crude_litres"] += arrival["cargo_litres"]
+                month["arrived_crude_tonnes"] += arrival["cargo_tonnes"]
+            else:
+                month["arrived_product_litres"] += arrival["cargo_litres"]
+                month["arrived_product_tonnes"] += arrival["cargo_tonnes"]
 
     # En-route bucket is always written to the current month, since it's a
     # live snapshot of inbound traffic right now.
