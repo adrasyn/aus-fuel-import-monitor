@@ -8,7 +8,41 @@ false positive is also not self-correcting (reversal only fires on vessels that
 reappear live). So we recover only the unambiguous inner-band cases.
 """
 
+from datetime import datetime
+
 from pipeline.arrivals import haversine_km, INNER_KM
+
+# A backfilled probable within this many days of a CONFIRMED arrival for the
+# same vessel is treated as the same voyage (the dark fix was just nearest a
+# different port than the berth) and suppressed, to avoid double-counting.
+DEDUP_WINDOW_DAYS = 5
+
+
+def _parse_iso(ts):
+    if not ts:
+        return None
+    try:
+        return datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except (ValueError, AttributeError):
+        return None
+
+
+def _has_nearby_confirmed(imo: str, ts: str, arrivals: list[dict]) -> bool:
+    """True if the same vessel has a CONFIRMED arrival within DEDUP_WINDOW_DAYS
+    of `ts` — i.e. the probable is almost certainly the same voyage."""
+    t = _parse_iso(ts)
+    if t is None:
+        return False
+    window = DEDUP_WINDOW_DAYS * 86400
+    for a in arrivals:
+        if a.get("imo") != imo or a.get("status") == "probable":
+            continue
+        at = _parse_iso(a.get("timestamp"))
+        if at is None:
+            continue
+        if abs((at - t).total_seconds()) <= window:
+            return True
+    return False
 
 
 def backfill_probable_arrivals(lost_vessels: dict, arrivals_data: dict, ports: list[dict]) -> int:
@@ -16,7 +50,7 @@ def backfill_probable_arrivals(lost_vessels: dict, arrivals_data: dict, ports: l
     event with recovered_as="probable" so re-runs are no-ops. Returns the count
     added."""
     arrivals = arrivals_data.setdefault("arrivals", [])
-    existing_keys = {(a["imo"], a["port"]) for a in arrivals}
+    existing_keys = {(a["imo"], a["port"]) for a in arrivals if a.get("status") == "probable"}
 
     added = 0
     for event in lost_vessels.get("events", []):
@@ -30,6 +64,9 @@ def backfill_probable_arrivals(lost_vessels: dict, arrivals_data: dict, ports: l
         port = min(ports, key=lambda p: haversine_km(lat, lon, p["lat"], p["lon"]))
         dist = haversine_km(lat, lon, port["lat"], port["lon"])
         if dist > INNER_KM:
+            continue
+        if _has_nearby_confirmed(event["imo"], event.get("last_position_update"), arrivals):
+            event["recovered_as"] = "duplicate_of_confirmed"
             continue
         key = (event["imo"], port["name"])
         if key in existing_keys:

@@ -45,3 +45,30 @@ def test_backfill_is_idempotent():
     assert backfill_probable_arrivals(lost, arrivals, PORTS) == 1
     assert backfill_probable_arrivals(lost, arrivals, PORTS) == 0  # already recovered
     assert len(arrivals["arrivals"]) == 1
+
+
+def test_backfill_skips_event_with_nearby_confirmed_arrival():
+    # Same vessel already confirmed at a (different) port 2 days before the dark fix.
+    lost = {"events": [_event("9000010", -38.13, 144.36,
+                              last_position_update="2026-05-05T00:00:00+00:00")]}
+    arrivals = {"arrivals": [
+        {"imo": "9000010", "port": "Geelong", "status": "confirmed",
+         "timestamp": "2026-05-03T00:00:00+00:00", "cargo_litres": 1, "ship_type": "product"},
+    ]}
+    added = backfill_probable_arrivals(lost, arrivals, PORTS)
+    assert added == 0
+    assert lost["events"][0]["recovered_as"] == "duplicate_of_confirmed"
+    # no probable row was added
+    assert [a for a in arrivals["arrivals"] if a.get("status") == "probable"] == []
+
+
+def test_backfill_keeps_event_when_confirmed_is_far_in_time():
+    # Confirmed arrival 30 days earlier = a different, earlier voyage → still recover.
+    lost = {"events": [_event("9000011", -38.13, 144.36,
+                              last_position_update="2026-05-05T00:00:00+00:00")]}
+    arrivals = {"arrivals": [
+        {"imo": "9000011", "port": "Geelong", "status": "confirmed",
+         "timestamp": "2026-04-05T00:00:00+00:00", "cargo_litres": 1, "ship_type": "product"},
+    ]}
+    added = backfill_probable_arrivals(lost, arrivals, PORTS)
+    assert added == 1
