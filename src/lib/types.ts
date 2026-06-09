@@ -53,6 +53,10 @@ export interface VesselDbRecord {
   arrival_count: number;
   in_transit: VesselDbInTransit | null;
   departed_au_since_arrival: boolean;
+  // Set when the pipeline has inferred this vessel berthed after going AIS-dark
+  // ("probable arrival"). Its in_transit block is retained for reversal, but it
+  // must be excluded from en-route views — it's no longer en route.
+  probable_arrival?: { port: string; since: string } | null;
 }
 
 export type VesselDb = Record<string, VesselDbRecord>;

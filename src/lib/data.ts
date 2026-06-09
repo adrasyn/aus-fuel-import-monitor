@@ -35,6 +35,10 @@ function rosterToSnapshot(db: VesselDb): Snapshot {
     // so it's not "en route" even though its in_transit block keeps refreshing
     // while it pings from the anchorage.
     if (record.departed_au_since_arrival === false) continue;
+    // Inferred to have berthed after going AIS-dark. Its in_transit block is
+    // retained (for reversal), but it's no longer en route — exclude it from
+    // the live roster so the map/headline agree with the en-route totals.
+    if (record.probable_arrival) continue;
 
     vessels.push({
       mmsi: it.mmsi,

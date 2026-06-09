@@ -240,6 +240,11 @@ def reconcile_probable_arrivals(
             record["probable_arrival"] = None  # upgraded; row already dropped above
             continue
         if imo in pinged:
+            # Any fresh ping (not just a moving/offshore one) voids the
+            # "vanished" inference and reverses the probable. The arrived-at-berth
+            # case is handled by the confirmed-arrival passes running earlier this
+            # run (upgrade branch above); a slow-but-not-confirmable ping just
+            # re-detects as probable next run — harmless, self-correcting churn.
             before = len(arrivals)
             arrivals[:] = [
                 a for a in arrivals
