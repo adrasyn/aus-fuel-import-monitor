@@ -181,6 +181,39 @@ def test_prune_skips_records_without_in_transit():
     assert "in_transit" not in db["9000003"]
 
 
+def _stale_record(marked: bool):
+    rec = {
+        "name": "FINAL TANKER", "ship_type": "product", "vessel_class": "MR",
+        "arrival_count": 0, "departed_au_since_arrival": True,
+        "in_transit": {
+            "lat": -38.13, "lon": 144.36, "cargo_litres": 48000000,
+            "cargo_tonnes": 40000, "is_ballast": False,
+            "last_position_update": "2026-05-01T00:00:00+00:00",  # >14d before NOW
+        },
+    }
+    if marked:
+        rec["probable_arrival"] = {"port": "Geelong", "since": "2026-05-05T00:00:00+00:00"}
+    return rec
+
+
+def test_prune_marked_probable_is_finalized_not_lost():
+    db = {"3000001": _stale_record(marked=True)}
+    lost = []
+    prune_stale_in_transit(db, now="2026-05-20T00:00:00+00:00", lost_log=lost)
+    assert db["3000001"]["in_transit"] is None
+    assert db["3000001"].get("probable_arrival") is None  # marker cleared
+    assert lost == []  # NOT logged lost
+
+
+def test_prune_unmarked_stale_still_logged_lost():
+    db = {"3000002": _stale_record(marked=False)}
+    lost = []
+    prune_stale_in_transit(db, now="2026-05-20T00:00:00+00:00", lost_log=lost)
+    assert db["3000002"]["in_transit"] is None
+    assert len(lost) == 1
+    assert lost[0]["reason"] == "stale_prune_14d"
+
+
 def test_update_vessel_db_populates_in_transit_for_pinged_vessels():
     db = {}
     vessels = [

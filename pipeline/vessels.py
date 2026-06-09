@@ -289,5 +289,11 @@ def prune_stale_in_transit(db: dict, now: str, lost_log: list | None = None) -> 
             continue
         last_dt = datetime.fromisoformat(last.replace("Z", "+00:00"))
         if last_dt < cutoff:
-            _record_lost(record, imo, "stale_prune_14d", now, lost_log)
+            if record.get("probable_arrival"):
+                # Already accounted as a probable arrival — finalize the trip:
+                # keep the probable row, drop the marker (so a later reappearance
+                # can't reverse it), and don't log it as lost.
+                record["probable_arrival"] = None
+            else:
+                _record_lost(record, imo, "stale_prune_14d", now, lost_log)
             record["in_transit"] = None
