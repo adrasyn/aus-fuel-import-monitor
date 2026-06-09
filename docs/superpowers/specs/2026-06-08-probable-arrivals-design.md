@@ -39,12 +39,17 @@ Applying the rule + backfill to existing `lost-vessels.json`:
 | May 2026 | Total | Crude | Product | Arrivals |
 |---|---|---|---|---|
 | Confirmed (today) | 2,482 ML (47%) | 543 (62%) | 1,939 (44%) | 55 |
-| + Probable | +699 ML | +281 | +418 | +28 |
-| **Confirmed + probable** | **3,181 ML (60%)** | **824 (94%)** | **2,357 (53%)** | **83** |
+| + Probable | +614 ML | +246 | +368 | +25 |
+| **Confirmed + probable** | **3,096 ML (58%)** | **789 (90%)** | **2,307 (52%)** | **80** |
 
-Crude becomes essentially complete; the residual gap is overwhelmingly *product*
-tankers never tracked. The backfill also lifts April (+816 ML / +20 vessels), as
-cargoes bucket into the month the vessel actually went dark, not the prune date.
+> **Shipped** figures (after the same-voyage backfill dedup — see Backfill). A
+> pre-implementation projection put May at ~3,181 ML; the dedup correctly removed
+> ~4 same-voyage duplicates (a probable near a confirmed berth at an adjacent
+> port), landing at 3,096 ML — a more honest band.
+
+Crude is near-complete; the residual gap is overwhelmingly *product* tankers
+never tracked. The backfill also lifts April (+796 ML / 19 vessels), as cargoes
+bucket into the month the vessel actually went dark, not the prune date.
 
 ## Decisions (locked)
 
@@ -134,8 +139,14 @@ A migration step (pattern of the existing `migrate_*` functions) that reprocesse
   backfilled false positive is *not* self-correcting (reversal only fires on vessels
   that reappear in a live snapshot; historical lost vessels never will). So we recover
   only the unambiguous inner-band vessels and leave outer-band events as lost. This
-  costs little: ~95% of recoverable cargo is within 50 km (May: +699 ML of the +756 ML
-  a full-150 km proximity sweep would have claimed). Document this asymmetry in code.
+  costs little: ~95% of recoverable cargo is within 50 km. Document this asymmetry in code.
+- **Same-voyage dedup (`DEDUP_WINDOW_DAYS = 5`).** Backfill attributes to the *nearest*
+  port, but confirmed arrivals use the *declared* port — so a vessel that berthed at Q
+  (confirmed) whose last dark fix was nearest an adjacent port P would otherwise get a
+  duplicate probable at P for the same voyage. Suppress a lost event when the same IMO
+  already has a confirmed arrival within 5 days (stamp `recovered_as:
+  "duplicate_of_confirmed"`). Genuine repeat voyages (>5 days apart, same or different
+  port) are still recovered. This removed ~4 May duplicates (3,181 → 3,096 ML).
 
 ### Aggregation
 
@@ -146,6 +157,11 @@ A migration step (pattern of the existing `migrate_*` functions) that reprocesse
   `status` are treated as confirmed (back-compat for existing data).
 - En-route sums (`update_monthly_estimates`, `update_daily_estimates`): skip records
   with `probable_arrival` set.
+- **Frontend roster (`src/lib/data.ts` `rosterToSnapshot`)**: also skip
+  `probable_arrival`-marked records. A probable vessel keeps its `in_transit` block (for
+  reversal), so without this guard it would show as "en route" on the map/headline while
+  being excluded from the en-route *totals* — an inconsistency. `VesselDbRecord` gains an
+  optional `probable_arrival` field.
 
 ### Dashboard
 
