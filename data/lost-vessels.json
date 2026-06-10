@@ -1289,6 +1289,23 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-05-26T22:17:30.061370+00:00",
       "cleared_at": "2026-06-09T22:19:13.056866+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9806665",
+      "name": "SWAN PRIDE",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 6033455,
+      "cargo_tonnes": 4945,
+      "is_ballast": false,
+      "last_lat": -42.83114,
+      "last_lon": 147.32095,
+      "last_destination": "AU HBA",
+      "last_destination_parsed": "Hobart",
+      "last_position_update": "2026-05-27T22:28:56.580976+00:00",
+      "cleared_at": "2026-06-10T22:35:03.015305+00:00",
       "reason": "stale_prune_14d"
     }
   ]

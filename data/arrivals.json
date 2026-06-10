@@ -2267,6 +2267,70 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9867073",
+      "name": "GOLDEN SAGITTARIUS",
+      "port": "Brisbane",
+      "timestamp": "2026-06-10T22:35:03.012482+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8655,
+      "cargo_litres": 10558545,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9881079",
+      "name": "GOLDEN PRELUDE",
+      "port": "Melbourne",
+      "timestamp": "2026-06-06T21:37:51.245321+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 14836,
+      "cargo_litres": 18100364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9906714",
+      "name": "GRAND WINNER 5",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-05T21:57:21.411349+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9401647",
+      "name": "CHANGHANG CHENGGONG",
+      "port": "Newcastle",
+      "timestamp": "2026-06-06T21:37:51.245321+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9937012",
+      "name": "WAVE",
+      "port": "Brisbane",
+      "timestamp": "2026-06-06T21:37:51.245321+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 68800,
+      "cargo_litres": 80014400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
