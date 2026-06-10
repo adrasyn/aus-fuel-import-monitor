@@ -2,8 +2,10 @@ name: Nightly Data Update
 
 on:
   schedule:
-    # 20:00 UTC = 06:00 AEST (currently) / 07:00 AEDT (Oct-Apr in NSW/VIC/ACT/TAS/SA)
+    # 20:00 UTC = 06:00 AEST / 07:00 AEDT — publishing run (refreshes the live site)
     - cron: "0 20 * * *"
+    # 08:00 UTC = 18:00 AEST / 19:00 AEDT — collect-only run (commits data, no deploy)
+    - cron: "0 8 * * *"
   workflow_dispatch: # Allow manual trigger
 
 permissions:
@@ -41,6 +43,10 @@ jobs:
         run: python -m pipeline.orchestrator
 
       - name: Commit updated data
+        env:
+          # True only for the 18:00 AEST collect-only schedule. Empty (→ false)
+          # for the 20:00 publish schedule and for manual workflow_dispatch.
+          IS_COLLECT_ONLY: ${{ github.event.schedule == '0 8 * * *' }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -49,11 +55,20 @@ jobs:
             echo "No data changes to commit"
             exit 0
           fi
-          git commit -m "data: nightly update $(date -u +%Y-%m-%d)"
+          if [ "$IS_COLLECT_ONLY" = "true" ]; then
+            # [skip ci] keeps this data commit from triggering deploy.yml's
+            # push trigger, so the live site is not rebuilt by the midday run.
+            git commit -m "data: midday collect $(date -u +%Y-%m-%d) [skip ci]"
+          else
+            git commit -m "data: nightly update $(date -u +%Y-%m-%d)"
+          fi
           git pull --rebase origin main
           git push
 
       - name: Trigger Pages deploy
+        # Skip on the 18:00 collect-only run; publish on the 20:00 run and on
+        # manual dispatch (where github.event.schedule is empty).
+        if: github.event.schedule != '0 8 * * *'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: gh workflow run deploy.yml --ref main
