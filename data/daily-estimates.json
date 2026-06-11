@@ -279,6 +279,11 @@
       "en_route_crude_litres": 375662682,
       "en_route_product_litres": 1019300047,
       "captured_at": "2026-06-11T12:01:38.628193+00:00"
+    },
+    "2026-06-12": {
+      "en_route_crude_litres": 441337976,
+      "en_route_product_litres": 806575273,
+      "captured_at": "2026-06-11T22:03:54.572438+00:00"
     }
   }
 }

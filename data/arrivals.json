@@ -2368,6 +2368,70 @@
       "cargo_litres": 32283077,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9538452",
+      "name": "KONG QUE ZUO",
+      "port": "Brisbane",
+      "timestamp": "2026-06-11T22:33:55.292017+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 63467,
+      "cargo_litres": 77429333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9433846",
+      "name": "FPMC 26",
+      "port": "Newcastle",
+      "timestamp": "2026-06-07T21:46:54.831186+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9617959",
+      "name": "DEIRA GHAIR",
+      "port": "Kwinana",
+      "timestamp": "2026-06-07T21:46:54.831186+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9736626",
+      "name": "GOLDEN ACE",
+      "port": "Newcastle",
+      "timestamp": "2026-06-07T21:46:54.831186+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11436,
+      "cargo_litres": 13952364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9922093",
+      "name": "DEE4 ILEX",
+      "port": "Kwinana",
+      "timestamp": "2026-06-07T21:46:54.831186+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
