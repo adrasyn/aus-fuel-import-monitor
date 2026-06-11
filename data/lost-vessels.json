@@ -1306,7 +1306,8 @@
       "last_destination_parsed": "Hobart",
       "last_position_update": "2026-05-27T22:28:56.580976+00:00",
       "cleared_at": "2026-06-10T22:35:03.015305+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     }
   ]
 }

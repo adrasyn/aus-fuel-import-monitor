@@ -2331,6 +2331,43 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9806665",
+      "name": "SWAN PRIDE",
+      "port": "Hobart",
+      "timestamp": "2026-05-27T22:28:56.580976+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4945,
+      "cargo_litres": 6033455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9539523",
+      "name": "MORNING IBIS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-11T12:14:44.192708+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 39200,
+      "cargo_litres": 47824000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9344150",
+      "name": "SC SAPPHIRE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-11T12:14:44.192708+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 26462,
+      "cargo_litres": 32283077,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
