@@ -2432,6 +2432,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9706073",
+      "name": "HAFNIA PETREL",
+      "port": "Kwinana",
+      "timestamp": "2026-06-12T22:19:40.091882+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
