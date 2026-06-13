@@ -2495,6 +2495,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9708239",
+      "name": "ARDMORE SEAHAWK",
+      "port": "Cairns",
+      "timestamp": "2026-06-13T21:49:52.503551+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 14154,
+      "cargo_litres": 17267692,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
