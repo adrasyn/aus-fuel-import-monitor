@@ -2444,6 +2444,57 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9952086",
+      "name": "YONG AO",
+      "port": "Gladstone",
+      "timestamp": "2026-06-13T10:49:28.539718+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 39040000,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9571674",
+      "name": "FANG CHENG GANG",
+      "port": "Kwinana",
+      "timestamp": "2026-06-08T22:21:52.377359+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7418,
+      "cargo_litres": 9050182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9782613",
+      "name": "CSK VALIANT",
+      "port": "Geelong",
+      "timestamp": "2026-06-08T22:21:52.377359+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 41600,
+      "cargo_litres": 48380800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9607186",
+      "name": "HAFNIA FALCON",
+      "port": "Brisbane",
+      "timestamp": "2026-06-08T22:21:52.377359+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 19692,
+      "cargo_litres": 24024615,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
