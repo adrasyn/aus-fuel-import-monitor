@@ -2507,6 +2507,19 @@
       "cargo_litres": 17267692,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9803247",
+      "name": "ROSTELLA",
+      "port": "Geelong",
+      "timestamp": "2026-06-09T22:19:13.056866+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5255,
+      "cargo_litres": 6410545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
