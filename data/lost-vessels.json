@@ -1308,6 +1308,22 @@
       "cleared_at": "2026-06-10T22:35:03.015305+00:00",
       "reason": "stale_prune_14d",
       "recovered_as": "probable"
+    },
+    {
+      "imo": "9750206",
+      "name": "STOLT HAGI",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13575273,
+      "cargo_tonnes": 11127,
+      "is_ballast": false,
+      "last_lat": 1.21445,
+      "last_lon": 103.93157,
+      "last_destination": "AU DRW",
+      "last_destination_parsed": "Darwin",
+      "last_position_update": "2026-05-31T21:32:26.213029+00:00",
+      "cleared_at": "2026-06-14T21:46:02.218650+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

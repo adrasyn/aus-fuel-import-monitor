@@ -2520,6 +2520,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9399612",
+      "name": "ETC NEFERTARI",
+      "port": "Gladstone",
+      "timestamp": "2026-06-14T21:46:02.215727+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
