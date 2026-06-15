@@ -2556,6 +2556,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1043152",
+      "name": "YASA AEGEAN SEA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-15T22:51:24.607750+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9538452",
+      "name": "KONG QUE ZUO",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-15T22:51:24.607750+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 34533,
+      "cargo_litres": 42130667,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
