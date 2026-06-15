@@ -2408,19 +2408,6 @@
       "status": "probable"
     },
     {
-      "imo": "9736626",
-      "name": "GOLDEN ACE",
-      "port": "Newcastle",
-      "timestamp": "2026-06-07T21:46:54.831186+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 11436,
-      "cargo_litres": 13952364,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9922093",
       "name": "DEE4 ILEX",
       "port": "Kwinana",
@@ -2532,6 +2519,43 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9856995",
+      "name": "HUA HANG HE CHANG",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-15T14:14:24.235971+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7727,
+      "cargo_litres": 9427273,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9736626",
+      "name": "GOLDEN ACE",
+      "port": "Newcastle",
+      "timestamp": "2026-06-15T14:14:24.235971+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11127,
+      "cargo_litres": 13575273,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9905411",
+      "name": "BLUE GRASS MARINER",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-10T22:35:03.015305+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 24615,
+      "cargo_litres": 30030769,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
