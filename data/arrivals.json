@@ -2618,6 +2618,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9896244",
+      "name": "YUAN JING HE",
+      "port": "Fremantle",
+      "timestamp": "2026-06-01T23:03:45.272271+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
