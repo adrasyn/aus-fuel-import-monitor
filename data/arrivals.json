@@ -2580,6 +2580,44 @@
       "cargo_litres": 42130667,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9740421",
+      "name": "SEAENVOY",
+      "port": "Brisbane",
+      "timestamp": "2026-06-16T13:14:04.790988+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 35200,
+      "cargo_litres": 40937600,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9380506",
+      "name": "SEAWAYS SPIRIT",
+      "port": "Newcastle",
+      "timestamp": "2026-06-12T12:02:48.335179+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9732371",
+      "name": "MARAN GAS OLYMPIAS",
+      "port": "Gladstone",
+      "timestamp": "2026-06-12T12:02:48.335179+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 48000,
+      "cargo_litres": 55824000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
