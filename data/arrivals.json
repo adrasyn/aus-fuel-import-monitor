@@ -2707,6 +2707,56 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9796901",
+      "name": "FOREVER GLORY",
+      "port": "Brisbane",
+      "timestamp": "2026-06-17T22:32:57.669283+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9952086",
+      "name": "YONG AO",
+      "port": "Cairns",
+      "timestamp": "2026-06-17T22:32:57.669969+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 19077,
+      "cargo_litres": 23273846,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9833565",
+      "name": "STI MARSHALL",
+      "port": "Kwinana",
+      "timestamp": "2026-06-13T21:49:52.505742+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9678525",
+      "name": "LEO SUNRISE",
+      "port": "Kwinana",
+      "timestamp": "2026-06-13T21:49:52.505742+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 20308,
+      "cargo_litres": 24775385,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
