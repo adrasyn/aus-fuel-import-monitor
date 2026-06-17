@@ -1341,6 +1341,38 @@
       "cleared_at": "2026-06-16T13:14:04.793421+00:00",
       "reason": "stale_prune_14d",
       "recovered_as": "probable"
+    },
+    {
+      "imo": "9829473",
+      "name": "STI MARVEL",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 27778462,
+      "cargo_tonnes": 22769,
+      "is_ballast": false,
+      "last_lat": -33.78525,
+      "last_lon": 151.56362,
+      "last_destination": "SINGAPORE",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-06-02T22:53:49.636840+00:00",
+      "cleared_at": "2026-06-17T12:38:46.041700+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1064546",
+      "name": "GRAND WINNER 6",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 39040000,
+      "cargo_tonnes": 32000,
+      "is_ballast": false,
+      "last_lat": -38.96562,
+      "last_lon": 142.75849,
+      "last_destination": "AUADL",
+      "last_destination_parsed": "Adelaide",
+      "last_position_update": "2026-06-02T22:53:49.636840+00:00",
+      "cleared_at": "2026-06-17T12:38:46.041700+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
