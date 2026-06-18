@@ -2757,6 +2757,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9732694",
+      "name": "HAFNIA LOTTE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-18T22:42:59.315145+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
