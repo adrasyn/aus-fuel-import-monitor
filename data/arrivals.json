@@ -2769,6 +2769,18 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9687667",
+      "name": "ARAGO",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-19T12:27:24.857423+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 3091,
+      "cargo_litres": 3770909,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
