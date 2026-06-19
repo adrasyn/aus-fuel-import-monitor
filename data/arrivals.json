@@ -2781,6 +2781,43 @@
       "cargo_litres": 3770909,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9742900",
+      "name": "NORDIC MOON",
+      "port": "Brisbane",
+      "timestamp": "2026-06-19T21:42:20.216618+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 72000,
+      "cargo_litres": 83736000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1030703",
+      "name": "CSK JUBILEE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-19T21:42:20.217315+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 112000,
+      "cargo_litres": 130256000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9812121",
+      "name": "JASTELLA",
+      "port": "Newcastle",
+      "timestamp": "2026-06-15T14:14:24.238394+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9273,
+      "cargo_litres": 11312727,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
