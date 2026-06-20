@@ -2866,6 +2866,43 @@
       "cargo_litres": 5279273,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "1032191",
+      "name": "BALDER",
+      "port": "Gladstone",
+      "timestamp": "2026-06-20T21:50:46.887457+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 54133,
+      "cargo_litres": 66042667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9321885",
+      "name": "VICTOIRE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-20T21:50:46.887457+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 1545,
+      "cargo_litres": 1885455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9783007",
+      "name": "NORDPENGUIN",
+      "port": "Melbourne",
+      "timestamp": "2026-06-16T13:14:04.793421+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 20000,
+      "cargo_litres": 23260000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
