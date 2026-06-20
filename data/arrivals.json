@@ -2818,6 +2818,54 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9800738",
+      "name": "OCEANA RIVER",
+      "port": "Brisbane",
+      "timestamp": "2026-06-20T10:53:59.423166+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 64706,
+      "cargo_litres": 75252941,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9732228",
+      "name": "SERIANA",
+      "port": "Brisbane",
+      "timestamp": "2026-06-20T10:53:59.423166+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 35294,
+      "cargo_litres": 41047059,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9317250",
+      "name": "THERESA MICRONESIA",
+      "port": "Cairns",
+      "timestamp": "2026-06-20T10:53:59.423709+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 2782,
+      "cargo_litres": 3393818,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9566203",
+      "name": "GOLDEN CHIE",
+      "port": "Bunbury",
+      "timestamp": "2026-06-20T10:53:59.423709+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4327,
+      "cargo_litres": 5279273,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
