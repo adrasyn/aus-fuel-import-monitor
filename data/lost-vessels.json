@@ -1389,7 +1389,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-06-07T21:46:54.831186+00:00",
       "cleared_at": "2026-06-24T11:08:41.413184+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9732395",

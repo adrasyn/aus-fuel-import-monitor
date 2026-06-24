@@ -3034,15 +3034,14 @@
     {
       "imo": "9699244",
       "name": "GAS KATE",
-      "port": "Brisbane",
-      "timestamp": "2026-06-19T12:27:24.859519+00:00",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-24T21:55:14.992041+00:00",
       "ship_type": "product",
       "vessel_class": "Handysize",
       "cargo_tonnes": 3400,
       "cargo_litres": 4148000,
       "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
+      "coastal": false
     }
   ]
 }
