@@ -2967,19 +2967,6 @@
       "status": "probable"
     },
     {
-      "imo": "9943334",
-      "name": "CL PEARL BUCK",
-      "port": "Melbourne",
-      "timestamp": "2026-06-18T12:12:34.449044+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 28923,
-      "cargo_litres": 35286154,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1020942",
       "name": "ATLANTIC TOPAZ",
       "port": "Melbourne",
@@ -3019,19 +3006,6 @@
       "status": "probable"
     },
     {
-      "imo": "9710074",
-      "name": "GOLDEN RESOLUTION",
-      "port": "Brisbane",
-      "timestamp": "2026-06-18T22:42:59.317689+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 10818,
-      "cargo_litres": 13198182,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9699244",
       "name": "GAS KATE",
       "port": "Sydney / Botany",
@@ -3040,6 +3014,54 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 3400,
       "cargo_litres": 4148000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9829899",
+      "name": "BOCCADASSE",
+      "port": "Brisbane",
+      "timestamp": "2026-06-25T11:01:59.688117+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 81600,
+      "cargo_litres": 94900800,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1059656",
+      "name": "NAVE EQUATOR",
+      "port": "Melbourne",
+      "timestamp": "2026-06-25T11:01:59.688117+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 102400,
+      "cargo_litres": 119091200,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9461843",
+      "name": "TORM GLORIA",
+      "port": "Kwinana",
+      "timestamp": "2026-06-25T11:01:59.688689+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 105600,
+      "cargo_litres": 128832000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9710074",
+      "name": "GOLDEN RESOLUTION",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-25T11:01:59.688689+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
       "draught_missing": false,
       "coastal": false
     }
