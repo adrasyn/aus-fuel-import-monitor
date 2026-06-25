@@ -3064,6 +3064,32 @@
       "cargo_litres": 12821091,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9693018",
+      "name": "ENERSEA 1",
+      "port": "Devonport",
+      "timestamp": "2026-06-21T11:27:55.541579+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 20308,
+      "cargo_litres": 24775385,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9867798",
+      "name": "PACIFIC BLUE",
+      "port": "Devonport",
+      "timestamp": "2026-06-21T11:27:55.541579+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 28308,
+      "cargo_litres": 34535385,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
