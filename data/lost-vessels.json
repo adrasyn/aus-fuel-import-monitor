@@ -1439,6 +1439,22 @@
       "last_position_update": "2026-06-08T22:21:52.377359+00:00",
       "cleared_at": "2026-06-24T11:08:41.413184+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9867073",
+      "name": "GOLDEN SAGITTARIUS",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 9427273,
+      "cargo_tonnes": 7727,
+      "is_ballast": false,
+      "last_lat": -27.31552,
+      "last_lon": 153.20498,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-06-11T22:33:55.294999+00:00",
+      "cleared_at": "2026-06-26T11:11:48.011584+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
