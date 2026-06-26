@@ -2967,19 +2967,6 @@
       "status": "probable"
     },
     {
-      "imo": "1020942",
-      "name": "ATLANTIC TOPAZ",
-      "port": "Melbourne",
-      "timestamp": "2026-06-18T22:42:59.317689+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Aframax",
-      "cargo_tonnes": 29412,
-      "cargo_litres": 34205882,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9494668",
       "name": "AQUARIUS T",
       "port": "Kwinana",
@@ -3101,6 +3088,30 @@
       "cargo_litres": 5656364,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9746267",
+      "name": "ELANDRA PALM",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-26T21:51:40.145436+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 35692,
+      "cargo_litres": 43544615,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9807229",
+      "name": "SEA DOLPHIN",
+      "port": "Brisbane",
+      "timestamp": "2026-06-26T21:51:40.145436+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
