@@ -1454,6 +1454,23 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-06-11T22:33:55.294999+00:00",
       "cleared_at": "2026-06-26T11:11:48.011584+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "1083205",
+      "name": "CC NINGBO",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 48800000,
+      "cargo_tonnes": 40000,
+      "is_ballast": false,
+      "last_lat": -35.79795,
+      "last_lon": 117.46131,
+      "last_destination": "ADELAIDE,AU",
+      "last_destination_parsed": "Adelaide",
+      "last_position_update": "2026-06-12T22:19:40.094175+00:00",
+      "cleared_at": "2026-06-27T10:24:09.717527+00:00",
       "reason": "stale_prune_14d"
     }
   ]
