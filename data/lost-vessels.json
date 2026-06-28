@@ -1488,6 +1488,22 @@
       "last_position_update": "2026-06-13T21:49:52.505742+00:00",
       "cleared_at": "2026-06-28T10:48:37.687830+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1032206",
+      "name": "BASTION",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 45546667,
+      "cargo_tonnes": 37333,
+      "is_ballast": false,
+      "last_lat": -31.94409,
+      "last_lon": 115.64474,
+      "last_destination": "GERALDTON",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-06-14T11:12:29.585443+00:00",
+      "cleared_at": "2026-06-28T21:34:59.044448+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
