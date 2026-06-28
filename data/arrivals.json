@@ -2954,19 +2954,6 @@
       "coastal": true
     },
     {
-      "imo": "9790373",
-      "name": "ARDMORE_GIBRALTAR",
-      "port": "Cairns",
-      "timestamp": "2026-06-19T12:27:24.859519+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9494668",
       "name": "AQUARIUS T",
       "port": "Kwinana",
@@ -3110,6 +3097,30 @@
       "vessel_class": "MR",
       "cargo_tonnes": 40000,
       "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9977983",
+      "name": "GAS ACE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-28T10:48:37.684298+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 2473,
+      "cargo_litres": 3016727,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9789269",
+      "name": "ATLANTIC GUARD",
+      "port": "Brisbane",
+      "timestamp": "2026-06-28T10:48:37.684298+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
       "draught_missing": false,
       "coastal": false
     }

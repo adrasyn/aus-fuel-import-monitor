@@ -1472,6 +1472,22 @@
       "last_position_update": "2026-06-12T22:19:40.094175+00:00",
       "cleared_at": "2026-06-27T10:24:09.717527+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9611632",
+      "name": "HUA CHI",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 18018462,
+      "cargo_tonnes": 14769,
+      "is_ballast": false,
+      "last_lat": -35.27573,
+      "last_lon": 119.17271,
+      "last_destination": "MELVILLE ISLAND",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-06-13T21:49:52.505742+00:00",
+      "cleared_at": "2026-06-28T10:48:37.687830+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
