@@ -1503,6 +1503,23 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-06-14T11:12:29.585443+00:00",
       "cleared_at": "2026-06-28T21:34:59.044448+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9881067",
+      "name": "GOLDEN MIND",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 10181455,
+      "cargo_tonnes": 8345,
+      "is_ballast": false,
+      "last_lat": -37.90607,
+      "last_lon": 144.90705,
+      "last_destination": "AU MEL",
+      "last_destination_parsed": "Melbourne",
+      "last_position_update": "2026-06-14T21:46:02.218650+00:00",
+      "cleared_at": "2026-06-29T12:51:07.111720+00:00",
       "reason": "stale_prune_14d"
     }
   ]
