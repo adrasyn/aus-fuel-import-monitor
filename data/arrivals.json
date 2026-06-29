@@ -3174,6 +3174,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9881067",
+      "name": "GOLDEN MIND",
+      "port": "Melbourne",
+      "timestamp": "2026-06-14T21:46:02.218650+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8345,
+      "cargo_litres": 10181455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

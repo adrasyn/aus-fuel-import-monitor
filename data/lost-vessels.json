@@ -1520,6 +1520,23 @@
       "last_destination_parsed": "Melbourne",
       "last_position_update": "2026-06-14T21:46:02.218650+00:00",
       "cleared_at": "2026-06-29T12:51:07.111720+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9772010",
+      "name": "PACIFIC ANNA",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 27912000,
+      "cargo_tonnes": 24000,
+      "is_ballast": false,
+      "last_lat": 1.28507,
+      "last_lon": 103.91725,
+      "last_destination": "AU ITH",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-06-15T14:14:24.238394+00:00",
+      "cleared_at": "2026-06-29T22:07:30.883570+00:00",
       "reason": "stale_prune_14d"
     }
   ]
