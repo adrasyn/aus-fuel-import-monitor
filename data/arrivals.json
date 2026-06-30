@@ -3237,6 +3237,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9634098",
+      "name": "SOLARIS",
+      "port": "Gladstone",
+      "timestamp": "2026-06-26T11:11:48.011584+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
