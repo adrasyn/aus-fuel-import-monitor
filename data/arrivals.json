@@ -3187,6 +3187,56 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9843352",
+      "name": "YUAN BEI HAI",
+      "port": "Brisbane",
+      "timestamp": "2026-06-30T11:16:38.996818+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 112000,
+      "cargo_litres": 130256000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9830252",
+      "name": "NORD VANTAGE",
+      "port": "Cairns",
+      "timestamp": "2026-06-30T11:16:38.997398+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 22154,
+      "cargo_litres": 27027692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9615999",
+      "name": "TASCO AMARIT",
+      "port": "Geelong",
+      "timestamp": "2026-06-25T22:16:05.219162+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11127,
+      "cargo_litres": 13575273,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9800001",
+      "name": "EVA HONGKONG",
+      "port": "Geelong",
+      "timestamp": "2026-06-25T22:16:05.219162+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7109,
+      "cargo_litres": 8673091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
