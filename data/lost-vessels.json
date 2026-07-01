@@ -1554,6 +1554,22 @@
       "last_position_update": "2026-06-16T22:44:45.913994+00:00",
       "cleared_at": "2026-07-01T11:29:58.146988+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1068889",
+      "name": "HONG BO 16",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13575273,
+      "cargo_tonnes": 11127,
+      "is_ballast": false,
+      "last_lat": -26.729,
+      "last_lon": 153.23201,
+      "last_destination": "BRISBANE  AU",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-06-17T12:38:46.041700+00:00",
+      "cleared_at": "2026-07-01T22:09:27.884992+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

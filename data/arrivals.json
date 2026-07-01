@@ -3040,19 +3040,6 @@
       "status": "probable"
     },
     {
-      "imo": "9867798",
-      "name": "PACIFIC BLUE",
-      "port": "Devonport",
-      "timestamp": "2026-06-21T11:27:55.541579+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 28308,
-      "cargo_litres": 34535385,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9829447",
       "name": "STI MAGIC",
       "port": "Sydney / Botany",
@@ -3296,6 +3283,32 @@
       "vessel_class": "Aframax",
       "cargo_tonnes": 51765,
       "cargo_litres": 60202353,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9929821",
+      "name": "DEE4 NERIUM",
+      "port": "Geelong",
+      "timestamp": "2026-06-27T21:37:29.169658+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9854791",
+      "name": "TORM SPLENDID",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-06-27T21:37:29.169658+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38769,
+      "cargo_litres": 47298462,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
