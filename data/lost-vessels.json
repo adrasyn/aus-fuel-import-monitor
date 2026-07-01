@@ -1538,6 +1538,22 @@
       "last_position_update": "2026-06-15T14:14:24.238394+00:00",
       "cleared_at": "2026-06-29T22:07:30.883570+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9856995",
+      "name": "HUA HANG HE CHANG",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 5656364,
+      "cargo_tonnes": 4636,
+      "is_ballast": false,
+      "last_lat": -33.1931,
+      "last_lon": 152.27558,
+      "last_destination": "GLADSTONE AU",
+      "last_destination_parsed": "Gladstone",
+      "last_position_update": "2026-06-16T22:44:45.913994+00:00",
+      "cleared_at": "2026-07-01T11:29:58.146988+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

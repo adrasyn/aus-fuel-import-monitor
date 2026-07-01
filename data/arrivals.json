@@ -3163,19 +3163,6 @@
       "status": "probable"
     },
     {
-      "imo": "9919577",
-      "name": "PS NEW ORLEANS",
-      "port": "Sydney / Botany",
-      "timestamp": "2026-06-25T11:01:59.691458+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9881067",
       "name": "GOLDEN MIND",
       "port": "Melbourne",
@@ -3226,19 +3213,6 @@
       "status": "probable"
     },
     {
-      "imo": "9800001",
-      "name": "EVA HONGKONG",
-      "port": "Geelong",
-      "timestamp": "2026-06-25T22:16:05.219162+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 7109,
-      "cargo_litres": 8673091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9634098",
       "name": "SOLARIS",
       "port": "Gladstone",
@@ -3247,6 +3221,81 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 36800,
       "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1107049",
+      "name": "GINGA JAGUARUNDI",
+      "port": "Fremantle",
+      "timestamp": "2026-07-01T11:29:58.143470+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7727,
+      "cargo_litres": 9427273,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9919577",
+      "name": "PS NEW ORLEANS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-01T11:29:58.144065+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1044194",
+      "name": "MAKARIOS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-01T11:29:58.144065+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10200,
+      "cargo_litres": 12444000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1020942",
+      "name": "ATLANTIC TOPAZ",
+      "port": "Melbourne",
+      "timestamp": "2026-06-26T21:51:40.148253+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 29412,
+      "cargo_litres": 34205882,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1063956",
+      "name": "SWAN VIRTUE",
+      "port": "Melbourne",
+      "timestamp": "2026-06-26T21:51:40.148253+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8345,
+      "cargo_litres": 10181455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1071422",
+      "name": "ATLANTIC AMBER",
+      "port": "Geelong",
+      "timestamp": "2026-06-26T21:51:40.148253+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 51765,
+      "cargo_litres": 60202353,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
