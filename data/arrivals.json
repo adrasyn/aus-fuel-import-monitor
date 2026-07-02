@@ -3360,6 +3360,19 @@
       "cargo_litres": 24024615,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9433808",
+      "name": "SUNSHINE EXPRESS",
+      "port": "Newcastle",
+      "timestamp": "2026-06-28T10:48:37.687830+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

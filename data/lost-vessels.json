@@ -1587,6 +1587,38 @@
       "last_position_update": "2026-06-17T22:32:57.672558+00:00",
       "cleared_at": "2026-07-02T10:55:57.778330+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9952086",
+      "name": "YONG AO",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 22523077,
+      "cargo_tonnes": 18462,
+      "is_ballast": false,
+      "last_lat": -16.61379,
+      "last_lon": 146.25997,
+      "last_destination": "ULSAN",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-06-18T12:12:34.449044+00:00",
+      "cleared_at": "2026-07-02T21:40:44.119350+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9732254",
+      "name": "ASP JEWELS",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 72516471,
+      "cargo_tonnes": 62353,
+      "is_ballast": false,
+      "last_lat": -35.41207,
+      "last_lon": 117.23249,
+      "last_destination": "AUGEX",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-06-18T12:12:34.449044+00:00",
+      "cleared_at": "2026-07-02T21:40:44.119350+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
