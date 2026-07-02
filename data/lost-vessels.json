@@ -1569,6 +1569,23 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-06-17T12:38:46.041700+00:00",
       "cleared_at": "2026-07-01T22:09:27.884992+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9883560",
+      "name": "BUENA AMISTAD",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 4902182,
+      "cargo_tonnes": 4018,
+      "is_ballast": false,
+      "last_lat": -32.73453,
+      "last_lon": 152.78559,
+      "last_destination": "AU CNS",
+      "last_destination_parsed": "Cairns",
+      "last_position_update": "2026-06-17T22:32:57.672558+00:00",
+      "cleared_at": "2026-07-02T10:55:57.778330+00:00",
       "reason": "stale_prune_14d"
     }
   ]
