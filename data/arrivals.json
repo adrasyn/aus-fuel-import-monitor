@@ -3275,19 +3275,6 @@
       "status": "probable"
     },
     {
-      "imo": "1071422",
-      "name": "ATLANTIC AMBER",
-      "port": "Geelong",
-      "timestamp": "2026-06-26T21:51:40.148253+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Aframax",
-      "cargo_tonnes": 51765,
-      "cargo_litres": 60202353,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9929821",
       "name": "DEE4 NERIUM",
       "port": "Geelong",
@@ -3397,6 +3384,19 @@
       "cargo_litres": 40541538,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9702211",
+      "name": "TORM DENISE",
+      "port": "Fremantle",
+      "timestamp": "2026-06-29T12:51:07.111720+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 22154,
+      "cargo_litres": 27027692,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

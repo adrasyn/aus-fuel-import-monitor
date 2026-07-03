@@ -1634,7 +1634,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-06-18T22:42:59.317689+00:00",
       "cleared_at": "2026-07-03T10:53:52.080607+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9665803",
@@ -1650,7 +1651,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-06-18T22:42:59.317689+00:00",
       "cleared_at": "2026-07-03T10:53:52.080607+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     }
   ]
 }
