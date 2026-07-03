@@ -3373,6 +3373,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9804837",
+      "name": "GINGA BLUE SHARK",
+      "port": "Fremantle",
+      "timestamp": "2026-07-03T10:53:52.077186+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9891,
+      "cargo_litres": 12066909,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9666974",
+      "name": "SURVILLE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-03T10:53:52.077685+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 33231,
+      "cargo_litres": 40541538,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

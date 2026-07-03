@@ -1619,6 +1619,38 @@
       "last_position_update": "2026-06-18T12:12:34.449044+00:00",
       "cleared_at": "2026-07-02T21:40:44.119350+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9718428",
+      "name": "SILVER ENTALINA",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 22523077,
+      "cargo_tonnes": 18462,
+      "is_ballast": false,
+      "last_lat": -33.86557,
+      "last_lon": 151.55513,
+      "last_destination": "CHINA FOR ORDER",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-06-18T22:42:59.317689+00:00",
+      "cleared_at": "2026-07-03T10:53:52.080607+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9665803",
+      "name": "MORNING SWAN",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 63765333,
+      "cargo_tonnes": 52267,
+      "is_ballast": false,
+      "last_lat": -26.7504,
+      "last_lon": 153.28973,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-06-18T22:42:59.317689+00:00",
+      "cleared_at": "2026-07-03T10:53:52.080607+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
