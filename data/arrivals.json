@@ -3397,6 +3397,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9654725",
+      "name": "MOWAMBA",
+      "port": "Kwinana",
+      "timestamp": "2026-07-04T21:30:13.878325+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 0,
+      "cargo_litres": 0,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9635834",
+      "name": "HAFNIA CHEETAH",
+      "port": "Newcastle",
+      "timestamp": "2026-06-30T11:16:39.000401+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9952983",
+      "name": "JESSIE GLORY",
+      "port": "Cairns",
+      "timestamp": "2026-06-30T11:16:39.000401+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

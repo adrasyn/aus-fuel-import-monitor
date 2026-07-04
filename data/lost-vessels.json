@@ -1653,6 +1653,38 @@
       "cleared_at": "2026-07-03T10:53:52.080607+00:00",
       "reason": "stale_prune_14d",
       "recovered_as": "probable"
+    },
+    {
+      "imo": "9442160",
+      "name": "JANESIA ASPHALT V",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 7918909,
+      "cargo_tonnes": 6491,
+      "is_ballast": false,
+      "last_lat": -17.42209,
+      "last_lon": 146.19356,
+      "last_destination": "BRISBANE-AUSTRALIA",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-06-20T10:53:59.425798+00:00",
+      "cleared_at": "2026-07-04T21:30:13.881877+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9394947",
+      "name": "SEAWAYS YELLOWSTONE",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 24190400,
+      "cargo_tonnes": 20800,
+      "is_ballast": true,
+      "last_lat": -38.12422,
+      "last_lon": 144.49315,
+      "last_destination": "AR PRS",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-06-20T10:53:59.425798+00:00",
+      "cleared_at": "2026-07-04T21:30:13.881877+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
