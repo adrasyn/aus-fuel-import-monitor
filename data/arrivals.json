@@ -3449,14 +3449,14 @@
       "coastal": false
     },
     {
-      "imo": "9874583",
-      "name": "GOLDEN HACHI",
+      "imo": "9552800",
+      "name": "TOPAZ EXPRESS",
       "port": "Townsville",
-      "timestamp": "2026-06-30T22:10:04.543657+00:00",
+      "timestamp": "2026-07-01T11:29:58.146988+00:00",
       "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 9273,
-      "cargo_litres": 11312727,
+      "vessel_class": "MR",
+      "cargo_tonnes": 19692,
+      "cargo_litres": 24024615,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"

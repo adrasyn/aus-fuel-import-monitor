@@ -1700,6 +1700,39 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-06-20T21:50:46.890814+00:00",
       "cleared_at": "2026-07-05T10:31:09.202454+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9317250",
+      "name": "THERESA MICRONESIA",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 17346182,
+      "cargo_tonnes": 14218,
+      "is_ballast": false,
+      "last_lat": -16.90177,
+      "last_lon": 145.7907,
+      "last_destination": "NPL NZ",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-06-21T11:27:55.541579+00:00",
+      "cleared_at": "2026-07-05T21:34:25.987434+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9321885",
+      "name": "VICTOIRE",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 1885455,
+      "cargo_tonnes": 1545,
+      "is_ballast": true,
+      "last_lat": -33.87658,
+      "last_lon": 151.56632,
+      "last_destination": "FOR ORDERS",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-06-21T11:27:55.541579+00:00",
+      "cleared_at": "2026-07-05T21:34:25.987434+00:00",
       "reason": "stale_prune_14d"
     }
   ]
