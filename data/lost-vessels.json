@@ -1685,6 +1685,22 @@
       "last_position_update": "2026-06-20T10:53:59.425798+00:00",
       "cleared_at": "2026-07-04T21:30:13.881877+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9732228",
+      "name": "SERIANA",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 41047059,
+      "cargo_tonnes": 35294,
+      "is_ballast": false,
+      "last_lat": -26.67216,
+      "last_lon": 153.40417,
+      "last_destination": "BRISBANE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-06-20T21:50:46.890814+00:00",
+      "cleared_at": "2026-07-05T10:31:09.202454+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
