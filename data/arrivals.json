@@ -3472,6 +3472,18 @@
       "cargo_litres": 77989412,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9791195",
+      "name": "FAIRCHEM VALOR",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-06T22:08:46.242968+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 16382,
+      "cargo_litres": 19985818,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
