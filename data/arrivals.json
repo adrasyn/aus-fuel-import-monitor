@@ -3484,6 +3484,57 @@
       "cargo_litres": 19985818,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9789269",
+      "name": "ATLANTIC GUARD",
+      "port": "Cairns",
+      "timestamp": "2026-07-08T10:33:58.351814+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 22154,
+      "cargo_litres": 27027692,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9800001",
+      "name": "EVA HONGKONG",
+      "port": "Brisbane",
+      "timestamp": "2026-07-03T21:40:25.144002+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12364,
+      "cargo_litres": 15083636,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9384021",
+      "name": "OAKTREE",
+      "port": "Geelong",
+      "timestamp": "2026-07-03T21:40:25.144002+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 35692,
+      "cargo_litres": 43544615,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9611682",
+      "name": "HE CHI",
+      "port": "Melbourne",
+      "timestamp": "2026-07-03T21:40:25.144002+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 15385,
+      "cargo_litres": 18769231,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
