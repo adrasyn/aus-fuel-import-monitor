@@ -3584,6 +3584,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9800661",
+      "name": "PACIFIC KOHINOOR",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-09T11:13:00.484201+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Gladstone",
+      "timestamp": "2026-07-04T21:30:13.881877+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12055,
+      "cargo_litres": 14706545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9881067",
+      "name": "GOLDEN MIND",
+      "port": "Melbourne",
+      "timestamp": "2026-07-05T10:31:09.202454+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9582,
+      "cargo_litres": 11689818,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
