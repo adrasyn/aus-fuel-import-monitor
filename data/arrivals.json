@@ -3622,6 +3622,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9417177",
+      "name": "YANG LI HU",
+      "port": "Brisbane",
+      "timestamp": "2026-07-09T21:55:12.236053+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 72941,
+      "cargo_litres": 84830588,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
