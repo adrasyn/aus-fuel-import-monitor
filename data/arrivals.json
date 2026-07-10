@@ -3598,19 +3598,6 @@
       "coastal": false
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Gladstone",
-      "timestamp": "2026-07-04T21:30:13.881877+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12055,
-      "cargo_litres": 14706545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9881067",
       "name": "GOLDEN MIND",
       "port": "Melbourne",
@@ -3634,6 +3621,32 @@
       "cargo_litres": 84830588,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9819911",
+      "name": "GOLDEN WAVE",
+      "port": "Brisbane",
+      "timestamp": "2026-07-05T21:34:25.987434+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 13909,
+      "cargo_litres": 16969091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9874583",
+      "name": "GOLDEN HACHI",
+      "port": "Newcastle",
+      "timestamp": "2026-07-05T21:34:25.987434+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 13600,
+      "cargo_litres": 16592000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
