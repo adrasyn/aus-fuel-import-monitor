@@ -3150,19 +3150,6 @@
       "status": "probable"
     },
     {
-      "imo": "9881067",
-      "name": "GOLDEN MIND",
-      "port": "Melbourne",
-      "timestamp": "2026-06-14T21:46:02.218650+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 8345,
-      "cargo_litres": 10181455,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9843352",
       "name": "YUAN BEI HAI",
       "port": "Brisbane",
@@ -3598,19 +3585,6 @@
       "coastal": false
     },
     {
-      "imo": "9881067",
-      "name": "GOLDEN MIND",
-      "port": "Melbourne",
-      "timestamp": "2026-07-05T10:31:09.202454+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 9582,
-      "cargo_litres": 11689818,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9417177",
       "name": "YANG LI HU",
       "port": "Brisbane",
@@ -3669,6 +3643,56 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 102400,
       "cargo_litres": 124928000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9880398",
+      "name": "FOREVER ASSURANCE",
+      "port": "Brisbane",
+      "timestamp": "2026-07-11T09:43:34.862100+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 15385,
+      "cargo_litres": 18769231,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9881067",
+      "name": "GOLDEN MIND",
+      "port": "Brisbane",
+      "timestamp": "2026-07-11T09:43:34.862549+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12982,
+      "cargo_litres": 15837818,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9927196",
+      "name": "GREEN ADMIRE",
+      "port": "Geelong",
+      "timestamp": "2026-07-06T22:08:46.245350+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 57647,
+      "cargo_litres": 67043529,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9781281",
+      "name": "CIELO DI CAGLIARI",
+      "port": "Brisbane",
+      "timestamp": "2026-07-06T22:08:46.245350+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 51333,
+      "cargo_litres": 62626667,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
