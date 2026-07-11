@@ -3597,19 +3597,6 @@
       "coastal": false
     },
     {
-      "imo": "9819911",
-      "name": "GOLDEN WAVE",
-      "port": "Brisbane",
-      "timestamp": "2026-07-05T21:34:25.987434+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 13909,
-      "cargo_litres": 16969091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9874583",
       "name": "GOLDEN HACHI",
       "port": "Newcastle",
@@ -3693,6 +3680,19 @@
       "vessel_class": "LR2/Panamax",
       "cargo_tonnes": 51333,
       "cargo_litres": 62626667,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9448712",
+      "name": "PETITE SOEUR",
+      "port": "Geelong",
+      "timestamp": "2026-07-07T11:12:57.394703+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
