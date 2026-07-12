@@ -1799,6 +1799,23 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-06-25T22:16:05.219162+00:00",
       "cleared_at": "2026-07-10T11:12:00.355313+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9710074",
+      "name": "GOLDEN RESOLUTION",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13198182,
+      "cargo_tonnes": 10818,
+      "is_ballast": false,
+      "last_lat": -37.90486,
+      "last_lon": 144.9059,
+      "last_destination": "AU MEL",
+      "last_destination_parsed": "Melbourne",
+      "last_position_update": "2026-06-28T10:48:37.687830+00:00",
+      "cleared_at": "2026-07-12T21:23:52.919865+00:00",
       "reason": "stale_prune_14d"
     }
   ]

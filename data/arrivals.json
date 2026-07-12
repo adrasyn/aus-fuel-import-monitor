@@ -3721,6 +3721,55 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9901415",
+      "name": "ASPEN EXPRESS",
+      "port": "Brisbane",
+      "timestamp": "2026-07-12T21:23:52.916464+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9915258",
+      "name": "GASCHEM HOMER",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-12T21:23:52.916464+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4636,
+      "cargo_litres": 5656364,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9800661",
+      "name": "PACIFIC KOHINOOR",
+      "port": "Newcastle",
+      "timestamp": "2026-07-12T21:23:52.916464+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9803120",
+      "name": "DA TAI SHAN",
+      "port": "Cairns",
+      "timestamp": "2026-07-08T10:33:58.354988+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6182,
+      "cargo_litres": 7541818,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

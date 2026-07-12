@@ -47,18 +47,18 @@
     },
     "2026-07": {
       "arrived_crude_litres": 162820000,
-      "arrived_product_litres": 473387869,
+      "arrived_product_litres": 527844233,
       "arrived_crude_tonnes": 140000,
-      "arrived_product_tonnes": 388023,
-      "arrival_count": 20,
+      "arrived_product_tonnes": 432659,
+      "arrival_count": 22,
       "probable_crude_litres": 94408235,
-      "probable_product_litres": 401667226,
+      "probable_product_litres": 409209044,
       "probable_crude_tonnes": 81176,
-      "probable_product_tonnes": 329235,
-      "probable_count": 11,
+      "probable_product_tonnes": 335417,
+      "probable_count": 12,
       "en_route_crude_litres": 247705318,
-      "en_route_product_litres": 865954863,
-      "last_updated": "2026-07-12T09:40:31.717931+00:00"
+      "en_route_product_litres": 860305325,
+      "last_updated": "2026-07-12T20:53:52.177538+00:00"
     }
   }
 }
