@@ -3696,6 +3696,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9959371",
+      "name": "STELLA",
+      "port": "Cairns",
+      "timestamp": "2026-07-12T10:10:32.806320+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4327,
+      "cargo_litres": 5279273,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1071422",
+      "name": "ATLANTIC AMBER",
+      "port": "Melbourne",
+      "timestamp": "2026-07-07T21:56:35.757219+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 23529,
+      "cargo_litres": 27364706,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
