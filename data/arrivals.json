@@ -3781,6 +3781,19 @@
       "cargo_litres": 0,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9414242",
+      "name": "CHEMROAD DITA",
+      "port": "Kwinana",
+      "timestamp": "2026-07-09T11:13:00.487288+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
