@@ -3659,19 +3659,6 @@
       "coastal": false
     },
     {
-      "imo": "9927196",
-      "name": "GREEN ADMIRE",
-      "port": "Geelong",
-      "timestamp": "2026-07-06T22:08:46.245350+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Aframax",
-      "cargo_tonnes": 57647,
-      "cargo_litres": 67043529,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9781281",
       "name": "CIELO DI CAGLIARI",
       "port": "Brisbane",
@@ -3770,6 +3757,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9833565",
+      "name": "STI MARSHALL",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-13T11:17:08.497379+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38769,
+      "cargo_litres": 47298462,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9654713",
+      "name": "MCARTHUR",
+      "port": "Darwin",
+      "timestamp": "2026-07-13T11:17:08.497379+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 0,
+      "cargo_litres": 0,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
