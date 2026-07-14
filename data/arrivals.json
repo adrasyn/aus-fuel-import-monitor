@@ -3832,6 +3832,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9155078",
+      "name": "HL MUSCAT",
+      "port": "Gladstone",
+      "timestamp": "2026-07-10T11:12:00.355313+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 30588,
+      "cargo_litres": 35574118,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
