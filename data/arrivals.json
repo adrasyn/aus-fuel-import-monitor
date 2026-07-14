@@ -3794,6 +3794,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9923475",
+      "name": "PROTEUS RONG NA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-14T10:12:51.248802+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 102400,
+      "cargo_litres": 119091200,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9965502",
+      "name": "SUN MERCURY",
+      "port": "Fremantle",
+      "timestamp": "2026-07-09T21:55:12.239667+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11745,
+      "cargo_litres": 14329455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9640437",
+      "name": "BW PAVILION VANDA",
+      "port": "Gladstone",
+      "timestamp": "2026-07-09T21:55:12.239667+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 35200,
+      "cargo_litres": 40937600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
