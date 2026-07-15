@@ -3845,6 +3845,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9783370",
+      "name": "LIAN BAI HU",
+      "port": "Kwinana",
+      "timestamp": "2026-07-15T10:16:36.745673+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 59733,
+      "cargo_litres": 72874667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1064558",
+      "name": "GRAND WINNER 7",
+      "port": "Kwinana",
+      "timestamp": "2026-07-11T09:43:34.865005+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9457385",
+      "name": "SPT THEMIS",
+      "port": "Kwinana",
+      "timestamp": "2026-07-11T09:43:34.865005+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
