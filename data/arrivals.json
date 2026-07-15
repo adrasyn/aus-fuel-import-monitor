@@ -3883,6 +3883,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9372432",
+      "name": "CLIPPER NEPTUN",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-15T21:32:48.914220+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 48533,
+      "cargo_litres": 59210667,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

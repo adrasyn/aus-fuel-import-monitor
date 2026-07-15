@@ -1833,6 +1833,23 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-06-28T21:34:59.044448+00:00",
       "cleared_at": "2026-07-13T11:17:08.500217+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9807229",
+      "name": "SEA DOLPHIN",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 24024615,
+      "cargo_tonnes": 19692,
+      "is_ballast": false,
+      "last_lat": -16.74708,
+      "last_lon": 145.8553,
+      "last_destination": "SINGAPORE",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-07-01T11:29:58.146988+00:00",
+      "cleared_at": "2026-07-15T21:32:48.918232+00:00",
       "reason": "stale_prune_14d"
     }
   ]
