@@ -3895,6 +3895,31 @@
       "cargo_litres": 59210667,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9736626",
+      "name": "GOLDEN ACE",
+      "port": "Kwinana",
+      "timestamp": "2026-07-16T10:22:31.541108+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11745,
+      "cargo_litres": 14329455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9578385",
+      "name": "NING HAI WAN",
+      "port": "Geelong",
+      "timestamp": "2026-07-11T21:22:50.482281+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5564,
+      "cargo_litres": 6787636,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
