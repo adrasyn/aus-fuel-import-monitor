@@ -3808,19 +3808,6 @@
       "coastal": false
     },
     {
-      "imo": "9965502",
-      "name": "SUN MERCURY",
-      "port": "Fremantle",
-      "timestamp": "2026-07-09T21:55:12.239667+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 11745,
-      "cargo_litres": 14329455,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9640437",
       "name": "BW PAVILION VANDA",
       "port": "Gladstone",
