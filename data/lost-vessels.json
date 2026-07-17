@@ -1899,7 +1899,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-07-02T21:40:44.119350+00:00",
       "cleared_at": "2026-07-17T10:13:26.559571+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "1044194",
@@ -1915,6 +1916,23 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-07-02T21:40:44.119350+00:00",
       "cleared_at": "2026-07-17T10:13:26.559571+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9407122",
+      "name": "FRITZI N",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 27328000,
+      "cargo_tonnes": 22400,
+      "is_ballast": false,
+      "last_lat": -35.73713,
+      "last_lon": 117.93342,
+      "last_destination": "AUHAS",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-07-03T10:53:52.080607+00:00",
+      "cleared_at": "2026-07-17T21:29:04.073925+00:00",
       "reason": "stale_prune_14d"
     }
   ]

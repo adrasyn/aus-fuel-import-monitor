@@ -3697,19 +3697,6 @@
       "coastal": false
     },
     {
-      "imo": "1071422",
-      "name": "ATLANTIC AMBER",
-      "port": "Melbourne",
-      "timestamp": "2026-07-07T21:56:35.757219+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Aframax",
-      "cargo_tonnes": 23529,
-      "cargo_litres": 27364706,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9901415",
       "name": "ASPEN EXPRESS",
       "port": "Brisbane",
@@ -3917,6 +3904,57 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 7418,
       "cargo_litres": 9050182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9867803",
+      "name": "PACIFIC JADE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-17T21:29:04.069677+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9433846",
+      "name": "FPMC 26",
+      "port": "Darwin",
+      "timestamp": "2026-07-13T11:17:08.500217+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9867073",
+      "name": "GOLDEN SAGITTARIUS",
+      "port": "Darwin",
+      "timestamp": "2026-07-13T11:17:08.500217+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4636,
+      "cargo_litres": 5656364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9810549",
+      "name": "PRISM AGILITY",
+      "port": "Darwin",
+      "timestamp": "2026-07-13T11:17:08.500217+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 38400,
+      "cargo_litres": 44659200,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
