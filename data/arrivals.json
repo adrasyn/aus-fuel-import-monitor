@@ -3907,6 +3907,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9750206",
+      "name": "STOLT HAGI",
+      "port": "Darwin",
+      "timestamp": "2026-07-12T21:23:52.919865+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7418,
+      "cargo_litres": 9050182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
