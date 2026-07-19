@@ -3958,6 +3958,95 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9577068",
+      "name": "TORM EVOLVE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-19T10:11:36.676764+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 61600,
+      "cargo_litres": 75152000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9635846",
+      "name": "HAFNIA TIGER",
+      "port": "Devonport",
+      "timestamp": "2026-07-19T10:11:36.677457+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 16000,
+      "cargo_litres": 19520000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1051032",
+      "name": "PIS MADURA",
+      "port": "Brisbane",
+      "timestamp": "2026-07-14T21:32:10.669835+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1088451",
+      "name": "ORIENTAL GREENSTONE",
+      "port": "Newcastle",
+      "timestamp": "2026-07-14T21:32:10.669835+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9923425",
+      "name": "PROTEUS PHILIPPA",
+      "port": "Geelong",
+      "timestamp": "2026-07-14T21:32:10.669835+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 72000,
+      "cargo_litres": 83736000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9808522",
+      "name": "TASCO TARA",
+      "port": "Cairns",
+      "timestamp": "2026-07-14T21:32:10.669835+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7109,
+      "cargo_litres": 8673091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9461661",
+      "name": "MONARCH",
+      "port": "Devonport",
+      "timestamp": "2026-07-14T21:32:10.669835+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
