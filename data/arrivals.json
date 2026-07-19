@@ -3733,19 +3733,6 @@
       "coastal": true
     },
     {
-      "imo": "9803120",
-      "name": "DA TAI SHAN",
-      "port": "Cairns",
-      "timestamp": "2026-07-08T10:33:58.354988+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 6182,
-      "cargo_litres": 7541818,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9833565",
       "name": "STI MARSHALL",
       "port": "Sydney / Botany",
