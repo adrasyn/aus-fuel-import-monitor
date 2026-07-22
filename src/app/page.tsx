@@ -5,7 +5,6 @@ import DashboardGrid from "@/components/DashboardGrid";
 import HistoricalChart from "@/components/HistoricalChart";
 import DailyEnRouteChart from "@/components/DailyEnRouteChart";
 import Footer from "@/components/Footer";
-import StaleBanner from "@/components/StaleBanner";
 
 export default function Home() {
   const data = loadDashboardData();
@@ -28,7 +27,6 @@ export default function Home() {
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
-      <StaleBanner timestamp={data.snapshot.timestamp} />
       <Header
         snapshot={data.snapshot}
         totalLitres={totalLitres}
