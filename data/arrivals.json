@@ -1841,19 +1841,6 @@
       "status": "probable"
     },
     {
-      "imo": "9977995",
-      "name": "GAS BLOSSOM",
-      "port": "Brisbane",
-      "timestamp": "2026-05-04T21:41:35.728725+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 3091,
-      "cargo_litres": 3770909,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9543081",
       "name": "NOVA BREEZE",
       "port": "Fremantle",
@@ -4200,6 +4187,42 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9977995",
+      "name": "GAS BLOSSOM",
+      "port": "Brisbane",
+      "timestamp": "2026-07-24T21:36:24.608681+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5873,
+      "cargo_litres": 7164727,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9543110",
+      "name": "STENA CONVOY",
+      "port": "Brisbane",
+      "timestamp": "2026-07-24T21:36:24.608681+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 22154,
+      "cargo_litres": 27027692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9906685",
+      "name": "GRAND WINNER 1",
+      "port": "Brisbane",
+      "timestamp": "2026-07-24T21:36:24.608681+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
