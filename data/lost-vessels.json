@@ -1949,7 +1949,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-07-07T11:12:57.394703+00:00",
       "cleared_at": "2026-07-23T21:36:55.671825+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "1035064",
@@ -1965,7 +1966,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-07-05T21:34:25.987434+00:00",
       "cleared_at": "2026-07-23T21:36:55.671825+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9812755",
@@ -1997,7 +1999,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-07-08T21:40:21.114227+00:00",
       "cleared_at": "2026-07-23T21:36:55.671825+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     }
   ]
 }

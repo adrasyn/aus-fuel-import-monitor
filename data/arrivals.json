@@ -4149,6 +4149,57 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1035064",
+      "name": "CAPE BONNY",
+      "port": "Fremantle",
+      "timestamp": "2026-07-05T21:34:25.987434+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1018509",
+      "name": "GREEN EXCELLENCE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-24T10:34:00.500584+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 29538,
+      "cargo_litres": 36036923,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9877793",
+      "name": "MORNING GLORY",
+      "port": "Melbourne",
+      "timestamp": "2026-07-19T21:23:28.138251+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9895197",
+      "name": "TP ENDURANCE",
+      "port": "Melbourne",
+      "timestamp": "2026-07-19T21:23:28.138251+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
