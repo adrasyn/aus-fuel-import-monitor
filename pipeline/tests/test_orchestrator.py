@@ -1,6 +1,43 @@
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
-from pipeline.orchestrator import rebucket_monthly_from_arrivals, update_monthly_estimates, migrate_coastal_on_arrivals
+import pytest
+
+from pipeline.orchestrator import (
+    rebucket_monthly_from_arrivals,
+    update_monthly_estimates,
+    migrate_coastal_on_arrivals,
+    _report_empty_collection,
+    STALE_FAIL_HOURS,
+)
+
+
+def test_report_empty_collection_warns_but_survives_when_recent(capsys):
+    now = datetime(2026, 7, 20, 21, 0, tzinfo=timezone.utc)
+    recent = (now - timedelta(hours=12)).isoformat()
+    # Recent last-good data → warn only, no exit.
+    _report_empty_collection({"timestamp": recent}, now)
+    out = capsys.readouterr().out
+    assert "::warning" in out
+    assert "::error" not in out
+
+
+def test_report_empty_collection_fails_when_stale(capsys):
+    now = datetime(2026, 7, 23, 21, 0, tzinfo=timezone.utc)
+    stale = (now - timedelta(hours=STALE_FAIL_HOURS + 1)).isoformat()
+    with pytest.raises(SystemExit) as exc:
+        _report_empty_collection({"timestamp": stale}, now)
+    assert exc.value.code == 1
+    out = capsys.readouterr().out
+    assert "::error" in out
+
+
+def test_report_empty_collection_warns_when_timestamp_missing(capsys):
+    now = datetime(2026, 7, 20, 21, 0, tzinfo=timezone.utc)
+    # No prior snapshot timestamp → can't judge staleness, warn but don't fail.
+    _report_empty_collection({}, now)
+    out = capsys.readouterr().out
+    assert "::warning" in out
+    assert "::error" not in out
 
 
 def test_update_monthly_estimates_sums_en_route_from_roster():

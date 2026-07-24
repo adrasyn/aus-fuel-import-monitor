@@ -3,7 +3,6 @@
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, Legend,
   ResponsiveContainer,
-  useXAxisScale, useYAxisScale,
 } from "recharts";
 import type { DailyEstimates } from "@/lib/types";
 
@@ -123,42 +122,6 @@ function CustomTooltip({ active, payload, label }: CustomTooltipProps) {
   );
 }
 
-const MISSING_DATES = new Set<string>(["2026-05-21"]);
-
-function MissingLabels({ chartData }: { chartData: ChartRow[] }) {
-  const xScale = useXAxisScale();
-  const yScale = useYAxisScale();
-  if (!xScale || !yScale) return null;
-
-  const maxStack = Math.max(
-    ...chartData.map((d) => (d.crude ?? 0) + (d.product ?? 0)),
-    1,
-  );
-  const yMid = yScale(maxStack / 2);
-  if (typeof yMid !== "number") return null;
-
-  return (
-    <g pointerEvents="none">
-      {chartData.map((d, i) => {
-        if (!MISSING_DATES.has(d.date)) return null;
-        const cx = xScale(d.date, { position: "middle" });
-        if (typeof cx !== "number") return null;
-        return (
-          <text
-            key={i}
-            x={cx} y={yMid}
-            transform={`rotate(-90, ${cx}, ${yMid})`}
-            textAnchor="middle" dominantBaseline="middle"
-            fontSize={10} fontWeight={500} fill="#dc2626"
-          >
-            Missing
-          </text>
-        );
-      })}
-    </g>
-  );
-}
-
 export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartProps) {
   const chartData = buildChartData(dailyEstimates);
 
@@ -206,7 +169,6 @@ export default function DailyEnRouteChart({ dailyEstimates }: DailyEnRouteChartP
           fillOpacity={0.8}
           connectNulls={false}
         />
-        <MissingLabels chartData={chartData} />
       </AreaChart>
     </ResponsiveContainer>
   );

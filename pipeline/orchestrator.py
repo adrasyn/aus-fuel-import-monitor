@@ -43,6 +43,46 @@ def save_json(path: str, data) -> None:
 
 COASTAL_HEURISTIC_WINDOW_DAYS = 14
 
+# When AISStream is unreachable a run collects 0 tankers and preserves
+# last-good data (a no-op). One blip is normal; a sustained outage freezes the
+# dashboard silently. Runs happen ~2x/day, so 48h of staleness ≈ 3-4 missed
+# runs — long enough to rule out a transient blip, short enough to alert within
+# ~2 days. Override with STALE_FAIL_HOURS.
+STALE_FAIL_HOURS = int(os.environ.get("STALE_FAIL_HOURS", "48"))
+
+
+def _report_empty_collection(previous_snapshot: dict, now: datetime) -> None:
+    """Handle a run that collected zero tankers (AIS provider unreachable).
+
+    Always emits a GitHub Actions warning annotation so the no-op is visible in
+    the run summary. If the last-good data is older than STALE_FAIL_HOURS,
+    escalates to an error annotation and exits non-zero so the run goes red and
+    GitHub emails the repo owner.
+    """
+    last_ts = previous_snapshot.get("timestamp")
+    stale_hours = None
+    if last_ts:
+        try:
+            last = datetime.fromisoformat(last_ts.replace("Z", "+00:00"))
+            stale_hours = (now - last).total_seconds() / 3600
+        except ValueError:
+            pass
+
+    age = f"{stale_hours:.0f}h" if stale_hours is not None else "unknown"
+    print(
+        f"::warning title=Empty AIS collection::0 tankers received "
+        f"(AIS provider unreachable). Preserving last-good data. Data age: {age}."
+    )
+    print("Pipeline complete (no-op run).")
+
+    if stale_hours is not None and stale_hours >= STALE_FAIL_HOURS:
+        print(
+            f"::error title=Data stale::No fresh AIS data for {age} "
+            f"(threshold {STALE_FAIL_HOURS}h) — collection has failed across "
+            f"multiple runs. Check AISStream status."
+        )
+        sys.exit(1)
+
 
 def migrate_coastal_on_arrivals(arrivals: list[dict]) -> int:
     """Backfill the coastal flag on arrivals that don't have it yet.
@@ -279,8 +319,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     print("Step 1: Collecting from AISStream...")
     current_snapshot = run_collector(api_key, duration_seconds)
     if not current_snapshot.get("vessels"):
-        print("  WARNING: 0 tankers received. Preserving last-good data; skipping downstream steps.")
-        print("Pipeline complete (no-op run).")
+        _report_empty_collection(previous_snapshot, now)
         return
     save_json(f"{DATA_DIR}/snapshot.json", current_snapshot)
 

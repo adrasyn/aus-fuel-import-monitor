@@ -2,6 +2,7 @@ import { loadDashboardData } from "@/lib/data";
 import Header from "@/components/Header";
 import StatBar from "@/components/StatBar";
 import DashboardGrid from "@/components/DashboardGrid";
+import StaleBanner from "@/components/StaleBanner";
 import HistoricalChart from "@/components/HistoricalChart";
 import DailyEnRouteChart from "@/components/DailyEnRouteChart";
 import Footer from "@/components/Footer";
@@ -27,6 +28,7 @@ export default function Home() {
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 py-8">
+      <StaleBanner timestamp={data.snapshot.timestamp} />
       <Header
         snapshot={data.snapshot}
         totalLitres={totalLitres}
@@ -36,12 +38,12 @@ export default function Home() {
         vessels={data.snapshot.vessels}
         msoReserve={data.msoReserve}
       />
-      <DashboardGrid vessels={data.snapshot.vessels} snapshotTimestamp={data.snapshot.timestamp} />
       <div className="mb-6">
         <p className="text-[10px] uppercase tracking-label text-label mb-2">Daily volume en route (last 30 days)</p>
         <DailyEnRouteChart dailyEstimates={data.dailyEstimates} />
         <p className="text-[9px] text-label-light mt-2">Each day&apos;s value is the total cargo on tankers en route at the time. A vessel is counted while AIS-active within the last 14 days; it drops out of the daily total once arrived or silent past that window.</p>
       </div>
+      <DashboardGrid vessels={data.snapshot.vessels} snapshotTimestamp={data.snapshot.timestamp} />
       <div className="mb-6">
         <p className="text-[10px] uppercase tracking-label text-label mb-2">Monthly fuel imports by type</p>
         <HistoricalChart imports={data.imports.imports_by_month} monthlyEstimates={data.monthlyEstimates} aisCompleteFromMonth={aisCompleteFromMonth} />
