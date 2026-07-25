@@ -4223,6 +4223,18 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9366275",
+      "name": "ALPINE EAGLE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-25T21:25:34.394004+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
