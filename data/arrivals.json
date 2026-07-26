@@ -4034,19 +4034,6 @@
       "coastal": true
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Gladstone",
-      "timestamp": "2026-07-18T21:22:55.086395+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12055,
-      "cargo_litres": 14706545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9819911",
       "name": "GOLDEN WAVE",
       "port": "Brisbane",
@@ -4220,6 +4207,18 @@
       "vessel_class": "MR",
       "cargo_tonnes": 40000,
       "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9883560",
+      "name": "BUENA AMISTAD",
+      "port": "Cairns",
+      "timestamp": "2026-07-26T21:31:56.590037+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 3709,
+      "cargo_litres": 4525091,
       "draught_missing": false,
       "coastal": false
     }
