@@ -2017,6 +2017,54 @@
       "last_position_update": "2026-07-11T09:43:34.865005+00:00",
       "cleared_at": "2026-07-25T09:54:32.003590+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9881067",
+      "name": "GOLDEN MIND",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 15837818,
+      "cargo_tonnes": 12982,
+      "is_ballast": false,
+      "last_lat": -27.33292,
+      "last_lon": 153.1936,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-07-12T10:10:32.810154+00:00",
+      "cleared_at": "2026-07-26T10:18:26.456105+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9861938",
+      "name": "SEROJA VI",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 1508364,
+      "cargo_tonnes": 1236,
+      "is_ballast": true,
+      "last_lat": -10.20446,
+      "last_lon": 123.52754,
+      "last_destination": "KUPANG",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-07-12T10:10:32.810154+00:00",
+      "cleared_at": "2026-07-26T10:18:26.456105+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9676527",
+      "name": "ELANDRA MELODY",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 48800000,
+      "cargo_tonnes": 40000,
+      "is_ballast": false,
+      "last_lat": -35.27656,
+      "last_lon": 118.532,
+      "last_destination": "AU ADL",
+      "last_destination_parsed": "Adelaide",
+      "last_position_update": "2026-07-12T10:10:32.810154+00:00",
+      "cleared_at": "2026-07-26T10:18:26.456105+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

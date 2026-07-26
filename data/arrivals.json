@@ -4125,19 +4125,6 @@
       "status": "probable"
     },
     {
-      "imo": "9792151",
-      "name": "GOLDEN SKY",
-      "port": "Fremantle",
-      "timestamp": "2026-07-17T21:29:04.073925+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 16382,
-      "cargo_litres": 19985818,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1035064",
       "name": "CAPE BONNY",
       "port": "Fremantle",
