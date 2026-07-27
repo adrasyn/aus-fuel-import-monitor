@@ -2032,7 +2032,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-07-12T10:10:32.810154+00:00",
       "cleared_at": "2026-07-26T10:18:26.456105+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9861938",
@@ -2064,6 +2065,54 @@
       "last_destination_parsed": "Adelaide",
       "last_position_update": "2026-07-12T10:10:32.810154+00:00",
       "cleared_at": "2026-07-26T10:18:26.456105+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9830252",
+      "name": "NORD VANTAGE",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 21772308,
+      "cargo_tonnes": 17846,
+      "is_ballast": false,
+      "last_lat": -12.27115,
+      "last_lon": 130.69248,
+      "last_destination": "AU DRW",
+      "last_destination_parsed": "Darwin",
+      "last_position_update": "2026-07-13T11:17:08.500217+00:00",
+      "cleared_at": "2026-07-27T11:29:19.474209+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9927196",
+      "name": "GREEN ADMIRE",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 34205882,
+      "cargo_tonnes": 29412,
+      "is_ballast": false,
+      "last_lat": -35.53727,
+      "last_lon": 118.5105,
+      "last_destination": "FOR ORDERS",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-07-13T11:17:08.500217+00:00",
+      "cleared_at": "2026-07-27T11:29:19.474209+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9804837",
+      "name": "GINGA BLUE SHARK",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 16592000,
+      "cargo_tonnes": 13600,
+      "is_ballast": false,
+      "last_lat": -37.92107,
+      "last_lon": 144.9132,
+      "last_destination": "AU MEL",
+      "last_destination_parsed": "Melbourne",
+      "last_position_update": "2026-07-13T11:17:08.500217+00:00",
+      "cleared_at": "2026-07-27T11:29:19.474209+00:00",
       "reason": "stale_prune_14d"
     }
   ]

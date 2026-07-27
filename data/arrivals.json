@@ -3997,19 +3997,6 @@
       "status": "probable"
     },
     {
-      "imo": "9461661",
-      "name": "MONARCH",
-      "port": "Devonport",
-      "timestamp": "2026-07-14T21:32:10.669835+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9782613",
       "name": "CSK VALIANT",
       "port": "Brisbane",
@@ -4055,19 +4042,6 @@
       "vessel_class": "MR",
       "cargo_tonnes": 29538,
       "cargo_litres": 36036923,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
-      "imo": "9710074",
-      "name": "GOLDEN RESOLUTION",
-      "port": "Brisbane",
-      "timestamp": "2026-07-18T09:43:30.274541+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 8036,
-      "cargo_litres": 9804364,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
@@ -4219,6 +4193,18 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 3709,
       "cargo_litres": 4525091,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1033925",
+      "name": "EXCELLENCE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-27T11:29:19.469870+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 88000,
+      "cargo_litres": 102344000,
       "draught_missing": false,
       "coastal": false
     }
