@@ -2081,7 +2081,8 @@
       "last_destination_parsed": "Darwin",
       "last_position_update": "2026-07-13T11:17:08.500217+00:00",
       "cleared_at": "2026-07-27T11:29:19.474209+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9927196",
@@ -2113,7 +2114,8 @@
       "last_destination_parsed": "Melbourne",
       "last_position_update": "2026-07-13T11:17:08.500217+00:00",
       "cleared_at": "2026-07-27T11:29:19.474209+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     }
   ]
 }
