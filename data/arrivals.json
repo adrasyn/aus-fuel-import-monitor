@@ -4259,6 +4259,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9717761",
+      "name": "SEAWAYS WARWICK",
+      "port": "Gladstone",
+      "timestamp": "2026-07-28T21:40:29.223237+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

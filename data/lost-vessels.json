@@ -2116,6 +2116,22 @@
       "cleared_at": "2026-07-27T11:29:19.474209+00:00",
       "reason": "stale_prune_14d",
       "recovered_as": "probable"
+    },
+    {
+      "imo": "1107049",
+      "name": "GINGA JAGUARUNDI",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13952364,
+      "cargo_tonnes": 11436,
+      "is_ballast": false,
+      "last_lat": -27.42493,
+      "last_lon": 153.12749,
+      "last_destination": "AUBNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-07-14T21:32:10.669835+00:00",
+      "cleared_at": "2026-07-28T21:40:29.227519+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
