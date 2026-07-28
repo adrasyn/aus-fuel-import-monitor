@@ -4233,6 +4233,32 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9867267",
+      "name": "SOUTHERN WOLF",
+      "port": "Kwinana",
+      "timestamp": "2026-07-23T21:36:55.671825+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 17000,
+      "cargo_litres": 20740000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9855496",
+      "name": "NAVIG8 PROSPERITY",
+      "port": "Geelong",
+      "timestamp": "2026-07-23T21:36:55.671825+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 25600,
+      "cargo_litres": 29772800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
