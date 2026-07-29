@@ -2131,6 +2131,23 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-07-14T21:32:10.669835+00:00",
       "cleared_at": "2026-07-28T21:40:29.227519+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9539523",
+      "name": "MORNING IBIS",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 63765333,
+      "cargo_tonnes": 52267,
+      "is_ballast": false,
+      "last_lat": 1.20052,
+      "last_lon": 103.89169,
+      "last_destination": "AU BTB",
+      "last_destination_parsed": "Sydney / Botany",
+      "last_position_update": "2026-07-15T10:16:36.749076+00:00",
+      "cleared_at": "2026-07-29T10:55:43.879362+00:00",
       "reason": "stale_prune_14d"
     }
   ]

@@ -4248,19 +4248,6 @@
       "status": "probable"
     },
     {
-      "imo": "9855496",
-      "name": "NAVIG8 PROSPERITY",
-      "port": "Geelong",
-      "timestamp": "2026-07-23T21:36:55.671825+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Suezmax",
-      "cargo_tonnes": 25600,
-      "cargo_litres": 29772800,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9717761",
       "name": "SEAWAYS WARWICK",
       "port": "Gladstone",
@@ -4271,6 +4258,44 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1107049",
+      "name": "GINGA JAGUARUNDI",
+      "port": "Brisbane",
+      "timestamp": "2026-07-14T21:32:10.669835+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11436,
+      "cargo_litres": 13952364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9883558",
+      "name": "BUENA BANDERA",
+      "port": "Brisbane",
+      "timestamp": "2026-07-29T10:55:43.875781+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4636,
+      "cargo_litres": 5656364,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9788590",
+      "name": "ETERNAL SUNSHINE",
+      "port": "Newcastle",
+      "timestamp": "2026-07-25T09:54:32.003590+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
