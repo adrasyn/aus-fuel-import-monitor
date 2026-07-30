@@ -4333,6 +4333,68 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1022677",
+      "name": "GEM EMERALD",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-30T21:42:44.002268+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 36923,
+      "cargo_litres": 45046154,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9952086",
+      "name": "YONG AO",
+      "port": "Hobart",
+      "timestamp": "2026-07-30T21:42:44.002268+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25846,
+      "cargo_litres": 31532308,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9711834",
+      "name": "BAKKEN LADY",
+      "port": "Kwinana",
+      "timestamp": "2026-07-30T21:42:44.002268+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 23385,
+      "cargo_litres": 28529231,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9874583",
+      "name": "GOLDEN HACHI",
+      "port": "Brisbane",
+      "timestamp": "2026-07-26T10:18:26.456105+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11127,
+      "cargo_litres": 13575273,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9747118",
+      "name": "LIAN LE HU",
+      "port": "Townsville",
+      "timestamp": "2026-07-26T10:18:26.456105+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

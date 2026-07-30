@@ -2149,6 +2149,38 @@
       "last_position_update": "2026-07-15T10:16:36.749076+00:00",
       "cleared_at": "2026-07-29T10:55:43.879362+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9662837",
+      "name": "AURIGA TITAN",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 0,
+      "cargo_tonnes": 0,
+      "is_ballast": true,
+      "last_lat": -27.4239,
+      "last_lon": 153.12975,
+      "last_destination": "BRISBANE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-07-16T21:33:04.389883+00:00",
+      "cleared_at": "2026-07-30T21:42:44.006001+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9923475",
+      "name": "PROTEUS RONG NA",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 100483200,
+      "cargo_tonnes": 86400,
+      "is_ballast": false,
+      "last_lat": -26.84418,
+      "last_lon": 153.59422,
+      "last_destination": "AUBNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-07-16T21:33:04.389883+00:00",
+      "cleared_at": "2026-07-30T21:42:44.006001+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
