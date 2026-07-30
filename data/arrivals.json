@@ -4296,6 +4296,43 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9543110",
+      "name": "STENA CONVOY",
+      "port": "Gladstone",
+      "timestamp": "2026-07-30T10:38:34.694545+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 22154,
+      "cargo_litres": 27027692,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "1073511",
+      "name": "WECO TWIGGY",
+      "port": "Bunbury",
+      "timestamp": "2026-07-30T10:38:34.694545+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1020930",
+      "name": "ATLANTIC PEARL",
+      "port": "Melbourne",
+      "timestamp": "2026-07-25T21:25:34.398435+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 62353,
+      "cargo_litres": 72516471,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
