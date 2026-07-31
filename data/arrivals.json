@@ -4309,19 +4309,6 @@
       "coastal": false
     },
     {
-      "imo": "1020930",
-      "name": "ATLANTIC PEARL",
-      "port": "Melbourne",
-      "timestamp": "2026-07-25T21:25:34.398435+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Aframax",
-      "cargo_tonnes": 62353,
-      "cargo_litres": 72516471,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1022677",
       "name": "GEM EMERALD",
       "port": "Sydney / Botany",
@@ -4417,6 +4404,56 @@
       "vessel_class": "LR2/Panamax",
       "cargo_tonnes": 44800,
       "cargo_litres": 54656000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9710074",
+      "name": "GOLDEN RESOLUTION",
+      "port": "Brisbane",
+      "timestamp": "2026-07-31T21:37:44.438874+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8345,
+      "cargo_litres": 10181455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9428970",
+      "name": "TORM GAURI",
+      "port": "Brisbane",
+      "timestamp": "2026-07-31T21:37:44.438874+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 68800,
+      "cargo_litres": 83936000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9367712",
+      "name": "HANSA SEALEADER",
+      "port": "Brisbane",
+      "timestamp": "2026-07-27T11:29:19.474209+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 12923,
+      "cargo_litres": 15766154,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9659660",
+      "name": "THE BLACKSMITH",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-27T11:29:19.474209+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 16615,
+      "cargo_litres": 20270769,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
