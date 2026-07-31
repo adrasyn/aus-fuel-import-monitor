@@ -4060,19 +4060,6 @@
       "status": "probable"
     },
     {
-      "imo": "9712852",
-      "name": "PM EMPRESS",
-      "port": "Geelong",
-      "timestamp": "2026-07-19T10:11:36.681008+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Suezmax",
-      "cargo_tonnes": 24000,
-      "cargo_litres": 27912000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9965502",
       "name": "SUN MERCURY",
       "port": "Melbourne",
@@ -4392,6 +4379,44 @@
       "vessel_class": "MR",
       "cargo_tonnes": 38154,
       "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9321885",
+      "name": "VICTOIRE",
+      "port": "Brisbane",
+      "timestamp": "2026-07-31T10:55:11.672827+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 1545,
+      "cargo_litres": 1885455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Newcastle",
+      "timestamp": "2026-07-26T21:31:56.593732+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5564,
+      "cargo_litres": 6787636,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9228057",
+      "name": "BANGOR",
+      "port": "Kwinana",
+      "timestamp": "2026-07-26T21:31:56.593732+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 44800,
+      "cargo_litres": 54656000,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
