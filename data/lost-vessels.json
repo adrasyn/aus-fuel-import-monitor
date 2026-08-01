@@ -2213,6 +2213,23 @@
       "last_destination_parsed": "Cairns",
       "last_position_update": "2026-07-17T21:29:04.073925+00:00",
       "cleared_at": "2026-07-31T21:37:44.443283+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9689809",
+      "name": "TASCO NIRAND",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 2262545,
+      "cargo_tonnes": 1855,
+      "is_ballast": true,
+      "last_lat": -31.93121,
+      "last_lon": 115.58637,
+      "last_destination": "KEM MY",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-07-18T09:43:30.274541+00:00",
+      "cleared_at": "2026-08-01T10:16:58.554456+00:00",
       "reason": "stale_prune_14d"
     }
   ]

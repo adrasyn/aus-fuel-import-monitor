@@ -4457,6 +4457,69 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9800661",
+      "name": "PACIFIC KOHINOOR",
+      "port": "Cairns",
+      "timestamp": "2026-07-17T21:29:04.073925+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 24615,
+      "cargo_litres": 30030769,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9997220",
+      "name": "GORDONS BAY",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-01T10:16:58.549927+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1076525",
+      "name": "LEFLAIVE",
+      "port": "Adelaide",
+      "timestamp": "2026-08-01T10:16:58.550595+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 27077,
+      "cargo_litres": 33033846,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9792151",
+      "name": "GOLDEN SKY",
+      "port": "Melbourne",
+      "timestamp": "2026-07-27T21:43:38.674962+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11745,
+      "cargo_litres": 14329455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9934644",
+      "name": "GREEN AZURE",
+      "port": "Geelong",
+      "timestamp": "2026-07-27T21:43:38.674962+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 65600,
+      "cargo_litres": 76292800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
