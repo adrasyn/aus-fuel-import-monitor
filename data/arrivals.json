@@ -4520,6 +4520,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9803247",
+      "name": "ROSTELLA",
+      "port": "Adelaide",
+      "timestamp": "2026-08-01T21:26:18.917363+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8655,
+      "cargo_litres": 10558545,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
