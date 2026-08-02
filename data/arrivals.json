@@ -4558,6 +4558,45 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1035777",
+      "name": "TP PROGRESS",
+      "port": "Fremantle",
+      "timestamp": "2026-07-19T10:11:36.681008+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 83529,
+      "cargo_litres": 97144706,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9882748",
+      "name": "GOLDEN AUSTRALIS",
+      "port": "Hobart",
+      "timestamp": "2026-07-19T10:11:36.681008+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4018,
+      "cargo_litres": 4902182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9461661",
+      "name": "MONARCH",
+      "port": "Devonport",
+      "timestamp": "2026-07-29T10:55:43.879362+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

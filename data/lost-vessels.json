@@ -2262,7 +2262,8 @@
       "last_destination_parsed": "Kwinana",
       "last_position_update": "2026-07-19T10:11:36.681008+00:00",
       "cleared_at": "2026-08-02T10:16:36.322559+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9882748",
@@ -2278,7 +2279,8 @@
       "last_destination_parsed": "Hobart",
       "last_position_update": "2026-07-19T10:11:36.681008+00:00",
       "cleared_at": "2026-08-02T10:16:36.322559+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9372432",
@@ -2294,6 +2296,38 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-07-19T10:11:36.681008+00:00",
       "cleared_at": "2026-08-02T10:16:36.322559+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9803120",
+      "name": "DA TAI SHAN",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13198182,
+      "cargo_tonnes": 10818,
+      "is_ballast": false,
+      "last_lat": 1.24412,
+      "last_lon": 103.80447,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-07-19T21:23:28.138251+00:00",
+      "cleared_at": "2026-08-02T21:28:14.085196+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9417177",
+      "name": "YANG LI HU",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 84830588,
+      "cargo_tonnes": 72941,
+      "is_ballast": false,
+      "last_lat": -27.28287,
+      "last_lon": 153.2741,
+      "last_destination": "BRISBANE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-07-19T21:23:28.138251+00:00",
+      "cleared_at": "2026-08-02T21:28:14.085196+00:00",
       "reason": "stale_prune_14d"
     }
   ]
