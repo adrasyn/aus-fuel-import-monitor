@@ -2247,6 +2247,54 @@
       "last_position_update": "2026-07-18T21:22:55.086395+00:00",
       "cleared_at": "2026-08-01T21:26:18.921150+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1035777",
+      "name": "TP PROGRESS",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 97144706,
+      "cargo_tonnes": 83529,
+      "is_ballast": false,
+      "last_lat": -31.89986,
+      "last_lon": 115.65827,
+      "last_destination": "AU KWI",
+      "last_destination_parsed": "Kwinana",
+      "last_position_update": "2026-07-19T10:11:36.681008+00:00",
+      "cleared_at": "2026-08-02T10:16:36.322559+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9882748",
+      "name": "GOLDEN AUSTRALIS",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 4902182,
+      "cargo_tonnes": 4018,
+      "is_ballast": false,
+      "last_lat": -42.93736,
+      "last_lon": 147.39088,
+      "last_destination": "AU HBA",
+      "last_destination_parsed": "Hobart",
+      "last_position_update": "2026-07-19T10:11:36.681008+00:00",
+      "cleared_at": "2026-08-02T10:16:36.322559+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9372432",
+      "name": "CLIPPER NEPTUN",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 13664000,
+      "cargo_tonnes": 11200,
+      "is_ballast": false,
+      "last_lat": -39.07243,
+      "last_lon": 143.02042,
+      "last_destination": "FOR ORDEDRS",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-07-19T10:11:36.681008+00:00",
+      "cleared_at": "2026-08-02T10:16:36.322559+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

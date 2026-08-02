@@ -4532,6 +4532,32 @@
       "cargo_litres": 10558545,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9853553",
+      "name": "RANA",
+      "port": "Fremantle",
+      "timestamp": "2026-07-28T21:40:29.227519+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9877822",
+      "name": "COSMIC GLORY",
+      "port": "Newcastle",
+      "timestamp": "2026-07-28T21:40:29.227519+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
