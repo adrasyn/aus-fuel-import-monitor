@@ -4670,6 +4670,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9965552",
+      "name": "GINGA PIONEER",
+      "port": "Fremantle",
+      "timestamp": "2026-08-04T21:44:07.301653+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9919840",
+      "name": "GASCHEM ODYSSEY",
+      "port": "Newcastle",
+      "timestamp": "2026-07-31T10:55:11.677204+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4945,
+      "cargo_litres": 6033455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
