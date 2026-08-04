@@ -4621,6 +4621,55 @@
       "cargo_litres": 13198182,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9807229",
+      "name": "SEA DOLPHIN",
+      "port": "Adelaide",
+      "timestamp": "2026-08-04T10:54:38.191546+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 30154,
+      "cargo_litres": 36787692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1035064",
+      "name": "CAPE BONNY",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-04T10:54:38.191546+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1083205",
+      "name": "CC NINGBO",
+      "port": "Melbourne",
+      "timestamp": "2026-08-04T10:54:38.191546+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 21538,
+      "cargo_litres": 26276923,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9718430",
+      "name": "SILVER ETREMA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-07-30T21:42:44.006001+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 21538,
+      "cargo_litres": 26276923,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
