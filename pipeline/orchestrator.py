@@ -51,13 +51,35 @@ COASTAL_HEURISTIC_WINDOW_DAYS = 14
 STALE_FAIL_HOURS = int(os.environ.get("STALE_FAIL_HOURS", "48"))
 
 
+def _update_petroleum_stats() -> None:
+    """Refresh imports.json from the ABS petroleum statistics workbook.
+
+    Independent of AISStream, so this runs on every pipeline run — including
+    runs where AIS collection came back empty.
+    """
+    print("Step 6: Checking petroleum statistics...")
+    try:
+        download_latest_excel(EXCEL_CACHE)
+        imports_data = build_imports_json(EXCEL_CACHE)
+        save_json(f"{DATA_DIR}/imports.json", imports_data)
+        print("  Updated imports data")
+    except Exception as e:
+        print(f"  Skipped petroleum stats update: {e}")
+
+
 def _report_empty_collection(previous_snapshot: dict, now: datetime) -> None:
     """Handle a run that collected zero tankers (AIS provider unreachable).
 
     Always emits a GitHub Actions warning annotation so the no-op is visible in
     the run summary. If the last-good data is older than STALE_FAIL_HOURS,
-    escalates to an error annotation and exits non-zero so the run goes red and
-    GitHub emails the repo owner.
+    escalates to an error annotation.
+
+    Deliberately does NOT exit non-zero: AISStream has been down since
+    2026-08-05 (aisstream/issues#257, #269) and a red run twice a day is noise
+    we can't act on. The ::error annotation still surfaces the staleness in the
+    run summary, and exiting zero lets the rest of the job commit and publish
+    the data sources that are still healthy. To re-arm the hard failure once
+    AIS is flowing again, restore `sys.exit(1)` below.
     """
     last_ts = previous_snapshot.get("timestamp")
     stale_hours = None
@@ -81,7 +103,6 @@ def _report_empty_collection(previous_snapshot: dict, now: datetime) -> None:
             f"(threshold {STALE_FAIL_HOURS}h) — collection has failed across "
             f"multiple runs. Check AISStream status."
         )
-        sys.exit(1)
 
 
 def migrate_coastal_on_arrivals(arrivals: list[dict]) -> int:
@@ -319,6 +340,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     print("Step 1: Collecting from AISStream...")
     current_snapshot = run_collector(api_key, duration_seconds)
     if not current_snapshot.get("vessels"):
+        _update_petroleum_stats()
         _report_empty_collection(previous_snapshot, now)
         return
     save_json(f"{DATA_DIR}/snapshot.json", current_snapshot)
@@ -392,14 +414,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     daily = update_daily_estimates(daily, vessel_db, now)
     save_json(f"{DATA_DIR}/daily-estimates.json", daily)
 
-    print("Step 6: Checking petroleum statistics...")
-    try:
-        download_latest_excel(EXCEL_CACHE)
-        imports_data = build_imports_json(EXCEL_CACHE)
-        save_json(f"{DATA_DIR}/imports.json", imports_data)
-        print("  Updated imports data")
-    except Exception as e:
-        print(f"  Skipped petroleum stats update: {e}")
+    _update_petroleum_stats()
 
     print("Pipeline complete.")
 

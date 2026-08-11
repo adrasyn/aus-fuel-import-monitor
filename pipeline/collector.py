@@ -24,6 +24,13 @@ AISSTREAM_URL = "wss://stream.aisstream.io/v0/stream"
 _AISSTREAM_HOST = "stream.aisstream.io"
 _AISSTREAM_PORT = 443
 
+# A healthy run sees ~10 msg/s across the subscribed boxes, so the first frame
+# lands within seconds. Total silence this long means the provider is down
+# (as in the aisstream outage from 2026-08-05) and there is nothing to gain by
+# holding the socket open for the rest of the collection window.
+EMPTY_STREAM_GRACE_SECONDS = 90
+_RECV_TIMEOUT_SECONDS = 10.0
+
 
 def _aisstream_cert_verifies() -> bool:
     # Workaround for AISStream upstream cert outage (aisstream/issues#192). We
@@ -63,6 +70,7 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
     vessels: dict[str, dict] = {}  # keyed by MMSI
     start_time = time.time()
     msg_count = 0
+    frame_count = 0  # every frame, including non-AIS control/error frames
     type_counts: dict[str, int] = {}
     non_ais_samples: list[str] = []  # capture a few non-AIS messages for diagnosis
 
@@ -86,10 +94,18 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
             while (time.time() - start_time) < duration_seconds:
                 try:
-                    raw = await asyncio.wait_for(ws.recv(), timeout=10.0)
+                    raw = await asyncio.wait_for(ws.recv(), timeout=_RECV_TIMEOUT_SECONDS)
                 except asyncio.TimeoutError:
+                    silent_for = time.time() - start_time
+                    if frame_count == 0 and silent_for >= EMPTY_STREAM_GRACE_SECONDS:
+                        print(
+                            f"  No frames received in {silent_for:.0f}s — giving up early "
+                            f"(subscription accepted but provider is sending nothing)"
+                        )
+                        break
                     continue
 
+                frame_count += 1
                 msg = json.loads(raw)
                 msg_type = msg.get("MessageType", "")
                 type_counts[msg_type] = type_counts.get(msg_type, 0) + 1

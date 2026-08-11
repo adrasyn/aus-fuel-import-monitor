@@ -1,7 +1,7 @@
+import json
 from datetime import datetime, timedelta, timezone
 
-import pytest
-
+from pipeline import orchestrator
 from pipeline.orchestrator import (
     rebucket_monthly_from_arrivals,
     update_monthly_estimates,
@@ -21,12 +21,12 @@ def test_report_empty_collection_warns_but_survives_when_recent(capsys):
     assert "::error" not in out
 
 
-def test_report_empty_collection_fails_when_stale(capsys):
+def test_report_empty_collection_flags_stale_without_exiting(capsys):
     now = datetime(2026, 7, 23, 21, 0, tzinfo=timezone.utc)
     stale = (now - timedelta(hours=STALE_FAIL_HOURS + 1)).isoformat()
-    with pytest.raises(SystemExit) as exc:
-        _report_empty_collection({"timestamp": stale}, now)
-    assert exc.value.code == 1
+    # Stale data escalates to an ::error annotation, but the run stays green
+    # while AISStream is down (see _report_empty_collection).
+    _report_empty_collection({"timestamp": stale}, now)
     out = capsys.readouterr().out
     assert "::error" in out
 
@@ -38,6 +38,25 @@ def test_report_empty_collection_warns_when_timestamp_missing(capsys):
     out = capsys.readouterr().out
     assert "::warning" in out
     assert "::error" not in out
+
+
+def test_run_pipeline_updates_petroleum_stats_when_ais_empty(tmp_path, monkeypatch):
+    # Petroleum stats come from ABS Excel, not AISStream. An AIS outage must
+    # not freeze them via the empty-collection early return.
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "ports.json").write_text(json.dumps({"ports": []}))
+
+    monkeypatch.setattr(
+        orchestrator, "run_collector", lambda *a, **k: {"vessels": [], "timestamp": ""}
+    )
+    monkeypatch.setattr(orchestrator, "download_latest_excel", lambda path: None)
+    monkeypatch.setattr(orchestrator, "build_imports_json", lambda path: {"months": {"2026-07": 1}})
+
+    orchestrator.run_pipeline("dummy-key", duration_seconds=1)
+
+    written = json.loads((tmp_path / "data" / "imports.json").read_text())
+    assert written == {"months": {"2026-07": 1}}
 
 
 def test_update_monthly_estimates_sums_en_route_from_roster():
