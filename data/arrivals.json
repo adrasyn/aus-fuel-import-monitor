@@ -4760,19 +4760,6 @@
       "status": "probable"
     },
     {
-      "imo": "1051032",
-      "name": "PIS MADURA",
-      "port": "Brisbane",
-      "timestamp": "2026-08-04T21:44:07.305659+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9540819",
       "name": "XING TONG 799",
       "port": "Geelong",
@@ -4927,6 +4914,67 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9736626",
+      "name": "GOLDEN ACE",
+      "port": "Fremantle",
+      "timestamp": "2026-07-27T21:43:38.674962+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5255,
+      "cargo_litres": 6410545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9783930",
+      "name": "SOUTHERN LEADER",
+      "port": "Brisbane",
+      "timestamp": "2026-08-17T20:59:35.480646+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 35294,
+      "cargo_litres": 41047059,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9929821",
+      "name": "DEE4 NERIUM",
+      "port": "Brisbane",
+      "timestamp": "2026-08-17T20:59:35.480646+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 30154,
+      "cargo_litres": 36787692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9800714",
+      "name": "MORNING CRANE",
+      "port": "Brisbane",
+      "timestamp": "2026-08-17T20:59:35.480646+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 70588,
+      "cargo_litres": 82094118,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9631151",
+      "name": "MT LARCOM",
+      "port": "Gladstone",
+      "timestamp": "2026-08-17T20:59:35.480646+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 0,
+      "cargo_litres": 0,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
