@@ -4987,6 +4987,18 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9654579",
+      "name": "ARDMORE ENCOUNTER",
+      "port": "Gladstone",
+      "timestamp": "2026-08-18T20:56:38.821836+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
