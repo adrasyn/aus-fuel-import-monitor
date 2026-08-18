@@ -4975,6 +4975,18 @@
       "cargo_litres": 0,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9902847",
+      "name": "FRONTIER MARINER",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-18T08:50:40.571676+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

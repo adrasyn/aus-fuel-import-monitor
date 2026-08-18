@@ -2574,6 +2574,22 @@
       "last_position_update": "2026-08-03T11:39:52.903419+00:00",
       "cleared_at": "2026-08-17T20:59:35.485059+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9714276",
+      "name": "SERI CAMELLIA",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 55824000,
+      "cargo_tonnes": 48000,
+      "is_ballast": false,
+      "last_lat": 0.48662,
+      "last_lon": 106.09782,
+      "last_destination": "AU GLT",
+      "last_destination_parsed": "Gladstone",
+      "last_position_update": "2026-08-03T21:35:18.446723+00:00",
+      "cleared_at": "2026-08-18T08:50:40.576082+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
