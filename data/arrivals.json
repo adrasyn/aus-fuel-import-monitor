@@ -4999,6 +4999,108 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9906702",
+      "name": "GRAND WINNER 3",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-22T20:55:11.716083+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9706073",
+      "name": "HAFNIA PETREL",
+      "port": "Gladstone",
+      "timestamp": "2026-08-22T20:55:11.716083+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1051032",
+      "name": "PIS MADURA",
+      "port": "Newcastle",
+      "timestamp": "2026-08-17T20:59:35.485059+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9833565",
+      "name": "STI MARSHALL",
+      "port": "Newcastle",
+      "timestamp": "2026-08-17T08:58:24.017414+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9952086",
+      "name": "YONG AO",
+      "port": "Melbourne",
+      "timestamp": "2026-08-17T20:59:35.485059+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 33231,
+      "cargo_litres": 40541538,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9975519",
+      "name": "MESAIEED",
+      "port": "Gladstone",
+      "timestamp": "2026-08-17T08:58:24.017414+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 70400,
+      "cargo_litres": 81875200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9686699",
+      "name": "STI VIRTUS",
+      "port": "Geelong",
+      "timestamp": "2026-08-18T08:50:40.576082+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9852286",
+      "name": "SWAN SPIRIT",
+      "port": "Melbourne",
+      "timestamp": "2026-08-17T20:59:35.485059+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9273,
+      "cargo_litres": 11312727,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

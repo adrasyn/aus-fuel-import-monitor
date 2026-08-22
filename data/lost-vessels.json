@@ -2590,6 +2590,38 @@
       "last_position_update": "2026-08-03T21:35:18.446723+00:00",
       "cleared_at": "2026-08-18T08:50:40.576082+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9915258",
+      "name": "GASCHEM HOMER",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 5279273,
+      "cargo_tonnes": 4327,
+      "is_ballast": false,
+      "last_lat": -26.86943,
+      "last_lon": 153.53963,
+      "last_destination": "AU BTB",
+      "last_destination_parsed": "Sydney / Botany",
+      "last_position_update": "2026-08-05T10:51:17.458937+00:00",
+      "cleared_at": "2026-08-22T20:55:11.720285+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1022677",
+      "name": "GEM EMERALD",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 27778462,
+      "cargo_tonnes": 22769,
+      "is_ballast": false,
+      "last_lat": -38.08872,
+      "last_lon": 144.3883,
+      "last_destination": "AUGEX",
+      "last_destination_parsed": "Geraldton",
+      "last_position_update": "2026-08-04T21:44:07.305659+00:00",
+      "cleared_at": "2026-08-22T20:55:11.720285+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
