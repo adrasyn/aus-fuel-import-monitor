@@ -2605,7 +2605,8 @@
       "last_destination_parsed": "Sydney / Botany",
       "last_position_update": "2026-08-05T10:51:17.458937+00:00",
       "cleared_at": "2026-08-22T20:55:11.720285+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "1022677",
@@ -2621,7 +2622,8 @@
       "last_destination_parsed": "Geraldton",
       "last_position_update": "2026-08-04T21:44:07.305659+00:00",
       "cleared_at": "2026-08-22T20:55:11.720285+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     }
   ]
 }

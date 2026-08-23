@@ -5051,19 +5051,6 @@
       "status": "probable"
     },
     {
-      "imo": "9952086",
-      "name": "YONG AO",
-      "port": "Melbourne",
-      "timestamp": "2026-08-17T20:59:35.485059+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 33231,
-      "cargo_litres": 40541538,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9975519",
       "name": "MESAIEED",
       "port": "Gladstone",
@@ -5077,19 +5064,6 @@
       "status": "probable"
     },
     {
-      "imo": "9686699",
-      "name": "STI VIRTUS",
-      "port": "Geelong",
-      "timestamp": "2026-08-18T08:50:40.576082+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9852286",
       "name": "SWAN SPIRIT",
       "port": "Melbourne",
@@ -5098,6 +5072,68 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 9273,
       "cargo_litres": 11312727,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1022677",
+      "name": "GEM EMERALD",
+      "port": "Geelong",
+      "timestamp": "2026-08-04T21:44:07.305659+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 22769,
+      "cargo_litres": 27778462,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9854741",
+      "name": "STI MAXIMUS",
+      "port": "Gladstone",
+      "timestamp": "2026-08-23T08:45:15.734097+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 39385,
+      "cargo_litres": 48049231,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9813113",
+      "name": "BARRAMUNDI",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-23T08:45:15.734097+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 59733,
+      "cargo_litres": 72874667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9803118",
+      "name": "DA WEI SHAN",
+      "port": "Gladstone",
+      "timestamp": "2026-08-23T08:45:15.734548+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8345,
+      "cargo_litres": 10181455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9528366",
+      "name": "FPMC 27",
+      "port": "Kwinana",
+      "timestamp": "2026-08-18T20:56:38.825627+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
