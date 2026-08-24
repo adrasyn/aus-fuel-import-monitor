@@ -5137,6 +5137,42 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9890446",
+      "name": "CLEAROCEAN MARAUDER",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-24T09:03:20.132360+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 15385,
+      "cargo_litres": 18769231,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1033937",
+      "name": "EXPEDITION",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-24T09:03:20.132360+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 88000,
+      "cargo_litres": 102344000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1025576",
+      "name": "SEA ORCA",
+      "port": "Brisbane",
+      "timestamp": "2026-08-24T09:03:20.132804+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 45882,
+      "cargo_litres": 53361176,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
