@@ -5173,6 +5173,30 @@
       "cargo_litres": 53361176,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9293533",
+      "name": "ASPHALT TRANSPORTER",
+      "port": "Gladstone",
+      "timestamp": "2026-08-24T21:02:32.575919+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10818,
+      "cargo_litres": 13198182,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9686699",
+      "name": "STI VIRTUS",
+      "port": "Hobart",
+      "timestamp": "2026-08-24T21:02:32.575919+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25231,
+      "cargo_litres": 30781538,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
