@@ -5197,6 +5197,18 @@
       "cargo_litres": 30781538,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9756274",
+      "name": "MANOLATES",
+      "port": "Gladstone",
+      "timestamp": "2026-08-25T08:56:51.290781+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
