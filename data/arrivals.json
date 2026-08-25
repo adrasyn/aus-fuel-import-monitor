@@ -5209,6 +5209,30 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1064560",
+      "name": "GRAND WINNER 8",
+      "port": "Gladstone",
+      "timestamp": "2026-08-25T21:01:26.835497+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9914694",
+      "name": "PROTEUS STEPHANIE",
+      "port": "Brisbane",
+      "timestamp": "2026-08-25T21:01:26.835497+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 83200,
+      "cargo_litres": 96761600,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
