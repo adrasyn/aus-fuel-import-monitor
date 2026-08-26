@@ -5281,6 +5281,32 @@
       "cargo_litres": 42043077,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9566203",
+      "name": "GOLDEN CHIE",
+      "port": "Geelong",
+      "timestamp": "2026-08-22T20:55:11.720285+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4327,
+      "cargo_litres": 5279273,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9970650",
+      "name": "SEA SPIRIT",
+      "port": "Gladstone",
+      "timestamp": "2026-08-22T20:55:11.720285+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
