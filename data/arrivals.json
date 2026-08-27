@@ -5307,6 +5307,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9808522",
+      "name": "TASCO TARA",
+      "port": "Brisbane",
+      "timestamp": "2026-08-27T18:57:17.304130+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12673,
+      "cargo_litres": 15460727,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
