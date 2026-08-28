@@ -5319,6 +5319,32 @@
       "cargo_litres": 15460727,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9829447",
+      "name": "STI MAGIC",
+      "port": "Devonport",
+      "timestamp": "2026-08-23T20:56:01.900777+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 21538,
+      "cargo_litres": 26276923,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9461661",
+      "name": "MONARCH",
+      "port": "Geelong",
+      "timestamp": "2026-08-23T20:56:01.900777+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25846,
+      "cargo_litres": 31532308,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
