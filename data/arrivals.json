@@ -5345,6 +5345,83 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9228045",
+      "name": "BANASTAR",
+      "port": "Bunbury",
+      "timestamp": "2026-08-28T20:11:00.973836+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 24267,
+      "cargo_litres": 29605333,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9732709",
+      "name": "HAFNIA MIKALA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-24T09:03:20.136791+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Brisbane",
+      "timestamp": "2026-08-24T09:03:20.136791+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12055,
+      "cargo_litres": 14706545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1015870",
+      "name": "GEM SAPPHIRE",
+      "port": "Kwinana",
+      "timestamp": "2026-08-24T09:03:20.136791+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9773741",
+      "name": "WISDOM VENTURE",
+      "port": "Brisbane",
+      "timestamp": "2026-08-24T09:03:20.136791+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 45882,
+      "cargo_litres": 53361176,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9694749",
+      "name": "CESI TIANJIN",
+      "port": "Gladstone",
+      "timestamp": "2026-08-24T09:03:20.136791+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
