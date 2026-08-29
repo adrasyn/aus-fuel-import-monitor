@@ -5372,19 +5372,6 @@
       "status": "probable"
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Brisbane",
-      "timestamp": "2026-08-24T09:03:20.136791+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12055,
-      "cargo_litres": 14706545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1015870",
       "name": "GEM SAPPHIRE",
       "port": "Kwinana",
