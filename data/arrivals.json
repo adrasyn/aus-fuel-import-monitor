@@ -5422,6 +5422,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9941685",
+      "name": "HAFNIA LANGUEDOC",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-29T13:56:02.345902+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 89600,
+      "cargo_litres": 109312000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
