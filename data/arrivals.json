@@ -5408,6 +5408,67 @@
       "cargo_litres": 109312000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9948281",
+      "name": "DAT MERCURY",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-08-31T16:04:26.487987+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1023516",
+      "name": "SOUTHERN RESONANCE",
+      "port": "Brisbane",
+      "timestamp": "2026-08-31T16:04:26.487987+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 75294,
+      "cargo_litres": 87567059,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9566203",
+      "name": "GOLDEN CHIE",
+      "port": "Kwinana",
+      "timestamp": "2026-08-31T16:04:26.488465+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4636,
+      "cargo_litres": 5656364,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9738662",
+      "name": "GOLDEN CREATION",
+      "port": "Brisbane",
+      "timestamp": "2026-08-31T16:04:26.488465+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8655,
+      "cargo_litres": 10558545,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9682576",
+      "name": "MARAN GAS LETO",
+      "port": "Gladstone",
+      "timestamp": "2026-08-26T23:22:36.127098+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 30400,
+      "cargo_litres": 35355200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
