@@ -5520,6 +5520,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9615999",
+      "name": "TASCO AMARIT",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-01T22:57:21.543978+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11127,
+      "cargo_litres": 13575273,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9685475",
+      "name": "STENA IMMORTAL",
+      "port": "Bunbury",
+      "timestamp": "2026-09-01T22:57:21.544467+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
