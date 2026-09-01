@@ -5469,6 +5469,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9640645",
+      "name": "V GAS OHIO",
+      "port": "Gladstone",
+      "timestamp": "2026-08-27T18:57:17.308155+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 28800,
+      "cargo_litres": 33494400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
