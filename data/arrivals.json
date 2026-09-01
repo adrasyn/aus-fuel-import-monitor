@@ -5482,6 +5482,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9697600",
+      "name": "STI CONNAUGHT",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-01T13:20:01.056267+00:00",
+      "ship_type": "product",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 82353,
+      "cargo_litres": 100470588,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9952086",
+      "name": "YONG AO",
+      "port": "Melbourne",
+      "timestamp": "2026-08-28T04:35:51.939413+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 33231,
+      "cargo_litres": 40541538,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9461855",
+      "name": "TORM GENESIS",
+      "port": "Fremantle",
+      "timestamp": "2026-08-28T04:35:51.939413+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 39040000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
