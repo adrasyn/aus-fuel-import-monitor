@@ -5544,6 +5544,19 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9942847",
+      "name": "SUN NEPTUNE",
+      "port": "Melbourne",
+      "timestamp": "2026-08-29T03:15:16.606036+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8655,
+      "cargo_litres": 10558545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
