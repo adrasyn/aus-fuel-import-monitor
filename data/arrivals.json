@@ -5557,6 +5557,55 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9977995",
+      "name": "GAS BLOSSOM",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-02T22:56:41.865966+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 1855,
+      "cargo_litres": 2262545,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1064558",
+      "name": "GRAND WINNER 7",
+      "port": "Gladstone",
+      "timestamp": "2026-09-02T22:56:41.865966+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9808522",
+      "name": "TASCO TARA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-02T22:56:41.866689+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9634098",
+      "name": "SOLARIS",
+      "port": "Gladstone",
+      "timestamp": "2026-08-29T13:56:02.350230+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
