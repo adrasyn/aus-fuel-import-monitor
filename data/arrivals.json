@@ -5496,19 +5496,6 @@
       "coastal": false
     },
     {
-      "imo": "9952086",
-      "name": "YONG AO",
-      "port": "Melbourne",
-      "timestamp": "2026-08-28T04:35:51.939413+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 33231,
-      "cargo_litres": 40541538,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9461855",
       "name": "TORM GENESIS",
       "port": "Fremantle",
@@ -5603,6 +5590,19 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 33600,
       "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Gladstone",
+      "timestamp": "2026-08-29T22:58:50.419914+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12055,
+      "cargo_litres": 14706545,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
