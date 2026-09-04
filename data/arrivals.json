@@ -5346,19 +5346,6 @@
       "coastal": true
     },
     {
-      "imo": "9732709",
-      "name": "HAFNIA MIKALA",
-      "port": "Sydney / Botany",
-      "timestamp": "2026-08-24T09:03:20.136791+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1015870",
       "name": "GEM SAPPHIRE",
       "port": "Kwinana",
@@ -5656,6 +5643,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9867803",
+      "name": "PACIFIC JADE",
+      "port": "Brisbane",
+      "timestamp": "2026-09-04T22:42:48.905988+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
