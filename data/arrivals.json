@@ -5606,6 +5606,56 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1064572",
+      "name": "GRAND WINNER 9",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-04T12:48:30.652085+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1042574",
+      "name": "GAZ GOTHAM",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-04T12:48:30.652960+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 52267,
+      "cargo_litres": 63765333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9867073",
+      "name": "GOLDEN SAGITTARIUS",
+      "port": "Hobart",
+      "timestamp": "2026-08-30T23:00:06.507471+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4636,
+      "cargo_litres": 5656364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9872901",
+      "name": "LNGSHIPS MANHATTAN",
+      "port": "Gladstone",
+      "timestamp": "2026-08-30T23:00:06.507471+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
