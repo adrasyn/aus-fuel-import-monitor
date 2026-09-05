@@ -5582,19 +5582,6 @@
       "status": "probable"
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Gladstone",
-      "timestamp": "2026-08-29T22:58:50.419914+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12055,
-      "cargo_litres": 14706545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1064572",
       "name": "GRAND WINNER 9",
       "port": "Sydney / Botany",
@@ -5706,6 +5693,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9439175",
+      "name": "BIT REDO",
+      "port": "Gladstone",
+      "timestamp": "2026-09-05T22:28:02.896067+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 13909,
+      "cargo_litres": 16969091,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
