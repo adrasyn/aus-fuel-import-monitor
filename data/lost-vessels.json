@@ -2640,6 +2640,22 @@
       "last_position_update": "2026-08-18T20:56:38.825627+00:00",
       "cleared_at": "2026-09-01T22:57:21.547560+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9835056",
+      "name": "TP ENDEAVOUR",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 37538462,
+      "cargo_tonnes": 30769,
+      "is_ballast": false,
+      "last_lat": -35.57297,
+      "last_lon": 118.07096,
+      "last_destination": "AU ADL",
+      "last_destination_parsed": "Adelaide",
+      "last_position_update": "2026-08-23T20:56:01.900777+00:00",
+      "cleared_at": "2026-09-06T22:29:48.314878+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
