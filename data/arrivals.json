@@ -5705,6 +5705,57 @@
       "cargo_litres": 16969091,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1064572",
+      "name": "GRAND WINNER 9",
+      "port": "Brisbane",
+      "timestamp": "2026-09-06T12:17:16.204277+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 26462,
+      "cargo_litres": 32283077,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9573684",
+      "name": "MP MR TANKER 3",
+      "port": "Geelong",
+      "timestamp": "2026-09-01T22:57:21.547560+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9877793",
+      "name": "MORNING GLORY",
+      "port": "Newcastle",
+      "timestamp": "2026-09-01T22:57:21.547560+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9331658",
+      "name": "SERI BIJAKSANA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-01T22:57:21.547560+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
