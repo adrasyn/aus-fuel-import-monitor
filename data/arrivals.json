@@ -5782,6 +5782,42 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9279680",
+      "name": "TASCO AMATA",
+      "port": "Brisbane",
+      "timestamp": "2026-09-07T23:07:10.146247+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9582,
+      "cargo_litres": 11689818,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9883558",
+      "name": "BUENA BANDERA",
+      "port": "Cairns",
+      "timestamp": "2026-09-07T23:07:10.147087+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4327,
+      "cargo_litres": 5279273,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9492361",
+      "name": "THE CHIEF",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-07T23:07:10.147087+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 14218,
+      "cargo_litres": 17346182,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
