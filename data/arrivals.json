@@ -5669,19 +5669,6 @@
       "status": "probable"
     },
     {
-      "imo": "9379624",
-      "name": "FOSSIL",
-      "port": "Geelong",
-      "timestamp": "2026-09-01T00:09:34.314679+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Aframax",
-      "cargo_tonnes": 47059,
-      "cargo_litres": 54729412,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9672844",
       "name": "CESI BEIHAI",
       "port": "Gladstone",
@@ -5818,6 +5805,82 @@
       "cargo_litres": 17346182,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1035076",
+      "name": "CAPE BRASILIA",
+      "port": "Kwinana",
+      "timestamp": "2026-09-08T12:49:59.960609+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9577068",
+      "name": "TORM EVOLVE",
+      "port": "Brisbane",
+      "timestamp": "2026-09-08T12:49:59.960609+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 62533,
+      "cargo_litres": 76290667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9952086",
+      "name": "YONG AO",
+      "port": "Geelong",
+      "timestamp": "2026-09-03T22:53:45.415374+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 33231,
+      "cargo_litres": 40541538,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9945291",
+      "name": "ELANDRA SWALLOW",
+      "port": "Melbourne",
+      "timestamp": "2026-09-03T22:53:45.415374+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 54118,
+      "cargo_litres": 62938824,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9926922",
+      "name": "ORION SINEAD",
+      "port": "Gladstone",
+      "timestamp": "2026-09-03T22:53:45.415374+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9183269",
+      "name": "HYUNDAI OCEANPIA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-03T22:53:45.415374+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 51200,
+      "cargo_litres": 59545600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
