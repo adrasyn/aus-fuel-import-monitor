@@ -5831,32 +5831,6 @@
       "coastal": false
     },
     {
-      "imo": "9952086",
-      "name": "YONG AO",
-      "port": "Geelong",
-      "timestamp": "2026-09-03T22:53:45.415374+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 33231,
-      "cargo_litres": 40541538,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
-      "imo": "9945291",
-      "name": "ELANDRA SWALLOW",
-      "port": "Melbourne",
-      "timestamp": "2026-09-03T22:53:45.415374+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Aframax",
-      "cargo_tonnes": 54118,
-      "cargo_litres": 62938824,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9926922",
       "name": "ORION SINEAD",
       "port": "Gladstone",
@@ -5881,6 +5855,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9540819",
+      "name": "XING TONG 799",
+      "port": "Hobart",
+      "timestamp": "2026-09-08T22:56:56.097270+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
