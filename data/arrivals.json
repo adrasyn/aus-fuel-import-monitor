@@ -5867,6 +5867,45 @@
       "cargo_litres": 22523077,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9732709",
+      "name": "HAFNIA MIKALA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-04T22:42:48.910552+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9708239",
+      "name": "ARDMORE SEAHAWK",
+      "port": "Melbourne",
+      "timestamp": "2026-09-04T22:42:48.910552+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9903774",
+      "name": "FOREVER CORDIALITY",
+      "port": "Townsville",
+      "timestamp": "2026-09-04T22:42:48.910552+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
