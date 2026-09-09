@@ -75,14 +75,14 @@
     "beam": 12,
     "ship_type": "product",
     "first_seen": "2026-04-14T12:31:35.477529+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 1,
     "in_transit": {
       "mmsi": "503016010",
-      "lat": -33.86029,
-      "lon": 151.22975,
-      "speed": 0.1,
-      "course": 239.8,
+      "lat": -33.86214,
+      "lon": 151.22709,
+      "speed": 0,
+      "course": 338.4,
       "draught": 0,
       "destination": "",
       "destination_parsed": null,
@@ -92,7 +92,7 @@
       "load_factor": 0.75,
       "is_ballast": false,
       "draught_missing": true,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     },
     "departed_au_since_arrival": false
   },
@@ -400,23 +400,7 @@
     "first_seen": "2026-04-14T21:12:19.881850+00:00",
     "last_seen": "2026-09-09T13:01:43.035556+00:00",
     "arrival_count": 2,
-    "in_transit": {
-      "mmsi": "503000162",
-      "lat": -32.20139,
-      "lon": 115.6987,
-      "speed": 0,
-      "course": 52.7,
-      "draught": 7.5,
-      "destination": "ORAN ANCHORAGE",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 13198182,
-      "cargo_tonnes": 10818,
-      "load_factor": 0.636,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
-    },
+    "in_transit": null,
     "departed_au_since_arrival": false
   },
   "9833541": {
@@ -557,7 +541,7 @@
     "beam": 12,
     "ship_type": "product",
     "first_seen": "2026-04-16T21:26:53.543986+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 1,
     "in_transit": {
       "mmsi": "503000080",
@@ -574,7 +558,7 @@
       "load_factor": 0.75,
       "is_ballast": false,
       "draught_missing": true,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     },
     "departed_au_since_arrival": false
   },
@@ -2008,25 +1992,25 @@
     "beam": 22,
     "ship_type": "product",
     "first_seen": "2026-05-11T21:50:20.394159+00:00",
-    "last_seen": "2026-09-04T22:42:48.910552+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 1,
     "departed_au_since_arrival": false,
     "in_transit": {
       "mmsi": "374909000",
-      "lat": -33.86806,
-      "lon": 152.02089,
-      "speed": 0.4,
-      "course": 244.6,
-      "draught": 7.1,
-      "destination": "AU BTB",
-      "destination_parsed": "Sydney / Botany",
+      "lat": -37.95818,
+      "lon": 144.88833,
+      "speed": 0,
+      "course": 92.1,
+      "draught": 6.3,
+      "destination": "AU MEL",
+      "destination_parsed": "Melbourne",
       "region": "AU_APPROACH",
-      "cargo_litres": 11689818,
-      "cargo_tonnes": 9582,
-      "load_factor": 0.564,
+      "cargo_litres": 8673091,
+      "cargo_tonnes": 7109,
+      "load_factor": 0.418,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-04T22:42:48.910552+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     }
   },
   "9929821": {
@@ -2423,7 +2407,7 @@
     "beam": 32,
     "ship_type": "product",
     "first_seen": "2026-05-18T21:44:58.231661+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 1,
     "departed_au_since_arrival": false,
     "in_transit": {
@@ -2431,17 +2415,17 @@
       "lat": -42.8452,
       "lon": 147.33079,
       "speed": 0,
-      "course": 210.2,
-      "draught": 8,
-      "destination": "AU HBT",
-      "destination_parsed": "Australia (port unknown)",
+      "course": 268.6,
+      "draught": 7.5,
+      "destination": "AU DPO",
+      "destination_parsed": "Devonport",
       "region": "AU_APPROACH",
-      "cargo_litres": 22523077,
-      "cargo_tonnes": 18462,
-      "load_factor": 0.462,
+      "cargo_litres": 18769231,
+      "cargo_tonnes": 15385,
+      "load_factor": 0.385,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     },
     "probable_arrival": null
   },
@@ -2691,17 +2675,17 @@
     "beam": 32,
     "ship_type": "product",
     "first_seen": "2026-05-27T22:28:56.580976+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 0,
     "departed_au_since_arrival": true,
     "in_transit": {
       "mmsi": "371294000",
-      "lat": -27.28623,
-      "lon": 153.27566,
-      "speed": 0.1,
-      "course": 299,
+      "lat": -27.42454,
+      "lon": 153.12845,
+      "speed": 0,
+      "course": 346.8,
       "draught": 9.4,
-      "destination": "STS 1",
+      "destination": "QUANTEM PINKENBA",
       "destination_parsed": null,
       "region": "AU_APPROACH",
       "cargo_litres": 33033846,
@@ -2709,7 +2693,7 @@
       "load_factor": 0.677,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     },
     "probable_arrival": null
   },
@@ -3127,15 +3111,15 @@
     "beam": 20,
     "ship_type": "product",
     "first_seen": "2026-06-07T21:46:54.831186+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 2,
     "departed_au_since_arrival": true,
     "in_transit": {
       "mmsi": "357843000",
-      "lat": -37.90288,
-      "lon": 144.90829,
-      "speed": 0.2,
-      "course": 100.6,
+      "lat": -37.90338,
+      "lon": 144.90931,
+      "speed": 0,
+      "course": 166.8,
       "draught": 6.9,
       "destination": "AU MEL",
       "destination_parsed": "Melbourne",
@@ -3145,7 +3129,7 @@
       "load_factor": 0.527,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     },
     "probable_arrival": null
   },
@@ -3293,15 +3277,15 @@
     "beam": 44,
     "ship_type": "crude",
     "first_seen": "2026-06-11T12:14:44.195485+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 0,
     "departed_au_since_arrival": true,
     "in_transit": {
       "mmsi": "538003322",
-      "lat": -37.99457,
-      "lon": 144.83622,
+      "lat": -37.99522,
+      "lon": 144.83782,
       "speed": 0,
-      "course": 289,
+      "course": 246,
       "draught": 11.7,
       "destination": "AU GEX",
       "destination_parsed": "Geraldton",
@@ -3311,7 +3295,7 @@
       "load_factor": 0.47,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     }
   },
   "9783007": {
@@ -3404,10 +3388,26 @@
     "beam": 20,
     "ship_type": "product",
     "first_seen": "2026-06-14T11:12:29.585443+00:00",
-    "last_seen": "2026-06-26T21:51:40.148253+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 0,
     "departed_au_since_arrival": true,
-    "in_transit": null,
+    "in_transit": {
+      "mmsi": "352006514",
+      "lat": -26.78531,
+      "lon": 153.24336,
+      "speed": 0.1,
+      "course": 196.8,
+      "draught": 7.2,
+      "destination": "AU BNE",
+      "destination_parsed": "Brisbane",
+      "region": "AU_APPROACH",
+      "cargo_litres": 12066909,
+      "cargo_tonnes": 9891,
+      "load_factor": 0.582,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
+    },
     "probable_arrival": null
   },
   "9856995": {
@@ -4061,15 +4061,15 @@
     "beam": 44,
     "ship_type": "crude",
     "first_seen": "2026-07-02T10:55:57.778330+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 0,
     "departed_au_since_arrival": true,
     "in_transit": {
       "mmsi": "563325800",
-      "lat": -37.9822,
-      "lon": 144.8186,
-      "speed": 0.1,
-      "course": 310.9,
+      "lat": -37.98293,
+      "lon": 144.81996,
+      "speed": 0,
+      "course": 237.1,
       "draught": 10.5,
       "destination": "AU GEX",
       "destination_parsed": "Geraldton",
@@ -4079,7 +4079,7 @@
       "load_factor": 0.35,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     },
     "probable_arrival": null
   },
@@ -4748,13 +4748,13 @@
     "beam": 32,
     "ship_type": "product",
     "first_seen": "2026-07-24T10:34:00.504948+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 1,
     "departed_au_since_arrival": true,
     "in_transit": {
       "mmsi": "636026357",
       "lat": -38.08876,
-      "lon": 144.38811,
+      "lon": 144.38808,
       "speed": 0,
       "course": 240.4,
       "draught": 11.3,
@@ -4766,7 +4766,7 @@
       "load_factor": 0.969,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     }
   },
   "9788590": {
@@ -5254,23 +5254,7 @@
     "last_seen": "2026-09-09T13:01:43.035556+00:00",
     "arrival_count": 1,
     "departed_au_since_arrival": false,
-    "in_transit": {
-      "mmsi": "503788000",
-      "lat": -23.8519,
-      "lon": 151.31502,
-      "speed": 0,
-      "course": 316.5,
-      "draught": 3.8,
-      "destination": "AU GLT",
-      "destination_parsed": "Gladstone",
-      "region": "AU_APPROACH",
-      "cargo_litres": 0,
-      "cargo_tonnes": 0,
-      "load_factor": 0.0,
-      "is_ballast": true,
-      "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
-    }
+    "in_transit": null
   },
   "9686699": {
     "name": "STI VIRTUS",
@@ -5367,15 +5351,15 @@
     "beam": 42,
     "ship_type": "crude",
     "first_seen": "2026-08-18T20:56:38.825627+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 0,
     "departed_au_since_arrival": true,
     "in_transit": {
       "mmsi": "636021572",
-      "lat": -37.99628,
-      "lon": 144.80703,
+      "lat": -37.99687,
+      "lon": 144.80843,
       "speed": 0,
-      "course": 106.7,
+      "course": 294.8,
       "draught": 11.1,
       "destination": "AUGEX",
       "destination_parsed": "Geraldton",
@@ -5385,7 +5369,7 @@
       "load_factor": 0.541,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     },
     "probable_arrival": null
   },
@@ -5816,23 +5800,7 @@
     "last_seen": "2026-09-09T13:01:43.035556+00:00",
     "arrival_count": 1,
     "departed_au_since_arrival": false,
-    "in_transit": {
-      "mmsi": "352005925",
-      "lat": -27.3843,
-      "lon": 153.16067,
-      "speed": 0,
-      "course": 154.4,
-      "draught": 12.9,
-      "destination": "AU_BNE",
-      "destination_parsed": null,
-      "region": "AU_APPROACH",
-      "cargo_litres": 87567059,
-      "cargo_tonnes": 75294,
-      "load_factor": 0.753,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
-    }
+    "in_transit": null
   },
   "9697600": {
     "name": "STI CONNAUGHT",
@@ -6140,15 +6108,15 @@
     "beam": 32,
     "ship_type": "product",
     "first_seen": "2026-09-03T22:53:45.415374+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 2,
     "departed_au_since_arrival": false,
     "in_transit": {
       "mmsi": "636026415",
-      "lat": -26.73642,
-      "lon": 153.22892,
-      "speed": 0,
-      "course": 314.6,
+      "lat": -26.73326,
+      "lon": 153.22947,
+      "speed": 0.6,
+      "course": 255.5,
       "draught": 9.3,
       "destination": "AU BNE",
       "destination_parsed": "Brisbane",
@@ -6158,7 +6126,7 @@
       "load_factor": 0.662,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     }
   },
   "9492361": {
@@ -6227,23 +6195,7 @@
     "last_seen": "2026-09-09T13:01:43.035556+00:00",
     "arrival_count": 1,
     "departed_au_since_arrival": false,
-    "in_transit": {
-      "mmsi": "538012323",
-      "lat": -32.24166,
-      "lon": 115.75495,
-      "speed": 0,
-      "course": 142.9,
-      "draught": 11.9,
-      "destination": "KWINANA",
-      "destination_parsed": "Kwinana",
-      "region": "AU_APPROACH",
-      "cargo_litres": 48800000,
-      "cargo_tonnes": 40000,
-      "load_factor": 1.0,
-      "is_ballast": false,
-      "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
-    }
+    "in_transit": null
   },
   "9677313": {
     "name": "GAMSUNORO",
@@ -6340,10 +6292,26 @@
     "beam": 20,
     "ship_type": "product",
     "first_seen": "2026-09-07T14:14:14.408002+00:00",
-    "last_seen": "2026-09-08T22:56:56.101862+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 1,
     "departed_au_since_arrival": false,
-    "in_transit": null
+    "in_transit": {
+      "mmsi": "567226000",
+      "lat": -27.25727,
+      "lon": 153.2582,
+      "speed": 14,
+      "course": 41,
+      "draught": 7.1,
+      "destination": "AU BNE",
+      "destination_parsed": "Brisbane",
+      "region": "AU_APPROACH",
+      "cargo_litres": 11689818,
+      "cargo_tonnes": 9582,
+      "load_factor": 0.564,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
+    }
   },
   "9731755": {
     "name": "CHEM STELLAR",
@@ -6353,15 +6321,15 @@
     "beam": 25,
     "ship_type": "product",
     "first_seen": "2026-09-07T23:07:10.151780+00:00",
-    "last_seen": "2026-09-09T13:01:43.035556+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
     "arrival_count": 0,
     "departed_au_since_arrival": true,
     "in_transit": {
       "mmsi": "538006893",
-      "lat": -38.08836,
-      "lon": 144.38884,
+      "lat": -38.02881,
+      "lon": 144.78536,
       "speed": 0,
-      "course": 343.9,
+      "course": 121,
       "draught": 9.3,
       "destination": "AUGEX > AUADL",
       "destination_parsed": "Adelaide",
@@ -6371,7 +6339,7 @@
       "load_factor": 0.964,
       "is_ballast": false,
       "draught_missing": false,
-      "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     }
   },
   "9401295": {
@@ -6517,6 +6485,64 @@
       "is_ballast": false,
       "draught_missing": false,
       "last_position_update": "2026-09-09T13:01:43.035556+00:00"
+    }
+  },
+  "9885910": {
+    "name": "BALZANI",
+    "vessel_class": "LR2/Panamax",
+    "dwt": 70000,
+    "length": 229,
+    "beam": 35,
+    "ship_type": "product",
+    "first_seen": "2026-09-09T22:50:46.327418+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
+    "arrival_count": 0,
+    "departed_au_since_arrival": true,
+    "in_transit": {
+      "mmsi": "538009013",
+      "lat": -27.13271,
+      "lon": 153.34825,
+      "speed": 11.9,
+      "course": 162,
+      "draught": 13.4,
+      "destination": "AUBNE",
+      "destination_parsed": "Brisbane",
+      "region": "AU_APPROACH",
+      "cargo_litres": 84261333,
+      "cargo_tonnes": 69067,
+      "load_factor": 0.987,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
+    }
+  },
+  "9985992": {
+    "name": "EVA PEARL",
+    "vessel_class": "Handysize",
+    "dwt": 17000,
+    "length": 146,
+    "beam": 24,
+    "ship_type": "product",
+    "first_seen": "2026-09-09T22:50:46.327418+00:00",
+    "last_seen": "2026-09-09T22:50:46.327418+00:00",
+    "arrival_count": 0,
+    "departed_au_since_arrival": true,
+    "in_transit": {
+      "mmsi": "548748000",
+      "lat": -38.02214,
+      "lon": 144.91125,
+      "speed": 13.9,
+      "course": 358.2,
+      "draught": 6.5,
+      "destination": "AUMEL",
+      "destination_parsed": "Melbourne",
+      "region": "AU_APPROACH",
+      "cargo_litres": 9427273,
+      "cargo_tonnes": 7727,
+      "load_factor": 0.455,
+      "is_ballast": false,
+      "draught_missing": false,
+      "last_position_update": "2026-09-09T22:50:46.327418+00:00"
     }
   }
 }
