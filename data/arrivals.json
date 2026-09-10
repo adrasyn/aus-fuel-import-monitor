@@ -5906,6 +5906,68 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1063956",
+      "name": "SWAN VIRTUE",
+      "port": "Brisbane",
+      "timestamp": "2026-09-10T12:55:16.765851+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9891,
+      "cargo_litres": 12066909,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9435600",
+      "name": "SHAN HU ZUO",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-10T12:55:16.766621+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 69067,
+      "cargo_litres": 84261333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9906697",
+      "name": "GRAND WINNER 2",
+      "port": "Melbourne",
+      "timestamp": "2026-09-10T12:55:16.766621+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Gladstone",
+      "timestamp": "2026-09-05T22:28:02.901227+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5255,
+      "cargo_litres": 6410545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9677313",
+      "name": "GAMSUNORO",
+      "port": "Melbourne",
+      "timestamp": "2026-09-06T12:17:16.207762+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 62353,
+      "cargo_litres": 72516471,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
