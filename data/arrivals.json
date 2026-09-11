@@ -4586,19 +4586,6 @@
       "status": "probable"
     },
     {
-      "imo": "9796559",
-      "name": "FS BITUMEN NO.2",
-      "port": "Kwinana",
-      "timestamp": "2026-07-29T21:28:54.086974+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 11127,
-      "cargo_litres": 13575273,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1024493",
       "name": "NAVE HINA",
       "port": "Sydney / Botany",
@@ -5944,19 +5931,6 @@
       "coastal": false
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Gladstone",
-      "timestamp": "2026-09-05T22:28:02.901227+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 5255,
-      "cargo_litres": 6410545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9677313",
       "name": "GAMSUNORO",
       "port": "Melbourne",
@@ -5965,6 +5939,56 @@
       "vessel_class": "Aframax",
       "cargo_tonnes": 62353,
       "cargo_litres": 72516471,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9796559",
+      "name": "FS BITUMEN NO.2",
+      "port": "Kwinana",
+      "timestamp": "2026-09-11T12:53:45.071917+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9885910",
+      "name": "BALZANI",
+      "port": "Brisbane",
+      "timestamp": "2026-09-11T12:53:45.072816+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 69067,
+      "cargo_litres": 84261333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9783382",
+      "name": "LIAN YANG HU",
+      "port": "Kwinana",
+      "timestamp": "2026-09-06T22:29:48.314878+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 14000,
+      "cargo_litres": 17080000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9792606",
+      "name": "BW PAVILION ARANDA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-06T22:29:48.314878+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 41600,
+      "cargo_litres": 48380800,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
