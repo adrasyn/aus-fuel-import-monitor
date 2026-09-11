@@ -5992,6 +5992,32 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9678525",
+      "name": "LEO SUNRISE",
+      "port": "Gladstone",
+      "timestamp": "2026-09-07T14:14:14.408002+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 33231,
+      "cargo_litres": 40541538,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9974151",
+      "name": "PUTERI PERAK",
+      "port": "Gladstone",
+      "timestamp": "2026-09-07T14:14:14.408002+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
