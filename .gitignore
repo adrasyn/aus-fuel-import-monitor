@@ -9,6 +9,7 @@ __pycache__/
 .claude/settings.local.json
 .worktrees/
 data/petroleum_stats_cache.xlsx
+data/mso_snapshot_cache.xlsx
 .DS_Store
 tsconfig.tsbuildinfo
 .venv/

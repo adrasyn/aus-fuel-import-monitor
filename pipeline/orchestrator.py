@@ -23,9 +23,11 @@ from pipeline.vessels import (
 from pipeline.backfill_probable import backfill_probable_arrivals
 from pipeline.daily_estimates import update_daily_estimates
 from pipeline.petroleum_stats import download_latest_excel, build_imports_json
+from pipeline.mso_reserves import download_spreadsheet, parse_latest_reserves, build_reserves_json
 
 DATA_DIR = "data"
 EXCEL_CACHE = "data/petroleum_stats_cache.xlsx"
+MSO_CACHE = "data/mso_snapshot_cache.xlsx"
 
 
 def load_json(path: str, default):
@@ -65,6 +67,22 @@ def _update_petroleum_stats() -> None:
         print("  Updated imports data")
     except Exception as e:
         print(f"  Skipped petroleum stats update: {e}")
+
+
+def _update_mso_reserves() -> None:
+    """Refresh mso-reserves.json from the DCCEEW weekly snapshot spreadsheet.
+
+    Also independent of AISStream. DCCEEW publishes weekly, so most daily runs
+    rewrite the file with identical content and the commit step sees no diff.
+    """
+    print("Step 7: Checking MSO reserves...")
+    try:
+        download_spreadsheet(MSO_CACHE)
+        reserves = build_reserves_json(parse_latest_reserves(MSO_CACHE))
+        save_json(f"{DATA_DIR}/mso-reserves.json", reserves)
+        print(f"  Updated MSO reserves (as of {reserves['as_of']})")
+    except Exception as e:
+        print(f"  Skipped MSO reserves update: {e}")
 
 
 def _report_empty_collection(previous_snapshot: dict, now: datetime) -> None:
@@ -341,6 +359,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     current_snapshot = run_collector(api_key, duration_seconds)
     if not current_snapshot.get("vessels"):
         _update_petroleum_stats()
+        _update_mso_reserves()
         _report_empty_collection(previous_snapshot, now)
         return
     save_json(f"{DATA_DIR}/snapshot.json", current_snapshot)
@@ -415,6 +434,7 @@ def run_pipeline(api_key: str, duration_seconds: int = 1800) -> None:
     save_json(f"{DATA_DIR}/daily-estimates.json", daily)
 
     _update_petroleum_stats()
+    _update_mso_reserves()
 
     print("Pipeline complete.")
 

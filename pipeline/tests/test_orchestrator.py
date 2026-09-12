@@ -59,6 +59,33 @@ def test_run_pipeline_updates_petroleum_stats_when_ais_empty(tmp_path, monkeypat
     assert written == {"months": {"2026-07": 1}}
 
 
+def test_run_pipeline_updates_mso_reserves_when_ais_empty(tmp_path, monkeypatch):
+    # MSO reserves come from the DCCEEW spreadsheet, not AISStream — same
+    # independence as petroleum stats.
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "ports.json").write_text(json.dumps({"ports": []}))
+
+    monkeypatch.setattr(
+        orchestrator, "run_collector", lambda *a, **k: {"vessels": [], "timestamp": ""}
+    )
+    monkeypatch.setattr(orchestrator, "download_latest_excel", lambda path: None)
+    monkeypatch.setattr(orchestrator, "build_imports_json", lambda path: {})
+    monkeypatch.setattr(orchestrator, "download_spreadsheet", lambda path: None)
+    monkeypatch.setattr(
+        orchestrator,
+        "parse_latest_reserves",
+        lambda path: {"as_of": "2026-09-01", "fuels": [{"key": "petrol", "label": "Petrol", "days": 43}]},
+    )
+
+    orchestrator.run_pipeline("dummy-key", duration_seconds=1)
+
+    written = json.loads((tmp_path / "data" / "mso-reserves.json").read_text())
+    assert written["as_of"] == "2026-09-01"
+    assert written["fuels"][0]["days"] == 43
+    assert written["source"] == "DCCEEW Minimum Stockholding Obligation"
+
+
 def test_update_monthly_estimates_sums_en_route_from_roster():
     monthly = {"months": {}}
     vessel_db = {
