@@ -2703,6 +2703,23 @@
       "last_destination_parsed": "Sydney / Botany",
       "last_position_update": "2026-08-29T03:15:16.606036+00:00",
       "cleared_at": "2026-09-12T12:15:12.202090+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9943358",
+      "name": "CL MARGUERITE DURAS",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 46547692,
+      "cargo_tonnes": 38154,
+      "is_ballast": false,
+      "last_lat": -27.27646,
+      "last_lon": 153.2538,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-08-29T13:56:02.350230+00:00",
+      "cleared_at": "2026-09-12T22:30:08.168273+00:00",
       "reason": "stale_prune_14d"
     }
   ]

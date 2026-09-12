@@ -6056,6 +6056,69 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9435612",
+      "name": "JING YU ZUO",
+      "port": "Melbourne",
+      "timestamp": "2026-09-12T22:30:08.164805+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 70000,
+      "cargo_litres": 85400000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9407378",
+      "name": "STELLA MARIA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-12T22:30:08.165295+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9401295",
+      "name": "BARCELONA KNUTSEN",
+      "port": "Gladstone",
+      "timestamp": "2026-09-08T12:49:59.965223+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 37216000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1059577",
+      "name": "PUSAKA JAYA",
+      "port": "Geelong",
+      "timestamp": "2026-09-08T12:49:59.965223+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 75200,
+      "cargo_litres": 87457600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9977232",
+      "name": "UMM GRAYBAH",
+      "port": "Gladstone",
+      "timestamp": "2026-09-08T12:49:59.965223+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 38400,
+      "cargo_litres": 44659200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
