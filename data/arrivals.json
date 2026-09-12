@@ -6018,6 +6018,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9985992",
+      "name": "EVA PEARL",
+      "port": "Melbourne",
+      "timestamp": "2026-09-12T12:15:12.197272+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7727,
+      "cargo_litres": 9427273,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9819911",
+      "name": "GOLDEN WAVE",
+      "port": "Brisbane",
+      "timestamp": "2026-09-07T23:07:10.151780+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4018,
+      "cargo_litres": 4902182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9672820",
+      "name": "CESI GLADSTONE",
+      "port": "Gladstone",
+      "timestamp": "2026-09-07T23:07:10.151780+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 37216000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
