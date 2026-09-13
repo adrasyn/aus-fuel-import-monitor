@@ -6130,6 +6130,18 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1078274",
+      "name": "ATLANTIC ONYX",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-13T22:43:20.430593+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 121600,
+      "cargo_litres": 141420800,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

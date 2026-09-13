@@ -2738,6 +2738,22 @@
       "last_position_update": "2026-08-29T22:58:50.419914+00:00",
       "cleared_at": "2026-09-13T13:23:22.195161+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9746243",
+      "name": "ELANDRA SPRUCE",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 23273846,
+      "cargo_tonnes": 19077,
+      "is_ballast": false,
+      "last_lat": -27.18755,
+      "last_lon": 153.34505,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-08-30T13:52:26.987579+00:00",
+      "cleared_at": "2026-09-13T22:43:20.434592+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
