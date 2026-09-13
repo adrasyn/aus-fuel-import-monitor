@@ -5856,19 +5856,6 @@
       "coastal": false
     },
     {
-      "imo": "9732709",
-      "name": "HAFNIA MIKALA",
-      "port": "Sydney / Botany",
-      "timestamp": "2026-09-04T22:42:48.910552+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9708239",
       "name": "ARDMORE SEAHAWK",
       "port": "Melbourne",
@@ -6119,6 +6106,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9906714",
+      "name": "GRAND WINNER 5",
+      "port": "Kwinana",
+      "timestamp": "2026-09-13T13:23:22.190253+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9732709",
+      "name": "HAFNIA MIKALA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-13T13:23:22.190253+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
