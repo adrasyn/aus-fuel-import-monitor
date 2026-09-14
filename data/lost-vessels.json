@@ -2770,6 +2770,23 @@
       "last_destination_parsed": "Cairns",
       "last_position_update": "2026-08-30T23:00:06.507471+00:00",
       "cleared_at": "2026-09-14T14:59:49.978893+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9906685",
+      "name": "GRAND WINNER 1",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 48800000,
+      "cargo_tonnes": 40000,
+      "is_ballast": false,
+      "last_lat": -27.04986,
+      "last_lon": 153.28588,
+      "last_destination": "AUBNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-08-31T16:04:26.491427+00:00",
+      "cleared_at": "2026-09-14T23:30:14.296665+00:00",
       "reason": "stale_prune_14d"
     }
   ]
