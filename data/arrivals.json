@@ -6142,6 +6142,32 @@
       "cargo_litres": 141420800,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9433808",
+      "name": "SUNSHINE EXPRESS",
+      "port": "Brisbane",
+      "timestamp": "2026-09-09T22:50:46.327418+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 27077,
+      "cargo_litres": 33033846,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9731755",
+      "name": "CHEM STELLAR",
+      "port": "Geelong",
+      "timestamp": "2026-09-10T12:55:16.771362+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 16382,
+      "cargo_litres": 19985818,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
