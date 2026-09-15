@@ -1865,10 +1865,10 @@
       "crude_oil_ml": 982.5,
       "lpg_ml": 96.0,
       "gasoline_ml": 1020.6,
-      "jet_fuel_ml": 827.9,
+      "jet_fuel_ml": 746.2,
       "diesel_ml": 2654.4,
       "fuel_oil_ml": 35.0,
-      "total_ml": 5782.8
+      "total_ml": 5701.0
     },
     {
       "month": "2026-02",
@@ -1876,29 +1876,29 @@
       "lpg_ml": 3.3,
       "gasoline_ml": 861.0,
       "jet_fuel_ml": 710.0,
-      "diesel_ml": 2432.5,
+      "diesel_ml": 2432.6,
       "fuel_oil_ml": 68.9,
       "total_ml": 4974.6
     },
     {
       "month": "2026-03",
-      "crude_oil_ml": 1082.9,
+      "crude_oil_ml": 1083.1,
       "lpg_ml": 98.1,
       "gasoline_ml": 1052.7,
       "jet_fuel_ml": 636.9,
-      "diesel_ml": 2184.5,
+      "diesel_ml": 2184.6,
       "fuel_oil_ml": 50.2,
-      "total_ml": 5288.3
+      "total_ml": 5288.5
     },
     {
       "month": "2026-04",
       "crude_oil_ml": 839.8,
       "lpg_ml": 7.9,
-      "gasoline_ml": 952.6,
+      "gasoline_ml": 952.4,
       "jet_fuel_ml": 641.9,
-      "diesel_ml": 3003.7,
+      "diesel_ml": 2985.6,
       "fuel_oil_ml": 65.9,
-      "total_ml": 5664.0
+      "total_ml": 5645.6
     },
     {
       "month": "2026-05",
@@ -1906,19 +1906,29 @@
       "lpg_ml": 118.4,
       "gasoline_ml": 872.9,
       "jet_fuel_ml": 636.2,
-      "diesel_ml": 3021.2,
+      "diesel_ml": 3020.9,
       "fuel_oil_ml": 23.2,
-      "total_ml": 5855.0
+      "total_ml": 5854.7
     },
     {
       "month": "2026-06",
-      "crude_oil_ml": 943.6,
-      "lpg_ml": 39.3,
-      "gasoline_ml": 843.8,
-      "jet_fuel_ml": 698.5,
-      "diesel_ml": 2565.2,
-      "fuel_oil_ml": 40.9,
-      "total_ml": 5256.8
+      "crude_oil_ml": 955.2,
+      "lpg_ml": 39.4,
+      "gasoline_ml": 815.0,
+      "jet_fuel_ml": 703.0,
+      "diesel_ml": 2539.6,
+      "fuel_oil_ml": 35.4,
+      "total_ml": 5213.8
+    },
+    {
+      "month": "2026-07",
+      "crude_oil_ml": 792.1,
+      "lpg_ml": 134.9,
+      "gasoline_ml": 837.6,
+      "jet_fuel_ml": 683.2,
+      "diesel_ml": 2590.1,
+      "fuel_oil_ml": 47.1,
+      "total_ml": 5259.6
     }
   ],
   "consumption_cover": [
@@ -3457,6 +3467,14 @@
       "jet_fuel_days": 22,
       "diesel_days": 31,
       "total_days": 35
+    },
+    {
+      "month": "2026-07",
+      "crude_days": 34,
+      "gasoline_days": 31,
+      "jet_fuel_days": 20,
+      "diesel_days": 28,
+      "total_days": 33
     }
   ]
 }

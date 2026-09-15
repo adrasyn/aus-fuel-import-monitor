@@ -6219,6 +6219,45 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Newcastle",
+      "timestamp": "2026-09-11T12:53:45.077562+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5255,
+      "cargo_litres": 6410545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9961520",
+      "name": "GREENERGY CLOUD",
+      "port": "Gladstone",
+      "timestamp": "2026-09-11T12:53:45.077562+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 43200,
+      "cargo_litres": 50241600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9748904",
+      "name": "GASLOG HONGKONG",
+      "port": "Gladstone",
+      "timestamp": "2026-09-11T12:53:45.077562+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

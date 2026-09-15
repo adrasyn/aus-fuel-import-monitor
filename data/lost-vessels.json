@@ -2787,7 +2787,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-08-31T16:04:26.491427+00:00",
       "cleared_at": "2026-09-14T23:30:14.296665+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     }
   ]
 }
