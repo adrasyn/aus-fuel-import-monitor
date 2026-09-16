@@ -4383,19 +4383,6 @@
       "coastal": false
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Newcastle",
-      "timestamp": "2026-07-26T21:31:56.593732+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 5564,
-      "cargo_litres": 6787636,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9228057",
       "name": "BANGOR",
       "port": "Kwinana",
@@ -6221,19 +6208,6 @@
       "status": "probable"
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Newcastle",
-      "timestamp": "2026-09-11T12:53:45.077562+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 5255,
-      "cargo_litres": 6410545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9961520",
       "name": "GREENERGY CLOUD",
       "port": "Gladstone",
@@ -6293,6 +6267,32 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 52800,
       "cargo_litres": 61406400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9882748",
+      "name": "GOLDEN AUSTRALIS",
+      "port": "Cairns",
+      "timestamp": "2026-09-12T22:30:08.168273+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9381562",
+      "name": "GULF BAYNUNAH",
+      "port": "Brisbane",
+      "timestamp": "2026-09-12T22:30:08.168273+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 31385,
+      "cargo_litres": 38289231,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"

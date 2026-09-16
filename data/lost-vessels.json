@@ -2789,6 +2789,22 @@
       "cleared_at": "2026-09-14T23:30:14.296665+00:00",
       "reason": "stale_prune_14d",
       "recovered_as": "probable"
+    },
+    {
+      "imo": "1064558",
+      "name": "GRAND WINNER 7",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 36036923,
+      "cargo_tonnes": 29538,
+      "is_ballast": false,
+      "last_lat": -23.84932,
+      "last_lon": 151.54505,
+      "last_destination": "AU MKY",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-09-02T22:56:41.871222+00:00",
+      "cleared_at": "2026-09-16T23:13:41.758030+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
