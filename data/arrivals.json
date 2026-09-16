@@ -6258,6 +6258,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9881067",
+      "name": "GOLDEN MIND",
+      "port": "Melbourne",
+      "timestamp": "2026-09-16T13:23:17.062306+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8036,
+      "cargo_litres": 9804364,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9731731",
+      "name": "CHEM STAR 1",
+      "port": "Melbourne",
+      "timestamp": "2026-09-11T22:49:43.108768+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6491,
+      "cargo_litres": 7918909,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9904209",
+      "name": "HUELVA KNUTSEN",
+      "port": "Gladstone",
+      "timestamp": "2026-09-12T12:15:12.202090+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 52800,
+      "cargo_litres": 61406400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
