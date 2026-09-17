@@ -6308,6 +6308,30 @@
       "cargo_litres": 74432000,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9228057",
+      "name": "BANGOR",
+      "port": "Gladstone",
+      "timestamp": "2026-09-17T23:13:17.822546+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 55067,
+      "cargo_litres": 67181333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9919840",
+      "name": "GASCHEM ODYSSEY",
+      "port": "Cairns",
+      "timestamp": "2026-09-17T23:13:17.822546+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8345,
+      "cargo_litres": 10181455,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
