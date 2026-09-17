@@ -6296,6 +6296,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1078274",
+      "name": "ATLANTIC ONYX",
+      "port": "Melbourne",
+      "timestamp": "2026-09-17T13:19:54.736310+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 64000,
+      "cargo_litres": 74432000,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
