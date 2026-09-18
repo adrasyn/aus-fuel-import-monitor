@@ -6233,32 +6233,6 @@
       "status": "probable"
     },
     {
-      "imo": "9882748",
-      "name": "GOLDEN AUSTRALIS",
-      "port": "Cairns",
-      "timestamp": "2026-09-12T22:30:08.168273+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 10509,
-      "cargo_litres": 12821091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
-      "imo": "9381562",
-      "name": "GULF BAYNUNAH",
-      "port": "Brisbane",
-      "timestamp": "2026-09-12T22:30:08.168273+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 31385,
-      "cargo_litres": 38289231,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1078274",
       "name": "ATLANTIC ONYX",
       "port": "Melbourne",
@@ -6327,6 +6301,18 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 10818,
       "cargo_litres": 13198182,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9719707",
+      "name": "STI SANCTITY",
+      "port": "Brisbane",
+      "timestamp": "2026-09-18T22:53:05.484128+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 112000,
+      "cargo_litres": 136640000,
       "draught_missing": false,
       "coastal": false
     }
