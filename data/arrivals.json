@@ -1919,19 +1919,6 @@
       "status": "probable"
     },
     {
-      "imo": "9942847",
-      "name": "SUN NEPTUNE",
-      "port": "Melbourne",
-      "timestamp": "2026-05-10T21:23:00.186198+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 4327,
-      "cargo_litres": 5279273,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9903425",
       "name": "PACIFIC SUCCESS",
       "port": "Gladstone",
@@ -5494,19 +5481,6 @@
       "coastal": false
     },
     {
-      "imo": "9942847",
-      "name": "SUN NEPTUNE",
-      "port": "Melbourne",
-      "timestamp": "2026-08-29T03:15:16.606036+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 8655,
-      "cargo_litres": 10558545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9977995",
       "name": "GAS BLOSSOM",
       "port": "Sydney / Botany",
@@ -6246,19 +6220,6 @@
       "coastal": false
     },
     {
-      "imo": "9731731",
-      "name": "CHEM STAR 1",
-      "port": "Melbourne",
-      "timestamp": "2026-09-11T22:49:43.108768+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 6491,
-      "cargo_litres": 7918909,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9904209",
       "name": "HUELVA KNUTSEN",
       "port": "Gladstone",
@@ -6330,6 +6291,42 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 8345,
       "cargo_litres": 10181455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9665803",
+      "name": "MORNING SWAN",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-18T12:54:36.733657+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 53200,
+      "cargo_litres": 64904000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9326201",
+      "name": "MAEA",
+      "port": "Brisbane",
+      "timestamp": "2026-09-18T12:54:36.733657+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7109,
+      "cargo_litres": 8673091,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9942847",
+      "name": "SUN NEPTUNE",
+      "port": "Melbourne",
+      "timestamp": "2026-09-18T12:54:36.734388+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10818,
+      "cargo_litres": 13198182,
       "draught_missing": false,
       "coastal": false
     }
