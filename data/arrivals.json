@@ -6364,6 +6364,56 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9939565",
+      "name": "ARREBOL",
+      "port": "Kwinana",
+      "timestamp": "2026-09-19T22:43:19.545585+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9738662",
+      "name": "GOLDEN CREATION",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-19T22:43:19.546285+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 13600,
+      "cargo_litres": 16592000,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9572575",
+      "name": "GOLDEN UNITY",
+      "port": "Townsville",
+      "timestamp": "2026-09-15T13:26:07.773714+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8036,
+      "cargo_litres": 9804364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9714056",
+      "name": "HAFNIA AMBER",
+      "port": "Kwinana",
+      "timestamp": "2026-09-15T13:26:07.773714+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
