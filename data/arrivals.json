@@ -6315,6 +6315,55 @@
       "cargo_litres": 136640000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9811074",
+      "name": "KAN WO",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-19T12:36:17.170796+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9273,
+      "cargo_litres": 11312727,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9381562",
+      "name": "GULF BAYNUNAH",
+      "port": "Gladstone",
+      "timestamp": "2026-09-19T12:36:17.170796+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25231,
+      "cargo_litres": 30781538,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9935911",
+      "name": "LARGO EAGLE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-19T12:36:17.170796+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9672832",
+      "name": "CESI QINGDAO",
+      "port": "Gladstone",
+      "timestamp": "2026-09-14T23:30:14.296665+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 70400,
+      "cargo_litres": 81875200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
