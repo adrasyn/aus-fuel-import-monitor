@@ -3223,19 +3223,6 @@
       "status": "probable"
     },
     {
-      "imo": "1063956",
-      "name": "SWAN VIRTUE",
-      "port": "Melbourne",
-      "timestamp": "2026-06-26T21:51:40.148253+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 8345,
-      "cargo_litres": 10181455,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9929821",
       "name": "DEE4 NERIUM",
       "port": "Geelong",
@@ -6414,6 +6401,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1063956",
+      "name": "SWAN VIRTUE",
+      "port": "Melbourne",
+      "timestamp": "2026-09-20T13:11:26.442229+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6182,
+      "cargo_litres": 7541818,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
