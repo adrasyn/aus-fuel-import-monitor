@@ -2856,6 +2856,22 @@
       "last_position_update": "2026-09-06T12:17:16.207762+00:00",
       "cleared_at": "2026-09-20T13:11:26.445164+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9351543",
+      "name": "STOLT BASUTO",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13198182,
+      "cargo_tonnes": 10818,
+      "is_ballast": false,
+      "last_lat": -29.02182,
+      "last_lon": 153.83847,
+      "last_destination": "BRISBANE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-09-07T14:14:14.408002+00:00",
+      "cleared_at": "2026-09-21T15:07:21.470460+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

@@ -6425,6 +6425,56 @@
       "cargo_litres": 48049231,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9783409",
+      "name": "LIAN GUI HU",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-21T15:07:21.465210+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 50400,
+      "cargo_litres": 61488000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9796901",
+      "name": "FOREVER GLORY",
+      "port": "Melbourne",
+      "timestamp": "2026-09-21T15:07:21.465210+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9772010",
+      "name": "PACIFIC ANNA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-16T23:13:41.758030+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 37216000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9767962",
+      "name": "MARAN GAS HYDRA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-16T23:13:41.758030+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
