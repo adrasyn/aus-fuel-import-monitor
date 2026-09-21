@@ -6475,6 +6475,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9800726",
+      "name": "CRESCENT RIVER",
+      "port": "Brisbane",
+      "timestamp": "2026-09-21T23:33:47.183107+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 75294,
+      "cargo_litres": 87567059,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9540819",
+      "name": "XING TONG 799",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-21T23:33:47.183749+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 29538,
+      "cargo_litres": 36036923,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }

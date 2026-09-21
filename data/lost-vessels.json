@@ -2872,6 +2872,22 @@
       "last_position_update": "2026-09-07T14:14:14.408002+00:00",
       "cleared_at": "2026-09-21T15:07:21.470460+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9697600",
+      "name": "STI CONNAUGHT",
+      "ship_type": "product",
+      "vessel_class": "Aframax",
+      "cargo_litres": 34447059,
+      "cargo_tonnes": 28235,
+      "is_ballast": false,
+      "last_lat": -16.77077,
+      "last_lon": 145.86852,
+      "last_destination": "SINGAPORE",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-09-07T23:07:10.151780+00:00",
+      "cleared_at": "2026-09-21T23:33:47.188923+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
