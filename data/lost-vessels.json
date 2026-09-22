@@ -2887,6 +2887,23 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-09-07T23:07:10.151780+00:00",
       "cleared_at": "2026-09-21T23:33:47.188923+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9379624",
+      "name": "FOSSIL",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 20523529,
+      "cargo_tonnes": 17647,
+      "is_ballast": false,
+      "last_lat": -35.35078,
+      "last_lon": 118.53183,
+      "last_destination": "ALGOA BAY",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-09-08T12:49:59.965223+00:00",
+      "cleared_at": "2026-09-22T13:22:58.276008+00:00",
       "reason": "stale_prune_14d"
     }
   ]

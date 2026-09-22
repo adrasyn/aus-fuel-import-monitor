@@ -6499,6 +6499,32 @@
       "cargo_litres": 36036923,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9697600",
+      "name": "STI CONNAUGHT",
+      "port": "Cairns",
+      "timestamp": "2026-09-07T23:07:10.151780+00:00",
+      "ship_type": "product",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 28235,
+      "cargo_litres": 34447059,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9394947",
+      "name": "SEAWAYS YELLOWSTONE",
+      "port": "Melbourne",
+      "timestamp": "2026-09-17T23:13:17.827555+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 24000,
+      "cargo_litres": 27912000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
