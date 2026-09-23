@@ -6537,6 +6537,70 @@
       "cargo_litres": 56608000,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9942847",
+      "name": "SUN NEPTUNE",
+      "port": "Brisbane",
+      "timestamp": "2026-09-23T13:35:08.152604+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10818,
+      "cargo_litres": 13198182,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9853539",
+      "name": "MARITIME GUARDIAN",
+      "port": "Newcastle",
+      "timestamp": "2026-09-19T12:36:17.174813+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9882748",
+      "name": "GOLDEN AUSTRALIS",
+      "port": "Brisbane",
+      "timestamp": "2026-09-18T22:53:05.486983+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 14527,
+      "cargo_litres": 17723273,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9744013",
+      "name": "GASLOG GENOA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-18T22:53:05.486983+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 48000,
+      "cargo_litres": 55824000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9965423",
+      "name": "AL SHELILA",
+      "port": "Gladstone",
+      "timestamp": "2026-09-18T22:53:05.486983+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
