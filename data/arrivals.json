@@ -6105,19 +6105,6 @@
       "status": "probable"
     },
     {
-      "imo": "9731755",
-      "name": "CHEM STELLAR",
-      "port": "Geelong",
-      "timestamp": "2026-09-10T12:55:16.771362+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 16382,
-      "cargo_litres": 19985818,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9890446",
       "name": "CLEAROCEAN MARAUDER",
       "port": "Cairns",
@@ -6598,6 +6585,44 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 40000,
       "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9538476",
+      "name": "TIAN E ZUO",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-23T23:18:31.616144+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 68133,
+      "cargo_litres": 83122667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9731731",
+      "name": "CHEM STAR 1",
+      "port": "Brisbane",
+      "timestamp": "2026-09-19T22:43:19.551366+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9728411",
+      "name": "KWK EXCELSUS",
+      "port": "Geelong",
+      "timestamp": "2026-09-19T22:43:19.551366+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 57600,
+      "cargo_litres": 66988800,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
