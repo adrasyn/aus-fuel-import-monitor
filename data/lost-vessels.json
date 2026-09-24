@@ -2936,6 +2936,23 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-09-09T22:50:46.327418+00:00",
       "cleared_at": "2026-09-23T23:18:31.621582+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9577068",
+      "name": "TORM EVOLVE",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 76290667,
+      "cargo_tonnes": 62533,
+      "is_ballast": false,
+      "last_lat": -27.23565,
+      "last_lon": 153.3329,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-09-10T12:55:16.771362+00:00",
+      "cleared_at": "2026-09-24T13:27:13.186192+00:00",
       "reason": "stale_prune_14d"
     }
   ]

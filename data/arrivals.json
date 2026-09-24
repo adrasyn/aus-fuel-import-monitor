@@ -6626,6 +6626,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9384019",
+      "name": "RIVIERA",
+      "port": "Melbourne",
+      "timestamp": "2026-09-24T13:27:13.180795+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
