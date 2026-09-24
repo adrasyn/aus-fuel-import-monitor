@@ -2953,6 +2953,39 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-09-10T12:55:16.771362+00:00",
       "cleared_at": "2026-09-24T13:27:13.186192+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9906697",
+      "name": "GRAND WINNER 2",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 33784615,
+      "cargo_tonnes": 27692,
+      "is_ballast": false,
+      "last_lat": -38.15086,
+      "last_lon": 144.91579,
+      "last_destination": "AU ADL",
+      "last_destination_parsed": "Adelaide",
+      "last_position_update": "2026-09-10T22:49:59.567491+00:00",
+      "cleared_at": "2026-09-24T23:34:59.704223+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9782613",
+      "name": "CSK VALIANT",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 22329600,
+      "cargo_tonnes": 19200,
+      "is_ballast": true,
+      "last_lat": -35.49217,
+      "last_lon": 117.74224,
+      "last_destination": "AUGEX>AUBWB",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-09-10T22:49:59.567491+00:00",
+      "cleared_at": "2026-09-24T23:34:59.704223+00:00",
       "reason": "stale_prune_14d"
     }
   ]

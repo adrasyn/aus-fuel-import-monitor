@@ -2075,19 +2075,6 @@
       "status": "probable"
     },
     {
-      "imo": "9882748",
-      "name": "GOLDEN AUSTRALIS",
-      "port": "Brisbane",
-      "timestamp": "2026-05-22T06:46:28.299813+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 13909,
-      "cargo_litres": 16969091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9718789",
       "name": "MUHUT SILVER",
       "port": "Gladstone",
@@ -6551,19 +6538,6 @@
       "status": "probable"
     },
     {
-      "imo": "9882748",
-      "name": "GOLDEN AUSTRALIS",
-      "port": "Brisbane",
-      "timestamp": "2026-09-18T22:53:05.486983+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 14527,
-      "cargo_litres": 17723273,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9744013",
       "name": "GASLOG GENOA",
       "port": "Gladstone",
@@ -6638,6 +6612,57 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9894739",
+      "name": "NORD MIYABI",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-24T23:34:59.698968+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9640437",
+      "name": "V GAS ZOE",
+      "port": "Gladstone",
+      "timestamp": "2026-09-20T22:45:56.859589+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 35200,
+      "cargo_litres": 40937600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9793375",
+      "name": "ORIENT CHALLENGE",
+      "port": "Brisbane",
+      "timestamp": "2026-09-20T22:45:56.859589+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 30769,
+      "cargo_litres": 37538462,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9794719",
+      "name": "HELLAS TATIANA",
+      "port": "Newcastle",
+      "timestamp": "2026-09-20T22:45:56.859589+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
