@@ -6662,6 +6662,55 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9881067",
+      "name": "GOLDEN MIND",
+      "port": "Newcastle",
+      "timestamp": "2026-09-25T23:40:15.305814+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12673,
+      "cargo_litres": 15460727,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9801562",
+      "name": "DRACO",
+      "port": "Kwinana",
+      "timestamp": "2026-09-25T23:40:15.305814+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9735608",
+      "name": "HAFNIA EXCEED",
+      "port": "Melbourne",
+      "timestamp": "2026-09-25T23:40:15.305814+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 65333,
+      "cargo_litres": 79706667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9893034",
+      "name": "PACIFIC RUBY",
+      "port": "Brisbane",
+      "timestamp": "2026-09-21T15:07:21.470460+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 105600,
+      "cargo_litres": 122812800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
