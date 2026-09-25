@@ -6364,19 +6364,6 @@
       "status": "probable"
     },
     {
-      "imo": "9714056",
-      "name": "HAFNIA AMBER",
-      "port": "Kwinana",
-      "timestamp": "2026-09-15T13:26:07.773714+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1063956",
       "name": "SWAN VIRTUE",
       "port": "Melbourne",
@@ -6663,6 +6650,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9714056",
+      "name": "HAFNIA AMBER",
+      "port": "Kwinana",
+      "timestamp": "2026-09-25T13:33:59.853864+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
