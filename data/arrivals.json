@@ -6576,19 +6576,6 @@
       "status": "probable"
     },
     {
-      "imo": "9728411",
-      "name": "KWK EXCELSUS",
-      "port": "Geelong",
-      "timestamp": "2026-09-19T22:43:19.551366+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Suezmax",
-      "cargo_tonnes": 57600,
-      "cargo_litres": 66988800,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9384019",
       "name": "RIVIERA",
       "port": "Melbourne",
@@ -6711,6 +6698,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9882748",
+      "name": "GOLDEN AUSTRALIS",
+      "port": "Melbourne",
+      "timestamp": "2026-09-26T22:59:59.041638+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9582,
+      "cargo_litres": 11689818,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
