@@ -2970,7 +2970,8 @@
       "last_destination_parsed": "Adelaide",
       "last_position_update": "2026-09-10T22:49:59.567491+00:00",
       "cleared_at": "2026-09-24T23:34:59.704223+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9782613",
@@ -2986,6 +2987,22 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-09-10T22:49:59.567491+00:00",
       "cleared_at": "2026-09-24T23:34:59.704223+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9317250",
+      "name": "THERESA MICRONESIA",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 1131273,
+      "cargo_tonnes": 927,
+      "is_ballast": true,
+      "last_lat": -37.97615,
+      "last_lon": 144.87435,
+      "last_destination": "AU TSV",
+      "last_destination_parsed": "Townsville",
+      "last_position_update": "2026-09-12T12:15:12.202090+00:00",
+      "cleared_at": "2026-09-26T13:01:31.172412+00:00",
       "reason": "stale_prune_14d"
     }
   ]
