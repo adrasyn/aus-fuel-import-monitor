@@ -15,18 +15,21 @@ jobs:
         shell: bash
         run: |
           url=https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx
-          for mode in http2 http1 browser; do
+          for mode in range-http2 range-http1 apex query ipv4; do
             echo "Testing $mode"
+            target="$url"
             case "$mode" in
-              http2) args=(--http2) ;;
-              http1) args=(--http1.1) ;;
-              browser) args=(--http2 --user-agent 'Mozilla/5.0') ;;
+              range-http2) args=(--http2 --range 0-1023) ;;
+              range-http1) args=(--http1.1 --range 0-1023) ;;
+              apex) args=(--http1.1); target="${url/www.dcceew.gov.au/dcceew.gov.au}" ;;
+              query) args=(--http1.1); target="$url?probe=20260927" ;;
+              ipv4) args=(--http1.1 --ipv4) ;;
             esac
-            curl -fLsS --connect-timeout 10 --max-time 35 "${args[@]}" \
+            curl -fLsS --connect-timeout 5 --max-time 20 "${args[@]}" \
               -o "/tmp/mso-$mode.xlsx" \
               -w 'status=%{http_code} bytes=%{size_download} seconds=%{time_total}\n' \
-              "$url" || true
+              "$target" || true
             if [ -f "/tmp/mso-$mode.xlsx" ]; then
-              unzip -t "/tmp/mso-$mode.xlsx" | tail -1
+              unzip -t "/tmp/mso-$mode.xlsx" | tail -1 || true
             fi
           done
