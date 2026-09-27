@@ -8,12 +8,33 @@ permissions:
 
 jobs:
   probe:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Download DCCEEW workbook from macOS runner
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install selenium
+      - name: Read DCCEEW public report in headless Chrome
         run: |
-          curl -fLsS --http1.1 --connect-timeout 10 --max-time 45 \
-            -o /tmp/mso-workbook.xlsx -w 'status=%{http_code} bytes=%{size_download}\n' \
-            'https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx'
-          file /tmp/mso-workbook.xlsx
+          python - <<'PY'
+          from selenium import webdriver
+          from selenium.webdriver.common.by import By
+          from selenium.webdriver.support.ui import WebDriverWait
+
+          options = webdriver.ChromeOptions()
+          options.add_argument("--headless=new")
+          options.add_argument("--no-sandbox")
+          driver = webdriver.Chrome(options=options)
+          try:
+              driver.set_page_load_timeout(60)
+              driver.get("https://app.powerbi.com/view?r=eyJrIjoiMzcyZmE4ZjgtOGRjNy00NGM3LWExYTktMTk2NzU2NWEzNzkzIiwidCI6IjhjM2M4MWJjLTJiM2MtNDRhZi1iM2Y3LTZmNjIwYjM5MTBlZSJ9")
+              text = WebDriverWait(driver, 90).until(lambda d: (
+                  value if "Days of stocks at normal rate of consumption" in (
+                      value := d.find_element(By.TAG_NAME, "body").text
+                  ) and "Gasoline" in value else False
+              ))
+              print(text[:2000])
+          finally:
+              driver.quit()
+          PY
