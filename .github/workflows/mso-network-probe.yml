@@ -1,0 +1,32 @@
+name: MSO Network Probe
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Test DCCEEW spreadsheet download
+        shell: bash
+        run: |
+          url=https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx
+          for mode in http2 http1 browser; do
+            echo "Testing $mode"
+            case "$mode" in
+              http2) args=(--http2) ;;
+              http1) args=(--http1.1) ;;
+              browser) args=(--http2 --user-agent 'Mozilla/5.0') ;;
+            esac
+            curl -fLsS --connect-timeout 10 --max-time 35 "${args[@]}" \
+              -o "/tmp/mso-$mode.xlsx" \
+              -w 'status=%{http_code} bytes=%{size_download} seconds=%{time_total}\n' \
+              "$url" || true
+            if [ -f "/tmp/mso-$mode.xlsx" ]; then
+              unzip -t "/tmp/mso-$mode.xlsx" | tail -1
+            fi
+          done
