@@ -1,6 +1,8 @@
 import json
 from datetime import datetime, timedelta, timezone
 
+import requests
+
 from pipeline import orchestrator
 from pipeline.orchestrator import (
     rebucket_monthly_from_arrivals,
@@ -84,6 +86,23 @@ def test_run_pipeline_updates_mso_reserves_when_ais_empty(tmp_path, monkeypatch)
     assert written["as_of"] == "2026-09-01"
     assert written["fuels"][0]["days"] == 43
     assert written["source"] == "DCCEEW Minimum Stockholding Obligation"
+
+
+def test_mso_download_failure_is_visible_and_preserves_previous_data(tmp_path, monkeypatch, capsys):
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "data").mkdir()
+    previous = '{"as_of": "2026-09-01"}'
+    (tmp_path / "data" / "mso-reserves.json").write_text(previous)
+
+    def timeout(path):
+        raise requests.exceptions.ReadTimeout("DCCEEW stalled")
+
+    monkeypatch.setattr(orchestrator, "download_spreadsheet", timeout)
+
+    orchestrator._update_mso_reserves()
+
+    assert "::warning" in capsys.readouterr().out
+    assert (tmp_path / "data" / "mso-reserves.json").read_text() == previous
 
 
 def test_update_monthly_estimates_sums_en_route_from_roster():

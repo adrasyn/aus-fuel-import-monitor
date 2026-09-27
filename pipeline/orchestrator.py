@@ -82,7 +82,7 @@ def _update_mso_reserves() -> None:
         save_json(f"{DATA_DIR}/mso-reserves.json", reserves)
         print(f"  Updated MSO reserves (as of {reserves['as_of']})")
     except Exception as e:
-        print(f"  Skipped MSO reserves update: {e}")
+        print(f"::warning title=MSO reserves update failed::{e}")
 
 
 def _report_empty_collection(previous_snapshot: dict, now: datetime) -> None:

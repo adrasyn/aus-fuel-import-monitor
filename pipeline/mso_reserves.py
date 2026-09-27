@@ -1,6 +1,7 @@
 """Parse the DCCEEW MSO weekly snapshot spreadsheet into mso-reserves.json."""
 
 from datetime import datetime
+from time import sleep
 
 import requests
 from openpyxl import load_workbook
@@ -27,8 +28,15 @@ MIN_DAYS, MAX_DAYS = 10, 90
 
 
 def download_spreadsheet(output_path: str) -> str:
-    resp = requests.get(SPREADSHEET_URL, timeout=60)
-    resp.raise_for_status()
+    for attempt in range(3):
+        try:
+            resp = requests.get(SPREADSHEET_URL, timeout=(10, 120))
+            resp.raise_for_status()
+            break
+        except requests.exceptions.Timeout:
+            if attempt == 2:
+                raise
+            sleep(2 ** attempt)
     with open(output_path, "wb") as f:
         f.write(resp.content)
     return output_path

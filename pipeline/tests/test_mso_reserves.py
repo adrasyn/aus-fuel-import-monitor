@@ -1,9 +1,12 @@
 import json
 from datetime import datetime
+from types import SimpleNamespace
 
 import pytest
+import requests
 from openpyxl import Workbook
 
+from pipeline import mso_reserves
 from pipeline.mso_reserves import parse_latest_reserves, build_reserves_json
 
 
@@ -127,3 +130,23 @@ def test_build_reserves_json_matches_existing_file_shape():
         "fuels": [{"key": "petrol", "label": "Petrol", "days": 43}],
     }
     json.dumps(result)  # must be serialisable as-is
+
+
+def test_download_spreadsheet_retries_after_read_timeout(tmp_path, monkeypatch):
+    attempts = 0
+
+    def fetch(*args, **kwargs):
+        nonlocal attempts
+        attempts += 1
+        if attempts == 1:
+            raise requests.exceptions.ReadTimeout("DCCEEW stalled")
+        return SimpleNamespace(content=b"workbook", raise_for_status=lambda: None)
+
+    monkeypatch.setattr(mso_reserves.requests, "get", fetch)
+    monkeypatch.setattr(mso_reserves, "sleep", lambda seconds: None, raising=False)
+    path = tmp_path / "mso.xlsx"
+
+    mso_reserves.download_spreadsheet(str(path))
+
+    assert attempts == 2
+    assert path.read_bytes() == b"workbook"
