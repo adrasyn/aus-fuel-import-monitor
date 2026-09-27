@@ -63,7 +63,7 @@ def test_run_pipeline_updates_petroleum_stats_when_ais_empty(tmp_path, monkeypat
 
 
 def test_run_pipeline_updates_mso_reserves_when_ais_empty(tmp_path, monkeypatch):
-    # MSO reserves come from the DCCEEW spreadsheet, not AISStream — same
+    # MSO reserves come from DCCEEW, not AISStream — same
     # independence as petroleum stats.
     monkeypatch.chdir(tmp_path)
     monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
