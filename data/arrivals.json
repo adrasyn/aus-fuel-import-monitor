@@ -2356,19 +2356,6 @@
       "status": "probable"
     },
     {
-      "imo": "9922093",
-      "name": "DEE4 ILEX",
-      "port": "Kwinana",
-      "timestamp": "2026-06-07T21:46:54.831186+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9706073",
       "name": "HAFNIA PETREL",
       "port": "Kwinana",
@@ -6710,6 +6697,31 @@
       "cargo_litres": 11689818,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9922093",
+      "name": "DEE4 ILEX",
+      "port": "Kwinana",
+      "timestamp": "2026-09-27T06:26:54.854003+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 35692,
+      "cargo_litres": 43544615,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9640645",
+      "name": "V GAS OHIO",
+      "port": "Gladstone",
+      "timestamp": "2026-09-22T23:18:03.095535+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 37216000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
