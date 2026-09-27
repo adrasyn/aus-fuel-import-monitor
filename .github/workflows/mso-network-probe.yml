@@ -20,4 +20,4 @@ jobs:
             -w 'status=%{http_code} bytes=%{size_download} seconds=%{time_total}\n' \
             'https://r.jina.ai/https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx'
           wc -c /tmp/mso-reader.txt
-          grep -E '^# \[Sheet [456]:|^\*\*9/15/2026\*\*' /tmp/mso-reader.txt
+          sed -n '1,25p' /tmp/mso-reader.txt
