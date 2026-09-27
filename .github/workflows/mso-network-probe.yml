@@ -8,22 +8,12 @@ permissions:
 
 jobs:
   probe:
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-      - run: pip install -r pipeline/requirements.txt
-      - name: Compare reader responses
-        shell: bash
+      - name: Download DCCEEW workbook from macOS runner
         run: |
-          for option in '' 'X-No-Cache: true'; do
-            echo "Header: ${option:-none}"
-            if [ -n "$option" ]; then header=(-H "$option"); else header=(); fi
-            curl -LsS --connect-timeout 10 --max-time 35 "${header[@]}" \
-              -o /tmp/mso-reader-response -w 'status=%{http_code} bytes=%{size_download}\n' \
-              'https://r.jina.ai/https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx' || true
-            sed -n '1,12p' /tmp/mso-reader-response
-          done
+          curl -fLsS --http1.1 --connect-timeout 10 --max-time 45 \
+            -o /tmp/mso-workbook.xlsx -w 'status=%{http_code} bytes=%{size_download}\n' \
+            'https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx'
+          file /tmp/mso-workbook.xlsx
