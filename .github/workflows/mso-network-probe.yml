@@ -16,5 +16,14 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install -r pipeline/requirements.txt
-      - name: Parse current MSO snapshot through the reader
-        run: python -c 'from pipeline.mso_reserves import fetch_reader_reserves; print(fetch_reader_reserves())'
+      - name: Compare reader responses
+        shell: bash
+        run: |
+          for option in '' 'X-No-Cache: true'; do
+            echo "Header: ${option:-none}"
+            if [ -n "$option" ]; then header=(-H "$option"); else header=(); fi
+            curl -LsS --connect-timeout 10 --max-time 35 "${header[@]}" \
+              -o /tmp/mso-reader-response -w 'status=%{http_code} bytes=%{size_download}\n' \
+              'https://r.jina.ai/https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx' || true
+            sed -n '1,12p' /tmp/mso-reader-response
+          done
