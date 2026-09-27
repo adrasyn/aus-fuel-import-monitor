@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timedelta, timezone
 
 import requests
+import pytest
 
 from pipeline import orchestrator
 from pipeline.orchestrator import (
@@ -65,6 +66,7 @@ def test_run_pipeline_updates_mso_reserves_when_ais_empty(tmp_path, monkeypatch)
     # MSO reserves come from the DCCEEW spreadsheet, not AISStream — same
     # independence as petroleum stats.
     monkeypatch.chdir(tmp_path)
+    monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
     (tmp_path / "data").mkdir()
     (tmp_path / "data" / "ports.json").write_text(json.dumps({"ports": []}))
 
@@ -90,6 +92,7 @@ def test_run_pipeline_updates_mso_reserves_when_ais_empty(tmp_path, monkeypatch)
 
 def test_mso_download_failure_is_visible_and_preserves_previous_data(tmp_path, monkeypatch, capsys):
     monkeypatch.chdir(tmp_path)
+    monkeypatch.delenv("GITHUB_ACTIONS", raising=False)
     (tmp_path / "data").mkdir()
     previous = '{"as_of": "2026-09-01"}'
     (tmp_path / "data" / "mso-reserves.json").write_text(previous)
@@ -103,6 +106,44 @@ def test_mso_download_failure_is_visible_and_preserves_previous_data(tmp_path, m
 
     assert "::warning" in capsys.readouterr().out
     assert (tmp_path / "data" / "mso-reserves.json").read_text() == previous
+
+
+def test_github_runner_uses_reader_conversion(tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    (tmp_path / "data").mkdir()
+    monkeypatch.setattr(orchestrator, "download_spreadsheet", lambda path: pytest.fail("direct fetch"))
+    monkeypatch.setattr(
+        orchestrator,
+        "fetch_reader_reserves",
+        lambda: {"as_of": "2026-09-15", "fuels": [{"key": "petrol", "label": "Petrol", "days": 41}]},
+        raising=False,
+    )
+
+    orchestrator._update_mso_reserves()
+
+    written = json.loads((tmp_path / "data" / "mso-reserves.json").read_text())
+    assert written["as_of"] == "2026-09-15"
+
+
+def test_older_reader_snapshot_does_not_replace_newer_data(tmp_path, monkeypatch, capsys):
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setenv("GITHUB_ACTIONS", "true")
+    (tmp_path / "data").mkdir()
+    path = tmp_path / "data" / "mso-reserves.json"
+    path.write_text('{"as_of": "2026-09-15"}')
+    monkeypatch.setattr(orchestrator, "download_spreadsheet", lambda cache: pytest.fail("direct fetch"))
+    monkeypatch.setattr(
+        orchestrator,
+        "fetch_reader_reserves",
+        lambda: {"as_of": "2026-09-01", "fuels": []},
+        raising=False,
+    )
+
+    orchestrator._update_mso_reserves()
+
+    assert path.read_text() == '{"as_of": "2026-09-15"}'
+    assert "older" in capsys.readouterr().out
 
 
 def test_update_monthly_estimates_sums_en_route_from_roster():

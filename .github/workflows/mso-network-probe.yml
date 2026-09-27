@@ -11,13 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Test DCCEEW spreadsheet download
-        shell: bash
-        run: |
-          curl -fLsS --connect-timeout 10 --max-time 60 \
-            -H 'X-No-Cache: true' \
-            -o /tmp/mso-reader.txt \
-            -w 'status=%{http_code} bytes=%{size_download} seconds=%{time_total}\n' \
-            'https://r.jina.ai/https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx'
-          wc -c /tmp/mso-reader.txt
-          sed -n '1,25p' /tmp/mso-reader.txt
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r pipeline/requirements.txt
+      - name: Parse current MSO snapshot through the reader
+        run: python -c 'from pipeline.mso_reserves import fetch_reader_reserves; print(fetch_reader_reserves())'

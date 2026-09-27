@@ -23,7 +23,7 @@ from pipeline.vessels import (
 from pipeline.backfill_probable import backfill_probable_arrivals
 from pipeline.daily_estimates import update_daily_estimates
 from pipeline.petroleum_stats import download_latest_excel, build_imports_json
-from pipeline.mso_reserves import download_spreadsheet, parse_latest_reserves, build_reserves_json
+from pipeline.mso_reserves import download_spreadsheet, parse_latest_reserves, fetch_reader_reserves, build_reserves_json
 
 DATA_DIR = "data"
 EXCEL_CACHE = "data/petroleum_stats_cache.xlsx"
@@ -77,8 +77,16 @@ def _update_mso_reserves() -> None:
     """
     print("Step 7: Checking MSO reserves...")
     try:
-        download_spreadsheet(MSO_CACHE)
-        reserves = build_reserves_json(parse_latest_reserves(MSO_CACHE))
+        if os.environ.get("GITHUB_ACTIONS") == "true":
+            # GitHub-hosted runners cannot fetch the DCCEEW file directly.
+            parsed = fetch_reader_reserves()
+        else:
+            download_spreadsheet(MSO_CACHE)
+            parsed = parse_latest_reserves(MSO_CACHE)
+        reserves = build_reserves_json(parsed)
+        previous = load_json(f"{DATA_DIR}/mso-reserves.json", {})
+        if previous.get("as_of", "") > reserves["as_of"]:
+            raise ValueError(f"reader snapshot {reserves['as_of']} is older than existing {previous['as_of']}")
         save_json(f"{DATA_DIR}/mso-reserves.json", reserves)
         print(f"  Updated MSO reserves (as of {reserves['as_of']})")
     except Exception as e:

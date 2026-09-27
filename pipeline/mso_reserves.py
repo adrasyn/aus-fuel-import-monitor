@@ -1,6 +1,7 @@
 """Parse the DCCEEW MSO weekly snapshot spreadsheet into mso-reserves.json."""
 
 from datetime import datetime
+import re
 from time import sleep
 
 import requests
@@ -10,6 +11,7 @@ SPREADSHEET_URL = (
     "https://www.dcceew.gov.au/sites/default/files/documents/"
     "mso-weekly-snapshot-timeseries.xlsx"
 )
+READER_URL = f"https://r.jina.ai/{SPREADSHEET_URL}"
 SOURCE_URL = (
     "https://www.dcceew.gov.au/energy/security/australias-fuel-security/"
     "minimum-stockholding-obligation/statistics"
@@ -70,6 +72,58 @@ def parse_latest_reserves(excel_path: str) -> dict:
             raise ValueError(f"{sheet}: implausible days value {days!r}")
         fuels.append({"key": key, "label": label, "days": days})
     return {"as_of": as_of, "fuels": fuels}
+
+
+def parse_reader_reserves(content: str) -> dict:
+    """Read Jina's text conversion of the DCCEEW workbook."""
+    if f"URL Source: {SPREADSHEET_URL}" not in content:
+        raise ValueError("reader response is not the DCCEEW MSO workbook")
+
+    as_of = None
+    fuels = []
+    for sheet, key, label in FUEL_SHEETS:
+        heading = re.search(rf"(?m)^# \[Sheet \d+: _{sheet}_\]", content)
+        if heading is None:
+            raise ValueError(f"{sheet}: missing from reader response")
+        section = content[heading.end():]
+        next_heading = re.search(r"(?m)^# \[Sheet \d+:", section)
+        if next_heading:
+            section = section[:next_heading.start()]
+        if "Stock held under MSO (Days equivalent)" not in section:
+            raise ValueError(f"{sheet}: days-equivalent column missing")
+
+        rows = re.findall(r"(?m)^\*\*(\d{1,2}/\d{1,2}/\d{4})\*\*(.*)$", section)
+        if not rows:
+            raise ValueError(f"{sheet}: no dated rows found")
+        date_text, values_text = max(rows, key=lambda row: datetime.strptime(row[0], "%m/%d/%Y"))
+        date = datetime.strptime(date_text, "%m/%d/%Y").date().isoformat()
+        if as_of is None:
+            as_of = date
+        elif date != as_of:
+            raise ValueError(f"{sheet}: latest date {date} != {as_of}")
+
+        values = values_text.strip().split()
+        expected_count = 3 if sheet == "Kerosene" else 4
+        if len(values) != expected_count or not all(value.isdecimal() for value in values):
+            raise ValueError(f"{sheet}: malformed latest row {values_text!r}")
+        days = int(values[-1])
+        if not MIN_DAYS <= days <= MAX_DAYS:
+            raise ValueError(f"{sheet}: implausible days value {days}")
+        fuels.append({"key": key, "label": label, "days": days})
+    return {"as_of": as_of, "fuels": fuels}
+
+
+def fetch_reader_reserves() -> dict:
+    """Fetch the public workbook through its text reader from GitHub runners."""
+    for attempt in range(3):
+        try:
+            resp = requests.get(READER_URL, headers={"X-No-Cache": "true"}, timeout=(10, 60))
+            resp.raise_for_status()
+            return parse_reader_reserves(resp.text)
+        except (requests.exceptions.RequestException, ValueError):
+            if attempt == 2:
+                raise
+            sleep(2 ** attempt)
 
 
 def build_reserves_json(parsed: dict) -> dict:

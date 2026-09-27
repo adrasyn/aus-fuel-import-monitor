@@ -150,3 +150,52 @@ def test_download_spreadsheet_retries_after_read_timeout(tmp_path, monkeypatch):
 
     assert attempts == 2
     assert path.read_bytes() == b"workbook"
+
+
+READER_TEXT = """Title: mso-weekly-snapshot-timeseries.xlsx
+URL Source: https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx
+Markdown Content:
+# [Sheet 4: _Gasoline_](https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx)
+**Obligation Date****Stock held under MSO (Days equivalent) [2]**
+**9/8/2026**1067 862 1763 41
+**9/15/2026**1067 862 1730 41
+# [Sheet 5: _Diesel_](https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx)
+**Obligation Date****Stock held under MSO (Days equivalent) [2]**
+**9/15/2026**2742 2225 2853 31
+# [Sheet 6: _Kerosene_](https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx)
+**Obligation Date****Stock held under MSO (Days equivalent) [2]**
+**9/15/2026**663 863 32
+"""
+
+
+def test_parse_reader_reserves_matches_published_workbook_rows():
+    result = mso_reserves.parse_reader_reserves(READER_TEXT)
+
+    assert result == {
+        "as_of": "2026-09-15",
+        "fuels": [
+            {"key": "petrol", "label": "Petrol", "days": 41},
+            {"key": "kerosene", "label": "Kerosene", "days": 32},
+            {"key": "diesel", "label": "Diesel", "days": 31},
+        ],
+    }
+
+
+def test_parse_reader_reserves_rejects_incomplete_conversion():
+    with pytest.raises(ValueError, match="Kerosene"):
+        mso_reserves.parse_reader_reserves(READER_TEXT.split("# [Sheet 6:")[0])
+
+
+def test_reader_fetch_retries_malformed_response(monkeypatch):
+    responses = iter(["Error fetching workbook", READER_TEXT])
+
+    def fetch(*args, **kwargs):
+        return SimpleNamespace(text=next(responses), raise_for_status=lambda: None)
+
+    monkeypatch.setattr(mso_reserves.requests, "get", fetch)
+    monkeypatch.setattr(mso_reserves, "sleep", lambda seconds: None)
+
+    result = mso_reserves.fetch_reader_reserves()
+
+    assert result["as_of"] == "2026-09-15"
+    assert result["fuels"][2]["days"] == 31
