@@ -152,50 +152,101 @@ def test_download_spreadsheet_retries_after_read_timeout(tmp_path, monkeypatch):
     assert path.read_bytes() == b"workbook"
 
 
-READER_TEXT = """Title: mso-weekly-snapshot-timeseries.xlsx
-URL Source: https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx
-Markdown Content:
-# [Sheet 4: _Gasoline_](https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx)
-**Obligation Date****Stock held under MSO (Days equivalent) [2]**
-**9/8/2026**1067 862 1763 41
-**9/15/2026**1067 862 1730 41
-# [Sheet 5: _Diesel_](https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx)
-**Obligation Date****Stock held under MSO (Days equivalent) [2]**
-**9/15/2026**2742 2225 2853 31
-# [Sheet 6: _Kerosene_](https://www.dcceew.gov.au/sites/default/files/documents/mso-weekly-snapshot-timeseries.xlsx)
-**Obligation Date****Stock held under MSO (Days equivalent) [2]**
-**9/15/2026**663 863 32
+REPORT_TEXT = """Power BI Report
+Minimum Stockholding Obligation (MSO) - Stocks held on 22/09/26
+Last updated: 25/09/2026
+Automotivegasoline
+Aviationkerosene
+Automotivediesel
+1807
+786
+2938
+Latest fuel stocks held under the Minimum Stockholding Obligation
+Days of stocks at normal rate of consumption
+Minimum Stockholding Obligation (ML)
+MSO after reductions applied (ML)
+Kerosene
+Days
+29
+Above required
+19%
+Diesel
+Days
+32
+Above required
+32%
+Gasoline
+Days
+42
+Above required
+110%
+Current MSO after reductions applied
+Gasoline*
+862 ML
+Kerosene
+663 ML
+Diesel*
+2225 ML
 """
 
 
-def test_parse_reader_reserves_matches_published_workbook_rows():
-    result = mso_reserves.parse_reader_reserves(READER_TEXT)
-
-    assert result == {
-        "as_of": "2026-09-15",
+def test_parse_report_reserves_reads_public_day_cards():
+    assert mso_reserves.parse_report_reserves(REPORT_TEXT) == {
+        "as_of": "2026-09-22",
         "fuels": [
-            {"key": "petrol", "label": "Petrol", "days": 41},
-            {"key": "kerosene", "label": "Kerosene", "days": 32},
-            {"key": "diesel", "label": "Diesel", "days": 31},
+            {"key": "petrol", "label": "Petrol", "days": 42},
+            {"key": "kerosene", "label": "Kerosene", "days": 29},
+            {"key": "diesel", "label": "Diesel", "days": 32},
         ],
     }
 
 
-def test_parse_reader_reserves_rejects_incomplete_conversion():
-    with pytest.raises(ValueError, match="Kerosene"):
-        mso_reserves.parse_reader_reserves(READER_TEXT.split("# [Sheet 6:")[0])
+def test_parse_report_reserves_rejects_missing_day_card():
+    incomplete = REPORT_TEXT.replace("Diesel\nDays\n32\nAbove required\n32%\n", "")
+
+    with pytest.raises(ValueError, match="Diesel"):
+        mso_reserves.parse_report_reserves(incomplete)
 
 
-def test_reader_fetch_retries_malformed_response(monkeypatch):
-    responses = iter(["Error fetching workbook", READER_TEXT])
+def test_parse_report_reserves_rejects_implausible_days():
+    incorrect = REPORT_TEXT.replace("Gasoline\nDays\n42", "Gasoline\nDays\n1807")
 
-    def fetch(*args, **kwargs):
-        return SimpleNamespace(text=next(responses), raise_for_status=lambda: None)
+    with pytest.raises(ValueError, match="Gasoline"):
+        mso_reserves.parse_report_reserves(incorrect)
 
-    monkeypatch.setattr(mso_reserves.requests, "get", fetch)
-    monkeypatch.setattr(mso_reserves, "sleep", lambda seconds: None)
 
-    result = mso_reserves.fetch_reader_reserves()
+def test_parse_report_reserves_rejects_missing_date():
+    incomplete = REPORT_TEXT.replace("Stocks held on 22/09/26", "Stocks held on unavailable")
 
-    assert result["as_of"] == "2026-09-15"
-    assert result["fuels"][2]["days"] == 31
+    with pytest.raises(ValueError, match="date"):
+        mso_reserves.parse_report_reserves(incomplete)
+
+
+def test_fetch_report_reserves_reads_browser_and_closes_it(monkeypatch):
+    from selenium import webdriver
+
+    class FakeBrowser:
+        def __init__(self):
+            self.closed = False
+
+        def set_page_load_timeout(self, seconds):
+            pass
+
+        def get(self, url):
+            assert url == mso_reserves.REPORT_URL
+
+        def execute_script(self, script):
+            assert script == "return document.body.innerText"
+            return REPORT_TEXT
+
+        def quit(self):
+            self.closed = True
+
+    browser = FakeBrowser()
+    monkeypatch.setattr(webdriver, "Chrome", lambda options: browser)
+
+    result = mso_reserves.fetch_report_reserves()
+
+    assert result["as_of"] == "2026-09-22"
+    assert result["fuels"][0]["days"] == 42
+    assert browser.closed

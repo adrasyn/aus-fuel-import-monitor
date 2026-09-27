@@ -108,25 +108,25 @@ def test_mso_download_failure_is_visible_and_preserves_previous_data(tmp_path, m
     assert (tmp_path / "data" / "mso-reserves.json").read_text() == previous
 
 
-def test_github_runner_uses_reader_conversion(tmp_path, monkeypatch):
+def test_github_runner_uses_public_report(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("GITHUB_ACTIONS", "true")
     (tmp_path / "data").mkdir()
     monkeypatch.setattr(orchestrator, "download_spreadsheet", lambda path: pytest.fail("direct fetch"))
     monkeypatch.setattr(
         orchestrator,
-        "fetch_reader_reserves",
-        lambda: {"as_of": "2026-09-15", "fuels": [{"key": "petrol", "label": "Petrol", "days": 41}]},
+        "fetch_report_reserves",
+        lambda: {"as_of": "2026-09-22", "fuels": [{"key": "petrol", "label": "Petrol", "days": 42}]},
         raising=False,
     )
 
     orchestrator._update_mso_reserves()
 
     written = json.loads((tmp_path / "data" / "mso-reserves.json").read_text())
-    assert written["as_of"] == "2026-09-15"
+    assert written["as_of"] == "2026-09-22"
 
 
-def test_older_reader_snapshot_does_not_replace_newer_data(tmp_path, monkeypatch, capsys):
+def test_older_report_snapshot_does_not_replace_newer_data(tmp_path, monkeypatch, capsys):
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("GITHUB_ACTIONS", "true")
     (tmp_path / "data").mkdir()
@@ -135,7 +135,7 @@ def test_older_reader_snapshot_does_not_replace_newer_data(tmp_path, monkeypatch
     monkeypatch.setattr(orchestrator, "download_spreadsheet", lambda cache: pytest.fail("direct fetch"))
     monkeypatch.setattr(
         orchestrator,
-        "fetch_reader_reserves",
+        "fetch_report_reserves",
         lambda: {"as_of": "2026-09-01", "fuels": []},
         raising=False,
     )

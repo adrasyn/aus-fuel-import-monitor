@@ -11,31 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: pip install selenium
-      - name: Read DCCEEW public report in headless Chrome
-        run: |
-          python - <<'PY'
-          import re
-          from selenium import webdriver
-          from selenium.webdriver.support.ui import WebDriverWait
-
-          options = webdriver.ChromeOptions()
-          options.add_argument("--headless=new")
-          options.add_argument("--no-sandbox")
-          options.add_argument("--window-size=1440,1100")
-          driver = webdriver.Chrome(options=options)
-          try:
-              driver.set_page_load_timeout(60)
-              driver.get("https://app.powerbi.com/view?r=eyJrIjoiMzcyZmE4ZjgtOGRjNy00NGM3LWExYTktMTk2NzU2NWEzNzkzIiwidCI6IjhjM2M4MWJjLTJiM2MtNDRhZi1iM2Y3LTZmNjIwYjM5MTBlZSJ9")
-              text = WebDriverWait(driver, 90).until(lambda d: (
-                  value if all(re.search(fr"{fuel}\s+Days\s+\d+", value) for fuel in (
-                      "Kerosene", "Diesel", "Gasoline"
-                  )) else False
-              ) if (value := d.execute_script("return document.body.innerText")) else False)
-              print(text[:2000])
-          finally:
-              driver.quit()
-          PY
+      - run: pip install -r pipeline/requirements.txt
+      - name: Parse current MSO report with production code
+        run: python -c 'from pipeline.mso_reserves import fetch_report_reserves; print(fetch_report_reserves())'

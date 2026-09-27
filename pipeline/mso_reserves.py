@@ -1,4 +1,4 @@
-"""Parse the DCCEEW MSO weekly snapshot spreadsheet into mso-reserves.json."""
+"""Read DCCEEW MSO days-equivalent data into mso-reserves.json."""
 
 from datetime import datetime
 import re
@@ -11,10 +11,14 @@ SPREADSHEET_URL = (
     "https://www.dcceew.gov.au/sites/default/files/documents/"
     "mso-weekly-snapshot-timeseries.xlsx"
 )
-READER_URL = f"https://r.jina.ai/{SPREADSHEET_URL}"
 SOURCE_URL = (
     "https://www.dcceew.gov.au/energy/security/australias-fuel-security/"
     "minimum-stockholding-obligation/statistics"
+)
+REPORT_URL = (
+    "https://app.powerbi.com/view?"
+    "r=eyJrIjoiMzcyZmE4ZjgtOGRjNy00NGM3LWExYTktMTk2NzU2NWEzNzkzIiw"
+    "idCI6IjhjM2M4MWJjLTJiM2MtNDRhZi1iM2Y3LTZmNjIwYjM5MTBlZSJ9"
 )
 
 # (sheet name in workbook, key/label used by the site). Order is render order.
@@ -74,56 +78,56 @@ def parse_latest_reserves(excel_path: str) -> dict:
     return {"as_of": as_of, "fuels": fuels}
 
 
-def parse_reader_reserves(content: str) -> dict:
-    """Read Jina's text conversion of the DCCEEW workbook."""
-    if f"URL Source: {SPREADSHEET_URL}" not in content:
-        raise ValueError("reader response is not the DCCEEW MSO workbook")
+def parse_report_reserves(content: str) -> dict:
+    """Read the dated days-equivalent cards from DCCEEW's public report."""
+    date_match = re.search(
+        r"Minimum Stockholding Obligation \(MSO\) - Stocks held on (\d{2}/\d{2}/\d{2})",
+        content,
+    )
+    if date_match is None:
+        raise ValueError("report date missing")
+    as_of = datetime.strptime(date_match.group(1), "%d/%m/%y").date().isoformat()
 
-    as_of = None
+    marker = "Days of stocks at normal rate of consumption"
+    if marker not in content or "Current MSO after reductions applied" not in content:
+        raise ValueError("report days-equivalent section missing")
+    section = content.split(marker, 1)[1].split("Current MSO after reductions applied", 1)[0]
     fuels = []
     for sheet, key, label in FUEL_SHEETS:
-        heading = re.search(rf"(?m)^# \[Sheet \d+: _{sheet}_\]", content)
-        if heading is None:
-            raise ValueError(f"{sheet}: missing from reader response")
-        section = content[heading.end():]
-        next_heading = re.search(r"(?m)^# \[Sheet \d+:", section)
-        if next_heading:
-            section = section[:next_heading.start()]
-        if "Stock held under MSO (Days equivalent)" not in section:
-            raise ValueError(f"{sheet}: days-equivalent column missing")
-
-        rows = re.findall(r"(?m)^\*\*(\d{1,2}/\d{1,2}/\d{4})\*\*(.*)$", section)
-        if not rows:
-            raise ValueError(f"{sheet}: no dated rows found")
-        date_text, values_text = max(rows, key=lambda row: datetime.strptime(row[0], "%m/%d/%Y"))
-        date = datetime.strptime(date_text, "%m/%d/%Y").date().isoformat()
-        if as_of is None:
-            as_of = date
-        elif date != as_of:
-            raise ValueError(f"{sheet}: latest date {date} != {as_of}")
-
-        values = values_text.strip().split()
-        expected_count = 3 if sheet == "Kerosene" else 4
-        if len(values) != expected_count or not all(value.isdecimal() for value in values):
-            raise ValueError(f"{sheet}: malformed latest row {values_text!r}")
-        days = int(values[-1])
+        matches = re.findall(rf"(?m)^{sheet}\s+Days\s+(\d+)\s+Above required", section)
+        if len(matches) != 1:
+            raise ValueError(f"{sheet}: expected one days-equivalent card")
+        days = int(matches[0])
         if not MIN_DAYS <= days <= MAX_DAYS:
             raise ValueError(f"{sheet}: implausible days value {days}")
         fuels.append({"key": key, "label": label, "days": days})
     return {"as_of": as_of, "fuels": fuels}
 
 
-def fetch_reader_reserves() -> dict:
-    """Fetch the public workbook through its text reader from GitHub runners."""
-    for attempt in range(3):
-        try:
-            resp = requests.get(READER_URL, headers={"X-No-Cache": "true"}, timeout=(10, 60))
-            resp.raise_for_status()
-            return parse_reader_reserves(resp.text)
-        except (requests.exceptions.RequestException, ValueError):
-            if attempt == 2:
-                raise
-            sleep(2 ** attempt)
+def fetch_report_reserves() -> dict:
+    """Read the public report in Chrome (the workbook blocks cloud runners)."""
+    from selenium import webdriver
+    from selenium.webdriver.support.ui import WebDriverWait
+
+    options = webdriver.ChromeOptions()
+    options.add_argument("--headless=new")
+    options.add_argument("--no-sandbox")
+    options.add_argument("--window-size=1440,1100")
+    driver = webdriver.Chrome(options=options)
+    try:
+        driver.set_page_load_timeout(60)
+        driver.get(REPORT_URL)
+
+        def loaded_text(browser):
+            content = browser.execute_script("return document.body.innerText") or ""
+            return content if all(
+                re.search(rf"(?m)^{sheet}\s+Days\s+\d+\s+Above required", content)
+                for sheet, _, _ in FUEL_SHEETS
+            ) else False
+
+        return parse_report_reserves(WebDriverWait(driver, 90).until(loaded_text))
+    finally:
+        driver.quit()
 
 
 def build_reserves_json(parsed: dict) -> dict:
