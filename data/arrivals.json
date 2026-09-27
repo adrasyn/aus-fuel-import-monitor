@@ -2681,19 +2681,6 @@
       "coastal": true
     },
     {
-      "imo": "9833565",
-      "name": "STI MARSHALL",
-      "port": "Kwinana",
-      "timestamp": "2026-06-13T21:49:52.505742+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9678525",
       "name": "LEO SUNRISE",
       "port": "Kwinana",
@@ -6722,6 +6709,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9833565",
+      "name": "STI MARSHALL",
+      "port": "Kwinana",
+      "timestamp": "2026-09-27T23:22:10.356407+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
