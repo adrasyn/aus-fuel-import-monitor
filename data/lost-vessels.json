@@ -3036,6 +3036,23 @@
       "last_destination_parsed": "Sydney / Botany",
       "last_position_update": "2026-09-14T14:59:49.978893+00:00",
       "cleared_at": "2026-09-28T16:38:48.593922+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "9435600",
+      "name": "SHAN HU ZUO",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 44408000,
+      "cargo_tonnes": 36400,
+      "is_ballast": false,
+      "last_lat": -38.0899,
+      "last_lon": 144.38743,
+      "last_destination": "GEELONG",
+      "last_destination_parsed": "Geelong",
+      "last_position_update": "2026-09-14T23:30:14.296665+00:00",
+      "cleared_at": "2026-09-29T00:45:24.378858+00:00",
       "reason": "stale_prune_14d"
     }
   ]
