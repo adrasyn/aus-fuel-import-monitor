@@ -6809,6 +6809,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9735608",
+      "name": "HAFNIA EXCEED",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-09-29T14:54:14.782218+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 41067,
+      "cargo_litres": 50101333,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9705653",
+      "name": "SEAPEAK NEW YORK",
+      "port": "Gladstone",
+      "timestamp": "2026-09-25T13:33:59.856946+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 43200,
+      "cargo_litres": 50241600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
