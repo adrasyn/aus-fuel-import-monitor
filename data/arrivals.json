@@ -6834,6 +6834,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9492361",
+      "name": "THE CHIEF",
+      "port": "Townsville",
+      "timestamp": "2026-09-15T13:26:07.773714+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9273,
+      "cargo_litres": 11312727,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
