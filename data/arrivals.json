@@ -6860,19 +6860,6 @@
       "coastal": true
     },
     {
-      "imo": "9469314",
-      "name": "PENG HU WAN",
-      "port": "Kwinana",
-      "timestamp": "2026-09-25T23:40:15.311877+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 8036,
-      "cargo_litres": 9804364,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9682576",
       "name": "MARAN GAS LETO",
       "port": "Gladstone",
@@ -6906,6 +6893,56 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 40000,
       "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9906702",
+      "name": "GRAND WINNER 3",
+      "port": "Brisbane",
+      "timestamp": "2026-10-01T15:22:36.876946+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 30154,
+      "cargo_litres": 36787692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1067158",
+      "name": "HORIZON LEDA",
+      "port": "Bunbury",
+      "timestamp": "2026-10-01T15:22:36.876946+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 39385,
+      "cargo_litres": 48049231,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1032206",
+      "name": "BASTION",
+      "port": "Kwinana",
+      "timestamp": "2026-09-27T06:26:54.856910+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 23333,
+      "cargo_litres": 28466667,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9331646",
+      "name": "SERI BEGAWAN",
+      "port": "Gladstone",
+      "timestamp": "2026-09-27T06:26:54.856910+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 60800,
+      "cargo_litres": 70710400,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
