@@ -6772,19 +6772,6 @@
       "status": "probable"
     },
     {
-      "imo": "9731755",
-      "name": "CHEM STELLAR",
-      "port": "Melbourne",
-      "timestamp": "2026-09-24T13:27:13.186192+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 10818,
-      "cargo_litres": 13198182,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9315707",
       "name": "GRACE ACACIA",
       "port": "Gladstone",
@@ -6886,19 +6873,6 @@
       "status": "probable"
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Sydney / Botany",
-      "timestamp": "2026-09-25T23:40:15.311877+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12055,
-      "cargo_litres": 14706545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9682576",
       "name": "MARAN GAS LETO",
       "port": "Gladstone",
@@ -6907,6 +6881,31 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 30400,
       "cargo_litres": 35355200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9609639",
+      "name": "GARNET EXPRESS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-01T00:03:10.523169+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9750244",
+      "name": "PAN EUROPE",
+      "port": "Gladstone",
+      "timestamp": "2026-09-26T22:59:59.046998+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"

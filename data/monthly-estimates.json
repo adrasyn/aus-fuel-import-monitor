@@ -81,14 +81,26 @@
       "arrived_crude_tonnes": 196894,
       "arrived_product_tonnes": 1865115,
       "arrival_count": 55,
-      "probable_crude_litres": 1363911671,
-      "probable_product_litres": 783956476,
-      "probable_crude_tonnes": 1172753,
-      "probable_product_tonnes": 642587,
-      "probable_count": 51,
-      "en_route_crude_litres": 598520847,
-      "en_route_product_litres": 698186379,
-      "last_updated": "2026-09-30T14:19:41.185964+00:00"
+      "probable_crude_litres": 1410431671,
+      "probable_product_litres": 756051749,
+      "probable_crude_tonnes": 1212753,
+      "probable_product_tonnes": 619714,
+      "probable_count": 50,
+      "en_route_crude_litres": 695282447,
+      "en_route_product_litres": 730239106,
+      "last_updated": "2026-09-30T23:33:09.818017+00:00"
+    },
+    "2026-10": {
+      "arrived_crude_litres": 0,
+      "arrived_product_litres": 48800000,
+      "arrived_crude_tonnes": 0,
+      "arrived_product_tonnes": 40000,
+      "arrival_count": 1,
+      "probable_crude_litres": 0,
+      "probable_product_litres": 0,
+      "probable_crude_tonnes": 0,
+      "probable_product_tonnes": 0,
+      "probable_count": 0
     }
   }
 }
