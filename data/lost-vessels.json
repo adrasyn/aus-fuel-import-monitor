@@ -3156,6 +3156,22 @@
       "last_position_update": "2026-09-15T23:15:12.975319+00:00",
       "cleared_at": "2026-09-30T00:02:13.857812+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9326201",
+      "name": "MAEA",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 8673091,
+      "cargo_tonnes": 7109,
+      "is_ballast": false,
+      "last_lat": -27.33118,
+      "last_lon": 153.19435,
+      "last_destination": "",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-09-18T12:54:36.739392+00:00",
+      "cleared_at": "2026-10-02T14:43:40.909045+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

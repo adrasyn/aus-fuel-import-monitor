@@ -6996,6 +6996,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9682394",
+      "name": "TORM DULCE",
+      "port": "Kwinana",
+      "timestamp": "2026-10-02T14:43:40.903571+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
