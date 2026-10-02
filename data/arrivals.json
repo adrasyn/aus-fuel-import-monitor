@@ -6946,6 +6946,56 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9686699",
+      "name": "STI VIRTUS",
+      "port": "Newcastle",
+      "timestamp": "2026-10-02T00:15:51.397769+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9779989",
+      "name": "NORDMARLIN",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-02T00:15:51.398153+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 86400,
+      "cargo_litres": 100483200,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9829447",
+      "name": "STI MAGIC",
+      "port": "Townsville",
+      "timestamp": "2026-09-27T23:22:10.361887+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25846,
+      "cargo_litres": 31532308,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9694749",
+      "name": "CESI TIANJIN",
+      "port": "Gladstone",
+      "timestamp": "2026-09-27T23:22:10.361887+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
