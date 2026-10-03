@@ -6635,19 +6635,6 @@
       "coastal": false
     },
     {
-      "imo": "9893034",
-      "name": "PACIFIC RUBY",
-      "port": "Brisbane",
-      "timestamp": "2026-09-21T15:07:21.470460+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Suezmax",
-      "cargo_tonnes": 105600,
-      "cargo_litres": 122812800,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9882748",
       "name": "GOLDEN AUSTRALIS",
       "port": "Melbourne",
@@ -6959,19 +6946,6 @@
       "coastal": false
     },
     {
-      "imo": "9829447",
-      "name": "STI MAGIC",
-      "port": "Townsville",
-      "timestamp": "2026-09-27T23:22:10.361887+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 25846,
-      "cargo_litres": 31532308,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9694749",
       "name": "CESI TIANJIN",
       "port": "Gladstone",
@@ -7030,6 +7004,31 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 36800,
       "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1021192",
+      "name": "JAL SITARA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-03T23:14:41.096337+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38769,
+      "cargo_litres": 47298462,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9779757",
+      "name": "DA HUA SHAN",
+      "port": "Geelong",
+      "timestamp": "2026-09-29T14:54:14.787989+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12673,
+      "cargo_litres": 15460727,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"

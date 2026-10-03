@@ -3171,6 +3171,23 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-09-18T12:54:36.739392+00:00",
       "cleared_at": "2026-10-02T14:43:40.909045+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9435612",
+      "name": "JING YU ZUO",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 22773333,
+      "cargo_tonnes": 18667,
+      "is_ballast": false,
+      "last_lat": -35.55245,
+      "last_lon": 117.43713,
+      "last_destination": "SINGAPORE",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-09-19T22:43:19.551366+00:00",
+      "cleared_at": "2026-10-03T23:14:41.102095+00:00",
       "reason": "stale_prune_14d"
     }
   ]
