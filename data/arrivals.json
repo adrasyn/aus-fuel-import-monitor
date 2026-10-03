@@ -6995,6 +6995,44 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9607148",
+      "name": "RTM DJULPAN",
+      "port": "Gladstone",
+      "timestamp": "2026-10-03T13:17:43.838611+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 56000,
+      "cargo_litres": 68320000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9732371",
+      "name": "MARAN GAS OLYMPIAS",
+      "port": "Gladstone",
+      "timestamp": "2026-09-29T00:45:24.378858+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9946362",
+      "name": "ZOE KNUTSEN",
+      "port": "Gladstone",
+      "timestamp": "2026-09-29T00:45:24.378858+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
