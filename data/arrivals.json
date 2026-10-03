@@ -6512,19 +6512,6 @@
       "status": "probable"
     },
     {
-      "imo": "9965423",
-      "name": "AL SHELILA",
-      "port": "Gladstone",
-      "timestamp": "2026-09-18T22:53:05.486983+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Suezmax",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 46520000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9538476",
       "name": "TIAN E ZUO",
       "port": "Sydney / Botany",
