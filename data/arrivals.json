@@ -1672,19 +1672,6 @@
       "status": "probable"
     },
     {
-      "imo": "9901415",
-      "name": "ASPEN EXPRESS",
-      "port": "Sydney / Botany",
-      "timestamp": "2026-04-30T21:34:48.663732+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9293533",
       "name": "ASPHALT TRANSPORTER",
       "port": "Newcastle",
@@ -7058,6 +7045,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9901415",
+      "name": "ASPEN EXPRESS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-04T23:22:39.347658+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1022677",
+      "name": "GEM EMERALD",
+      "port": "Cairns",
+      "timestamp": "2026-10-04T23:22:39.348348+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
