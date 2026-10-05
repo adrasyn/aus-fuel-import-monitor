@@ -3205,6 +3205,22 @@
       "last_position_update": "2026-09-20T22:45:56.859589+00:00",
       "cleared_at": "2026-10-04T23:22:39.354006+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9811074",
+      "name": "KAN WO",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 6410545,
+      "cargo_tonnes": 5255,
+      "is_ballast": false,
+      "last_lat": -27.54764,
+      "last_lon": 153.88966,
+      "last_destination": "YEOSU/ KR",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-09-21T15:07:21.470460+00:00",
+      "cleared_at": "2026-10-05T17:00:12.277081+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

@@ -7069,6 +7069,71 @@
       "cargo_litres": 22523077,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9945291",
+      "name": "ELANDRA SWALLOW",
+      "port": "Geelong",
+      "timestamp": "2026-10-01T00:03:10.527518+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9183269",
+      "name": "HYUNDAI OCEANPIA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-01T00:03:10.527518+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 51200,
+      "cargo_litres": 59545600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9731755",
+      "name": "CHEM STELLAR",
+      "port": "Brisbane",
+      "timestamp": "2026-10-01T00:03:10.527518+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 14218,
+      "cargo_litres": 17346182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1022706",
+      "name": "STENA CONTINENT",
+      "port": "Townsville",
+      "timestamp": "2026-10-01T00:03:10.527518+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9953274",
+      "name": "LIMAIL",
+      "port": "Gladstone",
+      "timestamp": "2026-10-01T15:22:36.882520+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 38400,
+      "cargo_litres": 44659200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
