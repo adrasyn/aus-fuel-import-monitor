@@ -7197,6 +7197,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9779989",
+      "name": "NORDMARLIN",
+      "port": "Brisbane",
+      "timestamp": "2026-10-06T15:02:39.781755+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
