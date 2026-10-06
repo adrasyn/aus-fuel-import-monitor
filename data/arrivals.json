@@ -7134,6 +7134,69 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9661235",
+      "name": "TORM BEATRICE",
+      "port": "Gladstone",
+      "timestamp": "2026-10-06T01:41:51.891140+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9717101",
+      "name": "STI GUARD",
+      "port": "Brisbane",
+      "timestamp": "2026-10-06T01:41:51.891140+00:00",
+      "ship_type": "product",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 85882,
+      "cargo_litres": 104776471,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9293533",
+      "name": "ASPHALT TRANSPORTER",
+      "port": "Newcastle",
+      "timestamp": "2026-10-02T00:15:51.401183+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11745,
+      "cargo_litres": 14329455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1044194",
+      "name": "MAKARIOS",
+      "port": "Townsville",
+      "timestamp": "2026-10-02T00:15:51.401183+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7418,
+      "cargo_litres": 9050182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9820544",
+      "name": "AMAZON FORTITUDE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-02T00:15:51.401183+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 52941,
+      "cargo_litres": 61570588,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
