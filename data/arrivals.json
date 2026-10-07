@@ -7021,19 +7021,6 @@
       "status": "probable"
     },
     {
-      "imo": "9881079",
-      "name": "GOLDEN PRELUDE",
-      "port": "Kwinana",
-      "timestamp": "2026-09-30T00:02:13.857812+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 15145,
-      "cargo_litres": 18477455,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9802578",
       "name": "GUANG ZHOU WAN",
       "port": "Kwinana",
@@ -7231,6 +7218,19 @@
       "vessel_class": "MR",
       "cargo_tonnes": 23385,
       "cargo_litres": 28529231,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Newcastle",
+      "timestamp": "2026-10-03T13:17:43.841564+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12055,
+      "cargo_litres": 14706545,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
