@@ -2216,19 +2216,6 @@
       "coastal": true
     },
     {
-      "imo": "9881079",
-      "name": "GOLDEN PRELUDE",
-      "port": "Melbourne",
-      "timestamp": "2026-06-06T21:37:51.245321+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 14836,
-      "cargo_litres": 18100364,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9906714",
       "name": "GRAND WINNER 5",
       "port": "Sydney / Botany",
@@ -7223,19 +7210,6 @@
       "status": "probable"
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Newcastle",
-      "timestamp": "2026-10-03T13:17:43.841564+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12055,
-      "cargo_litres": 14706545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9577068",
       "name": "TORM EVOLVE",
       "port": "Kwinana",
@@ -7256,6 +7230,31 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 105600,
       "cargo_litres": 122812800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9881079",
+      "name": "GOLDEN PRELUDE",
+      "port": "Melbourne",
+      "timestamp": "2026-10-08T15:30:08.327962+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11745,
+      "cargo_litres": 14329455,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9829447",
+      "name": "STI MAGIC",
+      "port": "Brisbane",
+      "timestamp": "2026-10-04T14:01:47.029518+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
