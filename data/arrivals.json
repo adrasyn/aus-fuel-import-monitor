@@ -7234,6 +7234,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9577068",
+      "name": "TORM EVOLVE",
+      "port": "Kwinana",
+      "timestamp": "2026-10-08T00:33:30.052009+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 63467,
+      "cargo_litres": 77429333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9893034",
+      "name": "PACIFIC RUBY",
+      "port": "Brisbane",
+      "timestamp": "2026-10-03T23:14:41.102095+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 105600,
+      "cargo_litres": 122812800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
