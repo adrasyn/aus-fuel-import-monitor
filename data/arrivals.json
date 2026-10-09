@@ -7296,6 +7296,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9381562",
+      "name": "GULF BAYNUNAH",
+      "port": "Townsville",
+      "timestamp": "2026-09-24T23:34:59.704223+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 13538,
+      "cargo_litres": 16516923,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9774343",
+      "name": "GEM NO.3",
+      "port": "Melbourne",
+      "timestamp": "2026-10-09T15:14:33.831372+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 57867,
+      "cargo_litres": 70597333,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
