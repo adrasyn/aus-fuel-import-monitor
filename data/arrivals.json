@@ -7258,6 +7258,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1030715",
+      "name": "KWK REVELATION",
+      "port": "Newcastle",
+      "timestamp": "2026-10-09T00:41:41.294734+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 65600,
+      "cargo_litres": 76292800,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9712852",
+      "name": "PM EMPRESS",
+      "port": "Geelong",
+      "timestamp": "2026-10-04T23:22:39.354006+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 37216000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9891440",
+      "name": "ENERGY ATHENA",
+      "port": "Brisbane",
+      "timestamp": "2026-10-04T23:22:39.354006+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
