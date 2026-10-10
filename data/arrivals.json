@@ -7197,19 +7197,6 @@
       "coastal": false
     },
     {
-      "imo": "9952086",
-      "name": "YONG AO",
-      "port": "Melbourne",
-      "timestamp": "2026-10-02T14:43:40.909045+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 23385,
-      "cargo_litres": 28529231,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9577068",
       "name": "TORM EVOLVE",
       "port": "Kwinana",
@@ -7220,19 +7207,6 @@
       "cargo_litres": 77429333,
       "draught_missing": false,
       "coastal": false
-    },
-    {
-      "imo": "9893034",
-      "name": "PACIFIC RUBY",
-      "port": "Brisbane",
-      "timestamp": "2026-10-03T23:14:41.102095+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Suezmax",
-      "cargo_tonnes": 105600,
-      "cargo_litres": 122812800,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
     },
     {
       "imo": "9881079",
@@ -7321,6 +7295,32 @@
       "cargo_litres": 70597333,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9672844",
+      "name": "CESI BEIHAI",
+      "port": "Gladstone",
+      "timestamp": "2026-10-05T17:00:12.277081+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 68800,
+      "cargo_litres": 80014400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9904170",
+      "name": "SANTANDER KNUTSEN",
+      "port": "Gladstone",
+      "timestamp": "2026-10-05T17:00:12.277081+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 41600,
+      "cargo_litres": 48380800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
