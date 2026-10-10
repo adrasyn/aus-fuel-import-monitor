@@ -7333,6 +7333,45 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9812121",
+      "name": "JASTELLA",
+      "port": "Newcastle",
+      "timestamp": "2026-10-06T15:02:39.787386+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8655,
+      "cargo_litres": 10558545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9893060",
+      "name": "PACIFIC JADE",
+      "port": "Melbourne",
+      "timestamp": "2026-10-06T15:02:39.787386+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 61176,
+      "cargo_litres": 71148235,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9645358",
+      "name": "GAS QUANTUM",
+      "port": "Gladstone",
+      "timestamp": "2026-10-06T15:02:39.787386+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 39040000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
