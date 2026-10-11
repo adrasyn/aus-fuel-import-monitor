@@ -7372,6 +7372,45 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9710074",
+      "name": "GOLDEN RESOLUTION",
+      "port": "Melbourne",
+      "timestamp": "2026-10-07T00:08:59.610697+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7109,
+      "cargo_litres": 8673091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9895197",
+      "name": "TP ENDURANCE",
+      "port": "Geelong",
+      "timestamp": "2026-10-07T00:08:59.610697+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 37538,
+      "cargo_litres": 45796923,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9657478",
+      "name": "SABRE GALAXY",
+      "port": "Melbourne",
+      "timestamp": "2026-10-07T00:08:59.610697+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10509,
+      "cargo_litres": 12821091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
