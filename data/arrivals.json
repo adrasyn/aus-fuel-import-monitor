@@ -7374,19 +7374,6 @@
       "status": "probable"
     },
     {
-      "imo": "9710074",
-      "name": "GOLDEN RESOLUTION",
-      "port": "Melbourne",
-      "timestamp": "2026-10-07T00:08:59.610697+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 7109,
-      "cargo_litres": 8673091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9895197",
       "name": "TP ENDURANCE",
       "port": "Geelong",
@@ -7411,6 +7398,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9389851",
+      "name": "GULF CORAL",
+      "port": "Brisbane",
+      "timestamp": "2026-10-11T23:59:57.464355+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 67200,
+      "cargo_litres": 81984000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }

@@ -3286,6 +3286,22 @@
       "last_position_update": "2026-09-26T22:59:59.046998+00:00",
       "cleared_at": "2026-10-10T23:49:44.968605+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9676527",
+      "name": "ELANDRA MELODY",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 48049231,
+      "cargo_tonnes": 39385,
+      "is_ballast": false,
+      "last_lat": -35.54556,
+      "last_lon": 118.41495,
+      "last_destination": "AUADL",
+      "last_destination_parsed": "Adelaide",
+      "last_position_update": "2026-09-27T23:22:10.361887+00:00",
+      "cleared_at": "2026-10-11T23:59:57.469794+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
