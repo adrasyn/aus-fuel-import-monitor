@@ -7387,19 +7387,6 @@
       "status": "probable"
     },
     {
-      "imo": "9657478",
-      "name": "SABRE GALAXY",
-      "port": "Melbourne",
-      "timestamp": "2026-10-07T00:08:59.610697+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 10509,
-      "cargo_litres": 12821091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9389851",
       "name": "GULF CORAL",
       "port": "Brisbane",

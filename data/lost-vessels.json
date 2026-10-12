@@ -3302,6 +3302,22 @@
       "last_position_update": "2026-09-27T23:22:10.361887+00:00",
       "cleared_at": "2026-10-11T23:59:57.469794+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9738662",
+      "name": "GOLDEN CREATION",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 8296000,
+      "cargo_tonnes": 6800,
+      "is_ballast": false,
+      "last_lat": -19.1408,
+      "last_lon": 146.88861,
+      "last_destination": "AU DRW",
+      "last_destination_parsed": "Darwin",
+      "last_position_update": "2026-09-28T16:38:48.593922+00:00",
+      "cleared_at": "2026-10-12T17:34:29.776184+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
