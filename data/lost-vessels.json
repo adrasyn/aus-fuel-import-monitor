@@ -3334,7 +3334,8 @@
       "last_destination_parsed": "Brisbane",
       "last_position_update": "2026-09-29T00:45:24.378858+00:00",
       "cleared_at": "2026-10-13T02:23:12.082990+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9861938",
@@ -3366,6 +3367,22 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-09-29T00:45:24.378858+00:00",
       "cleared_at": "2026-10-13T02:23:12.082990+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9592305",
+      "name": "OMERA GALAXY",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_litres": 17787059,
+      "cargo_tonnes": 15294,
+      "is_ballast": false,
+      "last_lat": 1.2085,
+      "last_lon": 103.8959,
+      "last_destination": "AU ASH",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-09-29T14:54:14.787989+00:00",
+      "cleared_at": "2026-10-13T15:50:44.105315+00:00",
       "reason": "stale_prune_14d"
     }
   ]

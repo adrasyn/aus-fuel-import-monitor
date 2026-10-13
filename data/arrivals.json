@@ -7472,6 +7472,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1063956",
+      "name": "SWAN VIRTUE",
+      "port": "Gladstone",
+      "timestamp": "2026-10-13T15:50:44.099509+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 3091,
+      "cargo_litres": 3770909,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9672820",
+      "name": "CESI GLADSTONE",
+      "port": "Gladstone",
+      "timestamp": "2026-10-09T15:14:33.837107+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 68800,
+      "cargo_litres": 80014400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
