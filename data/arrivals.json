@@ -7397,6 +7397,81 @@
       "cargo_litres": 81984000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9738662",
+      "name": "GOLDEN CREATION",
+      "port": "Townsville",
+      "timestamp": "2026-09-28T16:38:48.593922+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6800,
+      "cargo_litres": 8296000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9398723",
+      "name": "EAGLE HANOVER",
+      "port": "Brisbane",
+      "timestamp": "2026-10-13T02:23:12.076265+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 78400,
+      "cargo_litres": 91179200,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9881079",
+      "name": "GOLDEN PRELUDE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-13T02:23:12.077103+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6491,
+      "cargo_litres": 7918909,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9941685",
+      "name": "HAFNIA LANGUEDOC",
+      "port": "Melbourne",
+      "timestamp": "2026-10-13T02:23:12.077103+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 120000,
+      "cargo_litres": 146400000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9736626",
+      "name": "GOLDEN ACE",
+      "port": "Townsville",
+      "timestamp": "2026-10-09T00:41:41.298009+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4945,
+      "cargo_litres": 6033455,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9414632",
+      "name": "SEVILLA KNUTSEN",
+      "port": "Gladstone",
+      "timestamp": "2026-10-09T00:41:41.298009+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 72000,
+      "cargo_litres": 83736000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
