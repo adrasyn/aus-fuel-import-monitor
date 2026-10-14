@@ -3416,6 +3416,22 @@
       "last_position_update": "2026-09-30T00:02:13.857812+00:00",
       "cleared_at": "2026-10-14T00:08:45.119752+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9915258",
+      "name": "GASCHEM HOMER",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 10558545,
+      "cargo_tonnes": 8655,
+      "is_ballast": false,
+      "last_lat": -27.42137,
+      "last_lon": 153.13534,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-09-30T14:49:51.243565+00:00",
+      "cleared_at": "2026-10-14T23:32:50.787464+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

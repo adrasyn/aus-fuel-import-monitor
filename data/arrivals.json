@@ -7560,6 +7560,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9919840",
+      "name": "GASCHEM ODYSSEY",
+      "port": "Gladstone",
+      "timestamp": "2026-10-14T23:32:50.780633+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6182,
+      "cargo_litres": 7541818,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9997220",
+      "name": "GORDONS BAY",
+      "port": "Newcastle",
+      "timestamp": "2026-10-10T14:31:45.653080+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

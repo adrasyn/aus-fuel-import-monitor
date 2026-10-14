@@ -97,13 +97,13 @@
       "arrived_product_tonnes": 863393,
       "arrival_count": 22,
       "probable_crude_litres": 657464423,
-      "probable_product_litres": 325784364,
+      "probable_product_litres": 374584364,
       "probable_crude_tonnes": 565317,
-      "probable_product_tonnes": 267036,
-      "probable_count": 23,
+      "probable_product_tonnes": 307036,
+      "probable_count": 24,
       "en_route_crude_litres": 775570494,
-      "en_route_product_litres": 720226572,
-      "last_updated": "2026-10-14T13:08:34.085840+00:00"
+      "en_route_product_litres": 709668027,
+      "last_updated": "2026-10-14T23:02:50.018965+00:00"
     }
   }
 }
