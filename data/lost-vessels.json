@@ -3384,6 +3384,38 @@
       "last_position_update": "2026-09-29T14:54:14.787989+00:00",
       "cleared_at": "2026-10-13T15:50:44.105315+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9228057",
+      "name": "BANGOR",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 11386667,
+      "cargo_tonnes": 9333,
+      "is_ballast": true,
+      "last_lat": -32.95298,
+      "last_lon": 152.26083,
+      "last_destination": "AUNTL",
+      "last_destination_parsed": "Newcastle",
+      "last_position_update": "2026-09-30T00:02:13.857812+00:00",
+      "cleared_at": "2026-10-14T00:08:45.119752+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9783409",
+      "name": "LIAN GUI HU",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 22773333,
+      "cargo_tonnes": 18667,
+      "is_ballast": false,
+      "last_lat": -35.51355,
+      "last_lon": 117.46653,
+      "last_destination": "FOR ORDER",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-09-30T00:02:13.857812+00:00",
+      "cleared_at": "2026-10-14T00:08:45.119752+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

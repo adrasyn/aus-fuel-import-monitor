@@ -7497,6 +7497,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9757254",
+      "name": "PALANCA MIAMI",
+      "port": "Hobart",
+      "timestamp": "2026-10-14T00:08:45.114418+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 11077,
+      "cargo_litres": 13513846,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
