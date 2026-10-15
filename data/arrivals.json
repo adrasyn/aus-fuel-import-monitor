@@ -7585,6 +7585,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9469314",
+      "name": "PENG HU WAN",
+      "port": "Kwinana",
+      "timestamp": "2026-10-15T13:24:36.892432+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8036,
+      "cargo_litres": 9804364,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9781126",
+      "name": "STOLT RENGE",
+      "port": "Melbourne",
+      "timestamp": "2026-10-10T23:49:44.968605+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12055,
+      "cargo_litres": 14706545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
