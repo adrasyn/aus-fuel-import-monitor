@@ -7610,6 +7610,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9903425",
+      "name": "PACIFIC SUCCESS",
+      "port": "Gladstone",
+      "timestamp": "2026-10-11T14:56:48.101756+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
