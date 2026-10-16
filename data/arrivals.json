@@ -7348,19 +7348,6 @@
       "status": "probable"
     },
     {
-      "imo": "9895197",
-      "name": "TP ENDURANCE",
-      "port": "Geelong",
-      "timestamp": "2026-10-07T00:08:59.610697+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 37538,
-      "cargo_litres": 45796923,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9389851",
       "name": "GULF CORAL",
       "port": "Brisbane",
@@ -7632,6 +7619,43 @@
       "vessel_class": "LR2/Panamax",
       "cargo_tonnes": 70000,
       "cargo_litres": 85400000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9896244",
+      "name": "YUAN JING HE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-16T23:09:56.608352+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1064572",
+      "name": "GRAND WINNER 9",
+      "port": "Gladstone",
+      "timestamp": "2026-10-16T23:09:56.608352+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9657478",
+      "name": "SABRE GALAXY",
+      "port": "Brisbane",
+      "timestamp": "2026-10-12T17:34:29.776184+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 17000,
+      "cargo_litres": 20740000,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
