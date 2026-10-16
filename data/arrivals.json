@@ -1672,19 +1672,6 @@
       "status": "probable"
     },
     {
-      "imo": "9293533",
-      "name": "ASPHALT TRANSPORTER",
-      "port": "Newcastle",
-      "timestamp": "2026-04-30T21:34:48.663732+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 13909,
-      "cargo_litres": 16969091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9708588",
       "name": "STI SOLACE",
       "port": "Sydney / Botany",
@@ -7134,19 +7121,6 @@
       "coastal": false
     },
     {
-      "imo": "9293533",
-      "name": "ASPHALT TRANSPORTER",
-      "port": "Newcastle",
-      "timestamp": "2026-10-02T00:15:51.401183+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 11745,
-      "cargo_litres": 14329455,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1044194",
       "name": "MAKARIOS",
       "port": "Townsville",
@@ -7620,6 +7594,44 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 33600,
       "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9903774",
+      "name": "FOREVER CORDIALITY",
+      "port": "Kwinana",
+      "timestamp": "2026-10-16T13:16:49.653179+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9873670",
+      "name": "GREAT THITA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-11T23:59:57.469794+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1065758",
+      "name": "SEAWAYS DELGADA",
+      "port": "Kwinana",
+      "timestamp": "2026-10-11T23:59:57.469794+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 70000,
+      "cargo_litres": 85400000,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
