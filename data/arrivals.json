@@ -7684,6 +7684,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9718856",
+      "name": "SILVER MUNA",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-17T22:31:02.415025+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9753703",
+      "name": "HAFNIA TANZANITE",
+      "port": "Gladstone",
+      "timestamp": "2026-10-17T22:31:02.415025+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
