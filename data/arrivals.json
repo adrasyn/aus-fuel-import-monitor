@@ -7659,6 +7659,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9895197",
+      "name": "TP ENDURANCE",
+      "port": "Kwinana",
+      "timestamp": "2026-10-17T12:17:39.716232+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 18462,
+      "cargo_litres": 22523077,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9848338",
+      "name": "MALBEC HORIZON",
+      "port": "Newcastle",
+      "timestamp": "2026-10-13T02:23:12.082990+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 36923,
+      "cargo_litres": 45046154,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

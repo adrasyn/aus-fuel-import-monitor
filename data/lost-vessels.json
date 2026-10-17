@@ -3449,6 +3449,22 @@
       "last_position_update": "2026-10-01T00:03:10.527518+00:00",
       "cleared_at": "2026-10-15T13:24:36.898331+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9538476",
+      "name": "TIAN E ZUO",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 22773333,
+      "cargo_tonnes": 18667,
+      "is_ballast": false,
+      "last_lat": -35.50617,
+      "last_lon": 116.80824,
+      "last_destination": "FUJAIRAH",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-03T00:06:41.628292+00:00",
+      "cleared_at": "2026-10-17T12:17:39.720420+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
