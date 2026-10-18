@@ -7708,6 +7708,19 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9732931",
+      "name": "ARDMORE PURSUIT",
+      "port": "Brisbane",
+      "timestamp": "2026-10-14T00:08:45.119752+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

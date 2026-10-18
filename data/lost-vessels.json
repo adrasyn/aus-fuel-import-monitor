@@ -3465,6 +3465,22 @@
       "last_position_update": "2026-10-03T00:06:41.628292+00:00",
       "cleared_at": "2026-10-17T12:17:39.720420+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9746279",
+      "name": "LARGO SEA",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 48800000,
+      "cargo_tonnes": 40000,
+      "is_ballast": false,
+      "last_lat": -35.54681,
+      "last_lon": 118.71291,
+      "last_destination": "AU ADL",
+      "last_destination_parsed": "Adelaide",
+      "last_position_update": "2026-10-03T23:14:41.102095+00:00",
+      "cleared_at": "2026-10-18T12:43:14.237159+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
