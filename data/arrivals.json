@@ -7409,19 +7409,6 @@
       "coastal": false
     },
     {
-      "imo": "9736626",
-      "name": "GOLDEN ACE",
-      "port": "Townsville",
-      "timestamp": "2026-10-09T00:41:41.298009+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 4945,
-      "cargo_litres": 6033455,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9414632",
       "name": "SEVILLA KNUTSEN",
       "port": "Gladstone",
@@ -7826,17 +7813,16 @@
       "status": "probable"
     },
     {
-      "imo": "9609914",
-      "name": "UNIQUE HARMONY",
-      "port": "Kwinana",
-      "timestamp": "2026-10-15T13:24:36.898331+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
+      "imo": "9459709",
+      "name": "FPMC P IDEAL",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-19T23:56:08.624938+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 76471,
+      "cargo_litres": 88935294,
       "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
+      "coastal": false
     }
   ]
 }
