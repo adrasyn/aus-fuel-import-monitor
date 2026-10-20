@@ -7823,6 +7823,43 @@
       "cargo_litres": 88935294,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9543110",
+      "name": "STENA CONVOY",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-20T13:35:31.745659+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38769,
+      "cargo_litres": 47298462,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9718064",
+      "name": "CL YINGDU",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-20T13:35:31.745659+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9930832",
+      "name": "GOLDEN AXIS",
+      "port": "Gladstone",
+      "timestamp": "2026-10-15T23:26:28.003486+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 3091,
+      "cargo_litres": 3770909,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
