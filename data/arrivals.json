@@ -7761,19 +7761,6 @@
       "status": "probable"
     },
     {
-      "imo": "9893034",
-      "name": "PACIFIC RUBY",
-      "port": "Brisbane",
-      "timestamp": "2026-10-14T23:32:50.787464+00:00",
-      "ship_type": "crude",
-      "vessel_class": "Suezmax",
-      "cargo_tonnes": 105600,
-      "cargo_litres": 122812800,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9520376",
       "name": "M. MICKIE HARPER",
       "port": "Gladstone",
@@ -7857,6 +7844,55 @@
       "vessel_class": "Handysize",
       "cargo_tonnes": 3091,
       "cargo_litres": 3770909,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9725316",
+      "name": "MARI JONE",
+      "port": "Newcastle",
+      "timestamp": "2026-10-20T23:30:34.177883+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9833577",
+      "name": "STI MODEST",
+      "port": "Gladstone",
+      "timestamp": "2026-10-20T23:30:34.177883+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1064027",
+      "name": "ROKKO GALAXY",
+      "port": "Fremantle",
+      "timestamp": "2026-10-20T23:30:34.177883+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7418,
+      "cargo_litres": 9050182,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9807229",
+      "name": "SEA DOLPHIN",
+      "port": "Cairns",
+      "timestamp": "2026-10-16T13:16:49.656635+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 12923,
+      "cargo_litres": 15766154,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
