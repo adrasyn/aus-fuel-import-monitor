@@ -44,8 +44,8 @@ export default function VesselMap({ vessels, selectedImo, onSelectVessel }: Vess
       scrollWheelZoom={true}
     >
       <TileLayer
-        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-        url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
+        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        url="https://tile.openstreetmap.org/{z}/{x}/{y}.png"
       />
       {vessels.map((vessel) => {
         if (vessel.lat === 0 && vessel.lon === 0) return null;
