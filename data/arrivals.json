@@ -7960,6 +7960,32 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9885910",
+      "name": "BALZANI",
+      "port": "Kwinana",
+      "timestamp": "2026-10-17T22:31:02.420083+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 70000,
+      "cargo_litres": 85400000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9655042",
+      "name": "KOOL FROST",
+      "port": "Gladstone",
+      "timestamp": "2026-10-17T22:31:02.420083+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
