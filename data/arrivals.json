@@ -7896,6 +7896,70 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9848584",
+      "name": "MARI COUVA",
+      "port": "Hobart",
+      "timestamp": "2026-10-21T13:46:42.218814+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38769,
+      "cargo_litres": 47298462,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9442160",
+      "name": "JANESIA ASPHALT V",
+      "port": "Townsville",
+      "timestamp": "2026-10-17T12:17:39.720420+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 3709,
+      "cargo_litres": 4525091,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9607186",
+      "name": "HAFNIA FALCON",
+      "port": "Brisbane",
+      "timestamp": "2026-10-16T23:09:56.612152+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 21538,
+      "cargo_litres": 26276923,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9965423",
+      "name": "AL SHELILA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-16T23:09:56.612152+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 41600,
+      "cargo_litres": 48380800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9809394",
+      "name": "GINGA ANGEL",
+      "port": "Melbourne",
+      "timestamp": "2026-10-17T12:17:39.720420+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 14836,
+      "cargo_litres": 18100364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
