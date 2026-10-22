@@ -7986,6 +7986,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9781279",
+      "name": "CIELO DI ROTTERDAM",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-22T23:32:17.561547+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 56933,
+      "cargo_litres": 69458667,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9815252",
+      "name": "CHEM LITHIUM",
+      "port": "Brisbane",
+      "timestamp": "2026-10-22T23:32:17.562055+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5873,
+      "cargo_litres": 7164727,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
