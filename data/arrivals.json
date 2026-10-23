@@ -7471,19 +7471,6 @@
       "coastal": false
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Newcastle",
-      "timestamp": "2026-10-10T00:22:39.103559+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12055,
-      "cargo_litres": 14706545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9331658",
       "name": "SERI BIJAKSANA",
       "port": "Gladstone",
@@ -8022,6 +8009,43 @@
       "cargo_litres": 24024615,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9377078",
+      "name": "CLIPPER MARS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-23T23:27:02.884822+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 50400,
+      "cargo_litres": 61488000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9722584",
+      "name": "STI GRACE",
+      "port": "Brisbane",
+      "timestamp": "2026-10-23T23:27:02.885273+00:00",
+      "ship_type": "product",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 84706,
+      "cargo_litres": 103341176,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9640437",
+      "name": "V GAS ZOE",
+      "port": "Gladstone",
+      "timestamp": "2026-10-19T15:34:13.399987+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
