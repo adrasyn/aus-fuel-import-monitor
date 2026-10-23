@@ -8010,6 +8010,18 @@
       "cargo_litres": 7164727,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9896244",
+      "name": "YUAN JING HE",
+      "port": "Hobart",
+      "timestamp": "2026-10-23T13:24:36.359507+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 19692,
+      "cargo_litres": 24024615,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }

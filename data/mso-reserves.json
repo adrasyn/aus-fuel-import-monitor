@@ -1,12 +1,12 @@
 {
   "source": "DCCEEW Minimum Stockholding Obligation",
   "source_url": "https://www.dcceew.gov.au/energy/security/australias-fuel-security/minimum-stockholding-obligation/statistics",
-  "as_of": "2026-10-13",
+  "as_of": "2026-10-20",
   "fuels": [
     {
       "key": "petrol",
       "label": "Petrol",
-      "days": 41
+      "days": 39
     },
     {
       "key": "kerosene",
@@ -16,7 +16,7 @@
     {
       "key": "diesel",
       "label": "Diesel",
-      "days": 33
+      "days": 31
     }
   ]
 }
