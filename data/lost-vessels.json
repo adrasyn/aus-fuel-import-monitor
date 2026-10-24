@@ -3592,6 +3592,23 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-10-08T15:30:08.333682+00:00",
       "cleared_at": "2026-10-22T23:32:17.566362+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9321885",
+      "name": "VICTOIRE",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 7164727,
+      "cargo_tonnes": 5873,
+      "is_ballast": false,
+      "last_lat": -26.78808,
+      "last_lon": 153.36962,
+      "last_destination": "FOR ORDERS",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-10T14:31:45.653080+00:00",
+      "cleared_at": "2026-10-24T22:47:22.979400+00:00",
       "reason": "stale_prune_14d"
     }
   ]

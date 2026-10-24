@@ -7647,19 +7647,6 @@
       "coastal": false
     },
     {
-      "imo": "9848338",
-      "name": "MALBEC HORIZON",
-      "port": "Newcastle",
-      "timestamp": "2026-10-13T02:23:12.082990+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 36923,
-      "cargo_litres": 45046154,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9718856",
       "name": "SILVER MUNA",
       "port": "Sydney / Botany",
@@ -8072,6 +8059,30 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9611632",
+      "name": "HUA CHI",
+      "port": "Brisbane",
+      "timestamp": "2026-10-24T22:47:22.972112+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9439802",
+      "name": "DAS",
+      "port": "Kwinana",
+      "timestamp": "2026-10-24T22:47:22.972112+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 35692,
+      "cargo_litres": 43544615,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
