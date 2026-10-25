@@ -8096,6 +8096,32 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9849253",
+      "name": "TP RESOLVE",
+      "port": "Melbourne",
+      "timestamp": "2026-10-21T13:46:42.222406+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 26462,
+      "cargo_litres": 32283077,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9872949",
+      "name": "LNGSHIPS ATHENA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-21T13:46:42.222406+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

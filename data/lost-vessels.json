@@ -3611,6 +3611,38 @@
       "cleared_at": "2026-10-24T22:47:22.979400+00:00",
       "reason": "stale_prune_14d",
       "recovered_as": "probable"
+    },
+    {
+      "imo": "9687667",
+      "name": "ARAGO",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 4148000,
+      "cargo_tonnes": 3400,
+      "is_ballast": false,
+      "last_lat": -33.71063,
+      "last_lon": 154.32065,
+      "last_destination": "",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-11T14:56:48.101756+00:00",
+      "cleared_at": "2026-10-25T22:51:53.277072+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9957737",
+      "name": "APOSTOLOS",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 46520000,
+      "cargo_tonnes": 40000,
+      "is_ballast": false,
+      "last_lat": -4.67494,
+      "last_lon": 111.29074,
+      "last_destination": "AUSTRALIA",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-10-11T14:56:48.101756+00:00",
+      "cleared_at": "2026-10-25T22:51:53.277072+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
