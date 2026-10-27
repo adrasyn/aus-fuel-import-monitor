@@ -8185,6 +8185,57 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9789257",
+      "name": "ATLANTIC FALCON",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-10-27T14:11:22.214424+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9749697",
+      "name": "MISTRAL AURORA",
+      "port": "Townsville",
+      "timestamp": "2026-10-23T13:24:36.366548+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 17000,
+      "cargo_litres": 20740000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9997701",
+      "name": "PUTERI JOHOR",
+      "port": "Gladstone",
+      "timestamp": "2026-10-23T13:24:36.366548+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "1027897",
+      "name": "MAREX NINA",
+      "port": "Brisbane",
+      "timestamp": "2026-10-23T13:24:36.366548+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12982,
+      "cargo_litres": 15837818,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

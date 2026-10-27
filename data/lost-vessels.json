@@ -3643,6 +3643,38 @@
       "last_position_update": "2026-10-11T14:56:48.101756+00:00",
       "cleared_at": "2026-10-25T22:51:53.277072+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9919838",
+      "name": "GASCHEM ILIAD",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 5656364,
+      "cargo_tonnes": 4636,
+      "is_ballast": false,
+      "last_lat": -27.42137,
+      "last_lon": 153.13534,
+      "last_destination": "AU WEP",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-10-13T02:23:12.082990+00:00",
+      "cleared_at": "2026-10-27T14:11:22.219780+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9896452",
+      "name": "SERI DAYA",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 42798400,
+      "cargo_tonnes": 36800,
+      "is_ballast": false,
+      "last_lat": 1.17773,
+      "last_lon": 103.77859,
+      "last_destination": "AU BWI",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-10-13T02:23:12.082990+00:00",
+      "cleared_at": "2026-10-27T14:11:22.219780+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
