@@ -3658,7 +3658,8 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-10-13T02:23:12.082990+00:00",
       "cleared_at": "2026-10-27T14:11:22.219780+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9896452",
@@ -3674,6 +3675,22 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-10-13T02:23:12.082990+00:00",
       "cleared_at": "2026-10-27T14:11:22.219780+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9389851",
+      "name": "GULF CORAL",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 20496000,
+      "cargo_tonnes": 16800,
+      "is_ballast": false,
+      "last_lat": -27.22663,
+      "last_lon": 153.33547,
+      "last_destination": "AU BNE",
+      "last_destination_parsed": "Brisbane",
+      "last_position_update": "2026-10-13T15:50:44.105315+00:00",
+      "cleared_at": "2026-10-28T00:07:04.453818+00:00",
       "reason": "stale_prune_14d"
     }
   ]
