@@ -3742,6 +3742,22 @@
       "last_position_update": "2026-10-14T13:38:34.989225+00:00",
       "cleared_at": "2026-10-28T15:06:12.151529+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1063956",
+      "name": "SWAN VIRTUE",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 3770909,
+      "cargo_tonnes": 3091,
+      "is_ballast": false,
+      "last_lat": -16.79175,
+      "last_lon": 145.87138,
+      "last_destination": "AU CNS",
+      "last_destination_parsed": "Cairns",
+      "last_position_update": "2026-10-16T13:16:49.656635+00:00",
+      "cleared_at": "2026-10-30T15:08:43.423834+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
