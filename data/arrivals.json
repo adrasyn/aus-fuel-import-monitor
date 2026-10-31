@@ -8310,6 +8310,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9908982",
+      "name": "RICH HARVEST",
+      "port": "Kwinana",
+      "timestamp": "2026-10-31T14:27:12.447813+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38769,
+      "cargo_litres": 47298462,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9317250",
+      "name": "THERESA MICRONESIA",
+      "port": "Townsville",
+      "timestamp": "2026-10-27T00:08:02.159125+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 2782,
+      "cargo_litres": 3393818,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9788590",
+      "name": "ETERNAL SUNSHINE",
+      "port": "Townsville",
+      "timestamp": "2026-10-27T00:08:02.159125+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25846,
+      "cargo_litres": 31532308,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
