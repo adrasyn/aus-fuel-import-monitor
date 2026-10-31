@@ -8297,6 +8297,19 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9682576",
+      "name": "MARAN GAS LETO",
+      "port": "Gladstone",
+      "timestamp": "2026-10-26T15:07:24.028925+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 30400,
+      "cargo_litres": 35355200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
