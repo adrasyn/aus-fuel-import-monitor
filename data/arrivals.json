@@ -8335,6 +8335,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1032218",
+      "name": "BALTAZAR",
+      "port": "Bunbury",
+      "timestamp": "2026-11-01T15:04:28.048411+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 35467,
+      "cargo_litres": 43269333,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9848338",
+      "name": "MALBEC HORIZON",
+      "port": "Gladstone",
+      "timestamp": "2026-10-28T00:07:04.453818+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 14154,
+      "cargo_litres": 17267692,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9650042",
+      "name": "MARAN GAS SPARTA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-28T00:07:04.453818+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 33600,
+      "cargo_litres": 39076800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
