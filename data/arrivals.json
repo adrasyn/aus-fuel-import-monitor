@@ -4786,19 +4786,6 @@
       "status": "probable"
     },
     {
-      "imo": "9736626",
-      "name": "GOLDEN ACE",
-      "port": "Fremantle",
-      "timestamp": "2026-07-27T21:43:38.674962+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 5255,
-      "cargo_litres": 6410545,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9783930",
       "name": "SOUTHERN LEADER",
       "port": "Brisbane",
@@ -8122,19 +8109,6 @@
       "coastal": false
     },
     {
-      "imo": "9710074",
-      "name": "GOLDEN RESOLUTION",
-      "port": "Hobart",
-      "timestamp": "2026-10-21T23:33:51.760228+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 7109,
-      "cargo_litres": 8673091,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9893034",
       "name": "PACIFIC RUBY",
       "port": "Brisbane",
@@ -8398,6 +8372,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9736626",
+      "name": "GOLDEN ACE",
+      "port": "Fremantle",
+      "timestamp": "2026-11-02T18:00:12.294520+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 11745,
+      "cargo_litres": 14329455,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
