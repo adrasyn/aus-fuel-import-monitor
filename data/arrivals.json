@@ -8285,19 +8285,6 @@
       "coastal": false
     },
     {
-      "imo": "9317250",
-      "name": "THERESA MICRONESIA",
-      "port": "Townsville",
-      "timestamp": "2026-10-27T00:08:02.159125+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 2782,
-      "cargo_litres": 3393818,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9788590",
       "name": "ETERNAL SUNSHINE",
       "port": "Townsville",
@@ -8384,6 +8371,68 @@
       "cargo_litres": 14329455,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9977983",
+      "name": "GAS ACE",
+      "port": "Brisbane",
+      "timestamp": "2026-11-03T02:33:52.646642+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5564,
+      "cargo_litres": 6787636,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9429003",
+      "name": "TORM GWYNETH",
+      "port": "Brisbane",
+      "timestamp": "2026-11-03T02:33:52.647342+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 68800,
+      "cargo_litres": 83936000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9682370",
+      "name": "TORM DAMINI",
+      "port": "Newcastle",
+      "timestamp": "2026-11-03T02:33:52.647342+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9808522",
+      "name": "TASCO TARA",
+      "port": "Cairns",
+      "timestamp": "2026-10-30T00:20:27.919775+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 7418,
+      "cargo_litres": 9050182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9850678",
+      "name": "BW PAVILIONARANTHERA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-30T00:20:27.919775+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 38400,
+      "cargo_litres": 44659200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
