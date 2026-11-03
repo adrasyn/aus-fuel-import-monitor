@@ -8433,6 +8433,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9989089",
+      "name": "SOUTHERN RESPECT",
+      "port": "Brisbane",
+      "timestamp": "2026-11-03T16:01:54.428208+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 64706,
+      "cargo_litres": 75252941,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9796913",
+      "name": "FOREVER SPLENDOR",
+      "port": "Melbourne",
+      "timestamp": "2026-10-30T15:08:43.423834+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
