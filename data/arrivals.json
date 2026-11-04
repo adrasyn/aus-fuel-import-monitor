@@ -8470,6 +8470,45 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9829473",
+      "name": "STI MARVEL",
+      "port": "Geelong",
+      "timestamp": "2026-10-31T14:27:12.454258+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9926922",
+      "name": "ORION SINEAD",
+      "port": "Gladstone",
+      "timestamp": "2026-10-31T14:27:12.454258+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 46520000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9183269",
+      "name": "HYUNDAI OCEANPIA",
+      "port": "Gladstone",
+      "timestamp": "2026-10-31T14:27:12.454258+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 51200,
+      "cargo_litres": 59545600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
