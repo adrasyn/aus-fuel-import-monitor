@@ -8447,14 +8447,26 @@
       "coastal": false
     },
     {
-      "imo": "9796913",
-      "name": "FOREVER SPLENDOR",
-      "port": "Melbourne",
-      "timestamp": "2026-10-30T15:08:43.423834+00:00",
+      "imo": "9794719",
+      "name": "HELLAS TATIANA",
+      "port": "Brisbane",
+      "timestamp": "2026-11-04T00:57:31.459633+00:00",
       "ship_type": "product",
       "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
+      "cargo_tonnes": 31385,
+      "cargo_litres": 38289231,
+      "draught_missing": false,
+      "coastal": true
+    },
+    {
+      "imo": "9615999",
+      "name": "TASCO AMARIT",
+      "port": "Fremantle",
+      "timestamp": "2026-10-31T00:00:12.122786+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10200,
+      "cargo_litres": 12444000,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
