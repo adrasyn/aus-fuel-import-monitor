@@ -3775,6 +3775,22 @@
       "last_position_update": "2026-10-17T12:17:39.720420+00:00",
       "cleared_at": "2026-10-31T14:27:12.454258+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9441685",
+      "name": "PILARGAS",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 13952364,
+      "cargo_tonnes": 11436,
+      "is_ballast": false,
+      "last_lat": -9.50158,
+      "last_lon": 147.15623,
+      "last_destination": "MORESBY PNG",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-23T13:24:36.366548+00:00",
+      "cleared_at": "2026-11-06T15:56:31.628049+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

@@ -8634,6 +8634,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9789257",
+      "name": "ATLANTIC FALCON",
+      "port": "Cairns",
+      "timestamp": "2026-11-06T15:56:31.622204+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 20308,
+      "cargo_litres": 24775385,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
