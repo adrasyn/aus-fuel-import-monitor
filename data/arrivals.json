@@ -8597,6 +8597,43 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9781126",
+      "name": "STOLT RENGE",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-11-06T01:22:29.855921+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12673,
+      "cargo_litres": 15460727,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9640102",
+      "name": "PVT LYRA",
+      "port": "Brisbane",
+      "timestamp": "2026-11-06T01:22:29.856668+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12055,
+      "cargo_litres": 14706545,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1050002",
+      "name": "YANGZE 52",
+      "port": "Melbourne",
+      "timestamp": "2026-11-01T23:54:59.511391+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
