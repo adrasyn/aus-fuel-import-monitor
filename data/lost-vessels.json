@@ -3791,6 +3791,54 @@
       "last_position_update": "2026-10-23T13:24:36.366548+00:00",
       "cleared_at": "2026-11-06T15:56:31.628049+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9883560",
+      "name": "BUENA AMISTAD",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 2639636,
+      "cargo_tonnes": 2164,
+      "is_ballast": true,
+      "last_lat": -16.80162,
+      "last_lon": 145.95733,
+      "last_destination": "AU DRW",
+      "last_destination_parsed": "Darwin",
+      "last_position_update": "2026-10-24T22:47:22.979400+00:00",
+      "cleared_at": "2026-11-07T23:59:44.897213+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9725316",
+      "name": "MARI JONE",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 33033846,
+      "cargo_tonnes": 27077,
+      "is_ballast": false,
+      "last_lat": -40.87508,
+      "last_lon": 146.00278,
+      "last_destination": "AUBWT",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-24T22:47:22.979400+00:00",
+      "cleared_at": "2026-11-07T23:59:44.897213+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9797981",
+      "name": "TORM HERDIS",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 39040000,
+      "cargo_tonnes": 32000,
+      "is_ballast": false,
+      "last_lat": -38.138,
+      "last_lon": 149.54357,
+      "last_destination": "VANCOUVER CANADA",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-24T22:47:22.979400+00:00",
+      "cleared_at": "2026-11-07T23:59:44.897213+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
