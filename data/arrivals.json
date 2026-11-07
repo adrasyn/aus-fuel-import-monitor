@@ -8459,19 +8459,6 @@
       "status": "probable"
     },
     {
-      "imo": "9829473",
-      "name": "STI MARVEL",
-      "port": "Geelong",
-      "timestamp": "2026-10-31T14:27:12.454258+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 40000,
-      "cargo_litres": 48800000,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9926922",
       "name": "ORION SINEAD",
       "port": "Gladstone",
@@ -8555,19 +8542,6 @@
       "vessel_class": "MR",
       "cargo_tonnes": 18462,
       "cargo_litres": 22523077,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
-      "imo": "9965502",
-      "name": "SUN MERCURY",
-      "port": "Fremantle",
-      "timestamp": "2026-10-31T23:39:23.409205+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 13909,
-      "cargo_litres": 16969091,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
@@ -8658,6 +8632,43 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9719707",
+      "name": "STI SANCTITY",
+      "port": "Melbourne",
+      "timestamp": "2026-11-07T14:57:30.987395+00:00",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 89600,
+      "cargo_litres": 109312000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9796913",
+      "name": "FOREVER SPLENDOR",
+      "port": "Adelaide",
+      "timestamp": "2026-11-07T14:57:30.988154+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 24000,
+      "cargo_litres": 29280000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Gladstone",
+      "timestamp": "2026-11-03T02:33:52.653999+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5873,
+      "cargo_litres": 7164727,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
