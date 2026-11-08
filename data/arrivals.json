@@ -8695,6 +8695,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9919838",
+      "name": "GASCHEM ILIAD",
+      "port": "Hobart",
+      "timestamp": "2026-11-08T15:06:32.970025+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 6182,
+      "cargo_litres": 7541818,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9870525",
+      "name": "KOOL ORCA",
+      "port": "Gladstone",
+      "timestamp": "2026-11-04T00:57:31.466315+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 46400,
+      "cargo_litres": 53963200,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
