@@ -8720,6 +8720,31 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9490313",
+      "name": "AMAGI GALAXY",
+      "port": "Kwinana",
+      "timestamp": "2026-11-08T23:58:50.848677+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 17000,
+      "cargo_litres": 20740000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9785691",
+      "name": "CS ANTHEM",
+      "port": "Kwinana",
+      "timestamp": "2026-11-04T16:19:33.699147+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
