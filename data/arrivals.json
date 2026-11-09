@@ -8658,19 +8658,6 @@
       "coastal": false
     },
     {
-      "imo": "9212452",
-      "name": "WINCANTON",
-      "port": "Gladstone",
-      "timestamp": "2026-11-03T02:33:52.653999+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 5873,
-      "cargo_litres": 7164727,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9634098",
       "name": "SOLARIS",
       "port": "Gladstone",
@@ -8742,6 +8729,44 @@
       "vessel_class": "MR",
       "cargo_tonnes": 40000,
       "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9833682",
+      "name": "NAVIG8 GUIDE",
+      "port": "Gladstone",
+      "timestamp": "2026-11-09T18:23:24.933178+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9761827",
+      "name": "SM EAGLE",
+      "port": "Gladstone",
+      "timestamp": "2026-11-05T01:16:41.670363+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 32000,
+      "cargo_litres": 37216000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9867621",
+      "name": "KHANKENDI",
+      "port": "Geelong",
+      "timestamp": "2026-11-05T01:16:41.670363+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 75200,
+      "cargo_litres": 87457600,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
