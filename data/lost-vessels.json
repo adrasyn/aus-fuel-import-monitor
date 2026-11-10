@@ -3855,7 +3855,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-10-26T15:07:24.028925+00:00",
       "cleared_at": "2026-11-09T18:23:24.940004+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9872949",
@@ -3871,6 +3872,22 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-10-26T15:07:24.028925+00:00",
       "cleared_at": "2026-11-09T18:23:24.940004+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9977995",
+      "name": "GAS BLOSSOM",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 4902182,
+      "cargo_tonnes": 4018,
+      "is_ballast": false,
+      "last_lat": -33.97769,
+      "last_lon": 151.20675,
+      "last_destination": "RAM",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-27T14:11:22.219780+00:00",
+      "cleared_at": "2026-11-10T16:22:46.260195+00:00",
       "reason": "stale_prune_14d"
     }
   ]

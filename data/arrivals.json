@@ -8796,6 +8796,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1069649",
+      "name": "AENEAS GAS",
+      "port": "Kwinana",
+      "timestamp": "2026-11-10T16:22:46.254210+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 27692,
+      "cargo_litres": 33784615,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
