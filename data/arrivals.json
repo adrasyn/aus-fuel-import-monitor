@@ -8770,6 +8770,32 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9694476",
+      "name": "HAFNIA BOBCAT",
+      "port": "Brisbane",
+      "timestamp": "2026-11-06T01:22:29.863521+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 30769,
+      "cargo_litres": 37538462,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9694749",
+      "name": "CESI TIANJIN",
+      "port": "Gladstone",
+      "timestamp": "2026-11-06T01:22:29.863521+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
