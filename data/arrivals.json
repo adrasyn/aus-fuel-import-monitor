@@ -8808,6 +8808,43 @@
       "cargo_litres": 33784615,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "1030076",
+      "name": "CAMARO",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-11-11T00:57:47.408031+00:00",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_tonnes": 50400,
+      "cargo_litres": 61488000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1025576",
+      "name": "SEA ORCA",
+      "port": "Melbourne",
+      "timestamp": "2026-11-11T00:57:47.408031+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 96471,
+      "cargo_litres": 112195294,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9946362",
+      "name": "ZOE KNUTSEN",
+      "port": "Gladstone",
+      "timestamp": "2026-11-06T15:56:31.628049+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 35200,
+      "cargo_litres": 40937600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

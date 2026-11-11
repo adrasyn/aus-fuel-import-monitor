@@ -3888,6 +3888,23 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-10-27T14:11:22.219780+00:00",
       "cleared_at": "2026-11-10T16:22:46.260195+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
+    },
+    {
+      "imo": "1032191",
+      "name": "BALDER",
+      "ship_type": "product",
+      "vessel_class": "LR2/Panamax",
+      "cargo_litres": 66042667,
+      "cargo_tonnes": 54133,
+      "is_ballast": false,
+      "last_lat": -23.79073,
+      "last_lon": 151.18121,
+      "last_destination": "AU GLT.",
+      "last_destination_parsed": "Gladstone",
+      "last_position_update": "2026-10-28T00:07:04.453818+00:00",
+      "cleared_at": "2026-11-11T00:57:47.414985+00:00",
       "reason": "stale_prune_14d"
     }
   ]
