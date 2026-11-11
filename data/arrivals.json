@@ -8845,6 +8845,56 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9905411",
+      "name": "BLUE GRASS MARINER",
+      "port": "Newcastle",
+      "timestamp": "2026-11-11T16:09:56.772449+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9462897",
+      "name": "SEAMERIDIAN",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-11-11T16:09:56.772449+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 38154,
+      "cargo_litres": 46547692,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9792151",
+      "name": "GOLDEN SKY",
+      "port": "Melbourne",
+      "timestamp": "2026-11-07T14:57:30.994532+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 10818,
+      "cargo_litres": 13198182,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9331658",
+      "name": "SERI BIJAKSANA",
+      "port": "Gladstone",
+      "timestamp": "2026-11-07T14:57:30.994532+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
