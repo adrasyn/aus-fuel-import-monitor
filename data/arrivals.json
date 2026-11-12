@@ -8845,19 +8845,6 @@
       "coastal": false
     },
     {
-      "imo": "9792151",
-      "name": "GOLDEN SKY",
-      "port": "Melbourne",
-      "timestamp": "2026-11-07T14:57:30.994532+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 10818,
-      "cargo_litres": 13198182,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9331658",
       "name": "SERI BIJAKSANA",
       "port": "Gladstone",
@@ -8907,6 +8894,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9829473",
+      "name": "STI MARVEL",
+      "port": "Devonport",
+      "timestamp": "2026-11-12T16:54:11.192176+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 21538,
+      "cargo_litres": 26276923,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
