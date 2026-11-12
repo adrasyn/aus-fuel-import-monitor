@@ -1880,19 +1880,6 @@
       "status": "probable"
     },
     {
-      "imo": "9694476",
-      "name": "HAFNIA BOBCAT",
-      "port": "Brisbane",
-      "timestamp": "2026-05-10T21:23:00.186198+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 21538,
-      "cargo_litres": 26276923,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9903425",
       "name": "PACIFIC SUCCESS",
       "port": "Gladstone",
@@ -8772,19 +8759,6 @@
       "status": "probable"
     },
     {
-      "imo": "9694476",
-      "name": "HAFNIA BOBCAT",
-      "port": "Brisbane",
-      "timestamp": "2026-11-06T01:22:29.863521+00:00",
-      "ship_type": "product",
-      "vessel_class": "MR",
-      "cargo_tonnes": 30769,
-      "cargo_litres": 37538462,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9694749",
       "name": "CESI TIANJIN",
       "port": "Gladstone",
@@ -8892,6 +8866,44 @@
       "vessel_class": "Suezmax",
       "cargo_tonnes": 36800,
       "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9994577",
+      "name": "PACIFIC VIOLET",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-11-12T02:19:56.211099+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9829447",
+      "name": "STI MAGIC",
+      "port": "Townsville",
+      "timestamp": "2026-11-07T23:59:44.897213+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9896256",
+      "name": "YUAN YU HE",
+      "port": "Adelaide",
+      "timestamp": "2026-11-07T23:59:44.897213+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25231,
+      "cargo_litres": 30781538,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"

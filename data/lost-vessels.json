@@ -3907,6 +3907,22 @@
       "cleared_at": "2026-11-11T00:57:47.414985+00:00",
       "reason": "stale_prune_14d",
       "recovered_as": "probable"
+    },
+    {
+      "imo": "9611632",
+      "name": "HUA CHI",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 18769231,
+      "cargo_tonnes": 15385,
+      "is_ballast": false,
+      "last_lat": -26.75233,
+      "last_lon": 153.17624,
+      "last_destination": "DAESAN",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-10-29T00:25:11.754552+00:00",
+      "cleared_at": "2026-11-12T02:19:56.218023+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
