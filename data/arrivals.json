@@ -8906,6 +8906,19 @@
       "cargo_litres": 26276923,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9753014",
+      "name": "MARAN GAS CHIOS",
+      "port": "Gladstone",
+      "timestamp": "2026-11-08T23:58:50.855644+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 64000,
+      "cargo_litres": 74432000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
