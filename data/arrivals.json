@@ -8956,6 +8956,18 @@
       "cargo_litres": 48800000,
       "draught_missing": false,
       "coastal": false
+    },
+    {
+      "imo": "9794719",
+      "name": "HELLAS TATIANA",
+      "port": "Cairns",
+      "timestamp": "2026-11-14T15:04:57.608039+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 20308,
+      "cargo_litres": 24775385,
+      "draught_missing": false,
+      "coastal": true
     }
   ]
 }
