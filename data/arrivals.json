@@ -8919,6 +8919,43 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9848584",
+      "name": "MARI COUVA",
+      "port": "Melbourne",
+      "timestamp": "2026-10-30T15:08:43.423834+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25846,
+      "cargo_litres": 31532308,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9635846",
+      "name": "HAFNIA TIGER",
+      "port": "Adelaide",
+      "timestamp": "2026-11-14T01:15:28.131321+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9746279",
+      "name": "LARGO SEA",
+      "port": "Gladstone",
+      "timestamp": "2026-11-14T01:15:28.131321+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
