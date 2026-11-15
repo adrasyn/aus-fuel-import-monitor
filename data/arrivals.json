@@ -8968,6 +8968,32 @@
       "cargo_litres": 24775385,
       "draught_missing": false,
       "coastal": true
+    },
+    {
+      "imo": "9672844",
+      "name": "CESI BEIHAI",
+      "port": "Gladstone",
+      "timestamp": "2026-11-10T16:22:46.260195+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 36800,
+      "cargo_litres": 42798400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9157636",
+      "name": "K.ACACIA",
+      "port": "Gladstone",
+      "timestamp": "2026-11-10T16:22:46.260195+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Aframax",
+      "cargo_tonnes": 27059,
+      "cargo_litres": 31469412,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
