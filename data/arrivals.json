@@ -8994,6 +8994,44 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9807229",
+      "name": "SEA DOLPHIN",
+      "port": "Gladstone",
+      "timestamp": "2026-11-15T15:32:59.195798+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9965502",
+      "name": "SUN MERCURY",
+      "port": "Melbourne",
+      "timestamp": "2026-11-11T00:57:47.414985+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12982,
+      "cargo_litres": 15837818,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9401295",
+      "name": "BARCELONA KNUTSEN",
+      "port": "Gladstone",
+      "timestamp": "2026-11-11T00:57:47.414985+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 35200,
+      "cargo_litres": 40937600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
