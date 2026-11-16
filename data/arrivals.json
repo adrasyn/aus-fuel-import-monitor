@@ -9032,6 +9032,18 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9917880",
+      "name": "MONA",
+      "port": "Kwinana",
+      "timestamp": "2026-11-16T00:20:23.614679+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 39385,
+      "cargo_litres": 48049231,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
