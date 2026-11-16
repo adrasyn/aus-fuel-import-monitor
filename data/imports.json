@@ -1896,19 +1896,19 @@
       "lpg_ml": 7.9,
       "gasoline_ml": 1040.4,
       "jet_fuel_ml": 641.7,
-      "diesel_ml": 2897.4,
+      "diesel_ml": 2897.5,
       "fuel_oil_ml": 65.7,
-      "total_ml": 5644.6
+      "total_ml": 5644.8
     },
     {
       "month": "2026-05",
-      "crude_oil_ml": 1013.3,
+      "crude_oil_ml": 1012.3,
       "lpg_ml": 118.4,
-      "gasoline_ml": 872.8,
+      "gasoline_ml": 872.5,
       "jet_fuel_ml": 636.2,
-      "diesel_ml": 3021.2,
+      "diesel_ml": 3020.0,
       "fuel_oil_ml": 23.2,
-      "total_ml": 5855.0
+      "total_ml": 5852.4
     },
     {
       "month": "2026-06",
@@ -1916,29 +1916,39 @@
       "lpg_ml": 39.4,
       "gasoline_ml": 815.0,
       "jet_fuel_ml": 703.0,
-      "diesel_ml": 2515.6,
+      "diesel_ml": 2513.1,
       "fuel_oil_ml": 35.4,
-      "total_ml": 5189.9
+      "total_ml": 5187.3
     },
     {
       "month": "2026-07",
       "crude_oil_ml": 791.6,
       "lpg_ml": 134.9,
       "gasoline_ml": 833.3,
-      "jet_fuel_ml": 687.0,
+      "jet_fuel_ml": 691.6,
       "diesel_ml": 2507.7,
       "fuel_oil_ml": 44.3,
-      "total_ml": 5173.3
+      "total_ml": 5177.9
     },
     {
       "month": "2026-08",
-      "crude_oil_ml": 635.9,
+      "crude_oil_ml": 635.4,
       "lpg_ml": 67.4,
-      "gasoline_ml": 986.2,
-      "jet_fuel_ml": 535.7,
-      "diesel_ml": 2296.1,
+      "gasoline_ml": 994.1,
+      "jet_fuel_ml": 537.8,
+      "diesel_ml": 2283.6,
       "fuel_oil_ml": 83.1,
-      "total_ml": 4751.0
+      "total_ml": 4748.2
+    },
+    {
+      "month": "2026-09",
+      "crude_oil_ml": 752.0,
+      "lpg_ml": 98.5,
+      "gasoline_ml": 790.4,
+      "jet_fuel_ml": 643.0,
+      "diesel_ml": 2565.4,
+      "fuel_oil_ml": 11.4,
+      "total_ml": 5040.8
     }
   ],
   "consumption_cover": [
@@ -3493,6 +3503,14 @@
       "jet_fuel_days": 21,
       "diesel_days": 28,
       "total_days": 34
+    },
+    {
+      "month": "2026-09",
+      "crude_days": 36,
+      "gasoline_days": 30,
+      "jet_fuel_days": 19,
+      "diesel_days": 22,
+      "total_days": 30
     }
   ]
 }
