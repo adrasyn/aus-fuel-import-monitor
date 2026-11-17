@@ -4055,6 +4055,23 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-11-01T15:04:28.054960+00:00",
       "cleared_at": "2026-11-15T15:32:59.201923+00:00",
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
+    },
+    {
+      "imo": "9429003",
+      "name": "TORM GWYNETH",
+      "ship_type": "product",
+      "vessel_class": "Suezmax",
+      "cargo_litres": 35136000,
+      "cargo_tonnes": 28800,
+      "is_ballast": false,
+      "last_lat": -27.13817,
+      "last_lon": 153.35189,
+      "last_destination": "ICHSYT",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-11-03T16:01:54.434379+00:00",
+      "cleared_at": "2026-11-17T17:38:48.273888+00:00",
       "reason": "stale_prune_14d"
     }
   ]

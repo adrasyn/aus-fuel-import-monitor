@@ -9161,6 +9161,56 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9906714",
+      "name": "GRAND WINNER 5",
+      "port": "Brisbane",
+      "timestamp": "2026-11-17T17:38:48.269798+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 23385,
+      "cargo_litres": 28529231,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9907225",
+      "name": "ORIENT M",
+      "port": "Brisbane",
+      "timestamp": "2026-11-17T17:38:48.269798+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 115200,
+      "cargo_litres": 133977600,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9441685",
+      "name": "PILARGAS",
+      "port": "Newcastle",
+      "timestamp": "2026-11-13T16:14:57.530547+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 12055,
+      "cargo_litres": 14706545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9369887",
+      "name": "SIRTAKI",
+      "port": "Geelong",
+      "timestamp": "2026-11-13T16:14:57.530547+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
