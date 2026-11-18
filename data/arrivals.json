@@ -9211,6 +9211,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1064558",
+      "name": "GRAND WINNER 7",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-11-14T01:15:28.135437+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
