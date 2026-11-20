@@ -9224,6 +9224,57 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9565699",
+      "name": "STOLT DUGONG",
+      "port": "Kwinana",
+      "timestamp": "2026-11-20T02:11:29.345830+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9212452",
+      "name": "WINCANTON",
+      "port": "Gladstone",
+      "timestamp": "2026-11-16T00:20:23.620033+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5564,
+      "cargo_litres": 6787636,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9767950",
+      "name": "MARAN GAS SPETSES",
+      "port": "Gladstone",
+      "timestamp": "2026-11-16T00:20:23.620033+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 44800,
+      "cargo_litres": 52102400,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9878876",
+      "name": "MU LAN",
+      "port": "Gladstone",
+      "timestamp": "2026-11-16T00:20:23.620033+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 41600,
+      "cargo_litres": 48380800,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
