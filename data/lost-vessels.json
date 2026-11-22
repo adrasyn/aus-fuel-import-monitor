@@ -4105,7 +4105,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-11-05T01:16:41.670363+00:00",
       "cleared_at": "2026-11-19T17:22:44.497351+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9377078",
@@ -4137,6 +4138,22 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-11-05T01:16:41.670363+00:00",
       "cleared_at": "2026-11-19T17:22:44.497351+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9802580",
+      "name": "JIN ZHOU WAN",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 9050182,
+      "cargo_tonnes": 7418,
+      "is_ballast": false,
+      "last_lat": -38.71508,
+      "last_lon": 145.00144,
+      "last_destination": "FOR ORDERS",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-11-07T14:57:30.994532+00:00",
+      "cleared_at": "2026-11-22T00:38:58.323001+00:00",
       "reason": "stale_prune_14d"
     }
   ]

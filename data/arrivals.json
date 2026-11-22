@@ -9262,6 +9262,82 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9379806",
+      "name": "CHANG HANG KAI TUO",
+      "port": "Brisbane",
+      "timestamp": "2026-11-22T00:38:58.317643+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 19692,
+      "cargo_litres": 24024615,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1051032",
+      "name": "PIS MADURA",
+      "port": "Adelaide",
+      "timestamp": "2026-11-22T00:38:58.318105+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25231,
+      "cargo_litres": 30781538,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9930832",
+      "name": "GOLDEN AXIS",
+      "port": "Melbourne",
+      "timestamp": "2026-11-17T17:38:48.273888+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 14836,
+      "cargo_litres": 18100364,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9903425",
+      "name": "PACIFIC SUCCESS",
+      "port": "Gladstone",
+      "timestamp": "2026-11-17T17:38:48.273888+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 35200,
+      "cargo_litres": 40937600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9645358",
+      "name": "GAS QUANTUM",
+      "port": "Gladstone",
+      "timestamp": "2026-11-17T03:19:08.529860+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 33231,
+      "cargo_litres": 40541538,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9457268",
+      "name": "SEAFRONTIER",
+      "port": "Melbourne",
+      "timestamp": "2026-11-17T17:38:48.273888+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 17846,
+      "cargo_litres": 21772308,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
