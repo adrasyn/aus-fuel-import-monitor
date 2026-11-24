@@ -4,9 +4,9 @@ import asyncio
 import json
 import os
 import re
-import socket
 import ssl
 import time
+from contextlib import AsyncExitStack, asynccontextmanager
 from datetime import datetime, timezone
 
 import websockets
@@ -21,8 +21,8 @@ from pipeline.regions import (
 )
 
 AISSTREAM_URL = "wss://stream.aisstream.io/v0/stream"
-_AISSTREAM_HOST = "stream.aisstream.io"
-_AISSTREAM_PORT = 443
+_OPEN_TIMEOUT_SECONDS = 10.0
+_OPEN_RETRY_DELAYS = (1.0, 2.0)
 
 # A healthy run sees ~10 msg/s across the subscribed boxes, so the first frame
 # lands within seconds. Total silence this long means the provider is down
@@ -32,29 +32,29 @@ EMPTY_STREAM_GRACE_SECONDS = 90
 _RECV_TIMEOUT_SECONDS = 10.0
 
 
-def _aisstream_cert_verifies() -> bool:
-    # Workaround for AISStream upstream cert outage (aisstream/issues#192). We
-    # try a verifying TLS handshake against their host first; if it fails
-    # specifically with a cert-verification error, the caller falls back to
-    # an unverified context. Any other error (DNS, network) is treated as
-    # "probably fine" so we don't silently downgrade trust for unrelated
-    # flakes.
-    try:
-        ctx = ssl.create_default_context()
-        with socket.create_connection((_AISSTREAM_HOST, _AISSTREAM_PORT), timeout=5) as sock:
-            with ctx.wrap_socket(sock, server_hostname=_AISSTREAM_HOST):
-                return True
-    except ssl.SSLCertVerificationError:
-        return False
-    except Exception:
-        return True
+@asynccontextmanager
+async def _connect_aisstream():
+    """Retry opening timeouts only, with certificate verification on every attempt."""
+    ssl_ctx = ssl.create_default_context()
+    attempts = len(_OPEN_RETRY_DELAYS) + 1
+    async with AsyncExitStack() as stack:
+        for attempt in range(attempts):
+            try:
+                ws = await stack.enter_async_context(websockets.connect(
+                    AISSTREAM_URL, ssl=ssl_ctx, open_timeout=_OPEN_TIMEOUT_SECONDS,
+                ))
+                break
+            except TimeoutError:
+                if attempt == attempts - 1:
+                    raise
+                delay = _OPEN_RETRY_DELAYS[attempt]
+                print(f"  AISStream opening attempt {attempt + 1}/{attempts} timed out; "
+                      f"retrying in {delay:g}s")
+                await asyncio.sleep(delay)
+        # Keep send/receive outside the retry loop. A verified TLS/WebSocket
+        # connection must already be open before the key can be sent.
+        yield ws
 
-
-def _insecure_ssl_context() -> ssl.SSLContext:
-    ctx = ssl.create_default_context()
-    ctx.check_hostname = False
-    ctx.verify_mode = ssl.CERT_NONE
-    return ctx
 
 # AIS ship type code range for tankers. Used only as a gate to keep tankers
 # and drop non-tankers; the crude/product split is done later via
@@ -82,14 +82,8 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
 
     print(f"Connecting to AISStream, collecting for {duration_seconds}s...")
 
-    if _aisstream_cert_verifies():
-        ssl_ctx = ssl.create_default_context()
-    else:
-        print("  WARNING: AISStream TLS cert failed verification — connecting with SSL verification DISABLED (aisstream/issues#192)")
-        ssl_ctx = _insecure_ssl_context()
-
     try:
-        async with websockets.connect(AISSTREAM_URL, ssl=ssl_ctx) as ws:
+        async with _connect_aisstream() as ws:
             await ws.send(json.dumps(subscription))
 
             while (time.time() - start_time) < duration_seconds:
@@ -170,6 +164,8 @@ async def collect_vessels(api_key: str, duration_seconds: int = 1800) -> dict:
                     vessel["length"] = dimension.get("A", 0) + dimension.get("B", 0)
                     vessel["beam"] = dimension.get("C", 0) + dimension.get("D", 0)
 
+    except ssl.SSLCertVerificationError:
+        print("Collection error: AISStream TLS certificate verification failed; subscription not sent")
     except Exception as e:
         print(f"Collection error: {e}")
 

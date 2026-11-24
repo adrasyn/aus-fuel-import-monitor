@@ -1,7 +1,10 @@
 import asyncio
 import json
+import ssl
 
-from pipeline import collector
+import pytest
+
+from pipeline import collector, orchestrator
 
 
 class _FakeWS:
@@ -32,7 +35,6 @@ class _FakeConnect:
 
 
 def _patch_transport(monkeypatch, ws):
-    monkeypatch.setattr(collector, "_aisstream_cert_verifies", lambda: True)
     monkeypatch.setattr(
         collector.websockets, "connect", lambda *a, **k: _FakeConnect(ws)
     )
@@ -75,3 +77,114 @@ def test_collector_does_not_abort_when_frames_are_flowing(monkeypatch, capsys):
 
     out = capsys.readouterr().out
     assert "No frames received" not in out
+
+
+class _FailedOpen:
+    def __init__(self, error):
+        self.error = error
+
+    async def __aenter__(self):
+        raise self.error
+
+    async def __aexit__(self, *exc_info):
+        raise AssertionError("never entered")
+
+
+def _with_open_results(monkeypatch, results):
+    opens, waits = [], []
+    remaining = iter(results)
+
+    def connect(url, *, ssl, open_timeout):
+        opens.append((url, ssl, open_timeout))
+        result = next(remaining)
+        return _FailedOpen(result) if isinstance(result, Exception) else _FakeConnect(result)
+
+    async def sleep(delay):
+        waits.append(delay)
+
+    monkeypatch.setattr(collector.websockets, "connect", connect)
+    monkeypatch.setattr(collector.asyncio, "sleep", sleep)
+    return opens, waits
+
+
+def _assert_verified_opens(opens, count):
+    assert len(opens) == count
+    for url, context, timeout in opens:
+        assert url == collector.AISSTREAM_URL
+        assert context.check_hostname
+        assert context.verify_mode == ssl.CERT_REQUIRED
+        assert timeout == 10.0
+
+
+def test_open_timeout_retries_verified_then_sends_once(monkeypatch):
+    ws = _FakeWS()
+    opens, waits = _with_open_results(monkeypatch, [TimeoutError(), TimeoutError(), ws])
+
+    collector.run_collector("fixture-key", duration_seconds=0)
+
+    _assert_verified_opens(opens, 3)
+    assert waits == [1.0, 2.0]
+    assert len(ws.sent) == 1
+    assert json.loads(ws.sent[0])["APIKey"] == "fixture-key"
+
+
+def test_open_timeouts_stop_after_three_attempts(monkeypatch):
+    would_connect = _FakeWS()
+    results = [TimeoutError(), TimeoutError(), TimeoutError(), would_connect]
+    opens, waits = _with_open_results(monkeypatch, results)
+
+    result = collector.run_collector("fixture-key", duration_seconds=0)
+
+    _assert_verified_opens(opens, 3)
+    assert waits == [1.0, 2.0]
+    assert result["vessels"] == []
+    assert would_connect.sent == []
+
+
+@pytest.mark.parametrize("preceding", [[], [TimeoutError()]])
+def test_bad_certificate_does_not_retry_or_send_and_keeps_last_good_snapshot(
+    tmp_path, monkeypatch, capsys, preceding,
+):
+    would_connect = _FakeWS()
+    opens, waits = _with_open_results(
+        monkeypatch, [*preceding, ssl.SSLCertVerificationError("bad cert"), would_connect],
+    )
+    monkeypatch.chdir(tmp_path)
+    (tmp_path / "data").mkdir()
+    (tmp_path / "data" / "ports.json").write_text('{"ports": []}')
+    snapshot = tmp_path / "data" / "snapshot.json"
+    previous = (
+        b'{"timestamp": "2026-11-22T00:38:00Z", '
+        b'"vessels": [{"imo": "9000001", "name": "Last-good tanker"}]}'
+    )
+    snapshot.write_bytes(previous)
+    monkeypatch.setattr(orchestrator, "_update_petroleum_stats", lambda: None)
+    monkeypatch.setattr(orchestrator, "_update_mso_reserves", lambda: None)
+
+    orchestrator.run_pipeline("fixture-key", duration_seconds=0)
+
+    _assert_verified_opens(opens, len(preceding) + 1)
+    assert waits == ([1.0] if preceding else [])
+    assert would_connect.sent == []
+    assert snapshot.read_bytes() == previous
+    out = capsys.readouterr().out
+    assert "certificate verification failed; subscription not sent" in out
+    assert "Preserving last-good data" in out
+    assert "fixture-key" not in out
+
+
+def test_subscription_timeout_is_not_an_opening_timeout(monkeypatch):
+    class SendTimeout(_FakeWS):
+        async def send(self, payload):
+            await super().send(payload)
+            raise TimeoutError("send timed out")
+
+    ws = SendTimeout()
+    opens, waits = _with_open_results(monkeypatch, [ws, _FakeWS()])
+
+    result = collector.run_collector("fixture-key", duration_seconds=0)
+
+    _assert_verified_opens(opens, 1)
+    assert waits == []
+    assert len(ws.sent) == 1
+    assert result["vessels"] == []
