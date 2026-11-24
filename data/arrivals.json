@@ -9403,6 +9403,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9439785",
+      "name": "YAS",
+      "port": "Gladstone",
+      "timestamp": "2026-11-10T03:05:34.312442+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 15385,
+      "cargo_litres": 18769231,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

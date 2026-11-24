@@ -4170,7 +4170,8 @@
       "last_destination_parsed": "Australia (port unknown)",
       "last_position_update": "2026-11-08T23:58:50.855644+00:00",
       "cleared_at": "2026-11-24T05:09:26.141230+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "duplicate_of_confirmed"
     },
     {
       "imo": "9439785",
@@ -4186,7 +4187,8 @@
       "last_destination_parsed": "Gladstone",
       "last_position_update": "2026-11-10T03:05:34.312442+00:00",
       "cleared_at": "2026-11-24T05:09:26.141230+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     },
     {
       "imo": "9873656",
