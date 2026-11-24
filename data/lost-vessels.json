@@ -4155,6 +4155,54 @@
       "last_position_update": "2026-11-07T14:57:30.994532+00:00",
       "cleared_at": "2026-11-22T00:38:58.323001+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9919838",
+      "name": "GASCHEM ILIAD",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 6410545,
+      "cargo_tonnes": 5255,
+      "is_ballast": false,
+      "last_lat": -43.04355,
+      "last_lon": 147.38545,
+      "last_destination": "AU WEP",
+      "last_destination_parsed": "Australia (port unknown)",
+      "last_position_update": "2026-11-08T23:58:50.855644+00:00",
+      "cleared_at": "2026-11-24T05:09:26.141230+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9439785",
+      "name": "YAS",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 18769231,
+      "cargo_tonnes": 15385,
+      "is_ballast": false,
+      "last_lat": -23.86892,
+      "last_lon": 151.35014,
+      "last_destination": "AU GLT",
+      "last_destination_parsed": "Gladstone",
+      "last_position_update": "2026-11-10T03:05:34.312442+00:00",
+      "cleared_at": "2026-11-24T05:09:26.141230+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9873656",
+      "name": "GREAT KAPPA",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_litres": 48800000,
+      "cargo_tonnes": 40000,
+      "is_ballast": false,
+      "last_lat": -33.87174,
+      "last_lon": 121.90005,
+      "last_destination": "AUEPR",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-11-10T03:05:34.312442+00:00",
+      "cleared_at": "2026-11-24T05:09:26.141230+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }

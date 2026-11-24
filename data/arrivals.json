@@ -9338,6 +9338,71 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "9687667",
+      "name": "ARAGO",
+      "port": "Melbourne",
+      "timestamp": "2026-11-19T17:22:44.497351+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 3400,
+      "cargo_litres": 4148000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9906697",
+      "name": "GRAND WINNER 2",
+      "port": "Brisbane",
+      "timestamp": "2026-11-18T02:42:22.215432+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 24615,
+      "cargo_litres": 30030769,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9712852",
+      "name": "PM EMPRESS",
+      "port": "Geelong",
+      "timestamp": "2026-11-18T02:42:22.215432+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 75200,
+      "cargo_litres": 87457600,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9903774",
+      "name": "FOREVER CORDIALITY",
+      "port": "Melbourne",
+      "timestamp": "2026-11-19T17:22:44.497351+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9995478",
+      "name": "NARRATOR",
+      "port": "Newcastle",
+      "timestamp": "2026-11-20T02:11:29.352817+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }
