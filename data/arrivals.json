@@ -3943,19 +3943,6 @@
       "status": "probable"
     },
     {
-      "imo": "9965502",
-      "name": "SUN MERCURY",
-      "port": "Melbourne",
-      "timestamp": "2026-07-16T21:33:04.389883+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 11127,
-      "cargo_litres": 13575273,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "1035064",
       "name": "CAPE BONNY",
       "port": "Fremantle",
@@ -9008,19 +8995,6 @@
       "coastal": false
     },
     {
-      "imo": "9965502",
-      "name": "SUN MERCURY",
-      "port": "Melbourne",
-      "timestamp": "2026-11-11T00:57:47.414985+00:00",
-      "ship_type": "product",
-      "vessel_class": "Handysize",
-      "cargo_tonnes": 12982,
-      "cargo_litres": 15837818,
-      "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
-    },
-    {
       "imo": "9401295",
       "name": "BARCELONA KNUTSEN",
       "port": "Gladstone",
@@ -9413,6 +9387,81 @@
       "vessel_class": "MR",
       "cargo_tonnes": 15385,
       "cargo_litres": 18769231,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9812755",
+      "name": "HIGH MARINER",
+      "port": "Adelaide",
+      "timestamp": "2026-11-26T18:26:10.194291+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 39385,
+      "cargo_litres": 48049231,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "1034008",
+      "name": "PACIFIC TAURUS",
+      "port": "Adelaide",
+      "timestamp": "2026-11-26T18:26:10.194857+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 25846,
+      "cargo_litres": 31532308,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9965502",
+      "name": "SUN MERCURY",
+      "port": "Brisbane",
+      "timestamp": "2026-11-26T18:26:10.194857+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 5255,
+      "cargo_litres": 6410545,
+      "draught_missing": false,
+      "coastal": false
+    },
+    {
+      "imo": "9874583",
+      "name": "GOLDEN HACHI",
+      "port": "Brisbane",
+      "timestamp": "2026-11-22T00:38:58.323001+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 8655,
+      "cargo_litres": 10558545,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9645762",
+      "name": "GEM TOPAZ",
+      "port": "Newcastle",
+      "timestamp": "2026-11-20T16:57:31.409281+00:00",
+      "ship_type": "product",
+      "vessel_class": "MR",
+      "cargo_tonnes": 40000,
+      "cargo_litres": 48800000,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
+    },
+    {
+      "imo": "9578385",
+      "name": "NING HAI WAN",
+      "port": "Melbourne",
+      "timestamp": "2026-11-20T16:57:31.409281+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 4945,
+      "cargo_litres": 6033455,
       "draught_missing": false,
       "coastal": false,
       "status": "probable"

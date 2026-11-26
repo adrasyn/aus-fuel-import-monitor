@@ -4205,6 +4205,38 @@
       "last_position_update": "2026-11-10T03:05:34.312442+00:00",
       "cleared_at": "2026-11-24T05:09:26.141230+00:00",
       "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "9317250",
+      "name": "THERESA MICRONESIA",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 1508364,
+      "cargo_tonnes": 1236,
+      "is_ballast": true,
+      "last_lat": -23.89992,
+      "last_lon": 151.39038,
+      "last_destination": "AU GLT",
+      "last_destination_parsed": "Gladstone",
+      "last_position_update": "2026-11-11T00:57:47.414985+00:00",
+      "cleared_at": "2026-11-26T18:26:10.200921+00:00",
+      "reason": "stale_prune_14d"
+    },
+    {
+      "imo": "1044194",
+      "name": "MAKARIOS",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_litres": 12066909,
+      "cargo_tonnes": 9891,
+      "is_ballast": false,
+      "last_lat": -34.20525,
+      "last_lon": 151.27628,
+      "last_destination": "AUS-BTNY",
+      "last_destination_parsed": null,
+      "last_position_update": "2026-11-10T16:22:46.260195+00:00",
+      "cleared_at": "2026-11-26T18:26:10.200921+00:00",
+      "reason": "stale_prune_14d"
     }
   ]
 }
