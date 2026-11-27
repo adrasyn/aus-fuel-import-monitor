@@ -9465,6 +9465,19 @@
       "draught_missing": false,
       "coastal": false,
       "status": "probable"
+    },
+    {
+      "imo": "1044194",
+      "name": "MAKARIOS",
+      "port": "Sydney / Botany",
+      "timestamp": "2026-11-10T16:22:46.260195+00:00",
+      "ship_type": "product",
+      "vessel_class": "Handysize",
+      "cargo_tonnes": 9891,
+      "cargo_litres": 12066909,
+      "draught_missing": false,
+      "coastal": false,
+      "status": "probable"
     }
   ]
 }

@@ -4236,7 +4236,8 @@
       "last_destination_parsed": null,
       "last_position_update": "2026-11-10T16:22:46.260195+00:00",
       "cleared_at": "2026-11-26T18:26:10.200921+00:00",
-      "reason": "stale_prune_14d"
+      "reason": "stale_prune_14d",
+      "recovered_as": "probable"
     }
   ]
 }
