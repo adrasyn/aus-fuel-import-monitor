@@ -9467,17 +9467,28 @@
       "status": "probable"
     },
     {
-      "imo": "1044194",
-      "name": "MAKARIOS",
-      "port": "Sydney / Botany",
-      "timestamp": "2026-11-10T16:22:46.260195+00:00",
+      "imo": "9814404",
+      "name": "KANG HUA WAN",
+      "port": "Fremantle",
+      "timestamp": "2026-11-28T03:01:27.097303+00:00",
       "ship_type": "product",
       "vessel_class": "Handysize",
-      "cargo_tonnes": 9891,
-      "cargo_litres": 12066909,
+      "cargo_tonnes": 8345,
+      "cargo_litres": 10181455,
       "draught_missing": false,
-      "coastal": false,
-      "status": "probable"
+      "coastal": false
+    },
+    {
+      "imo": "9984871",
+      "name": "STAVANGER STAR",
+      "port": "Brisbane",
+      "timestamp": "2026-11-28T03:01:27.097846+00:00",
+      "ship_type": "crude",
+      "vessel_class": "Suezmax",
+      "cargo_tonnes": 76800,
+      "cargo_litres": 89318400,
+      "draught_missing": false,
+      "coastal": false
     }
   ]
 }
